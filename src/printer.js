@@ -2014,14 +2014,20 @@ function printJSXElement(path, options, print) {
           if (/\S/.test(child.value)) {
             const beginBreak = child.value.match(/^\s*\n/);
             const endBreak = child.value.match(/\n\s*$/);
+            const beginSpace = child.value.match(/^\s+/);
+            const endSpace = child.value.match(/\s+$/);
 
             children.push(
               beginBreak ? hardline : "",
-              child.value.replace(/^\s+|\s+$/g, endBreak ? "" : " "),
-              endBreak ? hardline : ""
+              beginSpace && !beginBreak ? "{' '}" : "",
+              child.value.replace(/^\s+|\s+$/g, ""),
+              endSpace && !endBreak ? "{' '}" : "",
+              endBreak ? hardline : "",
             );
           } else if (/\n/.test(child.value)) {
             children.push(hardline);
+          } else if (/\s/.test(child.value)) {
+            children.push(ifBreak("{' '}"));
           }
         } else {
           children.push(print(childPath));
