@@ -511,6 +511,61 @@ const isMemberExpression = createTypeCheckFunction([
   "OptionalMemberExpression",
 ]);
 
+const literalTypes = new Set([
+  "Literal",
+  "BigIntLiteral",
+  "DecimalLiteral",
+  "BooleanLiteral",
+  "NullLiteral",
+  "NumericLiteral",
+  "RegExpLiteral",
+  "StringLiteral",
+]);
+
+const singleWordTypes = new Set([
+  "Identifier",
+  "ThisExpression",
+  "Super",
+  "PrivateName",
+  "PrivateIdentifier",
+  "Import",
+]);
+
+/**
+ * This is intended to return true for small expressions
+ * which cannot be broken.
+ */
+function isSimpleAtomicExpression(node) {
+  if (hasComment(node)) {
+    return false;
+  }
+  return literalTypes.has(node.type) || singleWordTypes.has(node.type);
+}
+
+function isSimpleMemberExpression(
+  node,
+  { maxDepth = Number.POSITIVE_INFINITY } = {}
+) {
+  if (!isMemberExpression(node)) {
+    return false;
+  }
+  if (hasComment(node)) {
+    return false;
+  }
+  let head = node;
+  let depth = 0;
+  while (isMemberExpression(head) && depth++ <= maxDepth) {
+    if (!isSimpleAtomicExpression(head.property)) {
+      return false;
+    }
+    head = head.object;
+    if (hasComment(head)) {
+      return false;
+    }
+  }
+  return isSimpleAtomicExpression(head);
+}
+
 /**
  *
  * @param {any} node
@@ -527,44 +582,88 @@ function isSimpleTemplateLiteral(node) {
     return false;
   }
 
-  return expressions.every((expr) => {
-    // Disallow comments since printDocToString can't print them here
-    if (hasComment(expr)) {
-      return false;
+  return expressions.every(
+    (expr) => isSimpleAtomicExpression(expr) || isSimpleMemberExpression(expr)
+  );
+}
+
+function getExpressionInnerNodeCount(node, maxCount) {
+  let count = 0;
+  for (const k in node) {
+    const prop = node[k];
+
+    if (prop && typeof prop === "object" && typeof prop.type === "string") {
+      count++;
+      count += getExpressionInnerNodeCount(prop, maxCount - count);
     }
 
-    // Allow `x` and `this`
-    if (expr.type === "Identifier" || expr.type === "ThisExpression") {
-      return true;
+    // Bail early to protect against bad performance.
+    if (count > maxCount) {
+      return count;
     }
+  }
+  return count;
+}
 
-    // Allow `a.b.c`, `a.b[c]`, and `this.x.y`
-    if (isMemberExpression(expr)) {
-      let head = expr;
-      while (isMemberExpression(head)) {
-        if (
-          head.property.type !== "Identifier" &&
-          head.property.type !== "Literal" &&
-          head.property.type !== "StringLiteral" &&
-          head.property.type !== "NumericLiteral"
-        ) {
-          return false;
-        }
-        head = head.object;
-        if (hasComment(head)) {
-          return false;
-        }
-      }
+/**
+ * Attempts to gauge the rough complexity of a node, for example
+ * to detect deeply-nested booleans, call expressions with lots of arguments, etc.
+ */
+function isSimpleExpressionByNodeCount(node, maxInnerNodeCount = 5) {
+  const count = getExpressionInnerNodeCount(node, maxInnerNodeCount);
+  return count <= maxInnerNodeCount;
+}
 
-      if (head.type === "Identifier" || head.type === "ThisExpression") {
-        return true;
-      }
+const LONE_SHORT_ARGUMENT_THRESHOLD_RATE = 0.25;
 
-      return false;
-    }
-
+function isLoneShortArgument(node, { printWidth }) {
+  if (hasComment(node)) {
     return false;
-  });
+  }
+
+  const threshold = printWidth * LONE_SHORT_ARGUMENT_THRESHOLD_RATE;
+
+  if (
+    node.type === "ThisExpression" ||
+    (node.type === "Identifier" && node.name.length <= threshold) ||
+    (isSignedNumericLiteral(node) && !hasComment(node.argument))
+  ) {
+    return true;
+  }
+
+  const regexpPattern =
+    (node.type === "Literal" && "regex" in node && node.regex.pattern) ||
+    (node.type === "RegExpLiteral" && node.pattern);
+
+  if (regexpPattern) {
+    return regexpPattern.length <= threshold;
+  }
+
+  if (isStringLiteral(node)) {
+    return rawText(node).length <= threshold;
+  }
+
+  if (node.type === "TemplateLiteral") {
+    return (
+      node.expressions.length === 0 &&
+      node.quasis[0].value.raw.length <= threshold &&
+      !node.quasis[0].value.raw.includes("\n")
+    );
+  }
+
+  if (node.type === "UnaryExpression") {
+    return isLoneShortArgument(node.argument, { printWidth });
+  }
+
+  if (
+    node.type === "CallExpression" &&
+    node.arguments.length === 0 &&
+    node.callee.type === "Identifier"
+  ) {
+    return node.callee.name.length <= threshold - 2;
+  }
+
+  return isLiteral(node);
 }
 
 /**
@@ -749,20 +848,9 @@ function isSimpleCallArgument(node, depth = 2) {
   }
 
   if (
-    node.type === "Literal" ||
-    node.type === "BigIntLiteral" ||
-    node.type === "DecimalLiteral" ||
-    node.type === "BooleanLiteral" ||
-    node.type === "NullLiteral" ||
-    node.type === "NumericLiteral" ||
-    node.type === "StringLiteral" ||
-    node.type === "Identifier" ||
-    node.type === "ThisExpression" ||
-    node.type === "Super" ||
-    node.type === "PrivateName" ||
-    node.type === "PrivateIdentifier" ||
-    node.type === "ArgumentPlaceholder" ||
-    node.type === "Import"
+    literalTypes.has(node.type) ||
+    singleWordTypes.has(node.type) ||
+    node.type === "ArgumentPlaceholder"
   ) {
     return true;
   }
@@ -1246,7 +1334,11 @@ export {
   isRegExpLiteral,
   isSimpleType,
   isSimpleNumber,
+  isSimpleAtomicExpression,
+  isSimpleMemberExpression,
   isSimpleTemplateLiteral,
+  isSimpleExpressionByNodeCount,
+  isLoneShortArgument,
   isStringLiteral,
   isStringPropSafeToUnquote,
   isTemplateOnItsOwnLine,
