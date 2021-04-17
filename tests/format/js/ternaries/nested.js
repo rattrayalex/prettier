@@ -2,7 +2,6 @@ let icecream = what == "cone"
   ? p => !!p ? `here's your ${p} cone` : `just the empty cone for you`
   : p => `here's your ${p} ${what}`;
 
-// TODO(rattrayalex): break this to next line?
 const value = condition1
 ? value1
 : condition2

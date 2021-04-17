@@ -485,23 +485,25 @@ a ?
         a: 0,
     } :
     {
-        a: {
-            a: 0,
-        } ?
+        a:
             {
                 a: 0,
-            } :
-            {
-                y: {
+            } ?
+                {
                     a: 0,
-                } ?
-                    {
-                        a: 0,
-                    } :
-                    {
-                        a: 0,
-                    },
-            },
+                } :
+                {
+                    y:
+                        {
+                            a: 0,
+                        } ?
+                            {
+                                a: 0,
+                            } :
+                            {
+                                a: 0,
+                            },
+                },
     };
 
 a ?
@@ -816,23 +818,25 @@ a ?
 		a: 0,
 	} :
 	{
-		a: {
-			a: 0,
-		} ?
+		a:
 			{
 				a: 0,
-			} :
-			{
-				y: {
+			} ?
+				{
 					a: 0,
-				} ?
-					{
-						a: 0,
-					} :
-					{
-						a: 0,
-					},
-			},
+				} :
+				{
+					y:
+						{
+							a: 0,
+						} ?
+							{
+								a: 0,
+							} :
+							{
+								a: 0,
+							},
+				},
 	};
 
 a ?
@@ -1146,23 +1150,25 @@ a ?
 		a: 0,
 	} :
 	{
-		a: {
-			a: 0,
-		} ?
+		a:
 			{
 				a: 0,
-			} :
-			{
-				y: {
+			} ?
+				{
 					a: 0,
-				} ?
-					{
-						a: 0,
-					} :
-					{
-						a: 0,
-					},
-			},
+				} :
+				{
+					y:
+						{
+							a: 0,
+						} ?
+							{
+								a: 0,
+							} :
+							{
+								a: 0,
+							},
+				},
 	};
 
 a ?
@@ -1475,23 +1481,25 @@ a ?
     a: 0,
   } :
   {
-    a: {
-      a: 0,
-    } ?
+    a:
       {
         a: 0,
-      } :
-      {
-        y: {
+      } ?
+        {
           a: 0,
-        } ?
-          {
-            a: 0,
-          } :
-          {
-            a: 0,
-          },
-      },
+        } :
+        {
+          y:
+            {
+              a: 0,
+            } ?
+              {
+                a: 0,
+              } :
+              {
+                a: 0,
+              },
+        },
   };
 
 a ?
@@ -4231,7 +4239,6 @@ let icecream = what == "cone"
   ? p => !!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`
   : p => \`here's your \${p} \${what}\`;
 
-// TODO(rattrayalex): break this to next line?
 const value = condition1
 ? value1
 : condition2
@@ -4330,14 +4337,14 @@ let icecream =
         (p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`) :
         (p) => \`here's your \${p} \${what}\`;
 
-// TODO(rattrayalex): break this to next line?
-const value = condition1 ?
-    value1 :
-condition2 ?
-    value2 :
-condition3 ?
-    value3 :
-    value4;
+const value =
+    condition1 ?
+        value1 :
+    condition2 ?
+        value2 :
+    condition3 ?
+        value3 :
+        value4;
 
 const StorybookLoader = ({ match }) =>
     match.params.storyId === "button" ? (
@@ -4440,7 +4447,6 @@ let icecream = what == "cone"
   ? p => !!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`
   : p => \`here's your \${p} \${what}\`;
 
-// TODO(rattrayalex): break this to next line?
 const value = condition1
 ? value1
 : condition2
@@ -4539,14 +4545,14 @@ let icecream =
 		(p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`) :
 		(p) => \`here's your \${p} \${what}\`;
 
-// TODO(rattrayalex): break this to next line?
-const value = condition1 ?
-	value1 :
-condition2 ?
-	value2 :
-condition3 ?
-	value3 :
-	value4;
+const value =
+	condition1 ?
+		value1 :
+	condition2 ?
+		value2 :
+	condition3 ?
+		value3 :
+		value4;
 
 const StorybookLoader = ({ match }) =>
 	match.params.storyId === "button" ? (
@@ -4648,7 +4654,6 @@ let icecream = what == "cone"
   ? p => !!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`
   : p => \`here's your \${p} \${what}\`;
 
-// TODO(rattrayalex): break this to next line?
 const value = condition1
 ? value1
 : condition2
@@ -4747,14 +4752,14 @@ let icecream =
 		(p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`) :
 		(p) => \`here's your \${p} \${what}\`;
 
-// TODO(rattrayalex): break this to next line?
-const value = condition1 ?
-	value1 :
-condition2 ?
-	value2 :
-condition3 ?
-	value3 :
-	value4;
+const value =
+	condition1 ?
+		value1 :
+	condition2 ?
+		value2 :
+	condition3 ?
+		value3 :
+		value4;
 
 const StorybookLoader = ({ match }) =>
 	match.params.storyId === "button" ? (
@@ -4855,7 +4860,6 @@ let icecream = what == "cone"
   ? p => !!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`
   : p => \`here's your \${p} \${what}\`;
 
-// TODO(rattrayalex): break this to next line?
 const value = condition1
 ? value1
 : condition2
@@ -4954,14 +4958,14 @@ let icecream =
     (p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`) :
     (p) => \`here's your \${p} \${what}\`;
 
-// TODO(rattrayalex): break this to next line?
-const value = condition1 ?
-  value1 :
-condition2 ?
-  value2 :
-condition3 ?
-  value3 :
-  value4;
+const value =
+  condition1 ?
+    value1 :
+  condition2 ?
+    value2 :
+  condition3 ?
+    value3 :
+    value4;
 
 const StorybookLoader = ({ match }) =>
   match.params.storyId === "button" ? (
@@ -5097,25 +5101,27 @@ const value = (bifornCringerMoshedPerplexSawder
 );
 
 =====================================output=====================================
-$var = (
-    $number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
-        kochabCooieGameOnOboleUnweave :
-        annularCooeedSplicesWalksWayWay
-) ?
-    anodyneCondosMalateOverateRetinol :
-    averredBathersBoxroomBuggyNurl;
+$var =
+    (
+        $number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
+            kochabCooieGameOnOboleUnweave :
+            annularCooeedSplicesWalksWayWay
+    ) ?
+        anodyneCondosMalateOverateRetinol :
+        averredBathersBoxroomBuggyNurl;
 
-const value = (
-    bifornCringerMoshedPerplexSawder ?
-        askTrovenaBeenaDependsRowans :
-        glimseGlyphsHazardNoopsTieTie
-) ?
+const value =
+    (
+        bifornCringerMoshedPerplexSawder ?
+            askTrovenaBeenaDependsRowans :
+            glimseGlyphsHazardNoopsTieTie
+    ) ?
+        true ?
+            true :
+            false :
     true ?
         true :
-        false :
-true ?
-    true :
-    false;
+        false;
 
 (
     bifornCringerMoshedPerplexSawder ?
@@ -5187,25 +5193,27 @@ const value = (bifornCringerMoshedPerplexSawder
 );
 
 =====================================output=====================================
-$var = (
-	$number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
-		kochabCooieGameOnOboleUnweave :
-		annularCooeedSplicesWalksWayWay
-) ?
-	anodyneCondosMalateOverateRetinol :
-	averredBathersBoxroomBuggyNurl;
+$var =
+	(
+		$number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
+			kochabCooieGameOnOboleUnweave :
+			annularCooeedSplicesWalksWayWay
+	) ?
+		anodyneCondosMalateOverateRetinol :
+		averredBathersBoxroomBuggyNurl;
 
-const value = (
-	bifornCringerMoshedPerplexSawder ?
-		askTrovenaBeenaDependsRowans :
-		glimseGlyphsHazardNoopsTieTie
-) ?
+const value =
+	(
+		bifornCringerMoshedPerplexSawder ?
+			askTrovenaBeenaDependsRowans :
+			glimseGlyphsHazardNoopsTieTie
+	) ?
+		true ?
+			true :
+			false :
 	true ?
 		true :
-		false :
-true ?
-	true :
-	false;
+		false;
 
 (
 	bifornCringerMoshedPerplexSawder ?
@@ -5276,25 +5284,27 @@ const value = (bifornCringerMoshedPerplexSawder
 );
 
 =====================================output=====================================
-$var = (
-	$number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
-		kochabCooieGameOnOboleUnweave :
-		annularCooeedSplicesWalksWayWay
-) ?
-	anodyneCondosMalateOverateRetinol :
-	averredBathersBoxroomBuggyNurl;
+$var =
+	(
+		$number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
+			kochabCooieGameOnOboleUnweave :
+			annularCooeedSplicesWalksWayWay
+	) ?
+		anodyneCondosMalateOverateRetinol :
+		averredBathersBoxroomBuggyNurl;
 
-const value = (
-	bifornCringerMoshedPerplexSawder ?
-		askTrovenaBeenaDependsRowans :
-		glimseGlyphsHazardNoopsTieTie
-) ?
+const value =
+	(
+		bifornCringerMoshedPerplexSawder ?
+			askTrovenaBeenaDependsRowans :
+			glimseGlyphsHazardNoopsTieTie
+	) ?
+		true ?
+			true :
+			false :
 	true ?
 		true :
-		false :
-true ?
-	true :
-	false;
+		false;
 
 (
 	bifornCringerMoshedPerplexSawder ?
@@ -5364,25 +5374,27 @@ const value = (bifornCringerMoshedPerplexSawder
 );
 
 =====================================output=====================================
-$var = (
-  $number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
-    kochabCooieGameOnOboleUnweave :
-    annularCooeedSplicesWalksWayWay
-) ?
-  anodyneCondosMalateOverateRetinol :
-  averredBathersBoxroomBuggyNurl;
+$var =
+  (
+    $number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
+      kochabCooieGameOnOboleUnweave :
+      annularCooeedSplicesWalksWayWay
+  ) ?
+    anodyneCondosMalateOverateRetinol :
+    averredBathersBoxroomBuggyNurl;
 
-const value = (
-  bifornCringerMoshedPerplexSawder ?
-    askTrovenaBeenaDependsRowans :
-    glimseGlyphsHazardNoopsTieTie
-) ?
+const value =
+  (
+    bifornCringerMoshedPerplexSawder ?
+      askTrovenaBeenaDependsRowans :
+      glimseGlyphsHazardNoopsTieTie
+  ) ?
+    true ?
+      true :
+      false :
   true ?
     true :
-    false :
-true ?
-  true :
-  false;
+    false;
 
 (
   bifornCringerMoshedPerplexSawder ?
@@ -5578,40 +5590,45 @@ const obj5 = conditionIsTruthy ? { some: 'long', object: 'with', lots: 'of', stu
 =====================================output=====================================
 const obj0 = conditionIsTruthy ? shortThing : otherShortThing;
 
-const obj1 = conditionIsTruthy ?
-    { some: "long", object: "with", lots: "of", stuff } :
-    shortThing;
+const obj1 =
+    conditionIsTruthy ?
+        { some: "long", object: "with", lots: "of", stuff } :
+        shortThing;
 
-const obj2 = conditionIsTruthy ?
-    shortThing :
-    { some: "long", object: "with", lots: "of", stuff };
+const obj2 =
+    conditionIsTruthy ?
+        shortThing :
+        { some: "long", object: "with", lots: "of", stuff };
 
-const obj3 = conditionIsTruthy ?
-    {
-        some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-        object: "with",
-        lots: "of",
-        stuff,
-    } :
-    shortThing;
+const obj3 =
+    conditionIsTruthy ?
+        {
+            some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+            object: "with",
+            lots: "of",
+            stuff,
+        } :
+        shortThing;
 
-const obj4 = conditionIsTruthy ?
-    shortThing :
-    {
-        some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-        object: "with",
-        lots: "of",
-        stuff,
-    };
+const obj4 =
+    conditionIsTruthy ?
+        shortThing :
+        {
+            some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+            object: "with",
+            lots: "of",
+            stuff,
+        };
 
-const obj5 = conditionIsTruthy ?
-    { some: "long", object: "with", lots: "of", stuff } :
-    {
-        some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-        object: "with",
-        lots: "of",
-        stuff,
-    };
+const obj5 =
+    conditionIsTruthy ?
+        { some: "long", object: "with", lots: "of", stuff } :
+        {
+            some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+            object: "with",
+            lots: "of",
+            stuff,
+        };
 
 ================================================================================
 `;
@@ -5639,40 +5656,45 @@ const obj5 = conditionIsTruthy ? { some: 'long', object: 'with', lots: 'of', stu
 =====================================output=====================================
 const obj0 = conditionIsTruthy ? shortThing : otherShortThing;
 
-const obj1 = conditionIsTruthy ?
-	{ some: "long", object: "with", lots: "of", stuff } :
-	shortThing;
+const obj1 =
+	conditionIsTruthy ?
+		{ some: "long", object: "with", lots: "of", stuff } :
+		shortThing;
 
-const obj2 = conditionIsTruthy ?
-	shortThing :
-	{ some: "long", object: "with", lots: "of", stuff };
+const obj2 =
+	conditionIsTruthy ?
+		shortThing :
+		{ some: "long", object: "with", lots: "of", stuff };
 
-const obj3 = conditionIsTruthy ?
-	{
-		some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-		object: "with",
-		lots: "of",
-		stuff,
-	} :
-	shortThing;
+const obj3 =
+	conditionIsTruthy ?
+		{
+			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+			object: "with",
+			lots: "of",
+			stuff,
+		} :
+		shortThing;
 
-const obj4 = conditionIsTruthy ?
-	shortThing :
-	{
-		some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-		object: "with",
-		lots: "of",
-		stuff,
-	};
+const obj4 =
+	conditionIsTruthy ?
+		shortThing :
+		{
+			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+			object: "with",
+			lots: "of",
+			stuff,
+		};
 
-const obj5 = conditionIsTruthy ?
-	{ some: "long", object: "with", lots: "of", stuff } :
-	{
-		some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-		object: "with",
-		lots: "of",
-		stuff,
-	};
+const obj5 =
+	conditionIsTruthy ?
+		{ some: "long", object: "with", lots: "of", stuff } :
+		{
+			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+			object: "with",
+			lots: "of",
+			stuff,
+		};
 
 ================================================================================
 `;
@@ -5699,40 +5721,45 @@ const obj5 = conditionIsTruthy ? { some: 'long', object: 'with', lots: 'of', stu
 =====================================output=====================================
 const obj0 = conditionIsTruthy ? shortThing : otherShortThing;
 
-const obj1 = conditionIsTruthy ?
-	{ some: "long", object: "with", lots: "of", stuff } :
-	shortThing;
+const obj1 =
+	conditionIsTruthy ?
+		{ some: "long", object: "with", lots: "of", stuff } :
+		shortThing;
 
-const obj2 = conditionIsTruthy ?
-	shortThing :
-	{ some: "long", object: "with", lots: "of", stuff };
+const obj2 =
+	conditionIsTruthy ?
+		shortThing :
+		{ some: "long", object: "with", lots: "of", stuff };
 
-const obj3 = conditionIsTruthy ?
-	{
-		some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-		object: "with",
-		lots: "of",
-		stuff,
-	} :
-	shortThing;
+const obj3 =
+	conditionIsTruthy ?
+		{
+			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+			object: "with",
+			lots: "of",
+			stuff,
+		} :
+		shortThing;
 
-const obj4 = conditionIsTruthy ?
-	shortThing :
-	{
-		some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-		object: "with",
-		lots: "of",
-		stuff,
-	};
+const obj4 =
+	conditionIsTruthy ?
+		shortThing :
+		{
+			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+			object: "with",
+			lots: "of",
+			stuff,
+		};
 
-const obj5 = conditionIsTruthy ?
-	{ some: "long", object: "with", lots: "of", stuff } :
-	{
-		some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-		object: "with",
-		lots: "of",
-		stuff,
-	};
+const obj5 =
+	conditionIsTruthy ?
+		{ some: "long", object: "with", lots: "of", stuff } :
+		{
+			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+			object: "with",
+			lots: "of",
+			stuff,
+		};
 
 ================================================================================
 `;
@@ -5758,40 +5785,45 @@ const obj5 = conditionIsTruthy ? { some: 'long', object: 'with', lots: 'of', stu
 =====================================output=====================================
 const obj0 = conditionIsTruthy ? shortThing : otherShortThing;
 
-const obj1 = conditionIsTruthy ?
-  { some: "long", object: "with", lots: "of", stuff } :
-  shortThing;
+const obj1 =
+  conditionIsTruthy ?
+    { some: "long", object: "with", lots: "of", stuff } :
+    shortThing;
 
-const obj2 = conditionIsTruthy ?
-  shortThing :
-  { some: "long", object: "with", lots: "of", stuff };
+const obj2 =
+  conditionIsTruthy ?
+    shortThing :
+    { some: "long", object: "with", lots: "of", stuff };
 
-const obj3 = conditionIsTruthy ?
-  {
-    some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-    object: "with",
-    lots: "of",
-    stuff,
-  } :
-  shortThing;
+const obj3 =
+  conditionIsTruthy ?
+    {
+      some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+      object: "with",
+      lots: "of",
+      stuff,
+    } :
+    shortThing;
 
-const obj4 = conditionIsTruthy ?
-  shortThing :
-  {
-    some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-    object: "with",
-    lots: "of",
-    stuff,
-  };
+const obj4 =
+  conditionIsTruthy ?
+    shortThing :
+    {
+      some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+      object: "with",
+      lots: "of",
+      stuff,
+    };
 
-const obj5 = conditionIsTruthy ?
-  { some: "long", object: "with", lots: "of", stuff } :
-  {
-    some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-    object: "with",
-    lots: "of",
-    stuff,
-  };
+const obj5 =
+  conditionIsTruthy ?
+    { some: "long", object: "with", lots: "of", stuff } :
+    {
+      some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+      object: "with",
+      lots: "of",
+      stuff,
+    };
 
 ================================================================================
 `;
