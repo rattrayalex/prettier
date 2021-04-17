@@ -8,6 +8,7 @@ const {
   isNonEmptyArray,
   isNextLineEmptyAfterIndex,
   getStringWidth,
+  hasNewlineInRange,
 } = require("../../common/util.js");
 const { locStart, locEnd, hasSameLocStart } = require("../loc.js");
 const isBlockComment = require("./is-block-comment.js");
@@ -542,6 +543,61 @@ const isMemberExpression = createTypeCheckFunction([
   "OptionalMemberExpression",
 ]);
 
+const literalTypes = new Set([
+  "Literal",
+  "BigIntLiteral",
+  "DecimalLiteral",
+  "BooleanLiteral",
+  "NullLiteral",
+  "NumericLiteral",
+  "RegExpLiteral",
+  "StringLiteral",
+]);
+
+const singleWordTypes = new Set([
+  "Identifier",
+  "ThisExpression",
+  "Super",
+  "PrivateName",
+  "PrivateIdentifier",
+  "Import",
+]);
+
+/**
+ * This is intended to return true for small expressions
+ * which cannot be broken.
+ */
+function isSimpleAtomicExpression(node) {
+  if (hasComment(node)) {
+    return false;
+  }
+  return literalTypes.has(node.type) || singleWordTypes.has(node.type);
+}
+
+function isSimpleMemberExpression(
+  node,
+  { maxDepth = Number.POSITIVE_INFINITY } = {}
+) {
+  if (!isMemberExpression(node)) {
+    return false;
+  }
+  if (hasComment(node)) {
+    return false;
+  }
+  let head = node;
+  let depth = 0;
+  while (isMemberExpression(head) && depth++ <= maxDepth) {
+    if (!isSimpleAtomicExpression(head.property)) {
+      return false;
+    }
+    head = head.object;
+    if (hasComment(head)) {
+      return false;
+    }
+  }
+  return isSimpleAtomicExpression(head);
+}
+
 /**
  *
  * @param {any} node
@@ -558,44 +614,25 @@ function isSimpleTemplateLiteral(node) {
     return false;
   }
 
-  return expressions.every((expr) => {
-    // Disallow comments since printDocToString can't print them here
-    if (hasComment(expr)) {
-      return false;
-    }
+  return expressions.every(
+    (expr) => isSimpleAtomicExpression(expr) || isSimpleMemberExpression(expr)
+  );
+}
 
-    // Allow `x` and `this`
-    if (expr.type === "Identifier" || expr.type === "ThisExpression") {
-      return true;
-    }
-
-    // Allow `a.b.c`, `a.b[c]`, and `this.x.y`
-    if (isMemberExpression(expr)) {
-      let head = expr;
-      while (isMemberExpression(head)) {
-        if (
-          head.property.type !== "Identifier" &&
-          head.property.type !== "Literal" &&
-          head.property.type !== "StringLiteral" &&
-          head.property.type !== "NumericLiteral"
-        ) {
-          return false;
-        }
-        head = head.object;
-        if (hasComment(head)) {
-          return false;
-        }
-      }
-
-      if (head.type === "Identifier" || head.type === "ThisExpression") {
-        return true;
-      }
-
-      return false;
-    }
-
-    return false;
-  });
+/**
+ * Returns whether the expression is under ten characters long
+ * (calibrated to the word "undefined").
+ *
+ * Note that while the input won't be broken,
+ * this does not guarantee that the output will not break.
+ */
+function isVisuallyShortExpression(node, originalText, maxLength = 10) {
+  const start = locStart(node);
+  const end = locEnd(node);
+  return (
+    end - start < maxLength &&
+    !hasNewlineInRange(originalText, locStart(node), locEnd(node))
+  );
 }
 
 /**
@@ -832,21 +869,9 @@ function isSimpleCallArgument(node, depth) {
   }
 
   if (
-    node.type === "Literal" ||
-    node.type === "BigIntLiteral" ||
-    node.type === "DecimalLiteral" ||
-    node.type === "BooleanLiteral" ||
-    node.type === "NullLiteral" ||
-    node.type === "NumericLiteral" ||
-    node.type === "RegExpLiteral" ||
-    node.type === "StringLiteral" ||
-    node.type === "Identifier" ||
-    node.type === "ThisExpression" ||
-    node.type === "Super" ||
-    node.type === "PrivateName" ||
-    node.type === "PrivateIdentifier" ||
-    node.type === "ArgumentPlaceholder" ||
-    node.type === "Import"
+    literalTypes.has(node.type) ||
+    singleWordTypes.has(node.type) ||
+    node.type === "ArgumentPlaceholder"
   ) {
     return true;
   }
@@ -1334,7 +1359,10 @@ module.exports = {
   isObjectTypePropertyAFunction,
   isSimpleType,
   isSimpleNumber,
+  isSimpleAtomicExpression,
+  isSimpleMemberExpression,
   isSimpleTemplateLiteral,
+  isVisuallyShortExpression,
   isStringLiteral,
   isStringPropSafeToUnquote,
   isTemplateOnItsOwnLine,
