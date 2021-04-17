@@ -379,11 +379,10 @@ this.doWriteConfiguration(target, value, options) // queue up writes to prevent 
     }
   );
 
-ret =
-  __DEV__ ?
-    // $FlowFixMe: this type differs according to the env
-    vm.runInContext(source, ctx) :
-    a;
+ret = __DEV__ ?
+  // $FlowFixMe: this type differs according to the env
+  vm.runInContext(source, ctx) :
+  a;
 
 angular
   .module("AngularAppModule")
