@@ -790,9 +790,9 @@ normalModeNonBreaking ? "a" : "b";
 
 // This ConditionalExpression has no JSXElements so it prints in normal mode.
 // Its consequent is very long, so it breaks out to multiple lines.
-normalModeBreaking
-  ? johnJacobJingleHeimerSchmidtHisNameIsMyNameTooWheneverWeGoOutThePeopleAlwaysShoutThereGoesJohnJacobJingleHeimerSchmidtYaDaDaDaDaDaDa
-  : "c";
+normalModeBreaking ?
+  johnJacobJingleHeimerSchmidtHisNameIsMyNameTooWheneverWeGoOutThePeopleAlwaysShoutThereGoesJohnJacobJingleHeimerSchmidtYaDaDaDaDaDaDa :
+  "c";
 
 // This ConditionalExpression prints in JSX mode because its test is a
 // JSXElement. It is non-breaking.
@@ -849,7 +849,13 @@ jsxModeFromElementBreaking ? (
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is
 // non-breaking.
-<div>{a ? "a" : b ? "b" : "c"}</div>;
+<div>
+  {a ?
+    "a" :
+  b ?
+    "b" :
+    "c"}
+</div>;
 
 // This chain of ConditionalExpressions prints in JSX mode because there is a
 // JSX element somewhere in the chain. It is non-breaking.
@@ -1089,9 +1095,9 @@ normalModeNonBreaking ? "a" : "b";
 
 // This ConditionalExpression has no JSXElements so it prints in normal mode.
 // Its consequent is very long, so it breaks out to multiple lines.
-normalModeBreaking
-  ? johnJacobJingleHeimerSchmidtHisNameIsMyNameTooWheneverWeGoOutThePeopleAlwaysShoutThereGoesJohnJacobJingleHeimerSchmidtYaDaDaDaDaDaDa
-  : "c";
+normalModeBreaking ?
+  johnJacobJingleHeimerSchmidtHisNameIsMyNameTooWheneverWeGoOutThePeopleAlwaysShoutThereGoesJohnJacobJingleHeimerSchmidtYaDaDaDaDaDaDa :
+  "c";
 
 // This ConditionalExpression prints in JSX mode because its test is a
 // JSXElement. It is non-breaking.
@@ -1148,7 +1154,13 @@ jsxModeFromElementBreaking ? (
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is
 // non-breaking.
-<div>{a ? "a" : b ? "b" : "c"}</div>;
+<div>
+  {a ?
+    "a" :
+  b ?
+    "b" :
+    "c"}
+</div>;
 
 // This chain of ConditionalExpressions prints in JSX mode because there is a
 // JSX element somewhere in the chain. It is non-breaking.
@@ -1388,9 +1400,9 @@ normalModeNonBreaking ? 'a' : 'b';
 
 // This ConditionalExpression has no JSXElements so it prints in normal mode.
 // Its consequent is very long, so it breaks out to multiple lines.
-normalModeBreaking
-  ? johnJacobJingleHeimerSchmidtHisNameIsMyNameTooWheneverWeGoOutThePeopleAlwaysShoutThereGoesJohnJacobJingleHeimerSchmidtYaDaDaDaDaDaDa
-  : 'c';
+normalModeBreaking ?
+  johnJacobJingleHeimerSchmidtHisNameIsMyNameTooWheneverWeGoOutThePeopleAlwaysShoutThereGoesJohnJacobJingleHeimerSchmidtYaDaDaDaDaDaDa :
+  'c';
 
 // This ConditionalExpression prints in JSX mode because its test is a
 // JSXElement. It is non-breaking.
@@ -1447,7 +1459,13 @@ jsxModeFromElementBreaking ? (
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is
 // non-breaking.
-<div>{a ? 'a' : b ? 'b' : 'c'}</div>;
+<div>
+  {a ?
+    'a' :
+  b ?
+    'b' :
+    'c'}
+</div>;
 
 // This chain of ConditionalExpressions prints in JSX mode because there is a
 // JSX element somewhere in the chain. It is non-breaking.
@@ -1687,9 +1705,9 @@ normalModeNonBreaking ? 'a' : 'b';
 
 // This ConditionalExpression has no JSXElements so it prints in normal mode.
 // Its consequent is very long, so it breaks out to multiple lines.
-normalModeBreaking
-  ? johnJacobJingleHeimerSchmidtHisNameIsMyNameTooWheneverWeGoOutThePeopleAlwaysShoutThereGoesJohnJacobJingleHeimerSchmidtYaDaDaDaDaDaDa
-  : 'c';
+normalModeBreaking ?
+  johnJacobJingleHeimerSchmidtHisNameIsMyNameTooWheneverWeGoOutThePeopleAlwaysShoutThereGoesJohnJacobJingleHeimerSchmidtYaDaDaDaDaDaDa :
+  'c';
 
 // This ConditionalExpression prints in JSX mode because its test is a
 // JSXElement. It is non-breaking.
@@ -1746,7 +1764,13 @@ jsxModeFromElementBreaking ? (
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is
 // non-breaking.
-<div>{a ? 'a' : b ? 'b' : 'c'}</div>;
+<div>
+  {a ?
+    'a' :
+  b ?
+    'b' :
+    'c'}
+</div>;
 
 // This chain of ConditionalExpressions prints in JSX mode because there is a
 // JSX element somewhere in the chain. It is non-breaking.

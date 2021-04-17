@@ -182,9 +182,9 @@ func(
   () => {
     thing();
   },
-  something(longArgumentName, anotherLongArgumentName)
-    ? someOtherThing()
-    : somethingElse(true, 0)
+  something(longArgumentName, anotherLongArgumentName) ?
+    someOtherThing() :
+    somethingElse(true, 0)
 );
 
 func(
@@ -196,9 +196,9 @@ func(
     anotherLongArgumentName,
     anotherLongArgumentName,
     anotherLongArgumentName
-  )
-    ? someOtherThing()
-    : somethingElse(true, 0)
+  ) ?
+    someOtherThing() :
+    somethingElse(true, 0)
 );
 
 compose(
