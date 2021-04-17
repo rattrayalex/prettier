@@ -211,10 +211,10 @@ function printTernary(path, options, print) {
   // See tests/jsx/conditional-expression.js for more info.
   let jsxMode = false;
   const parent = path.getParentNode();
+  const isParentTernary = parent.type === node.type;
   const isParentTest =
-    parent.type === node.type &&
-    testNodePropertyNames.some((prop) => parent[prop] === node);
-  let forceNoIndent = parent.type === node.type && !isParentTest;
+    isParentTernary && testNodePropertyNames.some((prop) => parent[prop] === node);
+  let forceNoIndent = isParentTernary && !isParentTest;
 
   // Find the outermost non-ConditionalExpression parent, and the outermost
   // ConditionalExpression parent. We'll use these to determine if we should
@@ -289,15 +289,17 @@ function printTernary(path, options, print) {
         ? print(alternateNodePropertyName)
         : align(2, print(alternateNodePropertyName)),
     ];
-    parts.push(
-      parent.type !== node.type ||
-        parent[alternateNodePropertyName] === node ||
-        isParentTest
-        ? part
-        : options.useTabs
-        ? dedent(indent(part))
-        : align(Math.max(0, options.tabWidth - 2), part)
-    );
+
+    if (parent[consequentNodePropertyName] === node) {
+      // If we're in a consequent, indent appropriately.
+      parts.push(
+        options.useTabs
+          ? dedent(indent(part))
+          : align(Math.max(0, options.tabWidth - 2), part)
+      );
+    } else {
+      parts.push(part);
+    }
   }
 
   // We want a whole chain of ConditionalExpressions to all
@@ -337,6 +339,17 @@ function printTernary(path, options, print) {
       (parent.type === "NGPipeExpression" && parent.left === node)) &&
     !parent.computed;
 
+  // Do we want to wrap the entire ternary in its own indent?
+  // Eg; for when instead of this:
+  //    foo = (cond
+  //      ? cons
+  //      : alt)
+  // We want this:
+  //    foo = (
+  //      cond
+  //        ? cons
+  //        : alt
+  //    )
   const shouldExtraIndent = shouldExtraIndentForConditionalExpression(path);
 
   const result = maybeGroup([
