@@ -625,9 +625,6 @@ function needsParens(path, options) {
         case "OptionalCallExpression":
           return name === "callee";
 
-        case "ConditionalExpression":
-          return name === "test";
-
         case "MemberExpression":
         case "OptionalMemberExpression":
           return name === "object";
