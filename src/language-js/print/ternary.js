@@ -191,6 +191,7 @@ function printTernary(path, options, print) {
     (isJsxNode(node[testNodePropertyNames[0]]) ||
       isJsxNode(consequentNode) ||
       isJsxNode(alternateNode) ||
+      firstNonConditionalParent.type === 'JSXExpressionContainer' ||
       conditionalExpressionChainContainsJsx(lastConditionalParent))
   ) {
     jsxMode = true;

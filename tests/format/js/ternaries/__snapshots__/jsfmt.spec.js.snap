@@ -4401,17 +4401,19 @@ const foo = (
                 medals[0].type)
         }
     >
-        {medals[0].record ?
-            i18n("Record") :
-        medals[0].unique ?
-            i18n("Unique") :
-        medals[0].type === 0 ?
-            i18n("Silver") :
-        medals[0].type === 1 ?
-            i18n("Gold") :
-        medals[0].type === 2 ?
-            i18n("Platinum") :
-            i18n("Theme")}
+        {medals[0].record ? (
+            i18n("Record")
+        ) : medals[0].unique ? (
+            i18n("Unique")
+        ) : medals[0].type === 0 ? (
+            i18n("Silver")
+        ) : medals[0].type === 1 ? (
+            i18n("Gold")
+        ) : medals[0].type === 2 ? (
+            i18n("Platinum")
+        ) : (
+            i18n("Theme")
+        )}
     </div>
 );
 
@@ -4608,17 +4610,19 @@ const foo = (
 				medals[0].type)
 		}
 	>
-		{medals[0].record ?
-			i18n("Record") :
-		medals[0].unique ?
-			i18n("Unique") :
-		medals[0].type === 0 ?
-			i18n("Silver") :
-		medals[0].type === 1 ?
-			i18n("Gold") :
-		medals[0].type === 2 ?
-			i18n("Platinum") :
-			i18n("Theme")}
+		{medals[0].record ? (
+			i18n("Record")
+		) : medals[0].unique ? (
+			i18n("Unique")
+		) : medals[0].type === 0 ? (
+			i18n("Silver")
+		) : medals[0].type === 1 ? (
+			i18n("Gold")
+		) : medals[0].type === 2 ? (
+			i18n("Platinum")
+		) : (
+			i18n("Theme")
+		)}
 	</div>
 );
 
@@ -4814,17 +4818,19 @@ const foo = (
 				medals[0].type)
 		}
 	>
-		{medals[0].record ?
-			i18n("Record") :
-		medals[0].unique ?
-			i18n("Unique") :
-		medals[0].type === 0 ?
-			i18n("Silver") :
-		medals[0].type === 1 ?
-			i18n("Gold") :
-		medals[0].type === 2 ?
-			i18n("Platinum") :
-			i18n("Theme")}
+		{medals[0].record ? (
+			i18n("Record")
+		) : medals[0].unique ? (
+			i18n("Unique")
+		) : medals[0].type === 0 ? (
+			i18n("Silver")
+		) : medals[0].type === 1 ? (
+			i18n("Gold")
+		) : medals[0].type === 2 ? (
+			i18n("Platinum")
+		) : (
+			i18n("Theme")
+		)}
 	</div>
 );
 
@@ -5019,17 +5025,19 @@ const foo = (
         medals[0].type)
     }
   >
-    {medals[0].record ?
-      i18n("Record") :
-    medals[0].unique ?
-      i18n("Unique") :
-    medals[0].type === 0 ?
-      i18n("Silver") :
-    medals[0].type === 1 ?
-      i18n("Gold") :
-    medals[0].type === 2 ?
-      i18n("Platinum") :
-      i18n("Theme")}
+    {medals[0].record ? (
+      i18n("Record")
+    ) : medals[0].unique ? (
+      i18n("Unique")
+    ) : medals[0].type === 0 ? (
+      i18n("Silver")
+    ) : medals[0].type === 1 ? (
+      i18n("Gold")
+    ) : medals[0].type === 2 ? (
+      i18n("Platinum")
+    ) : (
+      i18n("Theme")
+    )}
   </div>
 );
 
