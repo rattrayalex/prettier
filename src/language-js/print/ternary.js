@@ -16,7 +16,6 @@ const {
     hardline,
     group,
     indent,
-    align,
     ifBreak,
     dedent,
     breakParent,
@@ -80,6 +79,41 @@ function conditionalExpressionChainContainsJsx(node) {
   return false;
 }
 
+// Break the closing paren to keep the chain right after it:
+// (a
+//   ? b
+//   : c
+// ).call()
+function shouldBreakClosingParen(node, parent) {
+  return (
+    (isMemberExpression(parent) ||
+      (parent.type === "NGPipeExpression" && parent.left === node)) &&
+    !parent.computed
+  );
+}
+
+function hasMultilineBlockComments(
+  testNodes,
+  consequentNode,
+  alternateNode,
+  options
+) {
+  const comments = [
+    ...testNodes.map((node) => getComments(node)),
+    getComments(consequentNode),
+    getComments(alternateNode),
+  ].flat();
+  return comments.some(
+    (comment) =>
+      isBlockComment(comment) &&
+      hasNewlineInRange(
+        options.originalText,
+        locStart(comment),
+        locEnd(comment)
+      )
+  );
+}
+
 const ancestorNameMap = new Map([
   ["AssignmentExpression", "right"],
   ["VariableDeclarator", "init"],
@@ -88,6 +122,19 @@ const ancestorNameMap = new Map([
   ["UnaryExpression", "argument"],
   ["YieldExpression", "argument"],
 ]);
+/**
+ * Do we want to wrap the entire ternary in its own indent?
+ * Eg; for when instead of this:
+ *    foo = (cond ?
+ *      cons :
+ *      alt)
+ * We want this:
+ *    foo = (
+ *      cond ?
+ *        cons :
+ *        alt
+ *    )
+ */
 function shouldExtraIndentForConditionalExpression(path) {
   const node = path.getValue();
   if (node.type !== "ConditionalExpression") {
@@ -129,6 +176,25 @@ function shouldExtraIndentForConditionalExpression(path) {
   return parent[ancestorNameMap.get(parent.type)] === child;
 }
 
+// The only things we don't wrap are:
+// * Nested conditional expressions in alternates
+// * null
+// * undefined
+const isNil = (node) =>
+  node.type === "NullLiteral" ||
+  (node.type === "Literal" && node.value === null) ||
+  (node.type === "Identifier" && node.name === "undefined");
+
+// Even though they don't need parens, we wrap (almost) everything in
+// parens when using ?: within JSX, because the parens are analogous to
+// curly braces in an if statement.
+const wrapInParens = (doc) => [
+  ifBreak("("),
+  indent([softline, doc]),
+  softline,
+  ifBreak(")"),
+];
+
 /**
  * The following is the shared logic for
  * ternary operators, namely ConditionalExpression
@@ -152,18 +218,16 @@ function printTernary(path, options, print) {
     : ["checkType", "extendsType"];
   const consequentNode = node[consequentNodePropertyName];
   const alternateNode = node[alternateNodePropertyName];
-  const parts = [];
+  const testNodes = testNodePropertyNames.map((prop) => node[prop]);
 
-  // We print a ConditionalExpression in either "JSX mode" or "normal mode".
-  // See tests/jsx/conditional-expression.js for more info.
-  let jsxMode = false;
   const parent = path.getParentNode();
   const isParentTernary = parent.type === node.type;
-  const isParentTest =
+  const isInTest =
     isParentTernary &&
     testNodePropertyNames.some((prop) => parent[prop] === node);
-  const isParentConsequent = isParentTernary && parent[consequentNodePropertyName] === node
-  const isParentAlternate =
+  const isInConsequent =
+    isParentTernary && parent[consequentNodePropertyName] === node;
+  const isInAlternate =
     isParentTernary && parent[alternateNodePropertyName] === node;
 
   // Find the outermost non-ConditionalExpression parent, and the outermost
@@ -186,137 +250,85 @@ function printTernary(path, options, print) {
   const firstNonConditionalParent = currentParent || parent;
   const lastConditionalParent = previousParent;
 
-  if (
+  const jsxMode =
     isConditionalExpression &&
-    (isJsxNode(node[testNodePropertyNames[0]]) ||
+    (isJsxNode(testNodes[0]) ||
       isJsxNode(consequentNode) ||
       isJsxNode(alternateNode) ||
-      firstNonConditionalParent.type === 'JSXExpressionContainer' ||
-      conditionalExpressionChainContainsJsx(lastConditionalParent))
-  ) {
-    jsxMode = true;
+      firstNonConditionalParent.type === "JSXExpressionContainer" ||
+      conditionalExpressionChainContainsJsx(lastConditionalParent));
 
-    // Even though they don't need parens, we wrap (almost) everything in
-    // parens when using ?: within JSX, because the parens are analogous to
-    // curly braces in an if statement.
-    const wrap = (doc) => [
-      ifBreak("("),
-      indent([softline, doc]),
-      softline,
-      ifBreak(")"),
-    ];
-
-    // The only things we don't wrap are:
-    // * Nested conditional expressions in alternates
-    // * null
-    // * undefined
-    const isNil = (node) =>
-      node.type === "NullLiteral" ||
-      (node.type === "Literal" && node.value === null) ||
-      (node.type === "Identifier" && node.name === "undefined");
-
-    parts.push(
+  if (jsxMode) {
+    const parts = [
+      print("test"),
       " ? ",
       isNil(consequentNode)
         ? print(consequentNodePropertyName)
-        : wrap(print(consequentNodePropertyName)),
+        : wrapInParens(print(consequentNodePropertyName)),
       " : ",
       alternateNode.type === node.type || isNil(alternateNode)
         ? print(alternateNodePropertyName)
-        : wrap(print(alternateNodePropertyName))
-    );
-  } else {
-    // normal mode
-    const part = [
-      " ?",
-      line,
-      // If the consequent is itself a ternary, it should either be wrapped in parens or indented.
-      consequentNode.type === node.type
-        ? [
-            ifBreak("", "("),
-            indent(print(consequentNodePropertyName)),
-            ifBreak("", ")"),
-          ]
-        : print(consequentNodePropertyName),
-      " :",
-      // If the alternate is itself a ternary, don't print a line; let it do that itself so it can dedent.
-      alternateNode.type === node.type ? ifBreak("", " ") : line,
-      print(alternateNodePropertyName),
+        : wrapInParens(print(alternateNodePropertyName)),
     ];
 
-    parts.push(part);
+    return parent === firstNonConditionalParent ? group(parts) : parts;
   }
 
+  // normal mode
+
+  const shouldExtraIndent = shouldExtraIndentForConditionalExpression(path);
+  const breakClosingParen = shouldBreakClosingParen(node, parent);
   // We want a whole chain of ConditionalExpressions to all
   // break if any of them break. That means we should only group around the
   // outer-most ConditionalExpression.
-  const comments = [
-    ...testNodePropertyNames.map((propertyName) =>
-      getComments(node[propertyName])
-    ),
-    getComments(consequentNode),
-    getComments(alternateNode),
-  ].flat();
-  const shouldBreak = comments.some(
-    (comment) =>
-      isBlockComment(comment) &&
-      hasNewlineInRange(
-        options.originalText,
-        locStart(comment),
-        locEnd(comment)
-      )
+  const shouldBreak = hasMultilineBlockComments(
+    testNodes,
+    consequentNode,
+    alternateNode,
+    options
   );
 
-  // Break the closing paren to keep the chain right after it:
-  // (a
-  //   ? b
-  //   : c
-  // ).call()
-  const breakClosingParen =
-    !jsxMode &&
-    (isMemberExpression(parent) ||
-      (parent.type === "NGPipeExpression" && parent.left === node)) &&
-    !parent.computed;
+  const body = [
+    " ?",
+    line,
+    // If the consequent is itself a ternary, it should either be wrapped in parens or indented.
+    consequentNode.type === node.type
+      ? [
+          ifBreak("", "("),
+          indent(print(consequentNodePropertyName)),
+          ifBreak("", ")"),
+        ]
+      : print(consequentNodePropertyName),
+    " :",
+    // If the alternate is itself a ternary, don't print a line; let it do that itself so it can dedent.
+    alternateNode.type === node.type ? ifBreak("", " ") : line,
+    print(alternateNodePropertyName),
+  ];
 
-  // Do we want to wrap the entire ternary in its own indent?
-  // Eg; for when instead of this:
-  //    foo = (cond ?
-  //      cons :
-  //      alt)
-  // We want this:
-  //    foo = (
-  //      cond ?
-  //        cons :
-  //        alt
-  //    )
-  const shouldExtraIndent = shouldExtraIndentForConditionalExpression(path);
-
-  const printedTernaryTest = isConditionalExpression
+  const printedTest = isConditionalExpression
     ? print("test")
     : [print("checkType"), " ", "extends", " ", print("extendsType")];
 
-  const result = [
-    isParentAlternate && !jsxMode
-      ? dedent([hardline, printedTernaryTest])
-      : printedTernaryTest,
+  const parts = [
+    isInAlternate ? dedent([hardline, printedTest]) : printedTest,
 
-    isParentConsequent || isParentAlternate || jsxMode ? parts : indent(parts),
+    isInConsequent || isInAlternate ? body : indent(body),
 
     isConditionalExpression && breakClosingParen && !shouldExtraIndent
       ? softline
       : "",
   ];
 
-  const maybeGroupedResult =
-    parent === firstNonConditionalParent
-      ? group(result, { shouldBreak })
+  const result =
+    isInTest || shouldExtraIndent
+      ? group([indent([softline, parts]), softline])
+      : parent === firstNonConditionalParent
+      ? group(parts, { shouldBreak })
       : shouldBreak
-      ? [result, breakParent]
-      : result;
+      ? [parts, breakParent]
+      : parts;
 
-  return isParentTest || shouldExtraIndent
-    ? group([indent([softline, maybeGroupedResult]), softline])
-    : maybeGroupedResult;
+  return result;
 }
 
 module.exports = { printTernary };

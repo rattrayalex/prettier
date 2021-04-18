@@ -856,13 +856,7 @@ jsxModeFromElementBreaking ? (
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is
 // non-breaking.
-<div>
-  {a ?
-    "a" :
-  b ?
-    "b" :
-    "c"}
-</div>;
+<div>{a ? "a" : b ? "b" : "c"}</div>;
 
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is
@@ -1181,13 +1175,7 @@ jsxModeFromElementBreaking ? (
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is
 // non-breaking.
-<div>
-  {a ?
-    "a" :
-  b ?
-    "b" :
-    "c"}
-</div>;
+<div>{a ? "a" : b ? "b" : "c"}</div>;
 
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is
@@ -1506,13 +1494,7 @@ jsxModeFromElementBreaking ? (
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is
 // non-breaking.
-<div>
-  {a ?
-    'a' :
-  b ?
-    'b' :
-    'c'}
-</div>;
+<div>{a ? 'a' : b ? 'b' : 'c'}</div>;
 
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is
@@ -1831,13 +1813,7 @@ jsxModeFromElementBreaking ? (
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is
 // non-breaking.
-<div>
-  {a ?
-    'a' :
-  b ?
-    'b' :
-    'c'}
-</div>;
+<div>{a ? 'a' : b ? 'b' : 'c'}</div>;
 
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is
