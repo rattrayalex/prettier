@@ -45,8 +45,8 @@ type ReduceNextElement<T extends readonly unknown[]> = T extends readonly [
   infer V,
   ...infer R
 ] ?
-  [V, R] :
-  never;
+  [V, R]
+: never;
 
 ================================================================================
 `;

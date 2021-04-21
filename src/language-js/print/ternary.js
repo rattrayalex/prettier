@@ -18,6 +18,7 @@ const {
     indent,
     ifBreak,
     dedent,
+    align,
     breakParent,
   },
 } = require("../../document");
@@ -125,15 +126,14 @@ const ancestorNameMap = new Map([
 /**
  * Do we want to wrap the entire ternary in its own indent?
  * Eg; for when instead of this:
- *    foo = (cond ?
- *      cons :
- *      alt)
+ *    foo = cond ?
+ *      cons
+ *    : alt
  * We want this:
- *    foo = (
+ *    foo =
  *      cond ?
- *        cons :
- *        alt
- *    )
+ *        cons
+ *      : alt
  */
 function shouldExtraIndentForConditionalExpression(path) {
   const node = path.getValue();
@@ -156,7 +156,6 @@ function shouldExtraIndentForConditionalExpression(path) {
     }
 
     // Reached chain root
-
     if (
       (node.type === "NewExpression" && node.callee === child) ||
       (node.type === "TSAsExpression" && node.expression === child)
@@ -229,6 +228,9 @@ function printTernary(path, options, print) {
     isParentTernary && parent[consequentNodePropertyName] === node;
   const isInAlternate =
     isParentTernary && parent[alternateNodePropertyName] === node;
+  const consequentIsTernary = consequentNode.type === node.type;
+  const alternateIsTernary = alternateNode.type === node.type;
+  const isInChain = alternateIsTernary || isInAlternate;
 
   // Find the outermost non-ConditionalExpression parent, and the outermost
   // ConditionalExpression parent. We'll use these to determine if we should
@@ -250,69 +252,80 @@ function printTernary(path, options, print) {
   const firstNonConditionalParent = currentParent || parent;
   const lastConditionalParent = previousParent;
 
-  const jsxMode =
+  // When a ternary's parent is a JSXExpressionContainer which is not in a JSXAttribute,
+  // and the consequent is not \`null\`,
+  // force the consequent to break,
+  // and force the terminal alternate to break if it is a JSXElement;
+  // when the consequent is \`null\`,
+  // do not add a line before or after it.
+
+  const inJSX =
     isConditionalExpression &&
-    (isJsxNode(testNodes[0]) ||
-      isJsxNode(consequentNode) ||
-      isJsxNode(alternateNode) ||
-      firstNonConditionalParent.type === "JSXExpressionContainer" ||
-      conditionalExpressionChainContainsJsx(lastConditionalParent));
-
-  if (jsxMode) {
-    const parts = [
-      print("test"),
-      " ? ",
-      isNil(consequentNode)
-        ? print(consequentNodePropertyName)
-        : wrapInParens(print(consequentNodePropertyName)),
-      " : ",
-      alternateNode.type === node.type || isNil(alternateNode)
-        ? print(alternateNodePropertyName)
-        : wrapInParens(print(alternateNodePropertyName)),
-    ];
-
-    return parent === firstNonConditionalParent ? group(parts) : parts;
-  }
-
-  // normal mode
+    firstNonConditionalParent.type === "JSXExpressionContainer" &&
+    path.getParentNode(i).type !== "JSXAttribute";
 
   const shouldExtraIndent = shouldExtraIndentForConditionalExpression(path);
   const breakClosingParen = shouldBreakClosingParen(node, parent);
   // We want a whole chain of ConditionalExpressions to all
   // break if any of them break. That means we should only group around the
   // outer-most ConditionalExpression.
-  const shouldBreak = hasMultilineBlockComments(
-    testNodes,
-    consequentNode,
-    alternateNode,
-    options
-  );
-
-  const body = [
-    " ?",
-    line,
-    // If the consequent is itself a ternary, it should either be wrapped in parens or indented.
-    consequentNode.type === node.type
-      ? [
-          ifBreak("", "("),
-          indent(print(consequentNodePropertyName)),
-          ifBreak("", ")"),
-        ]
-      : print(consequentNodePropertyName),
-    " :",
-    // If the alternate is itself a ternary, don't print a line; let it do that itself so it can dedent.
-    alternateNode.type === node.type ? ifBreak("", " ") : line,
-    print(alternateNodePropertyName),
-  ];
+  const shouldBreak =
+    hasMultilineBlockComments(
+      testNodes,
+      consequentNode,
+      alternateNode,
+      options
+    ) ||
+    consequentIsTernary ||
+    alternateIsTernary;
 
   const printedTest = isConditionalExpression
-    ? print("test")
+    ? wrapInParens(print("test"))
     : [print("checkType"), " ", "extends", " ", print("extendsType")];
 
-  const parts = [
-    isInAlternate ? dedent([hardline, printedTest]) : printedTest,
+  /**
+   * Have a null consequent and the colon hug the test in JSX, eg:
+   * <div>
+   *  {!foo ? null : (
+   *    <Bar />
+   *  )}
+   * </div>
+   */
+  if (inJSX && isNil(consequentNode)) {
+    return [
+      group([
+        wrapInParens(printedTest),
+        " ? ",
+        print(consequentNodePropertyName),
+        " : ",
+      ]),
 
-    isInConsequent || isInAlternate ? body : indent(body),
+      group(wrapInParens(print(alternateNodePropertyName)), {
+        shouldBreak: inJSX && isJsxNode(alternateNode),
+      }),
+    ];
+  }
+
+  const consequent = indent([
+    consequentIsTernary || inJSX ? hardline : line,
+    print(consequentNodePropertyName),
+  ]);
+
+  const parts = [
+    group([
+      group([printedTest, " ?"]),
+
+      // Avoid indenting consequent if it isn't a chain, even if the test breaks.
+      !isInChain ? group(consequent) : consequent,
+    ]),
+
+    alternateIsTernary ? hardline : line,
+    ": ",
+    alternateIsTernary
+      ? print(alternateNodePropertyName)
+      : group(wrapInParens(print(alternateNodePropertyName)), {
+          shouldBreak: inJSX && isJsxNode(alternateNode),
+        }),
 
     isConditionalExpression && breakClosingParen && !shouldExtraIndent
       ? softline
@@ -320,8 +333,10 @@ function printTernary(path, options, print) {
   ];
 
   const result =
-    isInTest || shouldExtraIndent
-      ? group([indent([softline, parts]), softline])
+    parent.type === "ReturnStatement"
+      ? wrapInParens(group(parts, { shouldBreak }))
+      : isInTest || shouldExtraIndent
+      ? group([indent([softline, parts])], { shouldBreak })
       : parent === firstNonConditionalParent
       ? group(parts, { shouldBreak })
       : shouldBreak

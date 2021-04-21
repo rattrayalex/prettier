@@ -4331,8 +4331,8 @@ function conditional() {
   return (
     // Reason for 42
     42 ?
-      1 :
-      2
+      1
+    : 2
   )
 }
 
@@ -4340,8 +4340,8 @@ function binaryInConditional() {
   return (
     // Reason for 42
     42 * 3 ?
-      1 :
-      2
+      1
+    : 2
   )
 }
 
@@ -4593,8 +4593,8 @@ function conditional() {
   return (
     // Reason for 42
     42 ?
-      1 :
-      2
+      1
+    : 2
   );
 }
 
@@ -4602,8 +4602,8 @@ function binaryInConditional() {
   return (
     // Reason for 42
     42 * 3 ?
-      1 :
-      2
+      1
+    : 2
   );
 }
 

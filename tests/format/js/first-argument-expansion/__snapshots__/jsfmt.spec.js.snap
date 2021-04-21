@@ -183,8 +183,8 @@ func(
     thing();
   },
   something(longArgumentName, anotherLongArgumentName) ?
-    someOtherThing() :
-    somethingElse(true, 0)
+    someOtherThing()
+  : somethingElse(true, 0)
 );
 
 func(
@@ -197,8 +197,8 @@ func(
     anotherLongArgumentName,
     anotherLongArgumentName
   ) ?
-    someOtherThing() :
-    somethingElse(true, 0)
+    someOtherThing()
+  : somethingElse(true, 0)
 );
 
 compose(

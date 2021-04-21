@@ -60,42 +60,42 @@ foo = (coooooooooooooooooooooooooooooooooooooooooooooooooooond
 =====================================output=====================================
 foo = (
   callNode.parent?.type === AST_NODE_TYPES.ChainExpression ?
-    callNode.parent.parent :
-    callNode.parent
+    callNode.parent.parent
+  : callNode.parent
 ).TSESTree!.BinaryExpression;
 
 foo = (
   callNode.parent?.type === AST_NODE_TYPES.ChainExpression ?
-    callNode.parent.parent :
-    callNode.parent
+    callNode.parent.parent
+  : callNode.parent
 ).TSESTree!.BinaryExpression;
 
 bifornCringerMoshedPerplexSawder = (
   glimseGlyphsHazardNoopsTieTie === 0 &&
   kochabCooieGameOnOboleUnweave === Math.PI ?
-    averredBathersBoxroomBuggyNurl :
-    anodyneCondosMalateOverateRetinol
+    averredBathersBoxroomBuggyNurl
+  : anodyneCondosMalateOverateRetinol
 ).annularCooeedSplicesWalksWayWay
   .annularCooeedSplicesWalksWayWay(annularCooeedSplicesWalksWayWay)!
   .annularCooeedSplicesWalksWayWay();
 
 foo = (
   callNode.parent?.type === AST_NODE_TYPES.ChainExpression ?
-    callNode.parent.parent :
-    callNode.parent
+    callNode.parent.parent
+  : callNode.parent
 ).TSESTree!.BinaryExpression!;
 
 foo = (
   callNode.parent?.type === AST_NODE_TYPES.ChainExpression ?
-    callNode.parent.parent :
-    callNode.parent
+    callNode.parent.parent
+  : callNode.parent
 ).TSESTree!.BinaryExpression!;
 
 bifornCringerMoshedPerplexSawder = (
   glimseGlyphsHazardNoopsTieTie === 0 &&
   kochabCooieGameOnOboleUnweave === Math.PI ?
-    averredBathersBoxroomBuggyNurl :
-    anodyneCondosMalateOverateRetinol
+    averredBathersBoxroomBuggyNurl
+  : anodyneCondosMalateOverateRetinol
 ).annularCooeedSplicesWalksWayWay
   .annularCooeedSplicesWalksWayWay(annularCooeedSplicesWalksWayWay)!
   .annularCooeedSplicesWalksWayWay()!;
@@ -103,20 +103,20 @@ bifornCringerMoshedPerplexSawder = (
 bifornCringerMoshedPerplexSawder =
   askTrovenaBeenaDependsRowans +
   (glimseGlyphsHazardNoopsTieTie === 0 ?
-    averredBathersBoxroomBuggyNurl :
-    anodyneCondosMalateOverateRetinol
+    averredBathersBoxroomBuggyNurl
+  : anodyneCondosMalateOverateRetinol
   ).Foo!.foo;
 
 foo = (
   coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-    baaaaaaaaaaaaaaaaaaaaar :
-    baaaaaaaaaaaaaaaaaaaaaz
+    baaaaaaaaaaaaaaaaaaaaar
+  : baaaaaaaaaaaaaaaaaaaaaz
 )!;
 
 foo = (
   coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-    baaaaaaaaaaaaaaaaaaaaar :
-    baaaaaaaaaaaaaaaaaaaaaz
+    baaaaaaaaaaaaaaaaaaaaar
+  : baaaaaaaaaaaaaaaaaaaaaz
 )!!!!!;
 
 ================================================================================

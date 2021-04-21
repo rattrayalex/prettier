@@ -34,8 +34,8 @@ room = room.map((row, rowIndex) =>
         colIndex === 0 ||
         rowIndex === height ||
         colIndex === width ?
-            1 :
-            0
+            1
+        : 0
     )
 );
 
@@ -77,8 +77,8 @@ room = room.map((row, rowIndex) =>
 		colIndex === 0 ||
 		rowIndex === height ||
 		colIndex === width ?
-			1 :
-			0
+			1
+		: 0
 	)
 );
 
@@ -119,8 +119,8 @@ room = room.map((row, rowIndex) =>
 		colIndex === 0 ||
 		rowIndex === height ||
 		colIndex === width ?
-			1 :
-			0
+			1
+		: 0
 	)
 );
 
@@ -160,8 +160,8 @@ room = room.map((row, rowIndex) =>
     colIndex === 0 ||
     rowIndex === height ||
     colIndex === width ?
-      1 :
-      0
+      1
+    : 0
   )
 );
 
@@ -184,14 +184,15 @@ fn(
       : kochabCooieGameOnOboleUnweave
 );
 // TODO(rattrayalex): try to indent consequent/alternate here.
+
 =====================================output=====================================
 fn(
     bifornCringerMoshedPerplexSawder,
     askTrovenaBeenaDependsRowans,
     glimseGlyphsHazardNoopsTieTie === averredBathersBoxroomBuggyNurl &&
         anodyneCondosMalateOverateRetinol ?
-        annularCooeedSplicesWalksWayWay :
-        kochabCooieGameOnOboleUnweave
+        annularCooeedSplicesWalksWayWay
+    : kochabCooieGameOnOboleUnweave
 );
 // TODO(rattrayalex): try to indent consequent/alternate here.
 
@@ -215,14 +216,15 @@ fn(
       : kochabCooieGameOnOboleUnweave
 );
 // TODO(rattrayalex): try to indent consequent/alternate here.
+
 =====================================output=====================================
 fn(
 	bifornCringerMoshedPerplexSawder,
 	askTrovenaBeenaDependsRowans,
 	glimseGlyphsHazardNoopsTieTie === averredBathersBoxroomBuggyNurl &&
 		anodyneCondosMalateOverateRetinol ?
-		annularCooeedSplicesWalksWayWay :
-		kochabCooieGameOnOboleUnweave
+		annularCooeedSplicesWalksWayWay
+	: kochabCooieGameOnOboleUnweave
 );
 // TODO(rattrayalex): try to indent consequent/alternate here.
 
@@ -245,14 +247,15 @@ fn(
       : kochabCooieGameOnOboleUnweave
 );
 // TODO(rattrayalex): try to indent consequent/alternate here.
+
 =====================================output=====================================
 fn(
 	bifornCringerMoshedPerplexSawder,
 	askTrovenaBeenaDependsRowans,
 	glimseGlyphsHazardNoopsTieTie === averredBathersBoxroomBuggyNurl &&
 		anodyneCondosMalateOverateRetinol ?
-		annularCooeedSplicesWalksWayWay :
-		kochabCooieGameOnOboleUnweave
+		annularCooeedSplicesWalksWayWay
+	: kochabCooieGameOnOboleUnweave
 );
 // TODO(rattrayalex): try to indent consequent/alternate here.
 
@@ -274,14 +277,15 @@ fn(
       : kochabCooieGameOnOboleUnweave
 );
 // TODO(rattrayalex): try to indent consequent/alternate here.
+
 =====================================output=====================================
 fn(
   bifornCringerMoshedPerplexSawder,
   askTrovenaBeenaDependsRowans,
   glimseGlyphsHazardNoopsTieTie === averredBathersBoxroomBuggyNurl &&
     anodyneCondosMalateOverateRetinol ?
-    annularCooeedSplicesWalksWayWay :
-    kochabCooieGameOnOboleUnweave
+    annularCooeedSplicesWalksWayWay
+  : kochabCooieGameOnOboleUnweave
 );
 // TODO(rattrayalex): try to indent consequent/alternate here.
 
@@ -465,44 +469,44 @@ a
 
 =====================================output=====================================
 aaaaaaaaaaaaaaa ?
-    bbbbbbbbbbbbbbbbbb :
-ccccccccccccccc ?
-    ddddddddddddddd :
-eeeeeeeeeeeeeee ?
-    fffffffffffffff :
-    gggggggggggggggg;
+    bbbbbbbbbbbbbbbbbb
+: ccccccccccccccc ?
+    ddddddddddddddd
+: eeeeeeeeeeeeeee ?
+    fffffffffffffff
+: gggggggggggggggg;
 
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
         aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa :
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa :
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa :
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa;
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa;
 
 a ?
     {
         a: 0,
-    } :
-    {
-        a: {
+    }
+: {
+    a: {
+        a: 0,
+    } ?
+        {
+            a: 0,
+        }
+    : {
+        y: {
             a: 0,
         } ?
             {
                 a: 0,
-            } :
-            {
-                y: {
-                    a: 0,
-                } ?
-                    {
-                        a: 0,
-                    } :
-                    {
-                        a: 0,
-                    },
-            },
-    };
+            }
+        : {
+            a: 0,
+        },
+    },
+};
 
 a ?
     {
@@ -514,106 +518,106 @@ a ?
                             {
                                 a: 0,
                                 b: [a ? [0, 1] : []],
-                            } :
+                            }
+                        : [
                             [
-                                [
-                                    0,
+                                0,
+                                {
+                                    a: 0,
+                                },
+                                a ? 0 : 1,
+                            ],
+                            function () {
+                                return a ?
+                                    {
+                                        a: 0,
+                                    }
+                                : [
                                     {
                                         a: 0,
                                     },
-                                    a ? 0 : 1,
-                                ],
-                                function () {
-                                    return a ?
+                                    {},
+                                ];
+                            },
+                        ],
+                    ],
+                }
+            : [
+                a ?
+                    function () {
+                        a ?
+                            a(
+                                a ?
+                                    {
+                                        a: a({
+                                            a: 0,
+                                        }),
+                                    }
+                                : [
+                                    0,
+                                    a(),
+                                    a(
+                                        a(),
                                         {
                                             a: 0,
-                                        } :
-                                        [
-                                            {
-                                                a: 0,
-                                            },
-                                            {},
-                                        ];
-                                },
-                            ],
-                    ],
-                } :
-                [
-                    a ?
-                        function () {
-                            a ?
-                                a(
-                                    a ?
-                                        {
-                                            a: a({
-                                                a: 0,
-                                            }),
-                                        } :
-                                        [
-                                            0,
-                                            a(),
-                                            a(
-                                                a(),
-                                                {
-                                                    a: 0,
-                                                },
-                                                a ?
-                                                    a() :
-                                                    a({
-                                                        a: 0,
-                                                    })
-                                            ),
-                                            a() ?
-                                                {
-                                                    a: a(),
-                                                    b: [],
-                                                } :
-                                                {},
-                                        ]
-                                ) :
-                                a(
+                                        },
+                                        a ?
+                                            a()
+                                        : a({
+                                            a: 0,
+                                        })
+                                    ),
                                     a() ?
                                         {
+                                            a: a(),
+                                            b: [],
+                                        }
+                                    : {},
+                                ]
+                            )
+                        : a(
+                            a() ?
+                                {
+                                    a: 0,
+                                }
+                            : (function (a) {
+                                return a() ?
+                                    [
+                                        {
                                             a: 0,
-                                        } :
-                                        (function (a) {
-                                            return a() ?
-                                                [
-                                                    {
-                                                        a: 0,
-                                                        b: a(),
-                                                    },
-                                                ] :
-                                                a([
-                                                    a ?
-                                                        {
-                                                            a: 0,
-                                                        } :
-                                                        {},
-                                                    {
-                                                        a: 0,
-                                                    },
-                                                ]);
-                                        })(
-                                            a ?
-                                                function (a) {
-                                                    return function () {
-                                                        return 0;
-                                                    };
-                                                } :
-                                                function (a) {
-                                                    return function () {
-                                                        return 1;
-                                                    };
-                                                }
-                                        )
-                                );
-                        } :
-                        function () {},
-                ];
+                                            b: a(),
+                                        },
+                                    ]
+                                : a([
+                                    a ?
+                                        {
+                                            a: 0,
+                                        }
+                                    : {},
+                                    {
+                                        a: 0,
+                                    },
+                                ]);
+                            })(
+                                a ?
+                                    function (a) {
+                                        return function () {
+                                            return 0;
+                                        };
+                                    }
+                                : function (a) {
+                                    return function () {
+                                        return 1;
+                                    };
+                                }
+                            )
+                        );
+                    }
+                : function () {},
+            ];
         },
-    } :
-    a;
+    }
+: a;
 
 ================================================================================
 `;
@@ -796,44 +800,44 @@ a
 
 =====================================output=====================================
 aaaaaaaaaaaaaaa ?
-	bbbbbbbbbbbbbbbbbb :
-ccccccccccccccc ?
-	ddddddddddddddd :
-eeeeeeeeeeeeeee ?
-	fffffffffffffff :
-	gggggggggggggggg;
+	bbbbbbbbbbbbbbbbbb
+: ccccccccccccccc ?
+	ddddddddddddddd
+: eeeeeeeeeeeeeee ?
+	fffffffffffffff
+: gggggggggggggggg;
 
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
 	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
 		aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
-			aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa :
-			aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa :
-		aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa :
-	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa;
+			aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+		: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+	: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa;
 
 a ?
 	{
 		a: 0,
-	} :
-	{
-		a: {
+	}
+: {
+	a: {
+		a: 0,
+	} ?
+		{
+			a: 0,
+		}
+	: {
+		y: {
 			a: 0,
 		} ?
 			{
 				a: 0,
-			} :
-			{
-				y: {
-					a: 0,
-				} ?
-					{
-						a: 0,
-					} :
-					{
-						a: 0,
-					},
-			},
-	};
+			}
+		: {
+			a: 0,
+		},
+	},
+};
 
 a ?
 	{
@@ -845,106 +849,106 @@ a ?
 							{
 								a: 0,
 								b: [a ? [0, 1] : []],
-							} :
+							}
+						: [
 							[
-								[
-									0,
+								0,
+								{
+									a: 0,
+								},
+								a ? 0 : 1,
+							],
+							function () {
+								return a ?
+									{
+										a: 0,
+									}
+								: [
 									{
 										a: 0,
 									},
-									a ? 0 : 1,
-								],
-								function () {
-									return a ?
+									{},
+								];
+							},
+						],
+					],
+				}
+			: [
+				a ?
+					function () {
+						a ?
+							a(
+								a ?
+									{
+										a: a({
+											a: 0,
+										}),
+									}
+								: [
+									0,
+									a(),
+									a(
+										a(),
 										{
 											a: 0,
-										} :
-										[
-											{
-												a: 0,
-											},
-											{},
-										];
-								},
-							],
-					],
-				} :
-				[
-					a ?
-						function () {
-							a ?
-								a(
-									a ?
-										{
-											a: a({
-												a: 0,
-											}),
-										} :
-										[
-											0,
-											a(),
-											a(
-												a(),
-												{
-													a: 0,
-												},
-												a ?
-													a() :
-													a({
-														a: 0,
-													})
-											),
-											a() ?
-												{
-													a: a(),
-													b: [],
-												} :
-												{},
-										]
-								) :
-								a(
+										},
+										a ?
+											a()
+										: a({
+											a: 0,
+										})
+									),
 									a() ?
 										{
+											a: a(),
+											b: [],
+										}
+									: {},
+								]
+							)
+						: a(
+							a() ?
+								{
+									a: 0,
+								}
+							: (function (a) {
+								return a() ?
+									[
+										{
 											a: 0,
-										} :
-										(function (a) {
-											return a() ?
-												[
-													{
-														a: 0,
-														b: a(),
-													},
-												] :
-												a([
-													a ?
-														{
-															a: 0,
-														} :
-														{},
-													{
-														a: 0,
-													},
-												]);
-										})(
-											a ?
-												function (a) {
-													return function () {
-														return 0;
-													};
-												} :
-												function (a) {
-													return function () {
-														return 1;
-													};
-												}
-										)
-								);
-						} :
-						function () {},
-				];
+											b: a(),
+										},
+									]
+								: a([
+									a ?
+										{
+											a: 0,
+										}
+									: {},
+									{
+										a: 0,
+									},
+								]);
+							})(
+								a ?
+									function (a) {
+										return function () {
+											return 0;
+										};
+									}
+								: function (a) {
+									return function () {
+										return 1;
+									};
+								}
+							)
+						);
+					}
+				: function () {},
+			];
 		},
-	} :
-	a;
+	}
+: a;
 
 ================================================================================
 `;
@@ -1126,44 +1130,44 @@ a
 
 =====================================output=====================================
 aaaaaaaaaaaaaaa ?
-	bbbbbbbbbbbbbbbbbb :
-ccccccccccccccc ?
-	ddddddddddddddd :
-eeeeeeeeeeeeeee ?
-	fffffffffffffff :
-	gggggggggggggggg;
+	bbbbbbbbbbbbbbbbbb
+: ccccccccccccccc ?
+	ddddddddddddddd
+: eeeeeeeeeeeeeee ?
+	fffffffffffffff
+: gggggggggggggggg;
 
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
 	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
 		aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
-			aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa :
-			aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa :
-		aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa :
-	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa;
+			aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+		: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+	: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa;
 
 a ?
 	{
 		a: 0,
-	} :
-	{
-		a: {
+	}
+: {
+	a: {
+		a: 0,
+	} ?
+		{
+			a: 0,
+		}
+	: {
+		y: {
 			a: 0,
 		} ?
 			{
 				a: 0,
-			} :
-			{
-				y: {
-					a: 0,
-				} ?
-					{
-						a: 0,
-					} :
-					{
-						a: 0,
-					},
-			},
-	};
+			}
+		: {
+			a: 0,
+		},
+	},
+};
 
 a ?
 	{
@@ -1175,106 +1179,106 @@ a ?
 							{
 								a: 0,
 								b: [a ? [0, 1] : []],
-							} :
+							}
+						: [
 							[
-								[
-									0,
+								0,
+								{
+									a: 0,
+								},
+								a ? 0 : 1,
+							],
+							function () {
+								return a ?
+									{
+										a: 0,
+									}
+								: [
 									{
 										a: 0,
 									},
-									a ? 0 : 1,
-								],
-								function () {
-									return a ?
+									{},
+								];
+							},
+						],
+					],
+				}
+			: [
+				a ?
+					function () {
+						a ?
+							a(
+								a ?
+									{
+										a: a({
+											a: 0,
+										}),
+									}
+								: [
+									0,
+									a(),
+									a(
+										a(),
 										{
 											a: 0,
-										} :
-										[
-											{
-												a: 0,
-											},
-											{},
-										];
-								},
-							],
-					],
-				} :
-				[
-					a ?
-						function () {
-							a ?
-								a(
-									a ?
-										{
-											a: a({
-												a: 0,
-											}),
-										} :
-										[
-											0,
-											a(),
-											a(
-												a(),
-												{
-													a: 0,
-												},
-												a ?
-													a() :
-													a({
-														a: 0,
-													})
-											),
-											a() ?
-												{
-													a: a(),
-													b: [],
-												} :
-												{},
-										]
-								) :
-								a(
+										},
+										a ?
+											a()
+										: a({
+											a: 0,
+										})
+									),
 									a() ?
 										{
+											a: a(),
+											b: [],
+										}
+									: {},
+								]
+							)
+						: a(
+							a() ?
+								{
+									a: 0,
+								}
+							: (function (a) {
+								return a() ?
+									[
+										{
 											a: 0,
-										} :
-										(function (a) {
-											return a() ?
-												[
-													{
-														a: 0,
-														b: a(),
-													},
-												] :
-												a([
-													a ?
-														{
-															a: 0,
-														} :
-														{},
-													{
-														a: 0,
-													},
-												]);
-										})(
-											a ?
-												function (a) {
-													return function () {
-														return 0;
-													};
-												} :
-												function (a) {
-													return function () {
-														return 1;
-													};
-												}
-										)
-								);
-						} :
-						function () {},
-				];
+											b: a(),
+										},
+									]
+								: a([
+									a ?
+										{
+											a: 0,
+										}
+									: {},
+									{
+										a: 0,
+									},
+								]);
+							})(
+								a ?
+									function (a) {
+										return function () {
+											return 0;
+										};
+									}
+								: function (a) {
+									return function () {
+										return 1;
+									};
+								}
+							)
+						);
+					}
+				: function () {},
+			];
 		},
-	} :
-	a;
+	}
+: a;
 
 ================================================================================
 `;
@@ -1455,44 +1459,44 @@ a
 
 =====================================output=====================================
 aaaaaaaaaaaaaaa ?
-  bbbbbbbbbbbbbbbbbb :
-ccccccccccccccc ?
-  ddddddddddddddd :
-eeeeeeeeeeeeeee ?
-  fffffffffffffff :
-  gggggggggggggggg;
+  bbbbbbbbbbbbbbbbbb
+: ccccccccccccccc ?
+  ddddddddddddddd
+: eeeeeeeeeeeeeee ?
+  fffffffffffffff
+: gggggggggggggggg;
 
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa :
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa :
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa :
-  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa;
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa;
 
 a ?
   {
     a: 0,
-  } :
-  {
-    a: {
+  }
+: {
+  a: {
+    a: 0,
+  } ?
+    {
+      a: 0,
+    }
+  : {
+    y: {
       a: 0,
     } ?
       {
         a: 0,
-      } :
-      {
-        y: {
-          a: 0,
-        } ?
-          {
-            a: 0,
-          } :
-          {
-            a: 0,
-          },
-      },
-  };
+      }
+    : {
+      a: 0,
+    },
+  },
+};
 
 a ?
   {
@@ -1504,106 +1508,106 @@ a ?
               {
                 a: 0,
                 b: [a ? [0, 1] : []],
-              } :
+              }
+            : [
               [
-                [
-                  0,
+                0,
+                {
+                  a: 0,
+                },
+                a ? 0 : 1,
+              ],
+              function () {
+                return a ?
+                  {
+                    a: 0,
+                  }
+                : [
                   {
                     a: 0,
                   },
-                  a ? 0 : 1,
-                ],
-                function () {
-                  return a ?
+                  {},
+                ];
+              },
+            ],
+          ],
+        }
+      : [
+        a ?
+          function () {
+            a ?
+              a(
+                a ?
+                  {
+                    a: a({
+                      a: 0,
+                    }),
+                  }
+                : [
+                  0,
+                  a(),
+                  a(
+                    a(),
                     {
                       a: 0,
-                    } :
-                    [
-                      {
-                        a: 0,
-                      },
-                      {},
-                    ];
-                },
-              ],
-          ],
-        } :
-        [
-          a ?
-            function () {
-              a ?
-                a(
-                  a ?
-                    {
-                      a: a({
-                        a: 0,
-                      }),
-                    } :
-                    [
-                      0,
-                      a(),
-                      a(
-                        a(),
-                        {
-                          a: 0,
-                        },
-                        a ?
-                          a() :
-                          a({
-                            a: 0,
-                          })
-                      ),
-                      a() ?
-                        {
-                          a: a(),
-                          b: [],
-                        } :
-                        {},
-                    ]
-                ) :
-                a(
+                    },
+                    a ?
+                      a()
+                    : a({
+                      a: 0,
+                    })
+                  ),
                   a() ?
                     {
+                      a: a(),
+                      b: [],
+                    }
+                  : {},
+                ]
+              )
+            : a(
+              a() ?
+                {
+                  a: 0,
+                }
+              : (function (a) {
+                return a() ?
+                  [
+                    {
                       a: 0,
-                    } :
-                    (function (a) {
-                      return a() ?
-                        [
-                          {
-                            a: 0,
-                            b: a(),
-                          },
-                        ] :
-                        a([
-                          a ?
-                            {
-                              a: 0,
-                            } :
-                            {},
-                          {
-                            a: 0,
-                          },
-                        ]);
-                    })(
-                      a ?
-                        function (a) {
-                          return function () {
-                            return 0;
-                          };
-                        } :
-                        function (a) {
-                          return function () {
-                            return 1;
-                          };
-                        }
-                    )
-                );
-            } :
-            function () {},
-        ];
+                      b: a(),
+                    },
+                  ]
+                : a([
+                  a ?
+                    {
+                      a: 0,
+                    }
+                  : {},
+                  {
+                    a: 0,
+                  },
+                ]);
+              })(
+                a ?
+                  function (a) {
+                    return function () {
+                      return 0;
+                    };
+                  }
+                : function (a) {
+                  return function () {
+                    return 1;
+                  };
+                }
+              )
+            );
+          }
+        : function () {},
+      ];
     },
-  } :
-  a;
+  }
+: a;
 
 ================================================================================
 `;
@@ -1912,349 +1916,349 @@ fn?.[
 =====================================output=====================================
 foo7 = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-        baaaaaaaaaaaaaaaaaaaaar :
-        baaaaaaaaaaaaaaaaaaaaaz
+        baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
 )[Fooooooooooo];
 
 foo8 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo9 = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-        baaaaaaaaaaaaaaaaaaaaar :
-        baaaaaaaaaaaaaaaaaaaaaz
+        baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
 )[Fooooooooooo];
 
 function foo10() {
     return (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     )[Fooooooooooo];
 }
 
 function foo11() {
     throw (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     )[Fooooooooooo];
 }
 
 function foo12() {
     void (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     )[Fooooooooooo];
 }
 
 foo13 = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-        baaaaaaaaaaaaaaaaaaaaar :
-        baaaaaaaaaaaaaaaaaaaaaz
+        baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
 ).Fooooooooooo.Fooooooooooo;
 
 foo14 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo15 = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-        baaaaaaaaaaaaaaaaaaaaar :
-        baaaaaaaaaaaaaaaaaaaaaz
+        baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
 ).Fooooooooooo.Fooooooooooo;
 
 function foo16() {
     return (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     ).Fooooooooooo.Fooooooooooo;
 }
 
 function foo17() {
     throw (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     ).Fooooooooooo.Fooooooooooo;
 }
 
 function foo18() {
     void (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     ).Fooooooooooo.Fooooooooooo;
 }
 
 foo19 = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-        baaaaaaaaaaaaaaaaaaaaar :
-        baaaaaaaaaaaaaaaaaaaaaz
+        baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
 )(Fooooooooooo.Fooooooooooo);
 
 foo20 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo21 = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-        baaaaaaaaaaaaaaaaaaaaar :
-        baaaaaaaaaaaaaaaaaaaaaz
+        baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
 )(Fooooooooooo.Fooooooooooo);
 
 function foo22() {
     return (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     )(Fooooooooooo.Fooooooooooo);
 }
 
 function foo23() {
     throw (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     )(Fooooooooooo.Fooooooooooo);
 }
 
 function foo24() {
     void (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     )(Fooooooooooo.Fooooooooooo);
 }
 
 foo25 = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-        baaaaaaaaaaaaaaaaaaaaar :
-        baaaaaaaaaaaaaaaaaaaaaz
+        baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
 )?.(Fooooooooooo.Fooooooooooo);
 
 foo26 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo27 = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-        baaaaaaaaaaaaaaaaaaaaar :
-        baaaaaaaaaaaaaaaaaaaaaz
+        baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
 )?.(Fooooooooooo.Fooooooooooo);
 
 function foo28() {
     return (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     )?.(Fooooooooooo.Fooooooooooo);
 }
 
 function foo29() {
     throw (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     )?.(Fooooooooooo.Fooooooooooo);
 }
 
 function foo30() {
     void (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     )?.(Fooooooooooo.Fooooooooooo);
 }
 
 function* foo31() {
     yield (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     )?.(Fooooooooooo.Fooooooooooo);
     yield (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     )(Fooooooooooo.Fooooooooooo);
     yield (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     ).Fooooooooooo.Fooooooooooo;
     yield (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     )[Fooooooooooo.Fooooooooooo];
 }
 
 const foo32 = new (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-        baaaaaaaaaaaaaaaaaaaaar :
-        baaaaaaaaaaaaaaaaaaaaaz
+        baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
 )(Fooooooooooo.Fooooooooooo);
 
 function foo33() {
     return new (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     )(Fooooooooooo.Fooooooooooo);
 }
 
 function foo34() {
     throw new (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     )(Fooooooooooo.Fooooooooooo);
 }
 
 function foo35() {
     void new (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     )(Fooooooooooo.Fooooooooooo);
 }
 
 foo36 = new (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-        baaaaaaaaaaaaaaaaaaaaar :
-        baaaaaaaaaaaaaaaaaaaaaz
+        baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
 )(Fooooooooooo.Fooooooooooo);
 
 bifornCringerMoshedPerplexSawder =
     askTrovenaBeenaDependsRowans +
     (glimseGlyphsHazardNoopsTieTie === 0 ?
-        averredBathersBoxroomBuggyNurl :
-        anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
+        averredBathersBoxroomBuggyNurl
+    : anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
     askTrovenaBeenaDependsRowans +
     (glimseGlyphsHazardNoopsTieTie === 0 &&
     kochabCooieGameOnOboleUnweave === Math.PI ?
-        averredBathersBoxroomBuggyNurl :
-        anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
+        averredBathersBoxroomBuggyNurl
+    : anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
     askTrovenaBeenaDependsRowans +
     (glimseGlyphsHazardNoopsTieTie === 0 ?
-        averredBathersBoxroomBuggyNurl :
-        anodyneCondosMalateOverateRetinol
+        averredBathersBoxroomBuggyNurl
+    : anodyneCondosMalateOverateRetinol
     ).Fooooooooooo.Fooooooooooo;
 
 bifornCringerMoshedPerplexSawder =
     askTrovenaBeenaDependsRowans +
     (glimseGlyphsHazardNoopsTieTie === 0 &&
     kochabCooieGameOnOboleUnweave === Math.PI ?
-        averredBathersBoxroomBuggyNurl :
-        anodyneCondosMalateOverateRetinol
+        averredBathersBoxroomBuggyNurl
+    : anodyneCondosMalateOverateRetinol
     ).Fooooooooooo.Fooooooooooo;
 
 bifornCringerMoshedPerplexSawder =
     askTrovenaBeenaDependsRowans +
     (glimseGlyphsHazardNoopsTieTie === 0 ?
-        averredBathersBoxroomBuggyNurl :
-        anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
+        averredBathersBoxroomBuggyNurl
+    : anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 
 bifornCringerMoshedPerplexSawder =
     askTrovenaBeenaDependsRowans +
     (glimseGlyphsHazardNoopsTieTie === 0 &&
         kochabCooieGameOnOboleUnweave === Math.PI ?
-        averredBathersBoxroomBuggyNurl :
-        anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
+        averredBathersBoxroomBuggyNurl
+    : anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 // TODO(rattrayalex): try to fix this case
 
 bifornCringerMoshedPerplexSawder = (
     glimseGlyphsHazardNoopsTieTie === 0 &&
     kochabCooieGameOnOboleUnweave === Math.PI ?
-        averredBathersBoxroomBuggyNurl :
-        anodyneCondosMalateOverateRetinol
+        averredBathersBoxroomBuggyNurl
+    : anodyneCondosMalateOverateRetinol
 ).annularCooeedSplicesWalksWayWay
     .annularCooeedSplicesWalksWayWay(annularCooeedSplicesWalksWayWay)
     .annularCooeedSplicesWalksWayWay();
 
 foo = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-        baaaaaaaaaaaaaaaaaaaaar :
-        baaaaaaaaaaaaaaaaaaaaaz
+        baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
 )?.()?.()?.();
 
 foo = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-        baaaaaaaaaaaaaaaaaaaaar :
-        baaaaaaaaaaaaaaaaaaaaaz
+        baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
 )()()();
 
 foo =
     foo.bar.baz[
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-            baaaaaaaaaaaaaaaaaaaaar :
-            baaaaaaaaaaaaaaaaaaaaaz
+            baaaaaaaaaaaaaaaaaaaaar
+        : baaaaaaaaaaaaaaaaaaaaaz
     ];
 
 const decorated = (arg, ignoreRequestError) => {
     return (
         typeof arg === "string" ||
         (arg && arg.valueOf && typeof arg.valueOf() === "string") ?
-            $delegate(arg, ignoreRequestError) :
-            handleAsyncOperations(arg, ignoreRequestError)
+            $delegate(arg, ignoreRequestError)
+        : handleAsyncOperations(arg, ignoreRequestError)
     ).foo();
 };
 
 bifornCringerMoshedPerplexSawder = fn(
     (glimseGlyphsHazardNoopsTieTie === 0 ?
-        averredBathersBoxroomBuggyNurl :
-        anodyneCondosMalateOverateRetinol
+        averredBathersBoxroomBuggyNurl
+    : anodyneCondosMalateOverateRetinol
     ).prop
 );
 
 fn(
     (glimseGlyphsHazardNoopsTieTie === 0 ?
-        averredBathersBoxroomBuggyNurl :
-        anodyneCondosMalateOverateRetinol
+        averredBathersBoxroomBuggyNurl
+    : anodyneCondosMalateOverateRetinol
     ).prop
 );
 
 bifornCringerMoshedPerplexSawder = fn?.(
     (glimseGlyphsHazardNoopsTieTie === 0 ?
-        averredBathersBoxroomBuggyNurl :
-        anodyneCondosMalateOverateRetinol
+        averredBathersBoxroomBuggyNurl
+    : anodyneCondosMalateOverateRetinol
     ).prop
 );
 
 fn?.(
     (glimseGlyphsHazardNoopsTieTie === 0 ?
-        averredBathersBoxroomBuggyNurl :
-        anodyneCondosMalateOverateRetinol
+        averredBathersBoxroomBuggyNurl
+    : anodyneCondosMalateOverateRetinol
     ).prop
 );
 
 bifornCringerMoshedPerplexSawder =
     fn[
         (glimseGlyphsHazardNoopsTieTie === 0 ?
-            averredBathersBoxroomBuggyNurl :
-            anodyneCondosMalateOverateRetinol
+            averredBathersBoxroomBuggyNurl
+        : anodyneCondosMalateOverateRetinol
         ).prop
     ];
 
 fn[
     (glimseGlyphsHazardNoopsTieTie === 0 ?
-        averredBathersBoxroomBuggyNurl :
-        anodyneCondosMalateOverateRetinol
+        averredBathersBoxroomBuggyNurl
+    : anodyneCondosMalateOverateRetinol
     ).prop
 ];
 
 bifornCringerMoshedPerplexSawder =
     fn?.[
         (glimseGlyphsHazardNoopsTieTie === 0 ?
-            averredBathersBoxroomBuggyNurl :
-            anodyneCondosMalateOverateRetinol
+            averredBathersBoxroomBuggyNurl
+        : anodyneCondosMalateOverateRetinol
         ).prop
     ];
 
 fn?.[
     (glimseGlyphsHazardNoopsTieTie === 0 ?
-        averredBathersBoxroomBuggyNurl :
-        anodyneCondosMalateOverateRetinol
+        averredBathersBoxroomBuggyNurl
+    : anodyneCondosMalateOverateRetinol
     ).prop
 ];
 
@@ -2566,349 +2570,349 @@ fn?.[
 =====================================output=====================================
 foo7 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )[Fooooooooooo];
 
 foo8 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo9 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )[Fooooooooooo];
 
 function foo10() {
 	return (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)[Fooooooooooo];
 }
 
 function foo11() {
 	throw (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)[Fooooooooooo];
 }
 
 function foo12() {
 	void (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)[Fooooooooooo];
 }
 
 foo13 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 ).Fooooooooooo.Fooooooooooo;
 
 foo14 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo15 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 ).Fooooooooooo.Fooooooooooo;
 
 function foo16() {
 	return (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	).Fooooooooooo.Fooooooooooo;
 }
 
 function foo17() {
 	throw (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	).Fooooooooooo.Fooooooooooo;
 }
 
 function foo18() {
 	void (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	).Fooooooooooo.Fooooooooooo;
 }
 
 foo19 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )(Fooooooooooo.Fooooooooooo);
 
 foo20 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo21 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )(Fooooooooooo.Fooooooooooo);
 
 function foo22() {
 	return (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo23() {
 	throw (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo24() {
 	void (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)(Fooooooooooo.Fooooooooooo);
 }
 
 foo25 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )?.(Fooooooooooo.Fooooooooooo);
 
 foo26 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo27 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )?.(Fooooooooooo.Fooooooooooo);
 
 function foo28() {
 	return (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)?.(Fooooooooooo.Fooooooooooo);
 }
 
 function foo29() {
 	throw (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)?.(Fooooooooooo.Fooooooooooo);
 }
 
 function foo30() {
 	void (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)?.(Fooooooooooo.Fooooooooooo);
 }
 
 function* foo31() {
 	yield (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)?.(Fooooooooooo.Fooooooooooo);
 	yield (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)(Fooooooooooo.Fooooooooooo);
 	yield (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	).Fooooooooooo.Fooooooooooo;
 	yield (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)[Fooooooooooo.Fooooooooooo];
 }
 
 const foo32 = new (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )(Fooooooooooo.Fooooooooooo);
 
 function foo33() {
 	return new (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo34() {
 	throw new (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo35() {
 	void new (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)(Fooooooooooo.Fooooooooooo);
 }
 
 foo36 = new (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )(Fooooooooooo.Fooooooooooo);
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
 	(glimseGlyphsHazardNoopsTieTie === 0 &&
 	kochabCooieGameOnOboleUnweave === Math.PI ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol
 	).Fooooooooooo.Fooooooooooo;
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
 	(glimseGlyphsHazardNoopsTieTie === 0 &&
 	kochabCooieGameOnOboleUnweave === Math.PI ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol
 	).Fooooooooooo.Fooooooooooo;
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
 	(glimseGlyphsHazardNoopsTieTie === 0 &&
 		kochabCooieGameOnOboleUnweave === Math.PI ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 // TODO(rattrayalex): try to fix this case
 
 bifornCringerMoshedPerplexSawder = (
 	glimseGlyphsHazardNoopsTieTie === 0 &&
 	kochabCooieGameOnOboleUnweave === Math.PI ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol
 ).annularCooeedSplicesWalksWayWay
 	.annularCooeedSplicesWalksWayWay(annularCooeedSplicesWalksWayWay)
 	.annularCooeedSplicesWalksWayWay();
 
 foo = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )?.()?.()?.();
 
 foo = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )()()();
 
 foo =
 	foo.bar.baz[
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	];
 
 const decorated = (arg, ignoreRequestError) => {
 	return (
 		typeof arg === "string" ||
 		(arg && arg.valueOf && typeof arg.valueOf() === "string") ?
-			$delegate(arg, ignoreRequestError) :
-			handleAsyncOperations(arg, ignoreRequestError)
+			$delegate(arg, ignoreRequestError)
+		: handleAsyncOperations(arg, ignoreRequestError)
 	).foo();
 };
 
 bifornCringerMoshedPerplexSawder = fn(
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 fn(
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 bifornCringerMoshedPerplexSawder = fn?.(
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 fn?.(
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 bifornCringerMoshedPerplexSawder =
 	fn[
 		(glimseGlyphsHazardNoopsTieTie === 0 ?
-			averredBathersBoxroomBuggyNurl :
-			anodyneCondosMalateOverateRetinol
+			averredBathersBoxroomBuggyNurl
+		: anodyneCondosMalateOverateRetinol
 		).prop
 	];
 
 fn[
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol
 	).prop
 ];
 
 bifornCringerMoshedPerplexSawder =
 	fn?.[
 		(glimseGlyphsHazardNoopsTieTie === 0 ?
-			averredBathersBoxroomBuggyNurl :
-			anodyneCondosMalateOverateRetinol
+			averredBathersBoxroomBuggyNurl
+		: anodyneCondosMalateOverateRetinol
 		).prop
 	];
 
 fn?.[
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol
 	).prop
 ];
 
@@ -3219,349 +3223,349 @@ fn?.[
 =====================================output=====================================
 foo7 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )[Fooooooooooo];
 
 foo8 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo9 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )[Fooooooooooo];
 
 function foo10() {
 	return (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)[Fooooooooooo];
 }
 
 function foo11() {
 	throw (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)[Fooooooooooo];
 }
 
 function foo12() {
 	void (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)[Fooooooooooo];
 }
 
 foo13 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 ).Fooooooooooo.Fooooooooooo;
 
 foo14 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo15 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 ).Fooooooooooo.Fooooooooooo;
 
 function foo16() {
 	return (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	).Fooooooooooo.Fooooooooooo;
 }
 
 function foo17() {
 	throw (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	).Fooooooooooo.Fooooooooooo;
 }
 
 function foo18() {
 	void (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	).Fooooooooooo.Fooooooooooo;
 }
 
 foo19 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )(Fooooooooooo.Fooooooooooo);
 
 foo20 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo21 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )(Fooooooooooo.Fooooooooooo);
 
 function foo22() {
 	return (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo23() {
 	throw (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo24() {
 	void (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)(Fooooooooooo.Fooooooooooo);
 }
 
 foo25 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )?.(Fooooooooooo.Fooooooooooo);
 
 foo26 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo27 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )?.(Fooooooooooo.Fooooooooooo);
 
 function foo28() {
 	return (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)?.(Fooooooooooo.Fooooooooooo);
 }
 
 function foo29() {
 	throw (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)?.(Fooooooooooo.Fooooooooooo);
 }
 
 function foo30() {
 	void (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)?.(Fooooooooooo.Fooooooooooo);
 }
 
 function* foo31() {
 	yield (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)?.(Fooooooooooo.Fooooooooooo);
 	yield (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)(Fooooooooooo.Fooooooooooo);
 	yield (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	).Fooooooooooo.Fooooooooooo;
 	yield (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)[Fooooooooooo.Fooooooooooo];
 }
 
 const foo32 = new (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )(Fooooooooooo.Fooooooooooo);
 
 function foo33() {
 	return new (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo34() {
 	throw new (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo35() {
 	void new (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	)(Fooooooooooo.Fooooooooooo);
 }
 
 foo36 = new (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )(Fooooooooooo.Fooooooooooo);
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
 	(glimseGlyphsHazardNoopsTieTie === 0 &&
 	kochabCooieGameOnOboleUnweave === Math.PI ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol
 	).Fooooooooooo.Fooooooooooo;
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
 	(glimseGlyphsHazardNoopsTieTie === 0 &&
 	kochabCooieGameOnOboleUnweave === Math.PI ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol
 	).Fooooooooooo.Fooooooooooo;
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
 	(glimseGlyphsHazardNoopsTieTie === 0 &&
 		kochabCooieGameOnOboleUnweave === Math.PI ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 // TODO(rattrayalex): try to fix this case
 
 bifornCringerMoshedPerplexSawder = (
 	glimseGlyphsHazardNoopsTieTie === 0 &&
 	kochabCooieGameOnOboleUnweave === Math.PI ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol
 ).annularCooeedSplicesWalksWayWay
 	.annularCooeedSplicesWalksWayWay(annularCooeedSplicesWalksWayWay)
 	.annularCooeedSplicesWalksWayWay();
 
 foo = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )?.()?.()?.();
 
 foo = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-		baaaaaaaaaaaaaaaaaaaaar :
-		baaaaaaaaaaaaaaaaaaaaaz
+		baaaaaaaaaaaaaaaaaaaaar
+	: baaaaaaaaaaaaaaaaaaaaaz
 )()()();
 
 foo =
 	foo.bar.baz[
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-			baaaaaaaaaaaaaaaaaaaaar :
-			baaaaaaaaaaaaaaaaaaaaaz
+			baaaaaaaaaaaaaaaaaaaaar
+		: baaaaaaaaaaaaaaaaaaaaaz
 	];
 
 const decorated = (arg, ignoreRequestError) => {
 	return (
 		typeof arg === "string" ||
 		(arg && arg.valueOf && typeof arg.valueOf() === "string") ?
-			$delegate(arg, ignoreRequestError) :
-			handleAsyncOperations(arg, ignoreRequestError)
+			$delegate(arg, ignoreRequestError)
+		: handleAsyncOperations(arg, ignoreRequestError)
 	).foo();
 };
 
 bifornCringerMoshedPerplexSawder = fn(
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 fn(
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 bifornCringerMoshedPerplexSawder = fn?.(
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 fn?.(
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 bifornCringerMoshedPerplexSawder =
 	fn[
 		(glimseGlyphsHazardNoopsTieTie === 0 ?
-			averredBathersBoxroomBuggyNurl :
-			anodyneCondosMalateOverateRetinol
+			averredBathersBoxroomBuggyNurl
+		: anodyneCondosMalateOverateRetinol
 		).prop
 	];
 
 fn[
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol
 	).prop
 ];
 
 bifornCringerMoshedPerplexSawder =
 	fn?.[
 		(glimseGlyphsHazardNoopsTieTie === 0 ?
-			averredBathersBoxroomBuggyNurl :
-			anodyneCondosMalateOverateRetinol
+			averredBathersBoxroomBuggyNurl
+		: anodyneCondosMalateOverateRetinol
 		).prop
 	];
 
 fn?.[
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
-		averredBathersBoxroomBuggyNurl :
-		anodyneCondosMalateOverateRetinol
+		averredBathersBoxroomBuggyNurl
+	: anodyneCondosMalateOverateRetinol
 	).prop
 ];
 
@@ -3871,349 +3875,349 @@ fn?.[
 =====================================output=====================================
 foo7 = (
   coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-    baaaaaaaaaaaaaaaaaaaaar :
-    baaaaaaaaaaaaaaaaaaaaaz
+    baaaaaaaaaaaaaaaaaaaaar
+  : baaaaaaaaaaaaaaaaaaaaaz
 )[Fooooooooooo];
 
 foo8 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo9 = (
   coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-    baaaaaaaaaaaaaaaaaaaaar :
-    baaaaaaaaaaaaaaaaaaaaaz
+    baaaaaaaaaaaaaaaaaaaaar
+  : baaaaaaaaaaaaaaaaaaaaaz
 )[Fooooooooooo];
 
 function foo10() {
   return (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   )[Fooooooooooo];
 }
 
 function foo11() {
   throw (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   )[Fooooooooooo];
 }
 
 function foo12() {
   void (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   )[Fooooooooooo];
 }
 
 foo13 = (
   coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-    baaaaaaaaaaaaaaaaaaaaar :
-    baaaaaaaaaaaaaaaaaaaaaz
+    baaaaaaaaaaaaaaaaaaaaar
+  : baaaaaaaaaaaaaaaaaaaaaz
 ).Fooooooooooo.Fooooooooooo;
 
 foo14 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo15 = (
   coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-    baaaaaaaaaaaaaaaaaaaaar :
-    baaaaaaaaaaaaaaaaaaaaaz
+    baaaaaaaaaaaaaaaaaaaaar
+  : baaaaaaaaaaaaaaaaaaaaaz
 ).Fooooooooooo.Fooooooooooo;
 
 function foo16() {
   return (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   ).Fooooooooooo.Fooooooooooo;
 }
 
 function foo17() {
   throw (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   ).Fooooooooooo.Fooooooooooo;
 }
 
 function foo18() {
   void (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   ).Fooooooooooo.Fooooooooooo;
 }
 
 foo19 = (
   coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-    baaaaaaaaaaaaaaaaaaaaar :
-    baaaaaaaaaaaaaaaaaaaaaz
+    baaaaaaaaaaaaaaaaaaaaar
+  : baaaaaaaaaaaaaaaaaaaaaz
 )(Fooooooooooo.Fooooooooooo);
 
 foo20 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo21 = (
   coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-    baaaaaaaaaaaaaaaaaaaaar :
-    baaaaaaaaaaaaaaaaaaaaaz
+    baaaaaaaaaaaaaaaaaaaaar
+  : baaaaaaaaaaaaaaaaaaaaaz
 )(Fooooooooooo.Fooooooooooo);
 
 function foo22() {
   return (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   )(Fooooooooooo.Fooooooooooo);
 }
 
 function foo23() {
   throw (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   )(Fooooooooooo.Fooooooooooo);
 }
 
 function foo24() {
   void (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   )(Fooooooooooo.Fooooooooooo);
 }
 
 foo25 = (
   coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-    baaaaaaaaaaaaaaaaaaaaar :
-    baaaaaaaaaaaaaaaaaaaaaz
+    baaaaaaaaaaaaaaaaaaaaar
+  : baaaaaaaaaaaaaaaaaaaaaz
 )?.(Fooooooooooo.Fooooooooooo);
 
 foo26 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo27 = (
   coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-    baaaaaaaaaaaaaaaaaaaaar :
-    baaaaaaaaaaaaaaaaaaaaaz
+    baaaaaaaaaaaaaaaaaaaaar
+  : baaaaaaaaaaaaaaaaaaaaaz
 )?.(Fooooooooooo.Fooooooooooo);
 
 function foo28() {
   return (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   )?.(Fooooooooooo.Fooooooooooo);
 }
 
 function foo29() {
   throw (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   )?.(Fooooooooooo.Fooooooooooo);
 }
 
 function foo30() {
   void (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   )?.(Fooooooooooo.Fooooooooooo);
 }
 
 function* foo31() {
   yield (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   )?.(Fooooooooooo.Fooooooooooo);
   yield (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   )(Fooooooooooo.Fooooooooooo);
   yield (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   ).Fooooooooooo.Fooooooooooo;
   yield (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   )[Fooooooooooo.Fooooooooooo];
 }
 
 const foo32 = new (
   coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-    baaaaaaaaaaaaaaaaaaaaar :
-    baaaaaaaaaaaaaaaaaaaaaz
+    baaaaaaaaaaaaaaaaaaaaar
+  : baaaaaaaaaaaaaaaaaaaaaz
 )(Fooooooooooo.Fooooooooooo);
 
 function foo33() {
   return new (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   )(Fooooooooooo.Fooooooooooo);
 }
 
 function foo34() {
   throw new (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   )(Fooooooooooo.Fooooooooooo);
 }
 
 function foo35() {
   void new (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   )(Fooooooooooo.Fooooooooooo);
 }
 
 foo36 = new (
   coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-    baaaaaaaaaaaaaaaaaaaaar :
-    baaaaaaaaaaaaaaaaaaaaaz
+    baaaaaaaaaaaaaaaaaaaaar
+  : baaaaaaaaaaaaaaaaaaaaaz
 )(Fooooooooooo.Fooooooooooo);
 
 bifornCringerMoshedPerplexSawder =
   askTrovenaBeenaDependsRowans +
   (glimseGlyphsHazardNoopsTieTie === 0 ?
-    averredBathersBoxroomBuggyNurl :
-    anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
+    averredBathersBoxroomBuggyNurl
+  : anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
   askTrovenaBeenaDependsRowans +
   (glimseGlyphsHazardNoopsTieTie === 0 &&
   kochabCooieGameOnOboleUnweave === Math.PI ?
-    averredBathersBoxroomBuggyNurl :
-    anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
+    averredBathersBoxroomBuggyNurl
+  : anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
   askTrovenaBeenaDependsRowans +
   (glimseGlyphsHazardNoopsTieTie === 0 ?
-    averredBathersBoxroomBuggyNurl :
-    anodyneCondosMalateOverateRetinol
+    averredBathersBoxroomBuggyNurl
+  : anodyneCondosMalateOverateRetinol
   ).Fooooooooooo.Fooooooooooo;
 
 bifornCringerMoshedPerplexSawder =
   askTrovenaBeenaDependsRowans +
   (glimseGlyphsHazardNoopsTieTie === 0 &&
   kochabCooieGameOnOboleUnweave === Math.PI ?
-    averredBathersBoxroomBuggyNurl :
-    anodyneCondosMalateOverateRetinol
+    averredBathersBoxroomBuggyNurl
+  : anodyneCondosMalateOverateRetinol
   ).Fooooooooooo.Fooooooooooo;
 
 bifornCringerMoshedPerplexSawder =
   askTrovenaBeenaDependsRowans +
   (glimseGlyphsHazardNoopsTieTie === 0 ?
-    averredBathersBoxroomBuggyNurl :
-    anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
+    averredBathersBoxroomBuggyNurl
+  : anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 
 bifornCringerMoshedPerplexSawder =
   askTrovenaBeenaDependsRowans +
   (glimseGlyphsHazardNoopsTieTie === 0 &&
     kochabCooieGameOnOboleUnweave === Math.PI ?
-    averredBathersBoxroomBuggyNurl :
-    anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
+    averredBathersBoxroomBuggyNurl
+  : anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 // TODO(rattrayalex): try to fix this case
 
 bifornCringerMoshedPerplexSawder = (
   glimseGlyphsHazardNoopsTieTie === 0 &&
   kochabCooieGameOnOboleUnweave === Math.PI ?
-    averredBathersBoxroomBuggyNurl :
-    anodyneCondosMalateOverateRetinol
+    averredBathersBoxroomBuggyNurl
+  : anodyneCondosMalateOverateRetinol
 ).annularCooeedSplicesWalksWayWay
   .annularCooeedSplicesWalksWayWay(annularCooeedSplicesWalksWayWay)
   .annularCooeedSplicesWalksWayWay();
 
 foo = (
   coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-    baaaaaaaaaaaaaaaaaaaaar :
-    baaaaaaaaaaaaaaaaaaaaaz
+    baaaaaaaaaaaaaaaaaaaaar
+  : baaaaaaaaaaaaaaaaaaaaaz
 )?.()?.()?.();
 
 foo = (
   coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-    baaaaaaaaaaaaaaaaaaaaar :
-    baaaaaaaaaaaaaaaaaaaaaz
+    baaaaaaaaaaaaaaaaaaaaar
+  : baaaaaaaaaaaaaaaaaaaaaz
 )()()();
 
 foo =
   foo.bar.baz[
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
-      baaaaaaaaaaaaaaaaaaaaar :
-      baaaaaaaaaaaaaaaaaaaaaz
+      baaaaaaaaaaaaaaaaaaaaar
+    : baaaaaaaaaaaaaaaaaaaaaz
   ];
 
 const decorated = (arg, ignoreRequestError) => {
   return (
     typeof arg === "string" ||
     (arg && arg.valueOf && typeof arg.valueOf() === "string") ?
-      $delegate(arg, ignoreRequestError) :
-      handleAsyncOperations(arg, ignoreRequestError)
+      $delegate(arg, ignoreRequestError)
+    : handleAsyncOperations(arg, ignoreRequestError)
   ).foo();
 };
 
 bifornCringerMoshedPerplexSawder = fn(
   (glimseGlyphsHazardNoopsTieTie === 0 ?
-    averredBathersBoxroomBuggyNurl :
-    anodyneCondosMalateOverateRetinol
+    averredBathersBoxroomBuggyNurl
+  : anodyneCondosMalateOverateRetinol
   ).prop
 );
 
 fn(
   (glimseGlyphsHazardNoopsTieTie === 0 ?
-    averredBathersBoxroomBuggyNurl :
-    anodyneCondosMalateOverateRetinol
+    averredBathersBoxroomBuggyNurl
+  : anodyneCondosMalateOverateRetinol
   ).prop
 );
 
 bifornCringerMoshedPerplexSawder = fn?.(
   (glimseGlyphsHazardNoopsTieTie === 0 ?
-    averredBathersBoxroomBuggyNurl :
-    anodyneCondosMalateOverateRetinol
+    averredBathersBoxroomBuggyNurl
+  : anodyneCondosMalateOverateRetinol
   ).prop
 );
 
 fn?.(
   (glimseGlyphsHazardNoopsTieTie === 0 ?
-    averredBathersBoxroomBuggyNurl :
-    anodyneCondosMalateOverateRetinol
+    averredBathersBoxroomBuggyNurl
+  : anodyneCondosMalateOverateRetinol
   ).prop
 );
 
 bifornCringerMoshedPerplexSawder =
   fn[
     (glimseGlyphsHazardNoopsTieTie === 0 ?
-      averredBathersBoxroomBuggyNurl :
-      anodyneCondosMalateOverateRetinol
+      averredBathersBoxroomBuggyNurl
+    : anodyneCondosMalateOverateRetinol
     ).prop
   ];
 
 fn[
   (glimseGlyphsHazardNoopsTieTie === 0 ?
-    averredBathersBoxroomBuggyNurl :
-    anodyneCondosMalateOverateRetinol
+    averredBathersBoxroomBuggyNurl
+  : anodyneCondosMalateOverateRetinol
   ).prop
 ];
 
 bifornCringerMoshedPerplexSawder =
   fn?.[
     (glimseGlyphsHazardNoopsTieTie === 0 ?
-      averredBathersBoxroomBuggyNurl :
-      anodyneCondosMalateOverateRetinol
+      averredBathersBoxroomBuggyNurl
+    : anodyneCondosMalateOverateRetinol
     ).prop
   ];
 
 fn?.[
   (glimseGlyphsHazardNoopsTieTie === 0 ?
-    averredBathersBoxroomBuggyNurl :
-    anodyneCondosMalateOverateRetinol
+    averredBathersBoxroomBuggyNurl
+  : anodyneCondosMalateOverateRetinol
   ).prop
 ];
 
@@ -4326,17 +4330,11 @@ a
 =====================================output=====================================
 let icecream =
     what == "cone" ?
-        (p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`) :
-        (p) => \`here's your \${p} \${what}\`;
+        (p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`)
+    : (p) => \`here's your \${p} \${what}\`;
 
 const value =
-    condition1 ?
-        value1 :
-    condition2 ?
-        value2 :
-    condition3 ?
-        value3 :
-        value4;
+    condition1 ? value1 : condition2 ? value2 : condition3 ? value3 : value4;
 
 const StorybookLoader = ({ match }) =>
     match.params.storyId === "button" ? (
@@ -4360,44 +4358,44 @@ const StorybookLoader = ({ match }) =>
 
 const message =
     i % 3 === 0 && i % 5 === 0 ?
-        "fizzbuzz" :
-    i % 3 === 0 ?
-        "fizz" :
-    i % 5 === 0 ?
-        "buzz" :
-        String(i);
+        "fizzbuzz"
+    : i % 3 === 0 ?
+        "fizz"
+    : i % 5 === 0 ?
+        "buzz"
+    : String(i);
 
 const paymentMessage =
     state == "success" ?
-        "Payment completed successfully" :
-    state == "processing" ?
-        "Payment processing" :
-    state == "invalid_cvc" ?
-        "There was an issue with your CVC number" :
-    state == "invalid_expiry" ?
-        "Expiry must be sometime in the past." :
-        "There was an issue with the payment.  Please contact support.";
+        "Payment completed successfully"
+    : state == "processing" ?
+        "Payment processing"
+    : state == "invalid_cvc" ?
+        "There was an issue with your CVC number"
+    : state == "invalid_expiry" ?
+        "Expiry must be sometime in the past."
+    : "There was an issue with the payment.  Please contact support.";
 
 const paymentMessage2 =
     state == "success" ?
-        1 : //'Payment completed successfully'
-    state == "processing" ?
-        2 : //'Payment processing'
-    state == "invalid_cvc" ?
-        3 : //'There was an issue with your CVC number'
-    true ? //state == 'invalid_expiry'
-        4 : //'Expiry must be sometime in the past.'
-        5; // 'There was an issue with the payment.  Please contact support.'
+        1 //'Payment completed successfully'
+    : state == "processing" ?
+        2 //'Payment processing'
+    : state == "invalid_cvc" ?
+        3 //'There was an issue with your CVC number'
+    : true ? //state == 'invalid_expiry'
+        4 //'Expiry must be sometime in the past.'
+    : 5; // 'There was an issue with the payment.  Please contact support.'
 
 const foo = (
     <div
         className={
             "match-achievement-medal-type type" +
             (medals[0].record ?
-                "-record" :
-            medals[0].unique ?
-                "-unique" :
-                medals[0].type)
+                "-record"
+            : medals[0].unique ?
+                "-unique"
+            : medals[0].type)
         }
     >
         {medals[0].record ? (
@@ -4417,12 +4415,12 @@ const foo = (
 );
 
 a ?
-    literalline :
-{
+    literalline
+: {
     123: 12,
 } ?
-    line :
-    softline;
+    line
+: softline;
 
 ================================================================================
 `;
@@ -4534,17 +4532,11 @@ a
 =====================================output=====================================
 let icecream =
 	what == "cone" ?
-		(p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`) :
-		(p) => \`here's your \${p} \${what}\`;
+		(p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`)
+	: (p) => \`here's your \${p} \${what}\`;
 
 const value =
-	condition1 ?
-		value1 :
-	condition2 ?
-		value2 :
-	condition3 ?
-		value3 :
-		value4;
+	condition1 ? value1 : condition2 ? value2 : condition3 ? value3 : value4;
 
 const StorybookLoader = ({ match }) =>
 	match.params.storyId === "button" ? (
@@ -4568,44 +4560,44 @@ const StorybookLoader = ({ match }) =>
 
 const message =
 	i % 3 === 0 && i % 5 === 0 ?
-		"fizzbuzz" :
-	i % 3 === 0 ?
-		"fizz" :
-	i % 5 === 0 ?
-		"buzz" :
-		String(i);
+		"fizzbuzz"
+	: i % 3 === 0 ?
+		"fizz"
+	: i % 5 === 0 ?
+		"buzz"
+	: String(i);
 
 const paymentMessage =
 	state == "success" ?
-		"Payment completed successfully" :
-	state == "processing" ?
-		"Payment processing" :
-	state == "invalid_cvc" ?
-		"There was an issue with your CVC number" :
-	state == "invalid_expiry" ?
-		"Expiry must be sometime in the past." :
-		"There was an issue with the payment.  Please contact support.";
+		"Payment completed successfully"
+	: state == "processing" ?
+		"Payment processing"
+	: state == "invalid_cvc" ?
+		"There was an issue with your CVC number"
+	: state == "invalid_expiry" ?
+		"Expiry must be sometime in the past."
+	: "There was an issue with the payment.  Please contact support.";
 
 const paymentMessage2 =
 	state == "success" ?
-		1 : //'Payment completed successfully'
-	state == "processing" ?
-		2 : //'Payment processing'
-	state == "invalid_cvc" ?
-		3 : //'There was an issue with your CVC number'
-	true ? //state == 'invalid_expiry'
-		4 : //'Expiry must be sometime in the past.'
-		5; // 'There was an issue with the payment.  Please contact support.'
+		1 //'Payment completed successfully'
+	: state == "processing" ?
+		2 //'Payment processing'
+	: state == "invalid_cvc" ?
+		3 //'There was an issue with your CVC number'
+	: true ? //state == 'invalid_expiry'
+		4 //'Expiry must be sometime in the past.'
+	: 5; // 'There was an issue with the payment.  Please contact support.'
 
 const foo = (
 	<div
 		className={
 			"match-achievement-medal-type type" +
 			(medals[0].record ?
-				"-record" :
-			medals[0].unique ?
-				"-unique" :
-				medals[0].type)
+				"-record"
+			: medals[0].unique ?
+				"-unique"
+			: medals[0].type)
 		}
 	>
 		{medals[0].record ? (
@@ -4625,12 +4617,12 @@ const foo = (
 );
 
 a ?
-	literalline :
-{
+	literalline
+: {
 	123: 12,
 } ?
-	line :
-	softline;
+	line
+: softline;
 
 ================================================================================
 `;
@@ -4741,17 +4733,11 @@ a
 =====================================output=====================================
 let icecream =
 	what == "cone" ?
-		(p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`) :
-		(p) => \`here's your \${p} \${what}\`;
+		(p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`)
+	: (p) => \`here's your \${p} \${what}\`;
 
 const value =
-	condition1 ?
-		value1 :
-	condition2 ?
-		value2 :
-	condition3 ?
-		value3 :
-		value4;
+	condition1 ? value1 : condition2 ? value2 : condition3 ? value3 : value4;
 
 const StorybookLoader = ({ match }) =>
 	match.params.storyId === "button" ? (
@@ -4775,44 +4761,44 @@ const StorybookLoader = ({ match }) =>
 
 const message =
 	i % 3 === 0 && i % 5 === 0 ?
-		"fizzbuzz" :
-	i % 3 === 0 ?
-		"fizz" :
-	i % 5 === 0 ?
-		"buzz" :
-		String(i);
+		"fizzbuzz"
+	: i % 3 === 0 ?
+		"fizz"
+	: i % 5 === 0 ?
+		"buzz"
+	: String(i);
 
 const paymentMessage =
 	state == "success" ?
-		"Payment completed successfully" :
-	state == "processing" ?
-		"Payment processing" :
-	state == "invalid_cvc" ?
-		"There was an issue with your CVC number" :
-	state == "invalid_expiry" ?
-		"Expiry must be sometime in the past." :
-		"There was an issue with the payment.  Please contact support.";
+		"Payment completed successfully"
+	: state == "processing" ?
+		"Payment processing"
+	: state == "invalid_cvc" ?
+		"There was an issue with your CVC number"
+	: state == "invalid_expiry" ?
+		"Expiry must be sometime in the past."
+	: "There was an issue with the payment.  Please contact support.";
 
 const paymentMessage2 =
 	state == "success" ?
-		1 : //'Payment completed successfully'
-	state == "processing" ?
-		2 : //'Payment processing'
-	state == "invalid_cvc" ?
-		3 : //'There was an issue with your CVC number'
-	true ? //state == 'invalid_expiry'
-		4 : //'Expiry must be sometime in the past.'
-		5; // 'There was an issue with the payment.  Please contact support.'
+		1 //'Payment completed successfully'
+	: state == "processing" ?
+		2 //'Payment processing'
+	: state == "invalid_cvc" ?
+		3 //'There was an issue with your CVC number'
+	: true ? //state == 'invalid_expiry'
+		4 //'Expiry must be sometime in the past.'
+	: 5; // 'There was an issue with the payment.  Please contact support.'
 
 const foo = (
 	<div
 		className={
 			"match-achievement-medal-type type" +
 			(medals[0].record ?
-				"-record" :
-			medals[0].unique ?
-				"-unique" :
-				medals[0].type)
+				"-record"
+			: medals[0].unique ?
+				"-unique"
+			: medals[0].type)
 		}
 	>
 		{medals[0].record ? (
@@ -4832,12 +4818,12 @@ const foo = (
 );
 
 a ?
-	literalline :
-{
+	literalline
+: {
 	123: 12,
 } ?
-	line :
-	softline;
+	line
+: softline;
 
 ================================================================================
 `;
@@ -4947,17 +4933,11 @@ a
 =====================================output=====================================
 let icecream =
   what == "cone" ?
-    (p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`) :
-    (p) => \`here's your \${p} \${what}\`;
+    (p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`)
+  : (p) => \`here's your \${p} \${what}\`;
 
 const value =
-  condition1 ?
-    value1 :
-  condition2 ?
-    value2 :
-  condition3 ?
-    value3 :
-    value4;
+  condition1 ? value1 : condition2 ? value2 : condition3 ? value3 : value4;
 
 const StorybookLoader = ({ match }) =>
   match.params.storyId === "button" ? (
@@ -4981,44 +4961,44 @@ const StorybookLoader = ({ match }) =>
 
 const message =
   i % 3 === 0 && i % 5 === 0 ?
-    "fizzbuzz" :
-  i % 3 === 0 ?
-    "fizz" :
-  i % 5 === 0 ?
-    "buzz" :
-    String(i);
+    "fizzbuzz"
+  : i % 3 === 0 ?
+    "fizz"
+  : i % 5 === 0 ?
+    "buzz"
+  : String(i);
 
 const paymentMessage =
   state == "success" ?
-    "Payment completed successfully" :
-  state == "processing" ?
-    "Payment processing" :
-  state == "invalid_cvc" ?
-    "There was an issue with your CVC number" :
-  state == "invalid_expiry" ?
-    "Expiry must be sometime in the past." :
-    "There was an issue with the payment.  Please contact support.";
+    "Payment completed successfully"
+  : state == "processing" ?
+    "Payment processing"
+  : state == "invalid_cvc" ?
+    "There was an issue with your CVC number"
+  : state == "invalid_expiry" ?
+    "Expiry must be sometime in the past."
+  : "There was an issue with the payment.  Please contact support.";
 
 const paymentMessage2 =
   state == "success" ?
-    1 : //'Payment completed successfully'
-  state == "processing" ?
-    2 : //'Payment processing'
-  state == "invalid_cvc" ?
-    3 : //'There was an issue with your CVC number'
-  true ? //state == 'invalid_expiry'
-    4 : //'Expiry must be sometime in the past.'
-    5; // 'There was an issue with the payment.  Please contact support.'
+    1 //'Payment completed successfully'
+  : state == "processing" ?
+    2 //'Payment processing'
+  : state == "invalid_cvc" ?
+    3 //'There was an issue with your CVC number'
+  : true ? //state == 'invalid_expiry'
+    4 //'Expiry must be sometime in the past.'
+  : 5; // 'There was an issue with the payment.  Please contact support.'
 
 const foo = (
   <div
     className={
       "match-achievement-medal-type type" +
       (medals[0].record ?
-        "-record" :
-      medals[0].unique ?
-        "-unique" :
-        medals[0].type)
+        "-record"
+      : medals[0].unique ?
+        "-unique"
+      : medals[0].type)
     }
   >
     {medals[0].record ? (
@@ -5038,12 +5018,12 @@ const foo = (
 );
 
 a ?
-  literalline :
-{
+  literalline
+: {
   123: 12,
 } ?
-  line :
-  softline;
+  line
+: softline;
 
 ================================================================================
 `;
@@ -5096,29 +5076,29 @@ const value = (bifornCringerMoshedPerplexSawder
 $var =
     (
         $number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
-            kochabCooieGameOnOboleUnweave :
-            annularCooeedSplicesWalksWayWay
+            kochabCooieGameOnOboleUnweave
+        : annularCooeedSplicesWalksWayWay
     ) ?
-        anodyneCondosMalateOverateRetinol :
-        averredBathersBoxroomBuggyNurl;
+        anodyneCondosMalateOverateRetinol
+    : averredBathersBoxroomBuggyNurl;
 
 const value =
     (
         bifornCringerMoshedPerplexSawder ?
-            askTrovenaBeenaDependsRowans :
-            glimseGlyphsHazardNoopsTieTie
+            askTrovenaBeenaDependsRowans
+        : glimseGlyphsHazardNoopsTieTie
     ) ?
         true ?
-            true :
-            false :
-    true ?
-        true :
-        false;
+            true
+        : false
+    : true ?
+        true
+    : false;
 
 (
     bifornCringerMoshedPerplexSawder ?
-        askTrovenaBeenaDependsRowans :
-        glimseGlyphsHazardNoopsTieTie
+        askTrovenaBeenaDependsRowans
+    : glimseGlyphsHazardNoopsTieTie
 ) ? (
     <Element>
         <Sub />
@@ -5188,29 +5168,29 @@ const value = (bifornCringerMoshedPerplexSawder
 $var =
 	(
 		$number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
-			kochabCooieGameOnOboleUnweave :
-			annularCooeedSplicesWalksWayWay
+			kochabCooieGameOnOboleUnweave
+		: annularCooeedSplicesWalksWayWay
 	) ?
-		anodyneCondosMalateOverateRetinol :
-		averredBathersBoxroomBuggyNurl;
+		anodyneCondosMalateOverateRetinol
+	: averredBathersBoxroomBuggyNurl;
 
 const value =
 	(
 		bifornCringerMoshedPerplexSawder ?
-			askTrovenaBeenaDependsRowans :
-			glimseGlyphsHazardNoopsTieTie
+			askTrovenaBeenaDependsRowans
+		: glimseGlyphsHazardNoopsTieTie
 	) ?
 		true ?
-			true :
-			false :
-	true ?
-		true :
-		false;
+			true
+		: false
+	: true ?
+		true
+	: false;
 
 (
 	bifornCringerMoshedPerplexSawder ?
-		askTrovenaBeenaDependsRowans :
-		glimseGlyphsHazardNoopsTieTie
+		askTrovenaBeenaDependsRowans
+	: glimseGlyphsHazardNoopsTieTie
 ) ? (
 	<Element>
 		<Sub />
@@ -5279,29 +5259,29 @@ const value = (bifornCringerMoshedPerplexSawder
 $var =
 	(
 		$number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
-			kochabCooieGameOnOboleUnweave :
-			annularCooeedSplicesWalksWayWay
+			kochabCooieGameOnOboleUnweave
+		: annularCooeedSplicesWalksWayWay
 	) ?
-		anodyneCondosMalateOverateRetinol :
-		averredBathersBoxroomBuggyNurl;
+		anodyneCondosMalateOverateRetinol
+	: averredBathersBoxroomBuggyNurl;
 
 const value =
 	(
 		bifornCringerMoshedPerplexSawder ?
-			askTrovenaBeenaDependsRowans :
-			glimseGlyphsHazardNoopsTieTie
+			askTrovenaBeenaDependsRowans
+		: glimseGlyphsHazardNoopsTieTie
 	) ?
 		true ?
-			true :
-			false :
-	true ?
-		true :
-		false;
+			true
+		: false
+	: true ?
+		true
+	: false;
 
 (
 	bifornCringerMoshedPerplexSawder ?
-		askTrovenaBeenaDependsRowans :
-		glimseGlyphsHazardNoopsTieTie
+		askTrovenaBeenaDependsRowans
+	: glimseGlyphsHazardNoopsTieTie
 ) ? (
 	<Element>
 		<Sub />
@@ -5369,29 +5349,29 @@ const value = (bifornCringerMoshedPerplexSawder
 $var =
   (
     $number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
-      kochabCooieGameOnOboleUnweave :
-      annularCooeedSplicesWalksWayWay
+      kochabCooieGameOnOboleUnweave
+    : annularCooeedSplicesWalksWayWay
   ) ?
-    anodyneCondosMalateOverateRetinol :
-    averredBathersBoxroomBuggyNurl;
+    anodyneCondosMalateOverateRetinol
+  : averredBathersBoxroomBuggyNurl;
 
 const value =
   (
     bifornCringerMoshedPerplexSawder ?
-      askTrovenaBeenaDependsRowans :
-      glimseGlyphsHazardNoopsTieTie
+      askTrovenaBeenaDependsRowans
+    : glimseGlyphsHazardNoopsTieTie
   ) ?
     true ?
-      true :
-      false :
-  true ?
-    true :
-    false;
+      true
+    : false
+  : true ?
+    true
+  : false;
 
 (
   bifornCringerMoshedPerplexSawder ?
-    askTrovenaBeenaDependsRowans :
-    glimseGlyphsHazardNoopsTieTie
+    askTrovenaBeenaDependsRowans
+  : glimseGlyphsHazardNoopsTieTie
 ) ? (
   <Element>
     <Sub />
@@ -5430,18 +5410,18 @@ a => a ? aasdasdasdasdasdasdaaasdasdasdasdasdasdasdasdasdasdasdasdasdaaaaaa : a
 debug ? (this.state.isVisible ? "partially visible" : "hidden") : null;
 debug ?
     this.state.isVisible && somethingComplex ?
-        "partially visible" :
-        "hidden" :
-    null;
+        "partially visible"
+    : "hidden"
+: null;
 
 (a) =>
     a ?
         () => {
             a;
-        } :
-        () => {
-            a;
-        };
+        }
+    : () => {
+        a;
+    };
 (a) => (a ? a : a);
 (a) =>
     a ? aasdasdasdasdasdasdaaasdasdasdasdasdasdasdasdasdasdasdasdasdaaaaaa : a;
@@ -5468,18 +5448,18 @@ a => a ? aasdasdasdasdasdasdaaasdasdasdasdasdasdasdasdasdasdasdasdasdaaaaaa : a
 debug ? (this.state.isVisible ? "partially visible" : "hidden") : null;
 debug ?
 	this.state.isVisible && somethingComplex ?
-		"partially visible" :
-		"hidden" :
-	null;
+		"partially visible"
+	: "hidden"
+: null;
 
 (a) =>
 	a ?
 		() => {
 			a;
-		} :
-		() => {
-			a;
-		};
+		}
+	: () => {
+		a;
+	};
 (a) => (a ? a : a);
 (a) =>
 	a ? aasdasdasdasdasdasdaaasdasdasdasdasdasdasdasdasdasdasdasdasdaaaaaa : a;
@@ -5505,18 +5485,18 @@ a => a ? aasdasdasdasdasdasdaaasdasdasdasdasdasdasdasdasdasdasdasdasdaaaaaa : a
 debug ? (this.state.isVisible ? "partially visible" : "hidden") : null;
 debug ?
 	this.state.isVisible && somethingComplex ?
-		"partially visible" :
-		"hidden" :
-	null;
+		"partially visible"
+	: "hidden"
+: null;
 
 (a) =>
 	a ?
 		() => {
 			a;
-		} :
-		() => {
-			a;
-		};
+		}
+	: () => {
+		a;
+	};
 (a) => (a ? a : a);
 (a) =>
 	a ? aasdasdasdasdasdasdaaasdasdasdasdasdasdasdasdasdasdasdasdasdaaaaaa : a;
@@ -5541,18 +5521,18 @@ a => a ? aasdasdasdasdasdasdaaasdasdasdasdasdasdasdasdasdasdasdasdasdaaaaaa : a
 debug ? (this.state.isVisible ? "partially visible" : "hidden") : null;
 debug ?
   this.state.isVisible && somethingComplex ?
-    "partially visible" :
-    "hidden" :
-  null;
+    "partially visible"
+  : "hidden"
+: null;
 
 (a) =>
   a ?
     () => {
       a;
-    } :
-    () => {
-      a;
-    };
+    }
+  : () => {
+    a;
+  };
 (a) => (a ? a : a);
 (a) =>
   a ? aasdasdasdasdasdasdaaasdasdasdasdasdasdasdasdasdasdasdasdasdaaaaaa : a;
@@ -5583,12 +5563,12 @@ const obj5 = conditionIsTruthy ? { some: 'long', object: 'with', lots: 'of', stu
 const obj0 = conditionIsTruthy ? shortThing : otherShortThing;
 
 const obj1 = conditionIsTruthy ?
-    { some: "long", object: "with", lots: "of", stuff } :
-    shortThing;
+    { some: "long", object: "with", lots: "of", stuff }
+: shortThing;
 
 const obj2 = conditionIsTruthy ?
-    shortThing :
-    { some: "long", object: "with", lots: "of", stuff };
+    shortThing
+: { some: "long", object: "with", lots: "of", stuff };
 
 const obj3 = conditionIsTruthy ?
     {
@@ -5596,26 +5576,26 @@ const obj3 = conditionIsTruthy ?
         object: "with",
         lots: "of",
         stuff,
-    } :
-    shortThing;
+    }
+: shortThing;
 
 const obj4 = conditionIsTruthy ?
-    shortThing :
-    {
-        some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-        object: "with",
-        lots: "of",
-        stuff,
-    };
+    shortThing
+: {
+    some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+    object: "with",
+    lots: "of",
+    stuff,
+};
 
 const obj5 = conditionIsTruthy ?
-    { some: "long", object: "with", lots: "of", stuff } :
-    {
-        some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-        object: "with",
-        lots: "of",
-        stuff,
-    };
+    { some: "long", object: "with", lots: "of", stuff }
+: {
+    some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+    object: "with",
+    lots: "of",
+    stuff,
+};
 
 ================================================================================
 `;
@@ -5644,12 +5624,12 @@ const obj5 = conditionIsTruthy ? { some: 'long', object: 'with', lots: 'of', stu
 const obj0 = conditionIsTruthy ? shortThing : otherShortThing;
 
 const obj1 = conditionIsTruthy ?
-	{ some: "long", object: "with", lots: "of", stuff } :
-	shortThing;
+	{ some: "long", object: "with", lots: "of", stuff }
+: shortThing;
 
 const obj2 = conditionIsTruthy ?
-	shortThing :
-	{ some: "long", object: "with", lots: "of", stuff };
+	shortThing
+: { some: "long", object: "with", lots: "of", stuff };
 
 const obj3 = conditionIsTruthy ?
 	{
@@ -5657,26 +5637,26 @@ const obj3 = conditionIsTruthy ?
 		object: "with",
 		lots: "of",
 		stuff,
-	} :
-	shortThing;
+	}
+: shortThing;
 
 const obj4 = conditionIsTruthy ?
-	shortThing :
-	{
-		some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-		object: "with",
-		lots: "of",
-		stuff,
-	};
+	shortThing
+: {
+	some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+	object: "with",
+	lots: "of",
+	stuff,
+};
 
 const obj5 = conditionIsTruthy ?
-	{ some: "long", object: "with", lots: "of", stuff } :
-	{
-		some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-		object: "with",
-		lots: "of",
-		stuff,
-	};
+	{ some: "long", object: "with", lots: "of", stuff }
+: {
+	some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+	object: "with",
+	lots: "of",
+	stuff,
+};
 
 ================================================================================
 `;
@@ -5704,12 +5684,12 @@ const obj5 = conditionIsTruthy ? { some: 'long', object: 'with', lots: 'of', stu
 const obj0 = conditionIsTruthy ? shortThing : otherShortThing;
 
 const obj1 = conditionIsTruthy ?
-	{ some: "long", object: "with", lots: "of", stuff } :
-	shortThing;
+	{ some: "long", object: "with", lots: "of", stuff }
+: shortThing;
 
 const obj2 = conditionIsTruthy ?
-	shortThing :
-	{ some: "long", object: "with", lots: "of", stuff };
+	shortThing
+: { some: "long", object: "with", lots: "of", stuff };
 
 const obj3 = conditionIsTruthy ?
 	{
@@ -5717,26 +5697,26 @@ const obj3 = conditionIsTruthy ?
 		object: "with",
 		lots: "of",
 		stuff,
-	} :
-	shortThing;
+	}
+: shortThing;
 
 const obj4 = conditionIsTruthy ?
-	shortThing :
-	{
-		some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-		object: "with",
-		lots: "of",
-		stuff,
-	};
+	shortThing
+: {
+	some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+	object: "with",
+	lots: "of",
+	stuff,
+};
 
 const obj5 = conditionIsTruthy ?
-	{ some: "long", object: "with", lots: "of", stuff } :
-	{
-		some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-		object: "with",
-		lots: "of",
-		stuff,
-	};
+	{ some: "long", object: "with", lots: "of", stuff }
+: {
+	some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+	object: "with",
+	lots: "of",
+	stuff,
+};
 
 ================================================================================
 `;
@@ -5763,12 +5743,12 @@ const obj5 = conditionIsTruthy ? { some: 'long', object: 'with', lots: 'of', stu
 const obj0 = conditionIsTruthy ? shortThing : otherShortThing;
 
 const obj1 = conditionIsTruthy ?
-  { some: "long", object: "with", lots: "of", stuff } :
-  shortThing;
+  { some: "long", object: "with", lots: "of", stuff }
+: shortThing;
 
 const obj2 = conditionIsTruthy ?
-  shortThing :
-  { some: "long", object: "with", lots: "of", stuff };
+  shortThing
+: { some: "long", object: "with", lots: "of", stuff };
 
 const obj3 = conditionIsTruthy ?
   {
@@ -5776,26 +5756,26 @@ const obj3 = conditionIsTruthy ?
     object: "with",
     lots: "of",
     stuff,
-  } :
-  shortThing;
+  }
+: shortThing;
 
 const obj4 = conditionIsTruthy ?
-  shortThing :
-  {
-    some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-    object: "with",
-    lots: "of",
-    stuff,
-  };
+  shortThing
+: {
+  some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+  object: "with",
+  lots: "of",
+  stuff,
+};
 
 const obj5 = conditionIsTruthy ?
-  { some: "long", object: "with", lots: "of", stuff } :
-  {
-    some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-    object: "with",
-    lots: "of",
-    stuff,
-  };
+  { some: "long", object: "with", lots: "of", stuff }
+: {
+  some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+  object: "with",
+  lots: "of",
+  stuff,
+};
 
 ================================================================================
 `;

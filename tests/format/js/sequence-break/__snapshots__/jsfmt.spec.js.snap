@@ -55,30 +55,30 @@ for (
   update
 ) {}
 (a = b ?
-  c :
-  function () {
+  c
+: function () {
+  return 0;
+}),
+  (a = b ?
+    c
+  : function () {
     return 0;
   }),
   (a = b ?
-    c :
-    function () {
-      return 0;
-    }),
+    c
+  : function () {
+    return 0;
+  }),
   (a = b ?
-    c :
-    function () {
-      return 0;
-    }),
+    c
+  : function () {
+    return 0;
+  }),
   (a = b ?
-    c :
-    function () {
-      return 0;
-    }),
-  (a = b ?
-    c :
-    function () {
-      return 0;
-    });
+    c
+  : function () {
+    return 0;
+  });
 
 ================================================================================
 `;

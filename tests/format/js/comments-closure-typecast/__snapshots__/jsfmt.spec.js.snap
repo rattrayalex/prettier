@@ -438,8 +438,8 @@ const fooooba2 = /** @type {Array.<fooo.barr.baaaaaaz>} */ (
 const fooooba3 = /** @type {Array.<fooo.barr.baaaaaaz>} */ (
   fooobaarbazzItems || foo
 ) ?
-  foo :
-  bar;
+  foo
+: bar;
 
 ================================================================================
 `;

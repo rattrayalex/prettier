@@ -95,8 +95,8 @@ trailingComma: "none"
         }
     | aaa,
   (hideLinqPanel ?
-    "ReportSelection.HideShowLabel_Show.String" :
-    "ReportSelection.HideShowLabel_Hide.String"
+    "ReportSelection.HideShowLabel_Show.String"
+  : "ReportSelection.HideShowLabel_Hide.String"
   ) | localize: localizationSection
 ]
 ================================================================================
