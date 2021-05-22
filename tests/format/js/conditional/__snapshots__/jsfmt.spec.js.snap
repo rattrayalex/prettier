@@ -448,12 +448,13 @@ const lessShort = isLoudReallyLoud() ? makeNoiseReallyLoudly.omgSoLoud()
   : silent();
 
 // next, put everything after the =
-const allNextLine = isLoudReallyReallyReallyReallyLoud() ?
-    makeNoiseReallyLoudly.omgSoLoud()
+const allNextLine =
+  isLoudReallyReallyReallyReallyLoud() ? makeNoiseReallyLoudly.omgSoLoud()
   : silent();
 
 // next, indent the consequent, too:
-const andIndented = isLoudReallyReallyReallyReallyLoud() ?
+const andIndented =
+  isLoudReallyReallyReallyReallyLoud() ?
     makeNoiseReallyReallyReallyReallyReallyLoudly.omgSoLoud()
   : silent();
 

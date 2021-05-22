@@ -440,7 +440,7 @@ function printPathNoParens(path, options, print, args) {
 
       return parts;
     case "ConditionalExpression":
-      return printTernary(path, options, print, args);
+      return printTernary(path, options, print);
     case "VariableDeclaration": {
       const printed = path.map(print, "declarations");
 
