@@ -125,6 +125,9 @@ definition.encode(
 
 // In a return, nest in parens if breaking:
 const inReturn = () => {
+  if (short) {
+    return foo ? 1 : 2
+  }
   return (
     typeof row[aVeryLongFieldName] !== "undefined" ? row[aVeryLongFieldName]
     : null

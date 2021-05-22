@@ -334,7 +334,7 @@ function printTernary(path, options, print) {
 
   const result =
     parent.type === "ReturnStatement"
-      ? wrapInParens(group(parts, { shouldBreak }))
+      ? group(wrapInParens(parts), { shouldBreak })
       : isInTest || shouldExtraIndent
       ? group([indent([softline, parts])], { shouldBreak })
       : parent === firstNonConditionalParent
