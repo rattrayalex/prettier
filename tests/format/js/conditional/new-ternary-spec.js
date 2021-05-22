@@ -5,11 +5,11 @@
 // remain on one line if possible:
 const short = isLoud() ? makeNoise() : silent();
 
-// next, keep the `conditional ? consequent` on one line and indent the consequent.
-const lessShort = isLoudReallyLoud() ? makeNoiseReallyLoudly.omgSoLoud()
-  : silent();
-
 // next, put everything after the =
+const lessShort =
+  isLoudReallyLoud() ? makeNoiseReallyLoudly.omgSoLoud() : silent();
+
+// next, push the alternate to a new line at the same level of indentation:
 const allNextLine =
   isLoudReallyReallyReallyReallyLoud() ? makeNoiseReallyLoudly.omgSoLoud()
   : silent();
