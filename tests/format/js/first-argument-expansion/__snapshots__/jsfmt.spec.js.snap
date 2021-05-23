@@ -182,8 +182,7 @@ func(
   () => {
     thing();
   },
-  something(longArgumentName, anotherLongArgumentName) ?
-    someOtherThing()
+  something(longArgumentName, anotherLongArgumentName) ? someOtherThing()
   : somethingElse(true, 0)
 );
 
@@ -191,13 +190,14 @@ func(
   () => {
     thing();
   },
-  something(
-    longArgumentName,
-    anotherLongArgumentName,
-    anotherLongArgumentName,
-    anotherLongArgumentName
-  ) ?
-    someOtherThing()
+  (
+    something(
+      longArgumentName,
+      anotherLongArgumentName,
+      anotherLongArgumentName,
+      anotherLongArgumentName
+    )
+  ) ? someOtherThing()
   : somethingElse(true, 0)
 );
 

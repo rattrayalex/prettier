@@ -12,8 +12,7 @@ printWidth: 80
 .prop;
 
 =====================================output=====================================
-(valid ?
-  helper.responseBody(this.currentUser)
+(valid ? helper.responseBody(this.currentUser)
 : helper.responseBody(this.defaultUser)
 ).prop;
 
