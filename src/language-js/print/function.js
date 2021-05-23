@@ -426,7 +426,8 @@ function printReturnAndThrowArgument(path, options, print) {
       parts.push([" (", indent([hardline, print("argument")]), hardline, ")"]);
     } else if (
       isBinaryish(node.argument) ||
-      node.argument.type === "SequenceExpression"
+      node.argument.type === "SequenceExpression" ||
+      node.argument.type === "ConditionalExpression"
     ) {
       parts.push(
         group([
