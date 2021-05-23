@@ -22,6 +22,7 @@ const {
     breakParent,
   },
 } = require("../../document");
+const pathNeedsParens = require("../needs-parens");
 
 /**
  * @typedef {import("../../document").Doc} Doc
@@ -266,6 +267,8 @@ function printTernary(path, options, print) {
 
   const shouldExtraIndent = shouldExtraIndentForConditionalExpression(path);
   const breakClosingParen = shouldBreakClosingParen(node, parent);
+  const breakTSClosingParen =
+    node.type === "TSConditionalType" && pathNeedsParens(path, options);
   // We want a whole chain of ConditionalExpressions to all
   // break if any of them break. That means we should only group around the
   // outer-most ConditionalExpression.
@@ -327,20 +330,17 @@ function printTernary(path, options, print) {
           shouldBreak: inJSX && isJsxNode(alternateNode),
         }),
 
-    isConditionalExpression && breakClosingParen && !shouldExtraIndent
-      ? softline
-      : "",
+    breakClosingParen && !shouldExtraIndent ? softline : "",
+    shouldBreak ? breakParent : "",
   ];
 
   const result =
     parent.type === "ReturnStatement"
-      ? group(wrapInParens(parts), { shouldBreak })
+      ? group(wrapInParens(parts))
       : isInTest || shouldExtraIndent
-      ? group([indent([softline, parts])], { shouldBreak })
+      ? group([indent([softline, parts]), breakTSClosingParen ? softline : ""])
       : parent === firstNonConditionalParent
-      ? group(parts, { shouldBreak })
-      : shouldBreak
-      ? [parts, breakParent]
+      ? group(parts)
       : parts;
 
   return result;
