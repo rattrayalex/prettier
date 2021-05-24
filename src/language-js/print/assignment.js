@@ -187,6 +187,8 @@ function shouldBreakAfterOperator(path, options, print, hasShortKey) {
     case "ConditionalExpression": {
       const { consequent, alternate } = rightNode;
       return (
+        options.useTabs ||
+        options.tabWidth !== 2 ||
         consequent.type == "ConditionalExpression" ||
         alternate.type === "ConditionalExpression"
       );
