@@ -264,9 +264,10 @@ function printTernary(path, options, print, args) {
       firstNonConditionalParent.type === "ObjectProperty" ||
       firstNonConditionalParent.type === "Property");
 
-  const inJSX =
+  const isInJsx =
     isConditionalExpression &&
-    firstNonConditionalParent.type === "JSXExpressionContainer";
+    firstNonConditionalParent.type === "JSXExpressionContainer" &&
+    path.getParentNode(1).type !== "JSXAttribute";
 
   const shouldExtraIndent = shouldExtraIndentForConditionalExpression(path);
   const breakClosingParen = shouldBreakClosingParen(node, parent);
@@ -293,7 +294,7 @@ function printTernary(path, options, print, args) {
     options.useTabs ||
     options.tabWidth !== 2 ||
     isBinaryish(alternateNode) ||
-    inJSX ||
+    isInJsx ||
     isJsxNode(alternateNode);
 
   // Do we want to keep ` : ` on the same line as the consequent?
@@ -301,7 +302,7 @@ function printTernary(path, options, print, args) {
     !isParentTernary &&
     !isInChain &&
     node.type !== "TSConditionalType" &&
-    (isOnSameLineAsAssignment || inJSX);
+    (isOnSameLineAsAssignment || isInJsx);
 
   const dedentIfRhs = (doc) => (isOnSameLineAsAssignment ? dedent(doc) : doc);
 
@@ -311,7 +312,7 @@ function printTernary(path, options, print, args) {
 
   const consequent = indent([
     isConsequentTernary ||
-    (inJSX && (isJsxNode(consequentNode) || isParentTernary || isInChain))
+    (isInJsx && (isJsxNode(consequentNode) || isParentTernary || isInChain))
       ? hardline
       : line,
     print(consequentNodePropertyName),
@@ -341,7 +342,7 @@ function printTernary(path, options, print, args) {
       ? print(alternateNodePropertyName)
       : shouldWrapAltInParens
       ? group(dedentIfRhs(wrapInParens(print(alternateNodePropertyName))), {
-          shouldBreak: inJSX && isJsxNode(alternateNode),
+          shouldBreak: isInJsx && isJsxNode(alternateNode),
         })
       : shouldHugAlt
       ? ifBreak(

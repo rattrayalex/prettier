@@ -882,11 +882,10 @@ ternaryWithJSXElements.hasNoSpecialCasing =
 
 jsxExpressionContainer.inJSXAttribute.hasNoSpecialCasing = (
   <Foo
-    withJSX={isABeautifulRichDeepRedColor.andNotGreen ?
-      <RedColorThing />
-    : (
-      <GreenColorThing />
-    )}
+    withJSX={
+      isABeautifulRichDeepRedColor.andNotGreen ? <RedColorThing />
+      : <GreenColorThing />
+    }
   />
 );
 
