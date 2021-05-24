@@ -162,7 +162,8 @@ const extractTextPluginOptions2 = shouldUseRelativeAssetPaths ?
 
 const extractTextPluginOptions3 = (
     shouldUseRelativeAssetPaths // Making sure that the publicPath goes back to to build folder.
-  ) ? { publicPath: Array(cssFilename.split("/").length).join("../") }
+  ) ?
+    { publicPath: Array(cssFilename.split("/").length).join("../") }
   : {};
 
 const { configureStore } = process.env.NODE_ENV === "production" ?
@@ -719,9 +720,9 @@ jsxExpressionContainer.inJSXAttribute.hasNoSpecialCasing = (
 const short = isLoud() ? makeNoise() : silent();
 
 // next, put everything after the =
-const lessShort = isLoudReallyLoud() ? makeNoiseReallyLoudly.omgSoLoud() : (
-  silent()
-);
+const lessShort = isLoudReallyLoud() ?
+    makeNoiseReallyLoudly.omgSoLoud()
+  : silent();
 
 // next, push the alternate to a new line at the same level of indentation:
 const allNextLine = isLoudReallyReallyReallyReallyLoud() ?
@@ -805,7 +806,8 @@ const longConditional = (
     bifornCringerMoshedPerplexSawder === 2 / askTrovenaBeenaDependsRowans &&
     glimseGlyphsHazardNoopsTieTie >=
       averredBathersBoxroomBuggyNurl().anodyneCondosMalateOverateRetinol()
-  ) ? "foo"
+  ) ?
+    "foo"
   : "bar";
 
 // long conditional, short consequent/alternate, chained
@@ -1086,9 +1088,9 @@ const avatar = has_ordered ?
   : undefined;
 
 // Similarly, in the alternate:
-const redirectUrl = pathName ? pathName : (
-  nextPathName + nextSearch || defaultAuthParams.afterLoginUrl
-);
+const redirectUrl = pathName ?
+    pathName
+  : nextPathName + nextSearch || defaultAuthParams.afterLoginUrl;
 
 // And another, more pathological case of the above:
 const isEmpty = (obj) =>
@@ -1186,7 +1188,8 @@ const obj2 = {
 // The boolean conditions in the test should look cohesive.
 const selectedReferencesDataStatus = (
     !isEmpty(value) && typeof value === "string" && !pattern.test(value)
-  ) ? getMessage(message, { pattern }, value, values)
+  ) ?
+    getMessage(message, { pattern }, value, values)
   : undefined;
 
 // Would be nice if these two nested ternaries didn't look like a single one.

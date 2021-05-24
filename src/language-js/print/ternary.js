@@ -247,12 +247,7 @@ function printTernary(path, options, print, args) {
 
   // Do we want to keep ` : ` on the same line as the consequent?
   const shouldHugAlt =
-    !isParentTernary &&
-    !isInChain &&
-    !isTSConditional &&
-    (isOnSameLineAsAssignment || isInJsx);
-
-  const dedentIfRhs = (doc) => (isOnSameLineAsAssignment ? dedent(doc) : doc);
+    isInJsx && !isParentTernary && !isInChain && !isTSConditional;
 
   const printedTest = isConditionalExpression
     ? wrapInParens(print("test"))
@@ -292,7 +287,7 @@ function printTernary(path, options, print, args) {
     isAlternateTernary
       ? print(alternateNodePropertyName)
       : shouldWrapAltInParens
-      ? group(dedentIfRhs(wrapInParens(print(alternateNodePropertyName))), {
+      ? group(wrapInParens(print(alternateNodePropertyName)), {
           shouldBreak: isInJsx && isJsxNode(alternateNode),
         })
       : shouldHugAlt

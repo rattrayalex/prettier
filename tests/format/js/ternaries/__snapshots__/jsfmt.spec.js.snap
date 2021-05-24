@@ -163,7 +163,8 @@ const funnelSnapshotCard = (
     (report === MY_OVERVIEW && !ReportGK.xar_metrics_active_capitol_v2) ||
     (report === COMPANY_OVERVIEW &&
       !ReportGK.xar_metrics_active_capitol_v2_company_metrics)
-  ) ? <ReportMetricsFunnelSnapshotCard metrics={metrics} />
+  ) ?
+    <ReportMetricsFunnelSnapshotCard metrics={metrics} />
   : null;
 
 room = room.map((row, rowIndex) =>
@@ -5319,7 +5320,8 @@ $var = (
       $number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
         kochabCooieGameOnOboleUnweave
       : annularCooeedSplicesWalksWayWay)
-  ) ? anodyneCondosMalateOverateRetinol
+  ) ?
+    anodyneCondosMalateOverateRetinol
   : averredBathersBoxroomBuggyNurl;
 
 const value =
@@ -5752,9 +5754,9 @@ const obj1 = conditionIsTruthy ?
     { some: "long", object: "with", lots: "of", stuff }
   : shortThing;
 
-const obj2 = conditionIsTruthy ? shortThing : (
-  { some: "long", object: "with", lots: "of", stuff }
-);
+const obj2 = conditionIsTruthy ?
+    shortThing
+  : { some: "long", object: "with", lots: "of", stuff };
 
 const obj3 = conditionIsTruthy ?
     {
@@ -5765,14 +5767,14 @@ const obj3 = conditionIsTruthy ?
     }
   : shortThing;
 
-const obj4 = conditionIsTruthy ? shortThing : (
-  {
-    some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-    object: "with",
-    lots: "of",
-    stuff,
-  }
-);
+const obj4 = conditionIsTruthy ?
+    shortThing
+  : {
+      some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+      object: "with",
+      lots: "of",
+      stuff,
+    };
 
 const obj5 = conditionIsTruthy ?
     { some: "long", object: "with", lots: "of", stuff }
