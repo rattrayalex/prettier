@@ -205,7 +205,7 @@ const wrapInParens = (doc) => [
  * @param {Function} print - Print function to call recursively
  * @returns {Doc}
  */
-function printTernary(path, options, print) {
+function printTernary(path, options, print, args) {
   const node = path.getValue();
   const isConditionalExpression = node.type === "ConditionalExpression";
   const consequentNodePropertyName = isConditionalExpression
@@ -233,6 +233,8 @@ function printTernary(path, options, print) {
   const consequentIsTernary = consequentNode.type === node.type;
   const alternateIsTernary = alternateNode.type === node.type;
   const isInChain = alternateIsTernary || isInAlternate;
+  const isAssignmentRhs =
+    args && args.assignmentLayout === "never-break-after-operator";
 
   // Find the outermost non-ConditionalExpression parent, and the outermost
   // ConditionalExpression parent. We'll use these to determine if we should
@@ -340,12 +342,13 @@ function printTernary(path, options, print) {
     shouldBreak ? breakParent : "",
   ];
 
-  const result =
-    isInTest || shouldExtraIndent
-      ? group([indent([softline, parts]), breakTSClosingParen ? softline : ""])
-      : parent === firstNonConditionalParent
-      ? group(parts)
-      : parts;
+  const result = isAssignmentRhs
+    ? indent(parts)
+    : isInTest || shouldExtraIndent
+    ? group([indent([softline, parts]), breakTSClosingParen ? softline : ""])
+    : parent === firstNonConditionalParent
+    ? group(parts)
+    : parts;
 
   return result;
 }

@@ -290,9 +290,9 @@ someReallyLongThingStoredInAMapWithAReallyBigName[pageletID] =
     : 0;
 
 =====================================output=====================================
-someReallyLongThingStoredInAMapWithAReallyBigName[pageletID] =
-  _someVariableThatWeAreCheckingForFalsiness ?
-    Date.now() - _someVariableThatWeAreCheckingForFalsiness
+someReallyLongThingStoredInAMapWithAReallyBigName[pageletID] = (
+    _someVariableThatWeAreCheckingForFalsiness
+  ) ? Date.now() - _someVariableThatWeAreCheckingForFalsiness
   : 0;
 
 ================================================================================
@@ -401,8 +401,7 @@ class foo {
 =====================================output=====================================
 class foo {
   bar() {
-    const median =
-      dates.length % 2 ? dates[half].getTime()
+    const median = dates.length % 2 ? dates[half].getTime()
       : (dates[half - 1].getTime() + dates[half].getTime()) / 2.0;
   }
 }

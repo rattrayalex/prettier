@@ -163,7 +163,8 @@ function chooseLayout(path, options, print, leftDoc, rightPropertyName) {
     rightNode.type === "TaggedTemplateExpression" ||
     rightNode.type === "BooleanLiteral" ||
     isNumericLiteral(rightNode) ||
-    rightNode.type === "ClassExpression"
+    rightNode.type === "ClassExpression" ||
+    rightNode.type === "ConditionalExpression"
   ) {
     return "never-break-after-operator";
   }
@@ -182,8 +183,14 @@ function shouldBreakAfterOperator(path, options, print, hasShortKey) {
     case "StringLiteralTypeAnnotation":
     case "SequenceExpression":
     case "TSConditionalType":
-    case "ConditionalExpression":
       return true;
+    case "ConditionalExpression": {
+      const { consequent, alternate } = rightNode;
+      return (
+        consequent.type == "ConditionalExpression" ||
+        alternate.type === "ConditionalExpression"
+      );
+    }
     case "ClassExpression":
       return isNonEmptyArray(rightNode.decorators);
   }

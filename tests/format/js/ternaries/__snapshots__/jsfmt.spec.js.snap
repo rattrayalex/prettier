@@ -21,8 +21,7 @@ room = room.map((row, rowIndex) => (
 ))
 
 =====================================output=====================================
-const funnelSnapshotCard =
-    (
+const funnelSnapshotCard = (
         (report === MY_OVERVIEW && !ReportGK.xar_metrics_active_capitol_v2) ||
         (report === COMPANY_OVERVIEW &&
             !ReportGK.xar_metrics_active_capitol_v2_company_metrics)
@@ -66,8 +65,7 @@ room = room.map((row, rowIndex) => (
 ))
 
 =====================================output=====================================
-const funnelSnapshotCard =
-	(
+const funnelSnapshotCard = (
 		(report === MY_OVERVIEW && !ReportGK.xar_metrics_active_capitol_v2) ||
 		(report === COMPANY_OVERVIEW &&
 			!ReportGK.xar_metrics_active_capitol_v2_company_metrics)
@@ -110,8 +108,7 @@ room = room.map((row, rowIndex) => (
 ))
 
 =====================================output=====================================
-const funnelSnapshotCard =
-	(
+const funnelSnapshotCard = (
 		(report === MY_OVERVIEW && !ReportGK.xar_metrics_active_capitol_v2) ||
 		(report === COMPANY_OVERVIEW &&
 			!ReportGK.xar_metrics_active_capitol_v2_company_metrics)
@@ -153,8 +150,7 @@ room = room.map((row, rowIndex) => (
 ))
 
 =====================================output=====================================
-const funnelSnapshotCard =
-  (
+const funnelSnapshotCard = (
     (report === MY_OVERVIEW && !ReportGK.xar_metrics_active_capitol_v2) ||
     (report === COMPANY_OVERVIEW &&
       !ReportGK.xar_metrics_active_capitol_v2_company_metrics)
@@ -499,8 +495,7 @@ a ?
     }
 : (
     {
-        a:
-            (
+        a: (
                 {
                     a: 0,
                 }
@@ -510,8 +505,7 @@ a ?
                 }
             : (
                 {
-                    y:
-                        (
+                    y: (
                             {
                                 a: 0,
                             }
@@ -862,8 +856,7 @@ a ?
 	}
 : (
 	{
-		a:
-			(
+		a: (
 				{
 					a: 0,
 				}
@@ -873,8 +866,7 @@ a ?
 				}
 			: (
 				{
-					y:
-						(
+					y: (
 							{
 								a: 0,
 							}
@@ -1224,8 +1216,7 @@ a ?
 	}
 : (
 	{
-		a:
-			(
+		a: (
 				{
 					a: 0,
 				}
@@ -1235,8 +1226,7 @@ a ?
 				}
 			: (
 				{
-					y:
-						(
+					y: (
 							{
 								a: 0,
 							}
@@ -1584,8 +1574,7 @@ a ?
     a: 0,
   }
 : {
-    a:
-      (
+    a: (
         {
           a: 0,
         }
@@ -1594,8 +1583,7 @@ a ?
           a: 0,
         }
       : {
-          y:
-            (
+          y: (
               {
                 a: 0,
               }
@@ -4288,8 +4276,7 @@ a
     : softline
 
 =====================================output=====================================
-let icecream =
-    what == "cone" ?
+let icecream = what == "cone" ?
         (p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`)
     : (p) => \`here's your \${p} \${what}\`;
 
@@ -4480,8 +4467,7 @@ a
     : softline
 
 =====================================output=====================================
-let icecream =
-	what == "cone" ?
+let icecream = what == "cone" ?
 		(p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`)
 	: (p) => \`here's your \${p} \${what}\`;
 
@@ -4671,8 +4657,7 @@ a
     : softline
 
 =====================================output=====================================
-let icecream =
-	what == "cone" ?
+let icecream = what == "cone" ?
 		(p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`)
 	: (p) => \`here's your \${p} \${what}\`;
 
@@ -4861,8 +4846,7 @@ a
     : softline
 
 =====================================output=====================================
-let icecream =
-  what == "cone" ?
+let icecream = what == "cone" ?
     (p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`)
   : (p) => \`here's your \${p} \${what}\`;
 
@@ -4993,8 +4977,7 @@ const value = (bifornCringerMoshedPerplexSawder
 );
 
 =====================================output=====================================
-$var =
-    (
+$var = (
         (
             $number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
                 kochabCooieGameOnOboleUnweave
@@ -5083,8 +5066,7 @@ const value = (bifornCringerMoshedPerplexSawder
 );
 
 =====================================output=====================================
-$var =
-	(
+$var = (
 		(
 			$number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
 				kochabCooieGameOnOboleUnweave
@@ -5172,8 +5154,7 @@ const value = (bifornCringerMoshedPerplexSawder
 );
 
 =====================================output=====================================
-$var =
-	(
+$var = (
 		(
 			$number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
 				kochabCooieGameOnOboleUnweave
@@ -5260,8 +5241,7 @@ const value = (bifornCringerMoshedPerplexSawder
 );
 
 =====================================output=====================================
-$var =
-  (
+$var = (
     (
       $number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
         kochabCooieGameOnOboleUnweave
@@ -5488,16 +5468,14 @@ const obj5 = conditionIsTruthy ? { some: 'long', object: 'with', lots: 'of', stu
 =====================================output=====================================
 const obj0 = conditionIsTruthy ? shortThing : otherShortThing;
 
-const obj1 =
-    conditionIsTruthy ? { some: "long", object: "with", lots: "of", stuff }
+const obj1 = conditionIsTruthy ?
+        { some: "long", object: "with", lots: "of", stuff }
     : shortThing;
 
-const obj2 =
-    conditionIsTruthy ? shortThing
+const obj2 = conditionIsTruthy ? shortThing
     : { some: "long", object: "with", lots: "of", stuff };
 
-const obj3 =
-    conditionIsTruthy ?
+const obj3 = conditionIsTruthy ?
         {
             some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
             object: "with",
@@ -5506,8 +5484,7 @@ const obj3 =
         }
     : shortThing;
 
-const obj4 =
-    conditionIsTruthy ? shortThing
+const obj4 = conditionIsTruthy ? shortThing
     : (
         {
             some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
@@ -5517,8 +5494,8 @@ const obj4 =
         }
     );
 
-const obj5 =
-    conditionIsTruthy ? { some: "long", object: "with", lots: "of", stuff }
+const obj5 = conditionIsTruthy ?
+        { some: "long", object: "with", lots: "of", stuff }
     : (
         {
             some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
@@ -5554,16 +5531,14 @@ const obj5 = conditionIsTruthy ? { some: 'long', object: 'with', lots: 'of', stu
 =====================================output=====================================
 const obj0 = conditionIsTruthy ? shortThing : otherShortThing;
 
-const obj1 =
-	conditionIsTruthy ? { some: "long", object: "with", lots: "of", stuff }
+const obj1 = conditionIsTruthy ?
+		{ some: "long", object: "with", lots: "of", stuff }
 	: shortThing;
 
-const obj2 =
-	conditionIsTruthy ? shortThing
+const obj2 = conditionIsTruthy ? shortThing
 	: { some: "long", object: "with", lots: "of", stuff };
 
-const obj3 =
-	conditionIsTruthy ?
+const obj3 = conditionIsTruthy ?
 		{
 			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
 			object: "with",
@@ -5572,8 +5547,7 @@ const obj3 =
 		}
 	: shortThing;
 
-const obj4 =
-	conditionIsTruthy ? shortThing
+const obj4 = conditionIsTruthy ? shortThing
 	: (
 		{
 			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
@@ -5583,8 +5557,8 @@ const obj4 =
 		}
 	);
 
-const obj5 =
-	conditionIsTruthy ? { some: "long", object: "with", lots: "of", stuff }
+const obj5 = conditionIsTruthy ?
+		{ some: "long", object: "with", lots: "of", stuff }
 	: (
 		{
 			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
@@ -5619,16 +5593,14 @@ const obj5 = conditionIsTruthy ? { some: 'long', object: 'with', lots: 'of', stu
 =====================================output=====================================
 const obj0 = conditionIsTruthy ? shortThing : otherShortThing;
 
-const obj1 =
-	conditionIsTruthy ? { some: "long", object: "with", lots: "of", stuff }
+const obj1 = conditionIsTruthy ?
+		{ some: "long", object: "with", lots: "of", stuff }
 	: shortThing;
 
-const obj2 =
-	conditionIsTruthy ? shortThing
+const obj2 = conditionIsTruthy ? shortThing
 	: { some: "long", object: "with", lots: "of", stuff };
 
-const obj3 =
-	conditionIsTruthy ?
+const obj3 = conditionIsTruthy ?
 		{
 			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
 			object: "with",
@@ -5637,8 +5609,7 @@ const obj3 =
 		}
 	: shortThing;
 
-const obj4 =
-	conditionIsTruthy ? shortThing
+const obj4 = conditionIsTruthy ? shortThing
 	: (
 		{
 			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
@@ -5648,8 +5619,8 @@ const obj4 =
 		}
 	);
 
-const obj5 =
-	conditionIsTruthy ? { some: "long", object: "with", lots: "of", stuff }
+const obj5 = conditionIsTruthy ?
+		{ some: "long", object: "with", lots: "of", stuff }
 	: (
 		{
 			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
@@ -5683,16 +5654,14 @@ const obj5 = conditionIsTruthy ? { some: 'long', object: 'with', lots: 'of', stu
 =====================================output=====================================
 const obj0 = conditionIsTruthy ? shortThing : otherShortThing;
 
-const obj1 =
-  conditionIsTruthy ? { some: "long", object: "with", lots: "of", stuff }
+const obj1 = conditionIsTruthy ?
+    { some: "long", object: "with", lots: "of", stuff }
   : shortThing;
 
-const obj2 =
-  conditionIsTruthy ? shortThing
+const obj2 = conditionIsTruthy ? shortThing
   : { some: "long", object: "with", lots: "of", stuff };
 
-const obj3 =
-  conditionIsTruthy ?
+const obj3 = conditionIsTruthy ?
     {
       some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
       object: "with",
@@ -5701,8 +5670,7 @@ const obj3 =
     }
   : shortThing;
 
-const obj4 =
-  conditionIsTruthy ? shortThing
+const obj4 = conditionIsTruthy ? shortThing
   : {
       some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
       object: "with",
@@ -5710,8 +5678,8 @@ const obj4 =
       stuff,
     };
 
-const obj5 =
-  conditionIsTruthy ? { some: "long", object: "with", lots: "of", stuff }
+const obj5 = conditionIsTruthy ?
+    { some: "long", object: "with", lots: "of", stuff }
   : {
       some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
       object: "with",
