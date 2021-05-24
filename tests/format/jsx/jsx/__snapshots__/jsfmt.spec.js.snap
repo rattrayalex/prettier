@@ -3259,9 +3259,7 @@ singleQuote: false
 
 =====================================output=====================================
 <div>
-  {__DEV__ ?
-    this.renderDevApp()
-  : (
+  {__DEV__ ? this.renderDevApp() : (
     <div>
       {routes.map((route) => (
         <MatchAsync
@@ -3341,9 +3339,7 @@ singleQuote: false
 
 =====================================output=====================================
 <div>
-  {__DEV__ ?
-    this.renderDevApp()
-  : (
+  {__DEV__ ? this.renderDevApp() : (
     <div>
       {routes.map((route) => (
         <MatchAsync
@@ -3423,9 +3419,7 @@ singleQuote: true
 
 =====================================output=====================================
 <div>
-  {__DEV__ ?
-    this.renderDevApp()
-  : (
+  {__DEV__ ? this.renderDevApp() : (
     <div>
       {routes.map((route) => (
         <MatchAsync
@@ -3505,9 +3499,7 @@ singleQuote: true
 
 =====================================output=====================================
 <div>
-  {__DEV__ ?
-    this.renderDevApp()
-  : (
+  {__DEV__ ? this.renderDevApp() : (
     <div>
       {routes.map((route) => (
         <MatchAsync

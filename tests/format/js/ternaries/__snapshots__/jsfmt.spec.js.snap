@@ -5682,8 +5682,9 @@ const obj1 = conditionIsTruthy ?
     { some: "long", object: "with", lots: "of", stuff }
   : shortThing;
 
-const obj2 = conditionIsTruthy ? shortThing
-  : { some: "long", object: "with", lots: "of", stuff };
+const obj2 = conditionIsTruthy ? shortThing : (
+  { some: "long", object: "with", lots: "of", stuff }
+);
 
 const obj3 = conditionIsTruthy ?
     {
@@ -5694,13 +5695,14 @@ const obj3 = conditionIsTruthy ?
     }
   : shortThing;
 
-const obj4 = conditionIsTruthy ? shortThing
-  : {
-      some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-      object: "with",
-      lots: "of",
-      stuff,
-    };
+const obj4 = conditionIsTruthy ? shortThing : (
+  {
+    some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+    object: "with",
+    lots: "of",
+    stuff,
+  }
+);
 
 const obj5 = conditionIsTruthy ?
     { some: "long", object: "with", lots: "of", stuff }

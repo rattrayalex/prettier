@@ -509,9 +509,8 @@ function printJsxExpressionContainer(path, options, print) {
         node.expression.type === "TemplateLiteral" ||
         node.expression.type === "TaggedTemplateExpression" ||
         node.expression.type === "DoExpression" ||
-        (isJsxNode(parent) &&
-          (node.expression.type === "ConditionalExpression" ||
-            isBinaryish(node.expression)))));
+        node.expression.type === "ConditionalExpression" ||
+        (isJsxNode(parent) && isBinaryish(node.expression))));
 
   if (shouldInline) {
     return group(["{", print("expression"), lineSuffixBoundary, "}"]);
