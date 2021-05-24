@@ -1009,9 +1009,7 @@ printWidth: 1
       a
     ) ?
       1
-    : (
-      2
-    )
+    : 2
   "
   [target]="
 
@@ -1159,9 +1157,7 @@ printWidth: 1
       something
     ) ?
       true
-    : (
-      false
-    )
+    : false
   "
   *ngIf="
     a
@@ -3307,9 +3303,7 @@ printWidth: 1
       a
     ) ?
       1
-    : (
-      2
-    )
+    : 2
   }}
 </div>
 <div>
@@ -3582,9 +3576,7 @@ printWidth: 1
           a
         ) ?
           b
-        : (
-          {}
-        )
+        : {}
     }
   }}
 </p>
@@ -8433,9 +8425,7 @@ can be found in the LICENSE file at http://angular.io/license
       isSpecial
     ) ?
       'red'
-    : (
-      'green'
-    )
+    : 'green'
   "
 >
   button
@@ -8936,9 +8926,7 @@ can be found in the LICENSE file at http://angular.io/license
       isSpecial
     ) ?
       'red'
-    : (
-      'green'
-    )
+    : 'green'
   "
 >
   Red
@@ -8949,9 +8937,7 @@ can be found in the LICENSE file at http://angular.io/license
       canSave
     ) ?
       'cyan'
-    : (
-      'grey'
-    )
+    : 'grey'
   "
 >
   Save
@@ -8963,9 +8949,7 @@ can be found in the LICENSE file at http://angular.io/license
       isSpecial
     ) ?
       3
-    : (
-      1
-    )
+    : 1
   "
 >
   Big
@@ -8976,9 +8960,7 @@ can be found in the LICENSE file at http://angular.io/license
       !isSpecial
     ) ?
       150
-    : (
-      50
-    )
+    : 50
   "
 >
   Small
@@ -9353,9 +9335,7 @@ bindon-ngModel
       canSave
     ) ?
       ""
-    : (
-      "not"
-    )
+    : "not"
   }}
   saveable,
   {{
@@ -9363,9 +9343,7 @@ bindon-ngModel
       isUnchanged
     ) ?
       "unchanged"
-    : (
-      "modified"
-    )
+    : "modified"
   }}
   and,
   {{
@@ -9373,9 +9351,7 @@ bindon-ngModel
       isSpecial
     ) ?
       ""
-    : (
-      "not"
-    )
+    : "not"
   }}
   special
   after
@@ -9390,9 +9366,7 @@ bindon-ngModel
       isSpecial
     ) ?
       'special'
-    : (
-      ''
-    )
+    : ''
   "
 >
   This
@@ -9446,9 +9420,7 @@ bindon-ngModel
       isSpecial
     ) ?
       'x-large'
-    : (
-      'smaller'
-    )
+    : 'smaller'
   "
 >
   This
@@ -9546,18 +9518,14 @@ bindon-ngModel
       canSave
     ) ?
       "italic"
-    : (
-      "plain"
-    )
+    : "plain"
   }},
   {{
     (
       isUnchanged
     ) ?
       "normal weight"
-    : (
-      "bold"
-    )
+    : "bold"
   }}
   and,
   {{
@@ -9565,9 +9533,7 @@ bindon-ngModel
       isSpecial
     ) ?
       "extra large"
-    : (
-      "normal size"
-    )
+    : "normal size"
   }}
   after
   clicking
@@ -9687,9 +9653,7 @@ bindon-ngModel
       isSpecial
     ) ?
       'block'
-    : (
-      'none'
-    )
+    : 'none'
   "
 >
   Show
@@ -9702,9 +9666,7 @@ bindon-ngModel
       isSpecial
     ) ?
       'none'
-    : (
-      'block'
-    )
+    : 'block'
   "
 >
   Hide

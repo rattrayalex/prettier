@@ -56,39 +56,29 @@ for (
 ) {}
 (a =
   b ? c
-  : (
-    function () {
+  : function () {
       return 0;
-    }
-  )),
+    }),
   (a =
     b ? c
-    : (
-      function () {
+    : function () {
         return 0;
-      }
-    )),
+      }),
   (a =
     b ? c
-    : (
-      function () {
+    : function () {
         return 0;
-      }
-    )),
+      }),
   (a =
     b ? c
-    : (
-      function () {
+    : function () {
         return 0;
-      }
-    )),
+      }),
   (a =
     b ? c
-    : (
-      function () {
+    : function () {
         return 0;
-      }
-    ));
+      });
 
 ================================================================================
 `;

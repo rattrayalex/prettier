@@ -136,12 +136,10 @@ var inspect =
     function (v, colors) {
       return util.inspect(v, void 0, void 0, colors);
     }
-  : (
-    // node > 0.8.x
+  : // node > 0.8.x
     function (v, colors) {
       return util.inspect(v, { colors: colors });
-    }
-  );
+    };
 
 var inspect =
   4 === util.inspect.length ?
@@ -149,12 +147,10 @@ var inspect =
     function (v, colors) {
       return util.inspect(v, void 0, void 0, colors);
     }
-  : (
-    // node > 0.8.x
+  : // node > 0.8.x
     function (v, colors) {
       return util.inspect(v, { colors: colors });
-    }
-  );
+    };
 
 const extractTextPluginOptions =
   shouldUseRelativeAssetPaths ?
@@ -213,14 +209,12 @@ test ?
 test ? /* comment */ foo : bar;
 
 test ? foo
-: (
-  /* comment
+: /* comment
          comment
      comment
            comment
     */
-  bar
-);
+  bar;
 
 test ? foo
 : /* comment
@@ -230,13 +224,11 @@ test ? foo
       A newline will be added after this comment, unfortunately – but it can be removed manually, see next statement.
     */
 test ? foo
-: (
-  /* comment
+: /* comment
   comment
     comment
    */
-  bar
-);
+  bar;
 
 // It is at least possible to delete the extra newline that was
 // unfortunately added before the second condition above:
@@ -247,13 +239,11 @@ test ?
            comment
     */
 : test ? foo
-: (
-  /* comment
+: /* comment
   comment
     comment
    */
-  bar
-);
+  bar;
 
 test ? foo : /* comment */ bar;
 
@@ -777,11 +767,9 @@ const consequentAndTerminalAlternateBreak =
       .thatWouldCauseALineBreak()
       .willCauseAnIndentButNotParens()
   : isDog() ? bark()
-  : (
-    someReallyLargeExpression
+  : someReallyLargeExpression
       .thatWouldCauseALineBreak()
-      .willCauseAnIndentButNotParens()
-  );
+      .willCauseAnIndentButNotParens();
 
 // multiline conditions and consequents/alternates:
 const multilineConditionsConsequentsAndAlternates =
@@ -798,11 +786,9 @@ const multilineConditionsConsequentsAndAlternates =
   ) ?
     bark()
   : shortCondition() ? shortConsequent()
-  : (
-    someReallyLargeExpression
+  : someReallyLargeExpression
       .thatWouldCauseALineBreak()
-      .willCauseAnIndentButNotParens()
-  );
+      .willCauseAnIndentButNotParens();
 
 // illustrating case of mostly short conditionals
 const mostlyShort =

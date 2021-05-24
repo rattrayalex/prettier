@@ -1583,8 +1583,7 @@ a ?
   {
     a: 0,
   }
-: (
-  {
+: {
     a:
       (
         {
@@ -1594,8 +1593,7 @@ a ?
         {
           a: 0,
         }
-      : (
-        {
+      : {
           y:
             (
               {
@@ -1605,15 +1603,11 @@ a ?
               {
                 a: 0,
               }
-            : (
-              {
+            : {
                 a: 0,
-              }
-            ),
-        }
-      ),
-  }
-);
+              },
+        },
+  };
 
 a ?
   {
@@ -1627,8 +1621,7 @@ a ?
                   a: 0,
                   b: [a ? [0, 1] : []],
                 }
-              : (
-                [
+              : [
                   [
                     0,
                     {
@@ -1642,22 +1635,18 @@ a ?
                         {
                           a: 0,
                         }
-                      : (
-                        [
+                      : [
                           {
                             a: 0,
                           },
                           {},
                         ]
-                      )
                     );
                   },
-                ]
-              ),
+                ],
             ],
           }
-        : (
-          [
+        : [
             a ?
               function () {
                 a ?
@@ -1668,8 +1657,7 @@ a ?
                           a: 0,
                         }),
                       }
-                    : (
-                      [
+                    : [
                         0,
                         a(),
                         a(
@@ -1678,11 +1666,9 @@ a ?
                             a: 0,
                           },
                           a ? a()
-                          : (
-                            a({
+                          : a({
                               a: 0,
                             })
-                          )
                         ),
                         a() ?
                           {
@@ -1691,16 +1677,13 @@ a ?
                           }
                         : {},
                       ]
-                    )
                   )
-                : (
-                  a(
+                : a(
                     a() ?
                       {
                         a: 0,
                       }
-                    : (
-                      (function (a) {
+                    : (function (a) {
                         return (
                           a() ?
                             [
@@ -1709,8 +1692,7 @@ a ?
                                 b: a(),
                               },
                             ]
-                          : (
-                            a([
+                          : a([
                               a ?
                                 {
                                   a: 0,
@@ -1720,7 +1702,6 @@ a ?
                                 a: 0,
                               },
                             ])
-                          )
                         );
                       })(
                         a ?
@@ -1729,21 +1710,16 @@ a ?
                               return 0;
                             };
                           }
-                        : (
-                          function (a) {
+                        : function (a) {
                             return function () {
                               return 1;
                             };
                           }
-                        )
                       )
-                    )
-                  )
-                );
+                  );
               }
             : function () {},
           ]
-        )
       );
     },
   }
@@ -5480,11 +5456,9 @@ debug ?
     () => {
       a;
     }
-  : (
-    () => {
+  : () => {
       a;
-    }
-  );
+    };
 (a) => (a ? a : a);
 (a) =>
   a ? aasdasdasdasdasdasdaaasdasdasdasdasdasdasdasdasdasdasdasdasdaaaaaa : a;
@@ -5729,25 +5703,21 @@ const obj3 =
 
 const obj4 =
   conditionIsTruthy ? shortThing
-  : (
-    {
+  : {
       some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
       object: "with",
       lots: "of",
       stuff,
-    }
-  );
+    };
 
 const obj5 =
   conditionIsTruthy ? { some: "long", object: "with", lots: "of", stuff }
-  : (
-    {
+  : {
       some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
       object: "with",
       lots: "of",
       stuff,
-    }
-  );
+    };
 
 ================================================================================
 `;

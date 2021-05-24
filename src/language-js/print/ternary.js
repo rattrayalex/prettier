@@ -7,6 +7,7 @@ const {
   getComments,
   isCallExpression,
   isMemberExpression,
+  isBinaryish,
 } = require("../utils");
 const { locStart, locEnd } = require("../loc");
 const {
@@ -326,9 +327,14 @@ function printTernary(path, options, print) {
     ": ",
     alternateIsTernary
       ? print(alternateNodePropertyName)
-      : group(wrapInParens(print(alternateNodePropertyName)), {
+      : options.useTabs ||
+        options.tabWidth !== 2 ||
+        isBinaryish(alternateNode) ||
+        isJsxNode(alternateNode)
+      ? group(wrapInParens(print(alternateNodePropertyName)), {
           shouldBreak: inJSX && isJsxNode(alternateNode),
-        }),
+        })
+      : group(indent(print(alternateNodePropertyName))),
 
     breakClosingParen && !shouldExtraIndent ? softline : "",
     shouldBreak ? breakParent : "",
