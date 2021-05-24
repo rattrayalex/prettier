@@ -25,63 +25,6 @@ const {
 } = require("../../document");
 const pathNeedsParens = require("../needs-parens");
 
-/**
- * @typedef {import("../../document").Doc} Doc
- * @typedef {import("../../common/ast-path")} AstPath
- *
- * @typedef {any} Options - Prettier options (TBD ...)
- */
-
-// If we have nested conditional expressions, we want to print them in JSX mode
-// if there's at least one JSXElement somewhere in the tree.
-//
-// A conditional expression chain like this should be printed in normal mode,
-// because there aren't JSXElements anywhere in it:
-//
-// isA ? "A" : isB ? "B" : isC ? "C" : "Unknown";
-//
-// But a conditional expression chain like this should be printed in JSX mode,
-// because there is a JSXElement in the last ConditionalExpression:
-//
-// isA ? "A" : isB ? "B" : isC ? "C" : <span className="warning">Unknown</span>;
-//
-// This type of ConditionalExpression chain is structured like this in the AST:
-//
-// ConditionalExpression {
-//   test: ...,
-//   consequent: ...,
-//   alternate: ConditionalExpression {
-//     test: ...,
-//     consequent: ...,
-//     alternate: ConditionalExpression {
-//       test: ...,
-//       consequent: ...,
-//       alternate: ...,
-//     }
-//   }
-// }
-function conditionalExpressionChainContainsJsx(node) {
-  // We don't care about whether each node was the test, consequent, or alternate
-  // We are only checking if there's any JSXElements inside.
-  const conditionalExpressions = [node];
-  for (let index = 0; index < conditionalExpressions.length; index++) {
-    const conditionalExpression = conditionalExpressions[index];
-    for (const property of ["test", "consequent", "alternate"]) {
-      const node = conditionalExpression[property];
-
-      if (isJsxNode(node)) {
-        return true;
-      }
-
-      if (node.type === "ConditionalExpression") {
-        conditionalExpressions.push(node);
-      }
-    }
-  }
-
-  return false;
-}
-
 // Break the closing paren to keep the chain right after it:
 // (a
 //   ? b
