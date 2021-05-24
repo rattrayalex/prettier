@@ -264,6 +264,10 @@ function printTernary(path, options, print, args) {
       firstNonConditionalParent.type === "ObjectProperty" ||
       firstNonConditionalParent.type === "Property");
 
+  const isOnSameLineAsReturn =
+    (parent.type === "ReturnStatement" || parent.type === "ThrowStatement") &&
+    !(isConsequentTernary || isAlternateTernary);
+
   const isInJsx =
     isConditionalExpression &&
     firstNonConditionalParent.type === "JSXExpressionContainer" &&
@@ -356,13 +360,14 @@ function printTernary(path, options, print, args) {
     shouldBreak ? breakParent : "",
   ];
 
-  const result = isOnSameLineAsAssignment
-    ? group(indent(parts))
-    : isInTest || shouldExtraIndent
-    ? group([indent([softline, parts]), breakTSClosingParen ? softline : ""])
-    : parent === firstNonConditionalParent
-    ? group(parts)
-    : parts;
+  const result =
+    isOnSameLineAsAssignment || isOnSameLineAsReturn
+      ? group(indent(parts))
+      : isInTest || shouldExtraIndent
+      ? group([indent([softline, parts]), breakTSClosingParen ? softline : ""])
+      : parent === firstNonConditionalParent
+      ? group(parts)
+      : parts;
 
   return result;
 }

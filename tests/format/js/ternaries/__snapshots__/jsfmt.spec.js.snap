@@ -531,8 +531,7 @@ a ?
 a ?
     {
         a: function () {
-            return (
-                a ?
+            return a ?
                     {
                         a: [
                             a ?
@@ -550,8 +549,7 @@ a ?
                                         a ? 0 : 1,
                                     ],
                                     function () {
-                                        return (
-                                            a ?
+                                        return a ?
                                                 {
                                                     a: 0,
                                                 }
@@ -562,8 +560,7 @@ a ?
                                                     },
                                                     {},
                                                 ]
-                                            )
-                                        );
+                                            );
                                     },
                                 ]
                             ),
@@ -614,8 +611,7 @@ a ?
                                             }
                                         : (
                                             (function (a) {
-                                                return (
-                                                    a() ?
+                                                return a() ?
                                                         [
                                                             {
                                                                 a: 0,
@@ -633,8 +629,7 @@ a ?
                                                                 a: 0,
                                                             },
                                                         ])
-                                                    )
-                                                );
+                                                    );
                                             })(
                                                 a ?
                                                     function (a) {
@@ -656,8 +651,7 @@ a ?
                             }
                         : function () {},
                     ]
-                )
-            );
+                );
         },
     }
 : a;
@@ -894,8 +888,7 @@ a ?
 a ?
 	{
 		a: function () {
-			return (
-				a ?
+			return a ?
 					{
 						a: [
 							a ?
@@ -913,8 +906,7 @@ a ?
 										a ? 0 : 1,
 									],
 									function () {
-										return (
-											a ?
+										return a ?
 												{
 													a: 0,
 												}
@@ -925,8 +917,7 @@ a ?
 													},
 													{},
 												]
-											)
-										);
+											);
 									},
 								]
 							),
@@ -977,8 +968,7 @@ a ?
 											}
 										: (
 											(function (a) {
-												return (
-													a() ?
+												return a() ?
 														[
 															{
 																a: 0,
@@ -996,8 +986,7 @@ a ?
 																a: 0,
 															},
 														])
-													)
-												);
+													);
 											})(
 												a ?
 													function (a) {
@@ -1019,8 +1008,7 @@ a ?
 							}
 						: function () {},
 					]
-				)
-			);
+				);
 		},
 	}
 : a;
@@ -1256,8 +1244,7 @@ a ?
 a ?
 	{
 		a: function () {
-			return (
-				a ?
+			return a ?
 					{
 						a: [
 							a ?
@@ -1275,8 +1262,7 @@ a ?
 										a ? 0 : 1,
 									],
 									function () {
-										return (
-											a ?
+										return a ?
 												{
 													a: 0,
 												}
@@ -1287,8 +1273,7 @@ a ?
 													},
 													{},
 												]
-											)
-										);
+											);
 									},
 								]
 							),
@@ -1339,8 +1324,7 @@ a ?
 											}
 										: (
 											(function (a) {
-												return (
-													a() ?
+												return a() ?
 														[
 															{
 																a: 0,
@@ -1358,8 +1342,7 @@ a ?
 																a: 0,
 															},
 														])
-													)
-												);
+													);
 											})(
 												a ?
 													function (a) {
@@ -1381,8 +1364,7 @@ a ?
 							}
 						: function () {},
 					]
-				)
-			);
+				);
 		},
 	}
 : a;
@@ -1609,8 +1591,7 @@ a ?
 a ?
   {
     a: function () {
-      return (
-        a ?
+      return a ?
           {
             a: [
               a ?
@@ -1627,8 +1608,7 @@ a ?
                     a ? 0 : 1,
                   ],
                   function () {
-                    return (
-                      a ?
+                    return a ?
                         {
                           a: 0,
                         }
@@ -1637,8 +1617,7 @@ a ?
                             a: 0,
                           },
                           {},
-                        ]
-                    );
+                        ];
                   },
                 ],
             ],
@@ -1681,8 +1660,7 @@ a ?
                         a: 0,
                       }
                     : (function (a) {
-                        return (
-                          a() ?
+                        return a() ?
                             [
                               {
                                 a: 0,
@@ -1698,8 +1676,7 @@ a ?
                               {
                                 a: 0,
                               },
-                            ])
-                        );
+                            ]);
                       })(
                         a ?
                           function (a) {
@@ -1716,8 +1693,7 @@ a ?
                   );
               }
             : function () {},
-          ]
-      );
+          ];
     },
   }
 : a;

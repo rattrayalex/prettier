@@ -427,7 +427,9 @@ function printReturnAndThrowArgument(path, options, print) {
     } else if (
       isBinaryish(node.argument) ||
       node.argument.type === "SequenceExpression" ||
-      node.argument.type === "ConditionalExpression"
+      (node.argument.type === "ConditionalExpression" &&
+        (node.argument.consequent.type === "ConditionalExpression" ||
+          node.argument.alternate.type === "ConditionalExpression"))
     ) {
       parts.push(
         group([

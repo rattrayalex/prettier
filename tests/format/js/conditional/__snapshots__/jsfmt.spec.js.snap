@@ -834,10 +834,9 @@ const inReturn = () => {
   if (short) {
     return foo ? 1 : 2;
   }
-  return (
-    typeof row[aVeryLongFieldName] !== "undefined" ? row[aVeryLongFieldName]
-    : null
-  );
+  return typeof row[aVeryLongFieldName] !== "undefined" ?
+      row[aVeryLongFieldName]
+    : null;
 };
 
 // Remove current JSX Mode, and replace it with this algorithm:
