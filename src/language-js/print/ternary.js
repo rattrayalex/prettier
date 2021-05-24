@@ -233,8 +233,6 @@ function printTernary(path, options, print, args) {
   const isConsequentTernary = consequentNode.type === node.type;
   const isAlternateTernary = alternateNode.type === node.type;
   const isInChain = isAlternateTernary || isInAlternate;
-  const isOnSameLineAsAssignment =
-    args && args.assignmentLayout === "never-break-after-operator";
 
   // Find the outermost non-ConditionalExpression parent, and the outermost
   // ConditionalExpression parent.
@@ -254,6 +252,17 @@ function printTernary(path, options, print, args) {
   );
   const firstNonConditionalParent = currentParent || parent;
   const lastConditionalParent = previousParent;
+
+  const isOnSameLineAsAssignment =
+    args &&
+    args.assignmentLayout === "never-break-after-operator" &&
+    (firstNonConditionalParent.type === "AssignmentExpression" ||
+      firstNonConditionalParent.type === "VariableDeclarator" ||
+      firstNonConditionalParent.type === "ClassProperty" ||
+      firstNonConditionalParent.type === "PropertyDefinition" ||
+      firstNonConditionalParent.type === "ClassPrivateProperty" ||
+      firstNonConditionalParent.type === "ObjectProperty" ||
+      firstNonConditionalParent.type === "Property");
 
   const inJSX =
     isConditionalExpression &&

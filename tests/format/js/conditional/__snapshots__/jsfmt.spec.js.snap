@@ -1060,6 +1060,24 @@ resolveRedirectTo(
       : null
 )
 
+const delayedDataProvider = new Proxy(restProvider, {
+  get: (target, name, self) =>
+      name === 'then' ? // as we await for the dataProvider, JS calls then on it. We must trap that call or else the dataProvider will be called with the then method
+           self
+          : (
+          (resource, params) =>
+              new Promise(resolve =>
+                  setTimeout(
+                      () =>
+                          resolve(
+                              restProvider[name](resource, params)
+                          ),
+                      500
+                  )
+              )
+      ),
+});
+
 =====================================output=====================================
 // concatened string in consequent should be visually distinguishable from alternate
 const avatar = has_ordered ?
@@ -1180,6 +1198,17 @@ resolveRedirectTo(
   : requestPayload && requestPayload.data ? requestPayload.data
   : null
 );
+
+const delayedDataProvider = new Proxy(restProvider, {
+  get: (target, name, self) =>
+    (
+      name === "then" // as we await for the dataProvider, JS calls then on it. We must trap that call or else the dataProvider will be called with the then method
+    ) ? self
+    : (resource, params) =>
+        new Promise((resolve) =>
+          setTimeout(() => resolve(restProvider[name](resource, params)), 500)
+        ),
+});
 
 ================================================================================
 `;
