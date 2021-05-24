@@ -174,7 +174,8 @@ const { configureStore } = process.env.NODE_ENV === "production" ?
   comment
       comment
 */
-) ? foo
+) ?
+  foo
 : bar;
 
 test ?
@@ -202,7 +203,8 @@ test ?
 
 test ? /* comment */ foo : bar;
 
-test ? foo
+test ?
+  foo
 : /* comment
          comment
      comment
@@ -882,7 +884,8 @@ ternaryWithJSXElements.hasNoSpecialCasing =
 jsxExpressionContainer.inJSXAttribute.hasNoSpecialCasing = (
   <Foo
     withJSX={
-      isABeautifulRichDeepRedColor.andNotGreen ? <RedColorThing />
+      isABeautifulRichDeepRedColor.andNotGreen ?
+        <RedColorThing />
       : <GreenColorThing />
     }
   />
@@ -1089,7 +1092,8 @@ const redirectUrl = pathName ? pathName : (
 
 // And another, more pathological case of the above:
 const isEmpty = (obj) =>
-  obj instanceof Date ? false
+  obj instanceof Date ?
+    false
   : obj === "" || obj === null || obj === undefined || shallowEqual(obj, {});
 
 // Ternaries in JSXExpressionContainers that are just attributes
@@ -1201,7 +1205,8 @@ const delayedDataProvider = new Proxy(restProvider, {
   get: (target, name, self) =>
     (
       name === "then" // as we await for the dataProvider, JS calls then on it. We must trap that call or else the dataProvider will be called with the then method
-    ) ? self
+    ) ?
+      self
     : (resource, params) =>
         new Promise((resolve) =>
           setTimeout(() => resolve(restProvider[name](resource, params)), 500)

@@ -208,6 +208,7 @@ const wrapInParens = (doc) => [
 function printTernary(path, options, print, args) {
   const node = path.getValue();
   const isConditionalExpression = node.type === "ConditionalExpression";
+  const isTSConditional = !isConditionalExpression;
   const consequentNodePropertyName = isConditionalExpression
     ? "consequent"
     : "trueType";
@@ -276,8 +277,7 @@ function printTernary(path, options, print, args) {
 
   const shouldExtraIndent = shouldExtraIndentForConditionalExpression(path);
   const breakClosingParen = shouldBreakClosingParen(node, parent);
-  const breakTSClosingParen =
-    node.type === "TSConditionalType" && pathNeedsParens(path, options);
+  const breakTSClosingParen = isTSConditional && pathNeedsParens(path, options);
 
   // We want a whole chain of ConditionalExpressions to all
   // break if any of them break. That means we should only group around the
@@ -306,7 +306,7 @@ function printTernary(path, options, print, args) {
   const shouldHugAlt =
     !isParentTernary &&
     !isInChain &&
-    node.type !== "TSConditionalType" &&
+    !isTSConditional &&
     (isOnSameLineAsAssignment || isInJsx);
 
   const dedentIfRhs = (doc) => (isOnSameLineAsAssignment ? dedent(doc) : doc);
@@ -324,15 +324,18 @@ function printTernary(path, options, print, args) {
   ]);
 
   const testAndConsequent = Symbol("test-and-consequent");
-  const printedTestAndConsequent = group(
-    [
-      group([printedTest, " ?"]),
+  const printedTestAndConsequent =
+    shouldHugAlt || isInChain || isParentTernary || isTSConditional
+      ? group(
+          [
+            group([printedTest, " ?"]),
 
-      // Avoid indenting consequent if it isn't a chain, even if the test breaks.
-      isInChain ? consequent : group(consequent),
-    ],
-    { id: testAndConsequent }
-  );
+            // Avoid indenting consequent if it isn't a chain, even if the test breaks.
+            isInChain ? consequent : group(consequent),
+          ],
+          { id: testAndConsequent }
+        )
+      : [group([printedTest, " ?"]), consequent];
 
   const parts = [
     printedTestAndConsequent,

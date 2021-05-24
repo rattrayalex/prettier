@@ -26,7 +26,8 @@ const funnelSnapshotCard =
         (report === MY_OVERVIEW && !ReportGK.xar_metrics_active_capitol_v2) ||
         (report === COMPANY_OVERVIEW &&
             !ReportGK.xar_metrics_active_capitol_v2_company_metrics)
-    ) ? <ReportMetricsFunnelSnapshotCard metrics={metrics} />
+    ) ?
+        <ReportMetricsFunnelSnapshotCard metrics={metrics} />
     : null;
 
 room = room.map((row, rowIndex) =>
@@ -36,7 +37,8 @@ room = room.map((row, rowIndex) =>
             colIndex === 0 ||
             rowIndex === height ||
             colIndex === width
-        ) ? 1
+        ) ?
+            1
         : 0
     )
 );
@@ -71,7 +73,8 @@ const funnelSnapshotCard =
 		(report === MY_OVERVIEW && !ReportGK.xar_metrics_active_capitol_v2) ||
 		(report === COMPANY_OVERVIEW &&
 			!ReportGK.xar_metrics_active_capitol_v2_company_metrics)
-	) ? <ReportMetricsFunnelSnapshotCard metrics={metrics} />
+	) ?
+		<ReportMetricsFunnelSnapshotCard metrics={metrics} />
 	: null;
 
 room = room.map((row, rowIndex) =>
@@ -81,7 +84,8 @@ room = room.map((row, rowIndex) =>
 			colIndex === 0 ||
 			rowIndex === height ||
 			colIndex === width
-		) ? 1
+		) ?
+			1
 		: 0
 	)
 );
@@ -115,7 +119,8 @@ const funnelSnapshotCard =
 		(report === MY_OVERVIEW && !ReportGK.xar_metrics_active_capitol_v2) ||
 		(report === COMPANY_OVERVIEW &&
 			!ReportGK.xar_metrics_active_capitol_v2_company_metrics)
-	) ? <ReportMetricsFunnelSnapshotCard metrics={metrics} />
+	) ?
+		<ReportMetricsFunnelSnapshotCard metrics={metrics} />
 	: null;
 
 room = room.map((row, rowIndex) =>
@@ -125,7 +130,8 @@ room = room.map((row, rowIndex) =>
 			colIndex === 0 ||
 			rowIndex === height ||
 			colIndex === width
-		) ? 1
+		) ?
+			1
 		: 0
 	)
 );
@@ -167,7 +173,8 @@ room = room.map((row, rowIndex) =>
       colIndex === 0 ||
       rowIndex === height ||
       colIndex === width
-    ) ? 1
+    ) ?
+      1
     : 0
   )
 );
@@ -199,7 +206,8 @@ fn(
     (
         glimseGlyphsHazardNoopsTieTie === averredBathersBoxroomBuggyNurl &&
             anodyneCondosMalateOverateRetinol
-    ) ? annularCooeedSplicesWalksWayWay
+    ) ?
+        annularCooeedSplicesWalksWayWay
     : kochabCooieGameOnOboleUnweave
 );
 // TODO(rattrayalex): try to indent consequent/alternate here.
@@ -232,7 +240,8 @@ fn(
 	(
 		glimseGlyphsHazardNoopsTieTie === averredBathersBoxroomBuggyNurl &&
 			anodyneCondosMalateOverateRetinol
-	) ? annularCooeedSplicesWalksWayWay
+	) ?
+		annularCooeedSplicesWalksWayWay
 	: kochabCooieGameOnOboleUnweave
 );
 // TODO(rattrayalex): try to indent consequent/alternate here.
@@ -264,7 +273,8 @@ fn(
 	(
 		glimseGlyphsHazardNoopsTieTie === averredBathersBoxroomBuggyNurl &&
 			anodyneCondosMalateOverateRetinol
-	) ? annularCooeedSplicesWalksWayWay
+	) ?
+		annularCooeedSplicesWalksWayWay
 	: kochabCooieGameOnOboleUnweave
 );
 // TODO(rattrayalex): try to indent consequent/alternate here.
@@ -295,7 +305,8 @@ fn(
   (
     glimseGlyphsHazardNoopsTieTie === averredBathersBoxroomBuggyNurl &&
       anodyneCondosMalateOverateRetinol
-  ) ? annularCooeedSplicesWalksWayWay
+  ) ?
+    annularCooeedSplicesWalksWayWay
   : kochabCooieGameOnOboleUnweave
 );
 // TODO(rattrayalex): try to indent consequent/alternate here.
@@ -587,7 +598,8 @@ a ?
                                                     {
                                                         a: 0,
                                                     },
-                                                    a ? a()
+                                                    a ?
+                                                        a()
                                                     : (
                                                         a({
                                                             a: 0,
@@ -944,7 +956,8 @@ a ?
 													{
 														a: 0,
 													},
-													a ? a()
+													a ?
+														a()
 													: (
 														a({
 															a: 0,
@@ -1300,7 +1313,8 @@ a ?
 													{
 														a: 0,
 													},
-													a ? a()
+													a ?
+														a()
 													: (
 														a({
 															a: 0,
@@ -1641,7 +1655,8 @@ a ?
                           {
                             a: 0,
                           },
-                          a ? a()
+                          a ?
+                            a()
                           : a({
                               a: 0,
                             })
@@ -2187,7 +2202,8 @@ foo36 = new (
 
 bifornCringerMoshedPerplexSawder =
     askTrovenaBeenaDependsRowans +
-    (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+    (glimseGlyphsHazardNoopsTieTie === 0 ?
+        averredBathersBoxroomBuggyNurl
     : anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
@@ -2195,12 +2211,14 @@ bifornCringerMoshedPerplexSawder =
     ((
         glimseGlyphsHazardNoopsTieTie === 0 &&
         kochabCooieGameOnOboleUnweave === Math.PI
-    ) ? averredBathersBoxroomBuggyNurl
+    ) ?
+        averredBathersBoxroomBuggyNurl
     : anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
     askTrovenaBeenaDependsRowans +
-    (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+    (glimseGlyphsHazardNoopsTieTie === 0 ?
+        averredBathersBoxroomBuggyNurl
     : anodyneCondosMalateOverateRetinol
     ).Fooooooooooo.Fooooooooooo;
 
@@ -2209,13 +2227,15 @@ bifornCringerMoshedPerplexSawder =
     ((
         glimseGlyphsHazardNoopsTieTie === 0 &&
         kochabCooieGameOnOboleUnweave === Math.PI
-    ) ? averredBathersBoxroomBuggyNurl
+    ) ?
+        averredBathersBoxroomBuggyNurl
     : anodyneCondosMalateOverateRetinol
     ).Fooooooooooo.Fooooooooooo;
 
 bifornCringerMoshedPerplexSawder =
     askTrovenaBeenaDependsRowans +
-    (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+    (glimseGlyphsHazardNoopsTieTie === 0 ?
+        averredBathersBoxroomBuggyNurl
     : anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 
 bifornCringerMoshedPerplexSawder =
@@ -2223,7 +2243,8 @@ bifornCringerMoshedPerplexSawder =
     ((
         glimseGlyphsHazardNoopsTieTie === 0 &&
             kochabCooieGameOnOboleUnweave === Math.PI
-    ) ? averredBathersBoxroomBuggyNurl
+    ) ?
+        averredBathersBoxroomBuggyNurl
     : anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 // TODO(rattrayalex): try to fix this case
 
@@ -2231,7 +2252,8 @@ bifornCringerMoshedPerplexSawder = (
     (
         glimseGlyphsHazardNoopsTieTie === 0 &&
         kochabCooieGameOnOboleUnweave === Math.PI
-    ) ? averredBathersBoxroomBuggyNurl
+    ) ?
+        averredBathersBoxroomBuggyNurl
     : anodyneCondosMalateOverateRetinol).annularCooeedSplicesWalksWayWay
     .annularCooeedSplicesWalksWayWay(annularCooeedSplicesWalksWayWay)
     .annularCooeedSplicesWalksWayWay();
@@ -2258,56 +2280,65 @@ const decorated = (arg, ignoreRequestError) => {
         (
             typeof arg === "string" ||
             (arg && arg.valueOf && typeof arg.valueOf() === "string")
-        ) ? $delegate(arg, ignoreRequestError)
+        ) ?
+            $delegate(arg, ignoreRequestError)
         : handleAsyncOperations(arg, ignoreRequestError)).foo();
 };
 
 bifornCringerMoshedPerplexSawder = fn(
-    (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+    (glimseGlyphsHazardNoopsTieTie === 0 ?
+        averredBathersBoxroomBuggyNurl
     : anodyneCondosMalateOverateRetinol
     ).prop
 );
 
 fn(
-    (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+    (glimseGlyphsHazardNoopsTieTie === 0 ?
+        averredBathersBoxroomBuggyNurl
     : anodyneCondosMalateOverateRetinol
     ).prop
 );
 
 bifornCringerMoshedPerplexSawder = fn?.(
-    (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+    (glimseGlyphsHazardNoopsTieTie === 0 ?
+        averredBathersBoxroomBuggyNurl
     : anodyneCondosMalateOverateRetinol
     ).prop
 );
 
 fn?.(
-    (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+    (glimseGlyphsHazardNoopsTieTie === 0 ?
+        averredBathersBoxroomBuggyNurl
     : anodyneCondosMalateOverateRetinol
     ).prop
 );
 
 bifornCringerMoshedPerplexSawder =
     fn[
-        (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+        (glimseGlyphsHazardNoopsTieTie === 0 ?
+            averredBathersBoxroomBuggyNurl
         : anodyneCondosMalateOverateRetinol
         ).prop
     ];
 
 fn[
-    (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+    (glimseGlyphsHazardNoopsTieTie === 0 ?
+        averredBathersBoxroomBuggyNurl
     : anodyneCondosMalateOverateRetinol
     ).prop
 ];
 
 bifornCringerMoshedPerplexSawder =
     fn?.[
-        (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+        (glimseGlyphsHazardNoopsTieTie === 0 ?
+            averredBathersBoxroomBuggyNurl
         : anodyneCondosMalateOverateRetinol
         ).prop
     ];
 
 fn?.[
-    (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+    (glimseGlyphsHazardNoopsTieTie === 0 ?
+        averredBathersBoxroomBuggyNurl
     : anodyneCondosMalateOverateRetinol
     ).prop
 ];
@@ -2802,7 +2833,8 @@ foo36 = new (
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
-	(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+	(glimseGlyphsHazardNoopsTieTie === 0 ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
@@ -2810,12 +2842,14 @@ bifornCringerMoshedPerplexSawder =
 	((
 		glimseGlyphsHazardNoopsTieTie === 0 &&
 		kochabCooieGameOnOboleUnweave === Math.PI
-	) ? averredBathersBoxroomBuggyNurl
+	) ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
-	(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+	(glimseGlyphsHazardNoopsTieTie === 0 ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol
 	).Fooooooooooo.Fooooooooooo;
 
@@ -2824,13 +2858,15 @@ bifornCringerMoshedPerplexSawder =
 	((
 		glimseGlyphsHazardNoopsTieTie === 0 &&
 		kochabCooieGameOnOboleUnweave === Math.PI
-	) ? averredBathersBoxroomBuggyNurl
+	) ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol
 	).Fooooooooooo.Fooooooooooo;
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
-	(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+	(glimseGlyphsHazardNoopsTieTie === 0 ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 
 bifornCringerMoshedPerplexSawder =
@@ -2838,7 +2874,8 @@ bifornCringerMoshedPerplexSawder =
 	((
 		glimseGlyphsHazardNoopsTieTie === 0 &&
 			kochabCooieGameOnOboleUnweave === Math.PI
-	) ? averredBathersBoxroomBuggyNurl
+	) ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 // TODO(rattrayalex): try to fix this case
 
@@ -2846,7 +2883,8 @@ bifornCringerMoshedPerplexSawder = (
 	(
 		glimseGlyphsHazardNoopsTieTie === 0 &&
 		kochabCooieGameOnOboleUnweave === Math.PI
-	) ? averredBathersBoxroomBuggyNurl
+	) ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol).annularCooeedSplicesWalksWayWay
 	.annularCooeedSplicesWalksWayWay(annularCooeedSplicesWalksWayWay)
 	.annularCooeedSplicesWalksWayWay();
@@ -2873,56 +2911,65 @@ const decorated = (arg, ignoreRequestError) => {
 		(
 			typeof arg === "string" ||
 			(arg && arg.valueOf && typeof arg.valueOf() === "string")
-		) ? $delegate(arg, ignoreRequestError)
+		) ?
+			$delegate(arg, ignoreRequestError)
 		: handleAsyncOperations(arg, ignoreRequestError)).foo();
 };
 
 bifornCringerMoshedPerplexSawder = fn(
-	(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+	(glimseGlyphsHazardNoopsTieTie === 0 ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 fn(
-	(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+	(glimseGlyphsHazardNoopsTieTie === 0 ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 bifornCringerMoshedPerplexSawder = fn?.(
-	(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+	(glimseGlyphsHazardNoopsTieTie === 0 ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 fn?.(
-	(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+	(glimseGlyphsHazardNoopsTieTie === 0 ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 bifornCringerMoshedPerplexSawder =
 	fn[
-		(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+		(glimseGlyphsHazardNoopsTieTie === 0 ?
+			averredBathersBoxroomBuggyNurl
 		: anodyneCondosMalateOverateRetinol
 		).prop
 	];
 
 fn[
-	(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+	(glimseGlyphsHazardNoopsTieTie === 0 ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol
 	).prop
 ];
 
 bifornCringerMoshedPerplexSawder =
 	fn?.[
-		(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+		(glimseGlyphsHazardNoopsTieTie === 0 ?
+			averredBathersBoxroomBuggyNurl
 		: anodyneCondosMalateOverateRetinol
 		).prop
 	];
 
 fn?.[
-	(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+	(glimseGlyphsHazardNoopsTieTie === 0 ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol
 	).prop
 ];
@@ -3416,7 +3463,8 @@ foo36 = new (
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
-	(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+	(glimseGlyphsHazardNoopsTieTie === 0 ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
@@ -3424,12 +3472,14 @@ bifornCringerMoshedPerplexSawder =
 	((
 		glimseGlyphsHazardNoopsTieTie === 0 &&
 		kochabCooieGameOnOboleUnweave === Math.PI
-	) ? averredBathersBoxroomBuggyNurl
+	) ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
-	(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+	(glimseGlyphsHazardNoopsTieTie === 0 ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol
 	).Fooooooooooo.Fooooooooooo;
 
@@ -3438,13 +3488,15 @@ bifornCringerMoshedPerplexSawder =
 	((
 		glimseGlyphsHazardNoopsTieTie === 0 &&
 		kochabCooieGameOnOboleUnweave === Math.PI
-	) ? averredBathersBoxroomBuggyNurl
+	) ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol
 	).Fooooooooooo.Fooooooooooo;
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
-	(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+	(glimseGlyphsHazardNoopsTieTie === 0 ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 
 bifornCringerMoshedPerplexSawder =
@@ -3452,7 +3504,8 @@ bifornCringerMoshedPerplexSawder =
 	((
 		glimseGlyphsHazardNoopsTieTie === 0 &&
 			kochabCooieGameOnOboleUnweave === Math.PI
-	) ? averredBathersBoxroomBuggyNurl
+	) ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 // TODO(rattrayalex): try to fix this case
 
@@ -3460,7 +3513,8 @@ bifornCringerMoshedPerplexSawder = (
 	(
 		glimseGlyphsHazardNoopsTieTie === 0 &&
 		kochabCooieGameOnOboleUnweave === Math.PI
-	) ? averredBathersBoxroomBuggyNurl
+	) ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol).annularCooeedSplicesWalksWayWay
 	.annularCooeedSplicesWalksWayWay(annularCooeedSplicesWalksWayWay)
 	.annularCooeedSplicesWalksWayWay();
@@ -3487,56 +3541,65 @@ const decorated = (arg, ignoreRequestError) => {
 		(
 			typeof arg === "string" ||
 			(arg && arg.valueOf && typeof arg.valueOf() === "string")
-		) ? $delegate(arg, ignoreRequestError)
+		) ?
+			$delegate(arg, ignoreRequestError)
 		: handleAsyncOperations(arg, ignoreRequestError)).foo();
 };
 
 bifornCringerMoshedPerplexSawder = fn(
-	(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+	(glimseGlyphsHazardNoopsTieTie === 0 ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 fn(
-	(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+	(glimseGlyphsHazardNoopsTieTie === 0 ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 bifornCringerMoshedPerplexSawder = fn?.(
-	(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+	(glimseGlyphsHazardNoopsTieTie === 0 ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 fn?.(
-	(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+	(glimseGlyphsHazardNoopsTieTie === 0 ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 bifornCringerMoshedPerplexSawder =
 	fn[
-		(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+		(glimseGlyphsHazardNoopsTieTie === 0 ?
+			averredBathersBoxroomBuggyNurl
 		: anodyneCondosMalateOverateRetinol
 		).prop
 	];
 
 fn[
-	(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+	(glimseGlyphsHazardNoopsTieTie === 0 ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol
 	).prop
 ];
 
 bifornCringerMoshedPerplexSawder =
 	fn?.[
-		(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+		(glimseGlyphsHazardNoopsTieTie === 0 ?
+			averredBathersBoxroomBuggyNurl
 		: anodyneCondosMalateOverateRetinol
 		).prop
 	];
 
 fn?.[
-	(glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+	(glimseGlyphsHazardNoopsTieTie === 0 ?
+		averredBathersBoxroomBuggyNurl
 	: anodyneCondosMalateOverateRetinol
 	).prop
 ];
@@ -4029,7 +4092,8 @@ foo36 = new (
 
 bifornCringerMoshedPerplexSawder =
   askTrovenaBeenaDependsRowans +
-  (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+  (glimseGlyphsHazardNoopsTieTie === 0 ?
+    averredBathersBoxroomBuggyNurl
   : anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
@@ -4037,12 +4101,14 @@ bifornCringerMoshedPerplexSawder =
   ((
     glimseGlyphsHazardNoopsTieTie === 0 &&
     kochabCooieGameOnOboleUnweave === Math.PI
-  ) ? averredBathersBoxroomBuggyNurl
+  ) ?
+    averredBathersBoxroomBuggyNurl
   : anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
   askTrovenaBeenaDependsRowans +
-  (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+  (glimseGlyphsHazardNoopsTieTie === 0 ?
+    averredBathersBoxroomBuggyNurl
   : anodyneCondosMalateOverateRetinol
   ).Fooooooooooo.Fooooooooooo;
 
@@ -4051,13 +4117,15 @@ bifornCringerMoshedPerplexSawder =
   ((
     glimseGlyphsHazardNoopsTieTie === 0 &&
     kochabCooieGameOnOboleUnweave === Math.PI
-  ) ? averredBathersBoxroomBuggyNurl
+  ) ?
+    averredBathersBoxroomBuggyNurl
   : anodyneCondosMalateOverateRetinol
   ).Fooooooooooo.Fooooooooooo;
 
 bifornCringerMoshedPerplexSawder =
   askTrovenaBeenaDependsRowans +
-  (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+  (glimseGlyphsHazardNoopsTieTie === 0 ?
+    averredBathersBoxroomBuggyNurl
   : anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 
 bifornCringerMoshedPerplexSawder =
@@ -4065,7 +4133,8 @@ bifornCringerMoshedPerplexSawder =
   ((
     glimseGlyphsHazardNoopsTieTie === 0 &&
       kochabCooieGameOnOboleUnweave === Math.PI
-  ) ? averredBathersBoxroomBuggyNurl
+  ) ?
+    averredBathersBoxroomBuggyNurl
   : anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 // TODO(rattrayalex): try to fix this case
 
@@ -4073,7 +4142,8 @@ bifornCringerMoshedPerplexSawder = (
   (
     glimseGlyphsHazardNoopsTieTie === 0 &&
     kochabCooieGameOnOboleUnweave === Math.PI
-  ) ? averredBathersBoxroomBuggyNurl
+  ) ?
+    averredBathersBoxroomBuggyNurl
   : anodyneCondosMalateOverateRetinol).annularCooeedSplicesWalksWayWay
   .annularCooeedSplicesWalksWayWay(annularCooeedSplicesWalksWayWay)
   .annularCooeedSplicesWalksWayWay();
@@ -4100,56 +4170,65 @@ const decorated = (arg, ignoreRequestError) => {
     (
       typeof arg === "string" ||
       (arg && arg.valueOf && typeof arg.valueOf() === "string")
-    ) ? $delegate(arg, ignoreRequestError)
+    ) ?
+      $delegate(arg, ignoreRequestError)
     : handleAsyncOperations(arg, ignoreRequestError)).foo();
 };
 
 bifornCringerMoshedPerplexSawder = fn(
-  (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+  (glimseGlyphsHazardNoopsTieTie === 0 ?
+    averredBathersBoxroomBuggyNurl
   : anodyneCondosMalateOverateRetinol
   ).prop
 );
 
 fn(
-  (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+  (glimseGlyphsHazardNoopsTieTie === 0 ?
+    averredBathersBoxroomBuggyNurl
   : anodyneCondosMalateOverateRetinol
   ).prop
 );
 
 bifornCringerMoshedPerplexSawder = fn?.(
-  (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+  (glimseGlyphsHazardNoopsTieTie === 0 ?
+    averredBathersBoxroomBuggyNurl
   : anodyneCondosMalateOverateRetinol
   ).prop
 );
 
 fn?.(
-  (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+  (glimseGlyphsHazardNoopsTieTie === 0 ?
+    averredBathersBoxroomBuggyNurl
   : anodyneCondosMalateOverateRetinol
   ).prop
 );
 
 bifornCringerMoshedPerplexSawder =
   fn[
-    (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+    (glimseGlyphsHazardNoopsTieTie === 0 ?
+      averredBathersBoxroomBuggyNurl
     : anodyneCondosMalateOverateRetinol
     ).prop
   ];
 
 fn[
-  (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+  (glimseGlyphsHazardNoopsTieTie === 0 ?
+    averredBathersBoxroomBuggyNurl
   : anodyneCondosMalateOverateRetinol
   ).prop
 ];
 
 bifornCringerMoshedPerplexSawder =
   fn?.[
-    (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+    (glimseGlyphsHazardNoopsTieTie === 0 ?
+      averredBathersBoxroomBuggyNurl
     : anodyneCondosMalateOverateRetinol
     ).prop
   ];
 
 fn?.[
-  (glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+  (glimseGlyphsHazardNoopsTieTie === 0 ?
+    averredBathersBoxroomBuggyNurl
   : anodyneCondosMalateOverateRetinol
   ).prop
 ];
@@ -4971,7 +5050,8 @@ $var =
             $number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
                 kochabCooieGameOnOboleUnweave
             : annularCooeedSplicesWalksWayWay)
-    ) ? anodyneCondosMalateOverateRetinol
+    ) ?
+        anodyneCondosMalateOverateRetinol
     : averredBathersBoxroomBuggyNurl;
 
 const value =
@@ -5061,7 +5141,8 @@ $var =
 			$number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
 				kochabCooieGameOnOboleUnweave
 			: annularCooeedSplicesWalksWayWay)
-	) ? anodyneCondosMalateOverateRetinol
+	) ?
+		anodyneCondosMalateOverateRetinol
 	: averredBathersBoxroomBuggyNurl;
 
 const value =
@@ -5150,7 +5231,8 @@ $var =
 			$number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
 				kochabCooieGameOnOboleUnweave
 			: annularCooeedSplicesWalksWayWay)
-	) ? anodyneCondosMalateOverateRetinol
+	) ?
+		anodyneCondosMalateOverateRetinol
 	: averredBathersBoxroomBuggyNurl;
 
 const value =
@@ -5460,11 +5542,13 @@ const obj5 = conditionIsTruthy ? { some: 'long', object: 'with', lots: 'of', stu
 const obj0 = conditionIsTruthy ? shortThing : otherShortThing;
 
 const obj1 =
-    conditionIsTruthy ? { some: "long", object: "with", lots: "of", stuff }
+    conditionIsTruthy ?
+        { some: "long", object: "with", lots: "of", stuff }
     : shortThing;
 
 const obj2 =
-    conditionIsTruthy ? shortThing
+    conditionIsTruthy ?
+        shortThing
     : { some: "long", object: "with", lots: "of", stuff };
 
 const obj3 =
@@ -5478,7 +5562,8 @@ const obj3 =
     : shortThing;
 
 const obj4 =
-    conditionIsTruthy ? shortThing
+    conditionIsTruthy ?
+        shortThing
     : (
         {
             some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
@@ -5489,7 +5574,8 @@ const obj4 =
     );
 
 const obj5 =
-    conditionIsTruthy ? { some: "long", object: "with", lots: "of", stuff }
+    conditionIsTruthy ?
+        { some: "long", object: "with", lots: "of", stuff }
     : (
         {
             some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
@@ -5526,11 +5612,13 @@ const obj5 = conditionIsTruthy ? { some: 'long', object: 'with', lots: 'of', stu
 const obj0 = conditionIsTruthy ? shortThing : otherShortThing;
 
 const obj1 =
-	conditionIsTruthy ? { some: "long", object: "with", lots: "of", stuff }
+	conditionIsTruthy ?
+		{ some: "long", object: "with", lots: "of", stuff }
 	: shortThing;
 
 const obj2 =
-	conditionIsTruthy ? shortThing
+	conditionIsTruthy ?
+		shortThing
 	: { some: "long", object: "with", lots: "of", stuff };
 
 const obj3 =
@@ -5544,7 +5632,8 @@ const obj3 =
 	: shortThing;
 
 const obj4 =
-	conditionIsTruthy ? shortThing
+	conditionIsTruthy ?
+		shortThing
 	: (
 		{
 			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
@@ -5555,7 +5644,8 @@ const obj4 =
 	);
 
 const obj5 =
-	conditionIsTruthy ? { some: "long", object: "with", lots: "of", stuff }
+	conditionIsTruthy ?
+		{ some: "long", object: "with", lots: "of", stuff }
 	: (
 		{
 			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
@@ -5591,11 +5681,13 @@ const obj5 = conditionIsTruthy ? { some: 'long', object: 'with', lots: 'of', stu
 const obj0 = conditionIsTruthy ? shortThing : otherShortThing;
 
 const obj1 =
-	conditionIsTruthy ? { some: "long", object: "with", lots: "of", stuff }
+	conditionIsTruthy ?
+		{ some: "long", object: "with", lots: "of", stuff }
 	: shortThing;
 
 const obj2 =
-	conditionIsTruthy ? shortThing
+	conditionIsTruthy ?
+		shortThing
 	: { some: "long", object: "with", lots: "of", stuff };
 
 const obj3 =
@@ -5609,7 +5701,8 @@ const obj3 =
 	: shortThing;
 
 const obj4 =
-	conditionIsTruthy ? shortThing
+	conditionIsTruthy ?
+		shortThing
 	: (
 		{
 			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
@@ -5620,7 +5713,8 @@ const obj4 =
 	);
 
 const obj5 =
-	conditionIsTruthy ? { some: "long", object: "with", lots: "of", stuff }
+	conditionIsTruthy ?
+		{ some: "long", object: "with", lots: "of", stuff }
 	: (
 		{
 			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
