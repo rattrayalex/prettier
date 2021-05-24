@@ -163,8 +163,7 @@ function chooseLayout(path, options, print, leftDoc, rightPropertyName) {
     rightNode.type === "TaggedTemplateExpression" ||
     rightNode.type === "BooleanLiteral" ||
     isNumericLiteral(rightNode) ||
-    rightNode.type === "ClassExpression" ||
-    rightNode.type === "ConditionalExpression"
+    rightNode.type === "ClassExpression"
   ) {
     return "never-break-after-operator";
   }

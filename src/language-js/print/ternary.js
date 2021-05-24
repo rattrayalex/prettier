@@ -255,7 +255,8 @@ function printTernary(path, options, print, args) {
 
   const isOnSameLineAsAssignment =
     args &&
-    args.assignmentLayout === "never-break-after-operator" &&
+    args.assignmentLayout &&
+    args.assignmentLayout !== "break-after-operator" &&
     (firstNonConditionalParent.type === "AssignmentExpression" ||
       firstNonConditionalParent.type === "VariableDeclarator" ||
       firstNonConditionalParent.type === "ClassProperty" ||

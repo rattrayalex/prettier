@@ -1476,7 +1476,8 @@ jsxModeFromElementBreaking ?
 
 // This ConditionalExpression prints in JSX mode because its alternate is a
 // JSXElement. It is breaking.
-jsxModeFromElementBreaking ? 'a'
+jsxModeFromElementBreaking ?
+  'a'
 : (
   <div>
     <span>
@@ -1779,7 +1780,8 @@ jsxModeFromElementNonBreaking ? 'a' : <div />;
       thisIsASongAboutYourPoorSickPenguinHeHasAFeverAndHisToesAreBlueButIfISingToYourPoorSickPenguinHeWillFeelBetterInADayOrTwo
     </span>
   </div>
-) ? 'jsx mode from element breaking'
+) ?
+  'jsx mode from element breaking'
 : 'a';
 
 // This ConditionalExpression prints in JSX mode because its consequent is a
@@ -1794,7 +1796,8 @@ jsxModeFromElementBreaking ?
 
 // This ConditionalExpression prints in JSX mode because its alternate is a
 // JSXElement. It is breaking.
-jsxModeFromElementBreaking ? 'a'
+jsxModeFromElementBreaking ?
+  'a'
 : (
   <div>
     <span>
