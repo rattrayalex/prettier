@@ -343,7 +343,7 @@ function printTernary(path, options, print, args) {
   ];
 
   const result = isAssignmentRhs
-    ? indent(parts)
+    ? group(indent(parts))
     : isInTest || shouldExtraIndent
     ? group([indent([softline, parts]), breakTSClosingParen ? softline : ""])
     : parent === firstNonConditionalParent
