@@ -371,7 +371,7 @@ function printTernary(path, options, print, args) {
   const result =
     isOnSameLineAsAssignment || isOnSameLineAsReturn
       ? group(indent(parts))
-      : shouldExtraIndent
+      : shouldExtraIndent || (isTSConditional && isInTest)
       ? group([indent([softline, parts]), breakTSClosingParen ? softline : ""])
       : parent === firstNonConditionalParent
       ? group(parts)
