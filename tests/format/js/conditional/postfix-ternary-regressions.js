@@ -158,3 +158,27 @@ const delayedDataProvider = new Proxy(restProvider, {
               )
       ),
 });
+
+function foo4() {
+  return !match || match.length < 5 ? line : (
+    match[1] + match[2] + match[3] + match[4]
+  )
+}
+
+function foo5() {
+  return !match || match.length < 5 ? foo(line) : (
+    match[1] + match[2] + match[3] + match[4]
+  )
+}
+
+function foo6() {
+  return !match || match.length < 5 ? linethatisverylongandbreaksthelinehooray : (
+    match[1] + match[2] + match[3] + match[4]
+  )
+}
+
+function foo7() {
+  return !match || match.length < 5 ? linethatisverylongandbreaksthelinehoorayjustabitlonger : (
+    match[1] + match[2] + match[3] + match[4]
+  )
+}

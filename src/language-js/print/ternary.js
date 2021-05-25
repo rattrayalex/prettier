@@ -253,7 +253,9 @@ function printTernary(path, options, print, args) {
           isSimpleMemberExpression(consequentNode, { maxDepth: 3 }))));
 
   const dedentIfRhs = (doc) =>
-    shouldHugAlt && isOnSameLineAsAssignment ? dedent(doc) : doc;
+    shouldHugAlt && (isOnSameLineAsAssignment || isOnSameLineAsReturn)
+      ? dedent(doc)
+      : doc;
 
   const printedTest = isConditionalExpression
     ? wrapInParens(print("test"))
