@@ -121,15 +121,6 @@ function shouldExtraIndentForConditionalExpression(path) {
   return parent[ancestorNameMap.get(parent.type)] === child;
 }
 
-// The only things we don't wrap are:
-// * Nested conditional expressions in alternates
-// * null
-// * undefined
-const isNil = (node) =>
-  node.type === "NullLiteral" ||
-  (node.type === "Literal" && node.value === null) ||
-  (node.type === "Identifier" && node.name === "undefined");
-
 // Even though they don't need parens, we wrap (almost) everything in
 // parens when using ?: within JSX, because the parens are analogous to
 // curly braces in an if statement.
