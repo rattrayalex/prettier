@@ -93,7 +93,8 @@ func(
 );
 
 promise.then((result) =>
-  result.veryLongVariable.veryLongPropertyName > someOtherVariable ? "ok"
+  result.veryLongVariable.veryLongPropertyName > someOtherVariable ?
+    "ok"
   : "fail"
 );
 
@@ -193,7 +194,8 @@ func(
 );
 
 promise.then((result) =>
-  result.veryLongVariable.veryLongPropertyName > someOtherVariable ? "ok"
+  result.veryLongVariable.veryLongPropertyName > someOtherVariable ?
+    "ok"
   : "fail",
 );
 
@@ -292,7 +294,8 @@ func(
 );
 
 promise.then((result) =>
-  result.veryLongVariable.veryLongPropertyName > someOtherVariable ? "ok"
+  result.veryLongVariable.veryLongPropertyName > someOtherVariable ?
+    "ok"
   : "fail"
 );
 

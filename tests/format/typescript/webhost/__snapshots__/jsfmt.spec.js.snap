@@ -157,7 +157,8 @@ namespace TypeScript.WebTsc {
                 bom.length >= 2 &&
                 ((bom.charCodeAt(0) === 0xff && bom.charCodeAt(1) === 0xfe) ||
                   (bom.charCodeAt(0) === 0xfe && bom.charCodeAt(1) === 0xff))
-              ) ? "unicode"
+              ) ?
+                "unicode"
               : "utf-8";
           }
           // ReadText method always strips byte order mark from resulting string

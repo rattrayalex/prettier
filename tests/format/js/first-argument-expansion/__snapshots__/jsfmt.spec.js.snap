@@ -182,7 +182,8 @@ func(
   () => {
     thing();
   },
-  something(longArgumentName, anotherLongArgumentName) ? someOtherThing()
+  something(longArgumentName, anotherLongArgumentName) ?
+    someOtherThing()
   : somethingElse(true, 0)
 );
 
@@ -197,7 +198,8 @@ func(
       anotherLongArgumentName,
       anotherLongArgumentName
     )
-  ) ? someOtherThing()
+  ) ?
+    someOtherThing()
   : somethingElse(true, 0)
 );
 

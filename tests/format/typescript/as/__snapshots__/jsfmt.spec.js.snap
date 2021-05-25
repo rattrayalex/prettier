@@ -50,7 +50,8 @@ const iter2 = createIterator(self.controller, child, self.tag as SyncFunctionCom
 =====================================output=====================================
 const name = (description as DescriptionObject).name || (description as string);
 this.isTabActionBar((e.target || e.srcElement) as HTMLElement);
-(originalError ? wrappedError(errMsg, originalError)
+(originalError ?
+  wrappedError(errMsg, originalError)
 : Error(errMsg)) as InjectionError;
 "current" in (props.pagination as Object);
 ("current" in props.pagination) as Object;
@@ -453,7 +454,8 @@ function foo() {
 
 bifornCringerMoshedPerplexSawder =
   askTrovenaBeenaDependsRowans +
-  ((glimseGlyphsHazardNoopsTieTie === 0 ? averredBathersBoxroomBuggyNurl
+  ((glimseGlyphsHazardNoopsTieTie === 0 ?
+    averredBathersBoxroomBuggyNurl
   : anodyneCondosMalateOverateRetinol) as AnnularCooeedSplicesWalksWayWay);
 
 bifornCringerMoshedPerplexSawder =
@@ -461,7 +463,8 @@ bifornCringerMoshedPerplexSawder =
   (((
     glimseGlyphsHazardNoopsTieTie === 0 &&
     kochabCooieGameOnOboleUnweave === Math.PI
-  ) ? averredBathersBoxroomBuggyNurl
+  ) ?
+    averredBathersBoxroomBuggyNurl
   : anodyneCondosMalateOverateRetinol) as AnnularCooeedSplicesWalksWayWay);
 
 ================================================================================
