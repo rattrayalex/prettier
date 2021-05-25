@@ -4279,6 +4279,14 @@ const config = {
     )
 }
 
+showNotification(
+    typeof error === 'string' ? error :   error.message || body,
+    level || 'warning',
+    {
+        messageArgs,
+        undoable: false,
+    }
+)
 =====================================output=====================================
 let icecream = what == "cone" ?
         (p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`)
@@ -4369,7 +4377,7 @@ const config = {
             notify(
                 typeof error === "string" ?
                     error
-                : error.message || "ra.notification.http_error",
+                :   error.message || "ra.notification.http_error",
                 "warning",
                 {
                     _:
@@ -4382,6 +4390,15 @@ const config = {
         }
     ),
 };
+
+showNotification(
+    typeof error === "string" ? error : error.message || body,
+    level || "warning",
+    {
+        messageArgs,
+        undoable: false,
+    }
+);
 
 ================================================================================
 `;
@@ -4510,6 +4527,14 @@ const config = {
     )
 }
 
+showNotification(
+    typeof error === 'string' ? error :   error.message || body,
+    level || 'warning',
+    {
+        messageArgs,
+        undoable: false,
+    }
+)
 =====================================output=====================================
 let icecream = what == "cone" ?
 		(p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`)
@@ -4600,7 +4625,7 @@ const config = {
 			notify(
 				typeof error === "string" ?
 					error
-				: error.message || "ra.notification.http_error",
+				:	error.message || "ra.notification.http_error",
 				"warning",
 				{
 					_:
@@ -4613,6 +4638,15 @@ const config = {
 		}
 	),
 };
+
+showNotification(
+	typeof error === "string" ? error : error.message || body,
+	level || "warning",
+	{
+		messageArgs,
+		undoable: false,
+	}
+);
 
 ================================================================================
 `;
@@ -4740,6 +4774,14 @@ const config = {
     )
 }
 
+showNotification(
+    typeof error === 'string' ? error :   error.message || body,
+    level || 'warning',
+    {
+        messageArgs,
+        undoable: false,
+    }
+)
 =====================================output=====================================
 let icecream = what == "cone" ?
 		(p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`)
@@ -4830,7 +4872,7 @@ const config = {
 			notify(
 				typeof error === "string" ?
 					error
-				: error.message || "ra.notification.http_error",
+				:	error.message || "ra.notification.http_error",
 				"warning",
 				{
 					_:
@@ -4843,6 +4885,15 @@ const config = {
 		}
 	),
 };
+
+showNotification(
+	typeof error === "string" ? error : error.message || body,
+	level || "warning",
+	{
+		messageArgs,
+		undoable: false,
+	}
+);
 
 ================================================================================
 `;
@@ -4969,6 +5020,14 @@ const config = {
     )
 }
 
+showNotification(
+    typeof error === 'string' ? error :   error.message || body,
+    level || 'warning',
+    {
+        messageArgs,
+        undoable: false,
+    }
+)
 =====================================output=====================================
 let icecream = what == "cone" ?
     (p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`)
@@ -5072,6 +5131,15 @@ const config = {
     }
   ),
 };
+
+showNotification(
+  typeof error === "string" ? error : error.message || body,
+  level || "warning",
+  {
+    messageArgs,
+    undoable: false,
+  }
+);
 
 ================================================================================
 `;

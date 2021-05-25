@@ -113,3 +113,12 @@ const config = {
       }
     )
 }
+
+showNotification(
+    typeof error === 'string' ? error :   error.message || body,
+    level || 'warning',
+    {
+        messageArgs,
+        undoable: false,
+    }
+)

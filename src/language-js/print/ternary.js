@@ -132,9 +132,6 @@ const wrapInParens = (doc) => [
   ifBreak(")"),
 ];
 
-const fillToTabWidth = (options) =>
-  options.useTabs ? "\t" : " ".repeat(options.tabWidth - 1);
-
 /**
  * The following is the shared logic for
  * ternary operators, namely ConditionalExpression
@@ -173,6 +170,7 @@ function printTernary(path, options, print, args) {
   const isConsequentTernary = consequentNode.type === node.type;
   const isAlternateTernary = alternateNode.type === node.type;
   const isInChain = isAlternateTernary || isInAlternate;
+  const isBigTabs = options.tabWidth > 2 || options.useTabs;
 
   // Find the outermost non-ConditionalExpression parent, and the outermost
   // ConditionalExpression parent.
@@ -217,6 +215,12 @@ function printTernary(path, options, print, args) {
   const shouldExtraIndent = shouldExtraIndentForConditionalExpression(path);
   const breakClosingParen = shouldBreakClosingParen(node, parent);
   const breakTSClosingParen = isTSConditional && pathNeedsParens(path, options);
+
+  const fillTab = !isBigTabs
+    ? ""
+    : options.useTabs
+    ? "\t"
+    : " ".repeat(options.tabWidth - 1);
 
   // We want a whole chain of ConditionalExpressions to all
   // break if any of them break. That means we should only group around the
@@ -264,6 +268,7 @@ function printTernary(path, options, print, args) {
       : doc;
 
   const testId = Symbol("test");
+  const consequentId = Symbol("consequent");
   const testAndConsequentId = Symbol("test-and-consequent");
   const printedTest = group(
     [
@@ -295,9 +300,9 @@ function printTernary(path, options, print, args) {
           isInChain
             ? consequent
             : isTSConditional
-            ? group(consequent)
+            ? group(consequent, { id: consequentId })
             : // If the test breaks, also break the consequent
-              ifBreak(consequent, group(consequent), {
+              ifBreak(consequent, group(consequent, { id: consequentId }), {
                 groupId: testId,
               }),
         ],
@@ -316,29 +321,41 @@ function printTernary(path, options, print, args) {
     ":",
     isAlternateTernary
       ? " "
-      : !(options.tabWidth > 2 || options.useTabs)
+      : !isBigTabs
       ? " "
+      : shouldWrapAltInParens
+      ? "" // deal with it below
       : shouldGroupTestAndConsequent
       ? ifBreak(
-          fillToTabWidth(options),
-          ifBreak(
-            isInChain || shouldWrapAltInParens || shouldHugAlt
-              ? " "
-              : fillToTabWidth(options),
-            " "
-          ),
+          fillTab,
+          ifBreak(isInChain || shouldHugAlt ? " " : fillTab, " "),
           { groupId: testAndConsequentId }
         )
-      : shouldWrapAltInParens || shouldHugAlt
-      ? ifBreak(" ", fillToTabWidth(options))
-      : ifBreak(fillToTabWidth(options), " "),
+      : shouldHugAlt
+      ? ifBreak(" ", fillTab)
+      : ifBreak(fillTab, " "),
 
     isAlternateTernary
       ? print(alternateNodePropertyName)
       : shouldWrapAltInParens
-      ? group(dedentIfRhs(wrapInParens(print(alternateNodePropertyName))), {
-          shouldBreak: isInJsx && isJsxNode(alternateNode),
-        })
+      ? group(
+          [
+            !isBigTabs
+              ? ""
+              : ifBreak(
+                  " ",
+                  ifBreak(fillTab, "", {
+                    groupId: shouldGroupTestAndConsequent
+                      ? testAndConsequentId
+                      : consequentId,
+                  })
+                ),
+            dedentIfRhs(wrapInParens(print(alternateNodePropertyName))),
+          ],
+          {
+            shouldBreak: isInJsx && isJsxNode(alternateNode),
+          }
+        )
       : shouldHugAlt
       ? ifBreak(
           group(indent(print(alternateNodePropertyName))),
