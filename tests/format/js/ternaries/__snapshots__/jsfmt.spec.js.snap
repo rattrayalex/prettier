@@ -21,14 +21,13 @@ room = room.map((row, rowIndex) => (
 ))
 
 =====================================output=====================================
-const funnelSnapshotCard =
-    (
+const funnelSnapshotCard = (
         (report === MY_OVERVIEW && !ReportGK.xar_metrics_active_capitol_v2) ||
         (report === COMPANY_OVERVIEW &&
             !ReportGK.xar_metrics_active_capitol_v2_company_metrics)
     ) ?
         <ReportMetricsFunnelSnapshotCard metrics={metrics} />
-    : null;
+    :   null;
 
 room = room.map((row, rowIndex) =>
     row.map((col, colIndex) =>
@@ -39,7 +38,7 @@ room = room.map((row, rowIndex) =>
             colIndex === width
         ) ?
             1
-        : 0
+        :   0
     )
 );
 
@@ -68,14 +67,13 @@ room = room.map((row, rowIndex) => (
 ))
 
 =====================================output=====================================
-const funnelSnapshotCard =
-	(
+const funnelSnapshotCard = (
 		(report === MY_OVERVIEW && !ReportGK.xar_metrics_active_capitol_v2) ||
 		(report === COMPANY_OVERVIEW &&
 			!ReportGK.xar_metrics_active_capitol_v2_company_metrics)
 	) ?
 		<ReportMetricsFunnelSnapshotCard metrics={metrics} />
-	: null;
+	:	null;
 
 room = room.map((row, rowIndex) =>
 	row.map((col, colIndex) =>
@@ -86,7 +84,7 @@ room = room.map((row, rowIndex) =>
 			colIndex === width
 		) ?
 			1
-		: 0
+		:	0
 	)
 );
 
@@ -114,14 +112,13 @@ room = room.map((row, rowIndex) => (
 ))
 
 =====================================output=====================================
-const funnelSnapshotCard =
-	(
+const funnelSnapshotCard = (
 		(report === MY_OVERVIEW && !ReportGK.xar_metrics_active_capitol_v2) ||
 		(report === COMPANY_OVERVIEW &&
 			!ReportGK.xar_metrics_active_capitol_v2_company_metrics)
 	) ?
 		<ReportMetricsFunnelSnapshotCard metrics={metrics} />
-	: null;
+	:	null;
 
 room = room.map((row, rowIndex) =>
 	row.map((col, colIndex) =>
@@ -132,7 +129,7 @@ room = room.map((row, rowIndex) =>
 			colIndex === width
 		) ?
 			1
-		: 0
+		:	0
 	)
 );
 
@@ -209,7 +206,7 @@ fn(
             anodyneCondosMalateOverateRetinol
     ) ?
         annularCooeedSplicesWalksWayWay
-    : kochabCooieGameOnOboleUnweave
+    :   kochabCooieGameOnOboleUnweave
 );
 // TODO(rattrayalex): try to indent consequent/alternate here.
 
@@ -243,7 +240,7 @@ fn(
 			anodyneCondosMalateOverateRetinol
 	) ?
 		annularCooeedSplicesWalksWayWay
-	: kochabCooieGameOnOboleUnweave
+	:	kochabCooieGameOnOboleUnweave
 );
 // TODO(rattrayalex): try to indent consequent/alternate here.
 
@@ -276,7 +273,7 @@ fn(
 			anodyneCondosMalateOverateRetinol
 	) ?
 		annularCooeedSplicesWalksWayWay
-	: kochabCooieGameOnOboleUnweave
+	:	kochabCooieGameOnOboleUnweave
 );
 // TODO(rattrayalex): try to indent consequent/alternate here.
 
@@ -500,18 +497,16 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
         aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
             aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa;
+        :   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    :   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+:   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa;
 
 a ?
     {
         a: 0,
     }
-: (
-    {
-        a:
-            (
+:   {
+        a: (
                 {
                     a: 0,
                 }
@@ -519,10 +514,8 @@ a ?
                 {
                     a: 0,
                 }
-            : (
-                {
-                    y:
-                        (
+            :   {
+                    y: (
                             {
                                 a: 0,
                             }
@@ -530,15 +523,11 @@ a ?
                             {
                                 a: 0,
                             }
-                        : (
-                            {
+                        :   {
                                 a: 0,
-                            }
-                        ),
-                }
-            ),
-    }
-);
+                            },
+                },
+    };
 
 a ?
     {
@@ -551,8 +540,7 @@ a ?
                                     a: 0,
                                     b: [a ? [0, 1] : []],
                                 }
-                            : (
-                                [
+                            :   [
                                     [
                                         0,
                                         {
@@ -565,21 +553,17 @@ a ?
                                                 {
                                                     a: 0,
                                                 }
-                                            : (
-                                                [
+                                            :   [
                                                     {
                                                         a: 0,
                                                     },
                                                     {},
-                                                ]
-                                            );
+                                                ];
                                     },
-                                ]
-                            ),
+                                ],
                         ],
                     }
-                : (
-                    [
+                :   [
                         a ?
                             function () {
                                 a ?
@@ -590,8 +574,7 @@ a ?
                                                     a: 0,
                                                 }),
                                             }
-                                        : (
-                                            [
+                                        :   [
                                                 0,
                                                 a(),
                                                 a(
@@ -601,29 +584,24 @@ a ?
                                                     },
                                                     a ?
                                                         a()
-                                                    : (
-                                                        a({
+                                                    :   a({
                                                             a: 0,
                                                         })
-                                                    )
                                                 ),
                                                 a() ?
                                                     {
                                                         a: a(),
                                                         b: [],
                                                     }
-                                                : {},
+                                                :   {},
                                             ]
-                                        )
                                     )
-                                : (
-                                    a(
+                                :   a(
                                         a() ?
                                             {
                                                 a: 0,
                                             }
-                                        : (
-                                            (function (a) {
+                                        :   (function (a) {
                                                 return a() ?
                                                         [
                                                             {
@@ -631,18 +609,16 @@ a ?
                                                                 b: a(),
                                                             },
                                                         ]
-                                                    : (
-                                                        a([
+                                                    :   a([
                                                             a ?
                                                                 {
                                                                     a: 0,
                                                                 }
-                                                            : {},
+                                                            :   {},
                                                             {
                                                                 a: 0,
                                                             },
-                                                        ])
-                                                    );
+                                                        ]);
                                             })(
                                                 a ?
                                                     function (a) {
@@ -650,24 +626,19 @@ a ?
                                                             return 0;
                                                         };
                                                     }
-                                                : (
-                                                    function (a) {
+                                                :   function (a) {
                                                         return function () {
                                                             return 1;
                                                         };
                                                     }
-                                                )
                                             )
-                                        )
-                                    )
-                                );
+                                    );
                             }
-                        : function () {},
-                    ]
-                );
+                        :   function () {},
+                    ];
         },
     }
-: a;
+:   a;
 
 ================================================================================
 `;
@@ -858,18 +829,16 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
 	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
 		aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
 			aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-		: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-	: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa;
+		:	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+	:	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+:	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa;
 
 a ?
 	{
 		a: 0,
 	}
-: (
-	{
-		a:
-			(
+:	{
+		a: (
 				{
 					a: 0,
 				}
@@ -877,10 +846,8 @@ a ?
 				{
 					a: 0,
 				}
-			: (
-				{
-					y:
-						(
+			:	{
+					y: (
 							{
 								a: 0,
 							}
@@ -888,15 +855,11 @@ a ?
 							{
 								a: 0,
 							}
-						: (
-							{
+						:	{
 								a: 0,
-							}
-						),
-				}
-			),
-	}
-);
+							},
+				},
+	};
 
 a ?
 	{
@@ -909,8 +872,7 @@ a ?
 									a: 0,
 									b: [a ? [0, 1] : []],
 								}
-							: (
-								[
+							:	[
 									[
 										0,
 										{
@@ -923,21 +885,17 @@ a ?
 												{
 													a: 0,
 												}
-											: (
-												[
+											:	[
 													{
 														a: 0,
 													},
 													{},
-												]
-											);
+												];
 									},
-								]
-							),
+								],
 						],
 					}
-				: (
-					[
+				:	[
 						a ?
 							function () {
 								a ?
@@ -948,8 +906,7 @@ a ?
 													a: 0,
 												}),
 											}
-										: (
-											[
+										:	[
 												0,
 												a(),
 												a(
@@ -959,29 +916,24 @@ a ?
 													},
 													a ?
 														a()
-													: (
-														a({
+													:	a({
 															a: 0,
 														})
-													)
 												),
 												a() ?
 													{
 														a: a(),
 														b: [],
 													}
-												: {},
+												:	{},
 											]
-										)
 									)
-								: (
-									a(
+								:	a(
 										a() ?
 											{
 												a: 0,
 											}
-										: (
-											(function (a) {
+										:	(function (a) {
 												return a() ?
 														[
 															{
@@ -989,18 +941,16 @@ a ?
 																b: a(),
 															},
 														]
-													: (
-														a([
+													:	a([
 															a ?
 																{
 																	a: 0,
 																}
-															: {},
+															:	{},
 															{
 																a: 0,
 															},
-														])
-													);
+														]);
 											})(
 												a ?
 													function (a) {
@@ -1008,24 +958,19 @@ a ?
 															return 0;
 														};
 													}
-												: (
-													function (a) {
+												:	function (a) {
 														return function () {
 															return 1;
 														};
 													}
-												)
 											)
-										)
-									)
-								);
+									);
 							}
-						: function () {},
-					]
-				);
+						:	function () {},
+					];
 		},
 	}
-: a;
+:	a;
 
 ================================================================================
 `;
@@ -1215,18 +1160,16 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
 	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
 		aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ?
 			aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-		: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-	: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa;
+		:	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+	:	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+:	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa;
 
 a ?
 	{
 		a: 0,
 	}
-: (
-	{
-		a:
-			(
+:	{
+		a: (
 				{
 					a: 0,
 				}
@@ -1234,10 +1177,8 @@ a ?
 				{
 					a: 0,
 				}
-			: (
-				{
-					y:
-						(
+			:	{
+					y: (
 							{
 								a: 0,
 							}
@@ -1245,15 +1186,11 @@ a ?
 							{
 								a: 0,
 							}
-						: (
-							{
+						:	{
 								a: 0,
-							}
-						),
-				}
-			),
-	}
-);
+							},
+				},
+	};
 
 a ?
 	{
@@ -1266,8 +1203,7 @@ a ?
 									a: 0,
 									b: [a ? [0, 1] : []],
 								}
-							: (
-								[
+							:	[
 									[
 										0,
 										{
@@ -1280,21 +1216,17 @@ a ?
 												{
 													a: 0,
 												}
-											: (
-												[
+											:	[
 													{
 														a: 0,
 													},
 													{},
-												]
-											);
+												];
 									},
-								]
-							),
+								],
 						],
 					}
-				: (
-					[
+				:	[
 						a ?
 							function () {
 								a ?
@@ -1305,8 +1237,7 @@ a ?
 													a: 0,
 												}),
 											}
-										: (
-											[
+										:	[
 												0,
 												a(),
 												a(
@@ -1316,29 +1247,24 @@ a ?
 													},
 													a ?
 														a()
-													: (
-														a({
+													:	a({
 															a: 0,
 														})
-													)
 												),
 												a() ?
 													{
 														a: a(),
 														b: [],
 													}
-												: {},
+												:	{},
 											]
-										)
 									)
-								: (
-									a(
+								:	a(
 										a() ?
 											{
 												a: 0,
 											}
-										: (
-											(function (a) {
+										:	(function (a) {
 												return a() ?
 														[
 															{
@@ -1346,18 +1272,16 @@ a ?
 																b: a(),
 															},
 														]
-													: (
-														a([
+													:	a([
 															a ?
 																{
 																	a: 0,
 																}
-															: {},
+															:	{},
 															{
 																a: 0,
 															},
-														])
-													);
+														]);
 											})(
 												a ?
 													function (a) {
@@ -1365,24 +1289,19 @@ a ?
 															return 0;
 														};
 													}
-												: (
-													function (a) {
+												:	function (a) {
 														return function () {
 															return 1;
 														};
 													}
-												)
 											)
-										)
-									)
-								);
+									);
 							}
-						: function () {},
-					]
-				);
+						:	function () {},
+					];
 		},
 	}
-: a;
+:	a;
 
 ================================================================================
 `;
@@ -2022,190 +1941,190 @@ fn?.[
 foo7 = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
         baaaaaaaaaaaaaaaaaaaaar
-    : baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
+    :   baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
 
 foo8 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo9 = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
         baaaaaaaaaaaaaaaaaaaaar
-    : baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
+    :   baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
 
 function foo10() {
     return (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
+        :   baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
 }
 
 function foo11() {
     throw (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
+        :   baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
 }
 
 function foo12() {
     void (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
+        :   baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
 }
 
 foo13 = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
         baaaaaaaaaaaaaaaaaaaaar
-    : baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
+    :   baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
 
 foo14 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo15 = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
         baaaaaaaaaaaaaaaaaaaaar
-    : baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
+    :   baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
 
 function foo16() {
     return (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
+        :   baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
 }
 
 function foo17() {
     throw (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
+        :   baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
 }
 
 function foo18() {
     void (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
+        :   baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
 }
 
 foo19 = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
         baaaaaaaaaaaaaaaaaaaaar
-    : baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+    :   baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 
 foo20 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo21 = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
         baaaaaaaaaaaaaaaaaaaaar
-    : baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+    :   baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 
 function foo22() {
     return (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+        :   baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo23() {
     throw (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+        :   baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo24() {
     void (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+        :   baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 }
 
 foo25 = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
         baaaaaaaaaaaaaaaaaaaaar
-    : baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
+    :   baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
 
 foo26 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo27 = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
         baaaaaaaaaaaaaaaaaaaaar
-    : baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
+    :   baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
 
 function foo28() {
     return (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
+        :   baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
 }
 
 function foo29() {
     throw (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
+        :   baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
 }
 
 function foo30() {
     void (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
+        :   baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
 }
 
 function* foo31() {
     yield (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
+        :   baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
     yield (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+        :   baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
     yield (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
+        :   baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
     yield (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo.Fooooooooooo];
+        :   baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo.Fooooooooooo];
 }
 
 const foo32 = new (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
         baaaaaaaaaaaaaaaaaaaaar
-    : baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+    :   baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 
 function foo33() {
     return new (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+        :   baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo34() {
     throw new (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+        :   baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo35() {
     void new (
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+        :   baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 }
 
 foo36 = new (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
         baaaaaaaaaaaaaaaaaaaaar
-    : baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+    :   baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 
 bifornCringerMoshedPerplexSawder =
     askTrovenaBeenaDependsRowans +
     (glimseGlyphsHazardNoopsTieTie === 0 ?
         averredBathersBoxroomBuggyNurl
-    : anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
+    :   anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
     askTrovenaBeenaDependsRowans +
@@ -2214,13 +2133,13 @@ bifornCringerMoshedPerplexSawder =
         kochabCooieGameOnOboleUnweave === Math.PI
     ) ?
         averredBathersBoxroomBuggyNurl
-    : anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
+    :   anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
     askTrovenaBeenaDependsRowans +
     (glimseGlyphsHazardNoopsTieTie === 0 ?
         averredBathersBoxroomBuggyNurl
-    : anodyneCondosMalateOverateRetinol
+    :   anodyneCondosMalateOverateRetinol
     ).Fooooooooooo.Fooooooooooo;
 
 bifornCringerMoshedPerplexSawder =
@@ -2230,14 +2149,14 @@ bifornCringerMoshedPerplexSawder =
         kochabCooieGameOnOboleUnweave === Math.PI
     ) ?
         averredBathersBoxroomBuggyNurl
-    : anodyneCondosMalateOverateRetinol
+    :   anodyneCondosMalateOverateRetinol
     ).Fooooooooooo.Fooooooooooo;
 
 bifornCringerMoshedPerplexSawder =
     askTrovenaBeenaDependsRowans +
     (glimseGlyphsHazardNoopsTieTie === 0 ?
         averredBathersBoxroomBuggyNurl
-    : anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
+    :   anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 
 bifornCringerMoshedPerplexSawder =
     askTrovenaBeenaDependsRowans +
@@ -2246,7 +2165,7 @@ bifornCringerMoshedPerplexSawder =
             kochabCooieGameOnOboleUnweave === Math.PI
     ) ?
         averredBathersBoxroomBuggyNurl
-    : anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
+    :   anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 // TODO(rattrayalex): try to fix this case
 
 bifornCringerMoshedPerplexSawder = (
@@ -2255,25 +2174,25 @@ bifornCringerMoshedPerplexSawder = (
         kochabCooieGameOnOboleUnweave === Math.PI
     ) ?
         averredBathersBoxroomBuggyNurl
-    : anodyneCondosMalateOverateRetinol).annularCooeedSplicesWalksWayWay
+    :   anodyneCondosMalateOverateRetinol).annularCooeedSplicesWalksWayWay
     .annularCooeedSplicesWalksWayWay(annularCooeedSplicesWalksWayWay)
     .annularCooeedSplicesWalksWayWay();
 
 foo = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
         baaaaaaaaaaaaaaaaaaaaar
-    : baaaaaaaaaaaaaaaaaaaaaz)?.()?.()?.();
+    :   baaaaaaaaaaaaaaaaaaaaaz)?.()?.()?.();
 
 foo = (
     coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
         baaaaaaaaaaaaaaaaaaaaar
-    : baaaaaaaaaaaaaaaaaaaaaz)()()();
+    :   baaaaaaaaaaaaaaaaaaaaaz)()()();
 
 foo =
     foo.bar.baz[
         coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
             baaaaaaaaaaaaaaaaaaaaar
-        : baaaaaaaaaaaaaaaaaaaaaz
+        :   baaaaaaaaaaaaaaaaaaaaaz
     ];
 
 const decorated = (arg, ignoreRequestError) => {
@@ -2283,34 +2202,34 @@ const decorated = (arg, ignoreRequestError) => {
             (arg && arg.valueOf && typeof arg.valueOf() === "string")
         ) ?
             $delegate(arg, ignoreRequestError)
-        : handleAsyncOperations(arg, ignoreRequestError)).foo();
+        :   handleAsyncOperations(arg, ignoreRequestError)).foo();
 };
 
 bifornCringerMoshedPerplexSawder = fn(
     (glimseGlyphsHazardNoopsTieTie === 0 ?
         averredBathersBoxroomBuggyNurl
-    : anodyneCondosMalateOverateRetinol
+    :   anodyneCondosMalateOverateRetinol
     ).prop
 );
 
 fn(
     (glimseGlyphsHazardNoopsTieTie === 0 ?
         averredBathersBoxroomBuggyNurl
-    : anodyneCondosMalateOverateRetinol
+    :   anodyneCondosMalateOverateRetinol
     ).prop
 );
 
 bifornCringerMoshedPerplexSawder = fn?.(
     (glimseGlyphsHazardNoopsTieTie === 0 ?
         averredBathersBoxroomBuggyNurl
-    : anodyneCondosMalateOverateRetinol
+    :   anodyneCondosMalateOverateRetinol
     ).prop
 );
 
 fn?.(
     (glimseGlyphsHazardNoopsTieTie === 0 ?
         averredBathersBoxroomBuggyNurl
-    : anodyneCondosMalateOverateRetinol
+    :   anodyneCondosMalateOverateRetinol
     ).prop
 );
 
@@ -2318,14 +2237,14 @@ bifornCringerMoshedPerplexSawder =
     fn[
         (glimseGlyphsHazardNoopsTieTie === 0 ?
             averredBathersBoxroomBuggyNurl
-        : anodyneCondosMalateOverateRetinol
+        :   anodyneCondosMalateOverateRetinol
         ).prop
     ];
 
 fn[
     (glimseGlyphsHazardNoopsTieTie === 0 ?
         averredBathersBoxroomBuggyNurl
-    : anodyneCondosMalateOverateRetinol
+    :   anodyneCondosMalateOverateRetinol
     ).prop
 ];
 
@@ -2333,14 +2252,14 @@ bifornCringerMoshedPerplexSawder =
     fn?.[
         (glimseGlyphsHazardNoopsTieTie === 0 ?
             averredBathersBoxroomBuggyNurl
-        : anodyneCondosMalateOverateRetinol
+        :   anodyneCondosMalateOverateRetinol
         ).prop
     ];
 
 fn?.[
     (glimseGlyphsHazardNoopsTieTie === 0 ?
         averredBathersBoxroomBuggyNurl
-    : anodyneCondosMalateOverateRetinol
+    :   anodyneCondosMalateOverateRetinol
     ).prop
 ];
 
@@ -2653,190 +2572,190 @@ fn?.[
 foo7 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
+	:	baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
 
 foo8 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo9 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
+	:	baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
 
 function foo10() {
 	return (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
+		:	baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
 }
 
 function foo11() {
 	throw (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
+		:	baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
 }
 
 function foo12() {
 	void (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
+		:	baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
 }
 
 foo13 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
+	:	baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
 
 foo14 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo15 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
+	:	baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
 
 function foo16() {
 	return (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
+		:	baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
 }
 
 function foo17() {
 	throw (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
+		:	baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
 }
 
 function foo18() {
 	void (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
+		:	baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
 }
 
 foo19 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+	:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 
 foo20 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo21 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+	:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 
 function foo22() {
 	return (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo23() {
 	throw (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo24() {
 	void (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 }
 
 foo25 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
+	:	baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
 
 foo26 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo27 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
+	:	baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
 
 function foo28() {
 	return (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
 }
 
 function foo29() {
 	throw (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
 }
 
 function foo30() {
 	void (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
 }
 
 function* foo31() {
 	yield (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
 	yield (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 	yield (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
+		:	baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
 	yield (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo.Fooooooooooo];
+		:	baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo.Fooooooooooo];
 }
 
 const foo32 = new (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+	:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 
 function foo33() {
 	return new (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo34() {
 	throw new (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo35() {
 	void new (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 }
 
 foo36 = new (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+	:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
+	:	anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
@@ -2845,13 +2764,13 @@ bifornCringerMoshedPerplexSawder =
 		kochabCooieGameOnOboleUnweave === Math.PI
 	) ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
+	:	anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol
+	:	anodyneCondosMalateOverateRetinol
 	).Fooooooooooo.Fooooooooooo;
 
 bifornCringerMoshedPerplexSawder =
@@ -2861,14 +2780,14 @@ bifornCringerMoshedPerplexSawder =
 		kochabCooieGameOnOboleUnweave === Math.PI
 	) ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol
+	:	anodyneCondosMalateOverateRetinol
 	).Fooooooooooo.Fooooooooooo;
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
+	:	anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
@@ -2877,7 +2796,7 @@ bifornCringerMoshedPerplexSawder =
 			kochabCooieGameOnOboleUnweave === Math.PI
 	) ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
+	:	anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 // TODO(rattrayalex): try to fix this case
 
 bifornCringerMoshedPerplexSawder = (
@@ -2886,25 +2805,25 @@ bifornCringerMoshedPerplexSawder = (
 		kochabCooieGameOnOboleUnweave === Math.PI
 	) ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol).annularCooeedSplicesWalksWayWay
+	:	anodyneCondosMalateOverateRetinol).annularCooeedSplicesWalksWayWay
 	.annularCooeedSplicesWalksWayWay(annularCooeedSplicesWalksWayWay)
 	.annularCooeedSplicesWalksWayWay();
 
 foo = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)?.()?.()?.();
+	:	baaaaaaaaaaaaaaaaaaaaaz)?.()?.()?.();
 
 foo = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)()()();
+	:	baaaaaaaaaaaaaaaaaaaaaz)()()();
 
 foo =
 	foo.bar.baz[
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz
+		:	baaaaaaaaaaaaaaaaaaaaaz
 	];
 
 const decorated = (arg, ignoreRequestError) => {
@@ -2914,34 +2833,34 @@ const decorated = (arg, ignoreRequestError) => {
 			(arg && arg.valueOf && typeof arg.valueOf() === "string")
 		) ?
 			$delegate(arg, ignoreRequestError)
-		: handleAsyncOperations(arg, ignoreRequestError)).foo();
+		:	handleAsyncOperations(arg, ignoreRequestError)).foo();
 };
 
 bifornCringerMoshedPerplexSawder = fn(
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol
+	:	anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 fn(
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol
+	:	anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 bifornCringerMoshedPerplexSawder = fn?.(
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol
+	:	anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 fn?.(
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol
+	:	anodyneCondosMalateOverateRetinol
 	).prop
 );
 
@@ -2949,14 +2868,14 @@ bifornCringerMoshedPerplexSawder =
 	fn[
 		(glimseGlyphsHazardNoopsTieTie === 0 ?
 			averredBathersBoxroomBuggyNurl
-		: anodyneCondosMalateOverateRetinol
+		:	anodyneCondosMalateOverateRetinol
 		).prop
 	];
 
 fn[
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol
+	:	anodyneCondosMalateOverateRetinol
 	).prop
 ];
 
@@ -2964,14 +2883,14 @@ bifornCringerMoshedPerplexSawder =
 	fn?.[
 		(glimseGlyphsHazardNoopsTieTie === 0 ?
 			averredBathersBoxroomBuggyNurl
-		: anodyneCondosMalateOverateRetinol
+		:	anodyneCondosMalateOverateRetinol
 		).prop
 	];
 
 fn?.[
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol
+	:	anodyneCondosMalateOverateRetinol
 	).prop
 ];
 
@@ -3283,190 +3202,190 @@ fn?.[
 foo7 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
+	:	baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
 
 foo8 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo9 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
+	:	baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
 
 function foo10() {
 	return (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
+		:	baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
 }
 
 function foo11() {
 	throw (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
+		:	baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
 }
 
 function foo12() {
 	void (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
+		:	baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo];
 }
 
 foo13 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
+	:	baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
 
 foo14 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo15 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
+	:	baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
 
 function foo16() {
 	return (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
+		:	baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
 }
 
 function foo17() {
 	throw (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
+		:	baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
 }
 
 function foo18() {
 	void (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
+		:	baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
 }
 
 foo19 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+	:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 
 foo20 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo21 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+	:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 
 function foo22() {
 	return (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo23() {
 	throw (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo24() {
 	void (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 }
 
 foo25 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
+	:	baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
 
 foo26 = (condition ? firstValue : secondValue)[SomeType];
 
 const foo27 = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
+	:	baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
 
 function foo28() {
 	return (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
 }
 
 function foo29() {
 	throw (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
 }
 
 function foo30() {
 	void (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
 }
 
 function* foo31() {
 	yield (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)?.(Fooooooooooo.Fooooooooooo);
 	yield (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 	yield (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
+		:	baaaaaaaaaaaaaaaaaaaaaz).Fooooooooooo.Fooooooooooo;
 	yield (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo.Fooooooooooo];
+		:	baaaaaaaaaaaaaaaaaaaaaz)[Fooooooooooo.Fooooooooooo];
 }
 
 const foo32 = new (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+	:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 
 function foo33() {
 	return new (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo34() {
 	throw new (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 }
 
 function foo35() {
 	void new (
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+		:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 }
 
 foo36 = new (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
+	:	baaaaaaaaaaaaaaaaaaaaaz)(Fooooooooooo.Fooooooooooo);
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
+	:	anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
@@ -3475,13 +3394,13 @@ bifornCringerMoshedPerplexSawder =
 		kochabCooieGameOnOboleUnweave === Math.PI
 	) ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
+	:	anodyneCondosMalateOverateRetinol)[AnnularCooeedSplicesWalksWayWay];
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol
+	:	anodyneCondosMalateOverateRetinol
 	).Fooooooooooo.Fooooooooooo;
 
 bifornCringerMoshedPerplexSawder =
@@ -3491,14 +3410,14 @@ bifornCringerMoshedPerplexSawder =
 		kochabCooieGameOnOboleUnweave === Math.PI
 	) ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol
+	:	anodyneCondosMalateOverateRetinol
 	).Fooooooooooo.Fooooooooooo;
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
+	:	anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 
 bifornCringerMoshedPerplexSawder =
 	askTrovenaBeenaDependsRowans +
@@ -3507,7 +3426,7 @@ bifornCringerMoshedPerplexSawder =
 			kochabCooieGameOnOboleUnweave === Math.PI
 	) ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
+	:	anodyneCondosMalateOverateRetinol)(Fooooooooooo.Fooooooooooo);
 // TODO(rattrayalex): try to fix this case
 
 bifornCringerMoshedPerplexSawder = (
@@ -3516,25 +3435,25 @@ bifornCringerMoshedPerplexSawder = (
 		kochabCooieGameOnOboleUnweave === Math.PI
 	) ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol).annularCooeedSplicesWalksWayWay
+	:	anodyneCondosMalateOverateRetinol).annularCooeedSplicesWalksWayWay
 	.annularCooeedSplicesWalksWayWay(annularCooeedSplicesWalksWayWay)
 	.annularCooeedSplicesWalksWayWay();
 
 foo = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)?.()?.()?.();
+	:	baaaaaaaaaaaaaaaaaaaaaz)?.()?.()?.();
 
 foo = (
 	coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 		baaaaaaaaaaaaaaaaaaaaar
-	: baaaaaaaaaaaaaaaaaaaaaz)()()();
+	:	baaaaaaaaaaaaaaaaaaaaaz)()()();
 
 foo =
 	foo.bar.baz[
 		coooooooooooooooooooooooooooooooooooooooooooooooooooond ?
 			baaaaaaaaaaaaaaaaaaaaar
-		: baaaaaaaaaaaaaaaaaaaaaz
+		:	baaaaaaaaaaaaaaaaaaaaaz
 	];
 
 const decorated = (arg, ignoreRequestError) => {
@@ -3544,34 +3463,34 @@ const decorated = (arg, ignoreRequestError) => {
 			(arg && arg.valueOf && typeof arg.valueOf() === "string")
 		) ?
 			$delegate(arg, ignoreRequestError)
-		: handleAsyncOperations(arg, ignoreRequestError)).foo();
+		:	handleAsyncOperations(arg, ignoreRequestError)).foo();
 };
 
 bifornCringerMoshedPerplexSawder = fn(
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol
+	:	anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 fn(
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol
+	:	anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 bifornCringerMoshedPerplexSawder = fn?.(
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol
+	:	anodyneCondosMalateOverateRetinol
 	).prop
 );
 
 fn?.(
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol
+	:	anodyneCondosMalateOverateRetinol
 	).prop
 );
 
@@ -3579,14 +3498,14 @@ bifornCringerMoshedPerplexSawder =
 	fn[
 		(glimseGlyphsHazardNoopsTieTie === 0 ?
 			averredBathersBoxroomBuggyNurl
-		: anodyneCondosMalateOverateRetinol
+		:	anodyneCondosMalateOverateRetinol
 		).prop
 	];
 
 fn[
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol
+	:	anodyneCondosMalateOverateRetinol
 	).prop
 ];
 
@@ -3594,14 +3513,14 @@ bifornCringerMoshedPerplexSawder =
 	fn?.[
 		(glimseGlyphsHazardNoopsTieTie === 0 ?
 			averredBathersBoxroomBuggyNurl
-		: anodyneCondosMalateOverateRetinol
+		:	anodyneCondosMalateOverateRetinol
 		).prop
 	];
 
 fn?.[
 	(glimseGlyphsHazardNoopsTieTie === 0 ?
 		averredBathersBoxroomBuggyNurl
-	: anodyneCondosMalateOverateRetinol
+	:	anodyneCondosMalateOverateRetinol
 	).prop
 ];
 
@@ -4341,10 +4260,9 @@ a
     : softline
 
 =====================================output=====================================
-let icecream =
-    what == "cone" ?
+let icecream = what == "cone" ?
         (p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`)
-    : (p) => \`here's your \${p} \${what}\`;
+    :   (p) => \`here's your \${p} \${what}\`;
 
 const value =
     condition1 ? value1
@@ -4391,7 +4309,7 @@ const paymentMessage2 =
         true //state == 'invalid_expiry'
     ) ?
         4 //'Expiry must be sometime in the past.'
-    : 5; // 'There was an issue with the payment.  Please contact support.'
+    :   5; // 'There was an issue with the payment.  Please contact support.'
 
 const foo = (
     <div
@@ -4412,7 +4330,7 @@ const foo = (
             i18n("Gold")
         : medals[0].type === 2 ?
             i18n("Platinum")
-        : i18n("Theme")}
+        :   i18n("Theme")}
     </div>
 );
 
@@ -4423,7 +4341,7 @@ a ? literalline
     }
 ) ?
     line
-: softline;
+:   softline;
 
 ================================================================================
 `;
@@ -4533,10 +4451,9 @@ a
     : softline
 
 =====================================output=====================================
-let icecream =
-	what == "cone" ?
+let icecream = what == "cone" ?
 		(p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`)
-	: (p) => \`here's your \${p} \${what}\`;
+	:	(p) => \`here's your \${p} \${what}\`;
 
 const value =
 	condition1 ? value1
@@ -4583,7 +4500,7 @@ const paymentMessage2 =
 		true //state == 'invalid_expiry'
 	) ?
 		4 //'Expiry must be sometime in the past.'
-	: 5; // 'There was an issue with the payment.  Please contact support.'
+	:	5; // 'There was an issue with the payment.  Please contact support.'
 
 const foo = (
 	<div
@@ -4604,7 +4521,7 @@ const foo = (
 			i18n("Gold")
 		: medals[0].type === 2 ?
 			i18n("Platinum")
-		: i18n("Theme")}
+		:	i18n("Theme")}
 	</div>
 );
 
@@ -4615,7 +4532,7 @@ a ? literalline
 	}
 ) ?
 	line
-: softline;
+:	softline;
 
 ================================================================================
 `;
@@ -4724,10 +4641,9 @@ a
     : softline
 
 =====================================output=====================================
-let icecream =
-	what == "cone" ?
+let icecream = what == "cone" ?
 		(p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`)
-	: (p) => \`here's your \${p} \${what}\`;
+	:	(p) => \`here's your \${p} \${what}\`;
 
 const value =
 	condition1 ? value1
@@ -4774,7 +4690,7 @@ const paymentMessage2 =
 		true //state == 'invalid_expiry'
 	) ?
 		4 //'Expiry must be sometime in the past.'
-	: 5; // 'There was an issue with the payment.  Please contact support.'
+	:	5; // 'There was an issue with the payment.  Please contact support.'
 
 const foo = (
 	<div
@@ -4795,7 +4711,7 @@ const foo = (
 			i18n("Gold")
 		: medals[0].type === 2 ?
 			i18n("Platinum")
-		: i18n("Theme")}
+		:	i18n("Theme")}
 	</div>
 );
 
@@ -4806,7 +4722,7 @@ a ? literalline
 	}
 ) ?
 	line
-: softline;
+:	softline;
 
 ================================================================================
 `;
@@ -5045,31 +4961,33 @@ const value = (bifornCringerMoshedPerplexSawder
 );
 
 =====================================output=====================================
-$var =
-    (
+$var = (
         (
             $number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
                 kochabCooieGameOnOboleUnweave
-            : annularCooeedSplicesWalksWayWay)
+            :   annularCooeedSplicesWalksWayWay
+        )
     ) ?
         anodyneCondosMalateOverateRetinol
-    : averredBathersBoxroomBuggyNurl;
+    :   averredBathersBoxroomBuggyNurl;
 
 const value =
     (
         (
             bifornCringerMoshedPerplexSawder ? askTrovenaBeenaDependsRowans
-            : glimseGlyphsHazardNoopsTieTie)
+            :   glimseGlyphsHazardNoopsTieTie
+        )
     ) ?
         true ? true
-        : false
+        :   false
     : true ? true
     : false;
 
 (
     (
         bifornCringerMoshedPerplexSawder ? askTrovenaBeenaDependsRowans
-        : glimseGlyphsHazardNoopsTieTie)
+        :   glimseGlyphsHazardNoopsTieTie
+    )
 ) ?
     <Element>
         <Sub />
@@ -5136,31 +5054,33 @@ const value = (bifornCringerMoshedPerplexSawder
 );
 
 =====================================output=====================================
-$var =
-	(
+$var = (
 		(
 			$number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
 				kochabCooieGameOnOboleUnweave
-			: annularCooeedSplicesWalksWayWay)
+			:	annularCooeedSplicesWalksWayWay
+		)
 	) ?
 		anodyneCondosMalateOverateRetinol
-	: averredBathersBoxroomBuggyNurl;
+	:	averredBathersBoxroomBuggyNurl;
 
 const value =
 	(
 		(
 			bifornCringerMoshedPerplexSawder ? askTrovenaBeenaDependsRowans
-			: glimseGlyphsHazardNoopsTieTie)
+			:	glimseGlyphsHazardNoopsTieTie
+		)
 	) ?
 		true ? true
-		: false
+		:	false
 	: true ? true
 	: false;
 
 (
 	(
 		bifornCringerMoshedPerplexSawder ? askTrovenaBeenaDependsRowans
-		: glimseGlyphsHazardNoopsTieTie)
+		:	glimseGlyphsHazardNoopsTieTie
+	)
 ) ?
 	<Element>
 		<Sub />
@@ -5226,31 +5146,33 @@ const value = (bifornCringerMoshedPerplexSawder
 );
 
 =====================================output=====================================
-$var =
-	(
+$var = (
 		(
 			$number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
 				kochabCooieGameOnOboleUnweave
-			: annularCooeedSplicesWalksWayWay)
+			:	annularCooeedSplicesWalksWayWay
+		)
 	) ?
 		anodyneCondosMalateOverateRetinol
-	: averredBathersBoxroomBuggyNurl;
+	:	averredBathersBoxroomBuggyNurl;
 
 const value =
 	(
 		(
 			bifornCringerMoshedPerplexSawder ? askTrovenaBeenaDependsRowans
-			: glimseGlyphsHazardNoopsTieTie)
+			:	glimseGlyphsHazardNoopsTieTie
+		)
 	) ?
 		true ? true
-		: false
+		:	false
 	: true ? true
 	: false;
 
 (
 	(
 		bifornCringerMoshedPerplexSawder ? askTrovenaBeenaDependsRowans
-		: glimseGlyphsHazardNoopsTieTie)
+		:	glimseGlyphsHazardNoopsTieTie
+	)
 ) ?
 	<Element>
 		<Sub />
@@ -5319,7 +5241,8 @@ $var = (
     (
       $number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
         kochabCooieGameOnOboleUnweave
-      : annularCooeedSplicesWalksWayWay)
+      : annularCooeedSplicesWalksWayWay
+    )
   ) ?
     anodyneCondosMalateOverateRetinol
   : averredBathersBoxroomBuggyNurl;
@@ -5328,7 +5251,8 @@ const value =
   (
     (
       bifornCringerMoshedPerplexSawder ? askTrovenaBeenaDependsRowans
-      : glimseGlyphsHazardNoopsTieTie)
+      : glimseGlyphsHazardNoopsTieTie
+    )
   ) ?
     true ? true
     : false
@@ -5338,7 +5262,8 @@ const value =
 (
   (
     bifornCringerMoshedPerplexSawder ? askTrovenaBeenaDependsRowans
-    : glimseGlyphsHazardNoopsTieTie)
+    : glimseGlyphsHazardNoopsTieTie
+  )
 ) ?
   <Element>
     <Sub />
@@ -5376,23 +5301,21 @@ a => a ? aasdasdasdasdasdasdaaasdasdasdasdasdasdasdasdasdasdasdasdasdaaaaaa : a
 =====================================output=====================================
 debug ?
     this.state.isVisible ? "partially visible"
-    : "hidden"
-: null;
+    :   "hidden"
+:   null;
 debug ?
     this.state.isVisible && somethingComplex ? "partially visible"
-    : "hidden"
-: null;
+    :   "hidden"
+:   null;
 
 (a) =>
     a ?
         () => {
             a;
         }
-    : (
-        () => {
+    :   () => {
             a;
-        }
-    );
+        };
 (a) => (a ? a : a);
 (a) =>
     a ? aasdasdasdasdasdasdaaasdasdasdasdasdasdasdasdasdasdasdasdasdaaaaaa : a;
@@ -5418,23 +5341,21 @@ a => a ? aasdasdasdasdasdasdaaasdasdasdasdasdasdasdasdasdasdasdasdasdaaaaaa : a
 =====================================output=====================================
 debug ?
 	this.state.isVisible ? "partially visible"
-	: "hidden"
-: null;
+	:	"hidden"
+:	null;
 debug ?
 	this.state.isVisible && somethingComplex ? "partially visible"
-	: "hidden"
-: null;
+	:	"hidden"
+:	null;
 
 (a) =>
 	a ?
 		() => {
 			a;
 		}
-	: (
-		() => {
+	:	() => {
 			a;
-		}
-	);
+		};
 (a) => (a ? a : a);
 (a) =>
 	a ? aasdasdasdasdasdasdaaasdasdasdasdasdasdasdasdasdasdasdasdasdaaaaaa : a;
@@ -5459,23 +5380,21 @@ a => a ? aasdasdasdasdasdasdaaasdasdasdasdasdasdasdasdasdasdasdasdasdaaaaaa : a
 =====================================output=====================================
 debug ?
 	this.state.isVisible ? "partially visible"
-	: "hidden"
-: null;
+	:	"hidden"
+:	null;
 debug ?
 	this.state.isVisible && somethingComplex ? "partially visible"
-	: "hidden"
-: null;
+	:	"hidden"
+:	null;
 
 (a) =>
 	a ?
 		() => {
 			a;
 		}
-	: (
-		() => {
+	:	() => {
 			a;
-		}
-	);
+		};
 (a) => (a ? a : a);
 (a) =>
 	a ? aasdasdasdasdasdasdaaasdasdasdasdasdasdasdasdasdasdasdasdasdaaaaaa : a;
@@ -5543,49 +5462,40 @@ const obj5 = conditionIsTruthy ? { some: 'long', object: 'with', lots: 'of', stu
 =====================================output=====================================
 const obj0 = conditionIsTruthy ? shortThing : otherShortThing;
 
-const obj1 =
-    conditionIsTruthy ?
+const obj1 = conditionIsTruthy ?
         { some: "long", object: "with", lots: "of", stuff }
-    : shortThing;
+    :   shortThing;
 
-const obj2 =
-    conditionIsTruthy ?
-        shortThing
-    : { some: "long", object: "with", lots: "of", stuff };
+const obj2 = conditionIsTruthy ? shortThing :   (
+    { some: "long", object: "with", lots: "of", stuff }
+);
 
-const obj3 =
-    conditionIsTruthy ?
+const obj3 = conditionIsTruthy ?
         {
             some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
             object: "with",
             lots: "of",
             stuff,
         }
-    : shortThing;
+    :   shortThing;
 
-const obj4 =
-    conditionIsTruthy ?
-        shortThing
-    : (
-        {
-            some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-            object: "with",
-            lots: "of",
-            stuff,
-        }
-    );
+const obj4 = conditionIsTruthy ? shortThing :   (
+    {
+        some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+        object: "with",
+        lots: "of",
+        stuff,
+    }
+);
 
-const obj5 =
-    conditionIsTruthy ?
+const obj5 = conditionIsTruthy ?
         { some: "long", object: "with", lots: "of", stuff }
-    : (
-        {
+    :   {
             some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
             object: "with",
             lots: "of",
             stuff,
-        }
-    );
+        };
 
 ================================================================================
 `;
@@ -5613,49 +5523,40 @@ const obj5 = conditionIsTruthy ? { some: 'long', object: 'with', lots: 'of', stu
 =====================================output=====================================
 const obj0 = conditionIsTruthy ? shortThing : otherShortThing;
 
-const obj1 =
-	conditionIsTruthy ?
+const obj1 = conditionIsTruthy ?
 		{ some: "long", object: "with", lots: "of", stuff }
-	: shortThing;
+	:	shortThing;
 
-const obj2 =
-	conditionIsTruthy ?
-		shortThing
-	: { some: "long", object: "with", lots: "of", stuff };
+const obj2 = conditionIsTruthy ? shortThing :	(
+	{ some: "long", object: "with", lots: "of", stuff }
+);
 
-const obj3 =
-	conditionIsTruthy ?
+const obj3 = conditionIsTruthy ?
 		{
 			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
 			object: "with",
 			lots: "of",
 			stuff,
 		}
-	: shortThing;
+	:	shortThing;
 
-const obj4 =
-	conditionIsTruthy ?
-		shortThing
-	: (
-		{
-			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-			object: "with",
-			lots: "of",
-			stuff,
-		}
-	);
+const obj4 = conditionIsTruthy ? shortThing :	(
+	{
+		some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+		object: "with",
+		lots: "of",
+		stuff,
+	}
+);
 
-const obj5 =
-	conditionIsTruthy ?
+const obj5 = conditionIsTruthy ?
 		{ some: "long", object: "with", lots: "of", stuff }
-	: (
-		{
+	:	{
 			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
 			object: "with",
 			lots: "of",
 			stuff,
-		}
-	);
+		};
 
 ================================================================================
 `;
@@ -5682,49 +5583,40 @@ const obj5 = conditionIsTruthy ? { some: 'long', object: 'with', lots: 'of', stu
 =====================================output=====================================
 const obj0 = conditionIsTruthy ? shortThing : otherShortThing;
 
-const obj1 =
-	conditionIsTruthy ?
+const obj1 = conditionIsTruthy ?
 		{ some: "long", object: "with", lots: "of", stuff }
-	: shortThing;
+	:	shortThing;
 
-const obj2 =
-	conditionIsTruthy ?
-		shortThing
-	: { some: "long", object: "with", lots: "of", stuff };
+const obj2 = conditionIsTruthy ? shortThing :	(
+	{ some: "long", object: "with", lots: "of", stuff }
+);
 
-const obj3 =
-	conditionIsTruthy ?
+const obj3 = conditionIsTruthy ?
 		{
 			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
 			object: "with",
 			lots: "of",
 			stuff,
 		}
-	: shortThing;
+	:	shortThing;
 
-const obj4 =
-	conditionIsTruthy ?
-		shortThing
-	: (
-		{
-			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
-			object: "with",
-			lots: "of",
-			stuff,
-		}
-	);
+const obj4 = conditionIsTruthy ? shortThing :	(
+	{
+		some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
+		object: "with",
+		lots: "of",
+		stuff,
+	}
+);
 
-const obj5 =
-	conditionIsTruthy ?
+const obj5 = conditionIsTruthy ?
 		{ some: "long", object: "with", lots: "of", stuff }
-	: (
-		{
+	:	{
 			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
 			object: "with",
 			lots: "of",
 			stuff,
-		}
-	);
+		};
 
 ================================================================================
 `;

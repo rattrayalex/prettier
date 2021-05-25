@@ -132,6 +132,9 @@ const wrapInParens = (doc) => [
   ifBreak(")"),
 ];
 
+const fillToTabWidth = (options) =>
+  options.useTabs ? "\t" : " ".repeat(options.tabWidth - 1);
+
 /**
  * The following is the shared logic for
  * ternary operators, namely ConditionalExpression
@@ -194,13 +197,13 @@ function printTernary(path, options, print, args) {
     args &&
     args.assignmentLayout &&
     args.assignmentLayout !== "break-after-operator" &&
-    (firstNonConditionalParent.type === "AssignmentExpression" ||
-      firstNonConditionalParent.type === "VariableDeclarator" ||
-      firstNonConditionalParent.type === "ClassProperty" ||
-      firstNonConditionalParent.type === "PropertyDefinition" ||
-      firstNonConditionalParent.type === "ClassPrivateProperty" ||
-      firstNonConditionalParent.type === "ObjectProperty" ||
-      firstNonConditionalParent.type === "Property");
+    (parent.type === "AssignmentExpression" ||
+      parent.type === "VariableDeclarator" ||
+      parent.type === "ClassProperty" ||
+      parent.type === "PropertyDefinition" ||
+      parent.type === "ClassPrivateProperty" ||
+      parent.type === "ObjectProperty" ||
+      parent.type === "Property");
 
   const isOnSameLineAsReturn =
     (parent.type === "ReturnStatement" || parent.type === "ThrowStatement") &&
@@ -232,11 +235,7 @@ function printTernary(path, options, print, args) {
   // force the alternate to wrap in parens non-2-space-indents
   // and JSX.
   const shouldWrapAltInParens =
-    options.useTabs ||
-    options.tabWidth !== 2 ||
-    isBinaryish(alternateNode) ||
-    isInJsx ||
-    isJsxNode(alternateNode);
+    isBinaryish(alternateNode) || isInJsx || isJsxNode(alternateNode);
 
   // Keep ` : ` on the same line as the consequent for this format:
   //   foo ? foo : (
@@ -250,16 +249,31 @@ function printTernary(path, options, print, args) {
     (isInJsx ||
       ((isOnSameLineAsAssignment || isOnSameLineAsReturn) &&
         (isSimpleAtomicExpression(consequentNode) ||
-          isSimpleMemberExpression(consequentNode, { maxDepth: 3 }))));
+          isSimpleMemberExpression(consequentNode, { maxDepth: 2 })) &&
+        !(
+          isSimpleAtomicExpression(alternateNode) ||
+          isSimpleMemberExpression(alternateNode, { maxDepth: 2 })
+        )));
+
+  const shouldGroupTestAndConsequent =
+    shouldHugAlt || isInChain || isParentTernary || isTSConditional;
 
   const dedentIfRhs = (doc) =>
     shouldHugAlt && (isOnSameLineAsAssignment || isOnSameLineAsReturn)
       ? dedent(doc)
       : doc;
 
-  const printedTest = isConditionalExpression
-    ? wrapInParens(print("test"))
-    : [print("checkType"), " ", "extends", " ", print("extendsType")];
+  const testId = Symbol("test");
+  const testAndConsequentId = Symbol("test-and-consequent");
+  const printedTest = group(
+    [
+      isConditionalExpression
+        ? wrapInParens(print("test"))
+        : [print("checkType"), " ", "extends", " ", print("extendsType")],
+      " ?",
+    ],
+    { id: testId }
+  );
 
   const consequent = indent([
     isConsequentTernary ||
@@ -269,29 +283,24 @@ function printTernary(path, options, print, args) {
     print(consequentNodePropertyName),
   ]);
 
-  const testGroupId = Symbol("test");
-  const printedTestWithQ = group([printedTest, " ?"], { id: testGroupId });
+  const printedTestAndConsequent = shouldGroupTestAndConsequent
+    ? group(
+        [
+          printedTest,
 
-  const testAndConsequent = Symbol("test-and-consequent");
-  const printedTestAndConsequent =
-    shouldHugAlt || isInChain || isParentTernary || isTSConditional
-      ? group(
-          [
-            printedTestWithQ,
-
-            // Avoid indenting consequent if it isn't a chain, even if the test breaks.
-            isInChain
-              ? consequent
-              : isTSConditional
-              ? group(consequent)
-              : // If the test breaks, also break the consequent
-                ifBreak(consequent, group(consequent), {
-                  groupId: testGroupId,
-                }),
-          ],
-          { id: testAndConsequent }
-        )
-      : [printedTestWithQ, consequent];
+          // Avoid indenting consequent if it isn't a chain, even if the test breaks.
+          isInChain
+            ? consequent
+            : isTSConditional
+            ? group(consequent)
+            : // If the test breaks, also break the consequent
+              ifBreak(consequent, group(consequent), {
+                groupId: testId,
+              }),
+        ],
+        { id: testAndConsequentId }
+      )
+    : [printedTest, consequent];
 
   const parts = [
     printedTestAndConsequent,
@@ -299,9 +308,26 @@ function printTernary(path, options, print, args) {
     isAlternateTernary
       ? hardline
       : shouldHugAlt
-      ? ifBreak(line, " ", { groupId: testAndConsequent })
+      ? ifBreak(line, " ", { groupId: testAndConsequentId })
       : line,
-    ": ",
+    ":",
+    isAlternateTernary
+      ? " "
+      : !(options.tabWidth > 2 || options.useTabs)
+      ? " "
+      : shouldGroupTestAndConsequent
+      ? ifBreak(
+          fillToTabWidth(options),
+          ifBreak(
+            isInChain || shouldWrapAltInParens ? " " : fillToTabWidth(options),
+            " "
+          ),
+          { groupId: testAndConsequentId }
+        )
+      : shouldWrapAltInParens
+      ? ifBreak(" ", fillToTabWidth(options))
+      : ifBreak(fillToTabWidth(options), " "),
+
     isAlternateTernary
       ? print(alternateNodePropertyName)
       : shouldWrapAltInParens
@@ -312,7 +338,7 @@ function printTernary(path, options, print, args) {
       ? ifBreak(
           group(indent(print(alternateNodePropertyName))),
           group(dedent(wrapInParens(print(alternateNodePropertyName)))),
-          { groupId: testAndConsequent }
+          { groupId: testAndConsequentId }
         )
       : group(indent(print(alternateNodePropertyName))),
 
@@ -324,7 +350,10 @@ function printTernary(path, options, print, args) {
     isOnSameLineAsAssignment || isOnSameLineAsReturn
       ? group(indent(parts))
       : isInTest || shouldExtraIndent
-      ? group([indent([softline, parts]), breakTSClosingParen ? softline : ""])
+      ? group([
+          indent([softline, parts]),
+          breakTSClosingParen || isInTest ? softline : "",
+        ])
       : parent === firstNonConditionalParent
       ? group(parts)
       : parts;
