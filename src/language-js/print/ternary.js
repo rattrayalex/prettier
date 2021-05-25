@@ -235,12 +235,6 @@ function printTernary(path, options, print, args) {
     isConsequentTernary ||
     isAlternateTernary;
 
-  // If the ternary breaks and the alternate is multiline,
-  // force the alternate to wrap in parens non-2-space-indents
-  // and JSX.
-  const shouldWrapAltInParens =
-    isBinaryish(alternateNode) || isInJsx || isJsxNode(alternateNode);
-
   // Keep ` : ` on the same line as the consequent for this format:
   //   foo ? foo : (
   //     something.else()
@@ -310,6 +304,8 @@ function printTernary(path, options, print, args) {
       )
     : [printedTest, consequent];
 
+  const printedAlternate = print(alternateNodePropertyName);
+
   const parts = [
     printedTestAndConsequent,
 
@@ -323,8 +319,6 @@ function printTernary(path, options, print, args) {
       ? " "
       : !isBigTabs
       ? " "
-      : shouldWrapAltInParens
-      ? "" // deal with it below
       : shouldGroupTestAndConsequent
       ? ifBreak(
           fillTab,
@@ -336,33 +330,16 @@ function printTernary(path, options, print, args) {
       : ifBreak(fillTab, " "),
 
     isAlternateTernary
-      ? print(alternateNodePropertyName)
-      : shouldWrapAltInParens
-      ? group(
-          [
-            !isBigTabs
-              ? ""
-              : ifBreak(
-                  " ",
-                  ifBreak(fillTab, "", {
-                    groupId: shouldGroupTestAndConsequent
-                      ? testAndConsequentId
-                      : consequentId,
-                  })
-                ),
-            dedentIfRhs(wrapInParens(print(alternateNodePropertyName))),
-          ],
-          {
-            shouldBreak: isInJsx && isJsxNode(alternateNode),
-          }
-        )
+      ? printedAlternate
       : shouldHugAlt
       ? ifBreak(
-          group(indent(print(alternateNodePropertyName))),
-          group(dedent(wrapInParens(print(alternateNodePropertyName)))),
+          group([indent(printedAlternate), isInJsx ? softline : ""]),
+          isInJsx
+            ? group(wrapInParens(printedAlternate))
+            : group(dedent(wrapInParens(printedAlternate))),
           { groupId: testAndConsequentId }
         )
-      : group(indent(print(alternateNodePropertyName))),
+      : group([indent(printedAlternate), isInJsx ? softline : ""]),
 
     breakClosingParen && !shouldExtraIndent ? softline : "",
     shouldBreak ? breakParent : "",

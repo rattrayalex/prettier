@@ -857,25 +857,19 @@ const someJSX = (
     Typical jsx case:
     {showTheThing || pleaseShowTheThing ?
       <Foo attribute="such and such stuff here" />
-    : (
-      <Bar short />
-    )}
+    : <Bar short />}
     Nested, and with a non-jsx consequent:
     {component ?
       React.createElement(component, props)
     : render ?
       <div>{render(props)}</div>
-    : (
-      <div>Nothing is here</div>
-    )}
+    : <div>Nothing is here</div>}
     When the terminal alternate isn't a JSXElement, we don't force it to break:
     {showTheJSXElement ?
       <div>the stuff</div>
     : renderOtherStuff()}
     When the consequent is \`null\`, don't put a linebreak before or after it:
-    {!thing ? null : (
-      <TheThing thing={thing} />
-    )}
+    {!thing ? null : <TheThing thing={thing} />}
   </div>
 );
 

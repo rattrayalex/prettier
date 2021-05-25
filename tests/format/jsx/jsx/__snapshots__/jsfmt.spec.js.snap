@@ -843,13 +843,11 @@ jsxModeFromElementBreaking ?
 // JSXElement. It is breaking.
 jsxModeFromElementBreaking ?
   "a"
-: (
-  <div>
+: <div>
     <span>
       thisIsASongAboutYourPoorSickPenguinHeHasAFeverAndHisToesAreBlueButIfISingToYourPoorSickPenguinHeWillFeelBetterInADayOrTwo
     </span>
-  </div>
-);
+  </div>;
 
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is
@@ -920,9 +918,7 @@ cable ?
   ) ?
     draggingApp == null || newPropertyName == null ?
       <MigrationPropertyListItem />
-    : (
-      <MigrationPropertyListItem apps={Immutable.List()} />
-    )
+    : <MigrationPropertyListItem apps={Immutable.List()} />
   : null}
 </div>;
 
@@ -1163,13 +1159,11 @@ jsxModeFromElementBreaking ?
 // JSXElement. It is breaking.
 jsxModeFromElementBreaking ?
   "a"
-: (
-  <div>
+: <div>
     <span>
       thisIsASongAboutYourPoorSickPenguinHeHasAFeverAndHisToesAreBlueButIfISingToYourPoorSickPenguinHeWillFeelBetterInADayOrTwo
     </span>
-  </div>
-);
+  </div>;
 
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is
@@ -1240,9 +1234,7 @@ cable ?
   ) ?
     draggingApp == null || newPropertyName == null ?
       <MigrationPropertyListItem />
-    : (
-      <MigrationPropertyListItem apps={Immutable.List()} />
-    )
+    : <MigrationPropertyListItem apps={Immutable.List()} />
   : null}
 </div>;
 
@@ -1483,13 +1475,11 @@ jsxModeFromElementBreaking ?
 // JSXElement. It is breaking.
 jsxModeFromElementBreaking ?
   'a'
-: (
-  <div>
+: <div>
     <span>
       thisIsASongAboutYourPoorSickPenguinHeHasAFeverAndHisToesAreBlueButIfISingToYourPoorSickPenguinHeWillFeelBetterInADayOrTwo
     </span>
-  </div>
-);
+  </div>;
 
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is
@@ -1560,9 +1550,7 @@ cable ?
   ) ?
     draggingApp == null || newPropertyName == null ?
       <MigrationPropertyListItem />
-    : (
-      <MigrationPropertyListItem apps={Immutable.List()} />
-    )
+    : <MigrationPropertyListItem apps={Immutable.List()} />
   : null}
 </div>;
 
@@ -1803,13 +1791,11 @@ jsxModeFromElementBreaking ?
 // JSXElement. It is breaking.
 jsxModeFromElementBreaking ?
   'a'
-: (
-  <div>
+: <div>
     <span>
       thisIsASongAboutYourPoorSickPenguinHeHasAFeverAndHisToesAreBlueButIfISingToYourPoorSickPenguinHeWillFeelBetterInADayOrTwo
     </span>
-  </div>
-);
+  </div>;
 
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is
@@ -1880,9 +1866,7 @@ cable ?
   ) ?
     draggingApp == null || newPropertyName == null ?
       <MigrationPropertyListItem />
-    : (
-      <MigrationPropertyListItem apps={Immutable.List()} />
-    )
+    : <MigrationPropertyListItem apps={Immutable.List()} />
   : null}
 </div>;
 

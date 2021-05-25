@@ -247,9 +247,7 @@ const renderTernary = (props) => (
     )}
     {props.showTheOtherThing ?
       <div>I am here</div>
-    : (
-      <div attr="blah" />
-    )}
+    : <div attr="blah" />}
     {props.showTheOtherThing ?
       <div>I am here!!</div>
     : null}
