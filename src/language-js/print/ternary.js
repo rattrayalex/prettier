@@ -9,6 +9,7 @@ const {
   isMemberExpression,
   isBinaryish,
   isSimpleAtomicExpression,
+  isSimpleMemberExpression,
 } = require("../utils");
 const { locStart, locEnd } = require("../loc");
 const {
@@ -247,8 +248,9 @@ function printTernary(path, options, print, args) {
     !isInChain &&
     !isTSConditional &&
     (isInJsx ||
-      (isSimpleAtomicExpression(consequentNode) &&
-        (isOnSameLineAsAssignment || isOnSameLineAsReturn)));
+      ((isOnSameLineAsAssignment || isOnSameLineAsReturn) &&
+        (isSimpleAtomicExpression(consequentNode) ||
+          isSimpleMemberExpression(consequentNode, { maxDepth: 3 }))));
 
   const dedentIfRhs = (doc) =>
     shouldHugAlt && isOnSameLineAsAssignment ? dedent(doc) : doc;

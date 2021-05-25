@@ -596,13 +596,17 @@ function isSimpleAtomicExpression(node) {
   return literalTypes.has(node.type) || singleWordTypes.has(node.type);
 }
 
-function isSimpleMemberExpression(node) {
+function isSimpleMemberExpression(node, { maxDepth = Infinity } = {}) {
   if (!isMemberExpression(node)) {
     return false;
   }
+  if (hasComment(node)) {
+    return false;
+  }
   let head = node;
-  while (isMemberExpression(head)) {
-    if (!isSimpleAtomicExpression(head)) {
+  let depth = 0;
+  while (isMemberExpression(head) && depth++ <= maxDepth) {
+    if (!isSimpleAtomicExpression(head.property)) {
       return false;
     }
     head = head.object;
@@ -1408,6 +1412,7 @@ module.exports = {
   isSimpleType,
   isSimpleNumber,
   isSimpleAtomicExpression,
+  isSimpleMemberExpression,
   isSimpleTemplateLiteral,
   isStringLiteral,
   isStringPropSafeToUnquote,
