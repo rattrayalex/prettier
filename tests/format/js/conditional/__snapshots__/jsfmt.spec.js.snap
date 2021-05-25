@@ -248,7 +248,8 @@ test ?
   (
     test /* c
 c */
-  ) ? foo
+  ) ?
+    foo
   : bar
 : bar;
 
@@ -1088,9 +1089,9 @@ const avatar = has_ordered ?
   : undefined;
 
 // Similarly, in the alternate:
-const redirectUrl = pathName ?
-    pathName
-  : nextPathName + nextSearch || defaultAuthParams.afterLoginUrl;
+const redirectUrl = pathName ? pathName : (
+  nextPathName + nextSearch || defaultAuthParams.afterLoginUrl
+);
 
 // And another, more pathological case of the above:
 const isEmpty = (obj) =>

@@ -565,6 +565,54 @@ function isMemberExpression(node) {
   );
 }
 
+const literalTypes = new Set([
+  "Literal",
+  "BigIntLiteral",
+  "DecimalLiteral",
+  "BooleanLiteral",
+  "NullLiteral",
+  "NumericLiteral",
+  "RegExpLiteral",
+  "StringLiteral",
+]);
+
+const singleWordTypes = new Set([
+  "Identifier",
+  "ThisExpression",
+  "Super",
+  "PrivateName",
+  "PrivateIdentifier",
+  "Import",
+]);
+
+/**
+ * This is intended to return true for small expressions
+ * which cannot be broken.
+ */
+function isSimpleAtomicExpression(node) {
+  if (hasComment(node)) {
+    return false;
+  }
+  return literalTypes.has(node.type) || singleWordTypes.has(node.type);
+}
+
+function isSimpleMemberExpression(node) {
+  if (!isMemberExpression(node)) {
+    return false;
+  }
+  let head = node;
+  while (isMemberExpression(head)) {
+    if (!isSimpleAtomicExpression(head)) {
+      return false;
+    }
+    head = head.object;
+    if (hasComment(head)) {
+      return false;
+    }
+  }
+  return isSimpleAtomicExpression(head);
+}
+
 /**
  *
  * @param {any} node
@@ -881,21 +929,9 @@ function isSimpleCallArgument(node, depth) {
   }
 
   if (
-    node.type === "Literal" ||
-    node.type === "BigIntLiteral" ||
-    node.type === "DecimalLiteral" ||
-    node.type === "BooleanLiteral" ||
-    node.type === "NullLiteral" ||
-    node.type === "NumericLiteral" ||
-    node.type === "RegExpLiteral" ||
-    node.type === "StringLiteral" ||
-    node.type === "Identifier" ||
-    node.type === "ThisExpression" ||
-    node.type === "Super" ||
-    node.type === "PrivateName" ||
-    node.type === "PrivateIdentifier" ||
-    node.type === "ArgumentPlaceholder" ||
-    node.type === "Import"
+    literalTypes.has(node.type) ||
+    singleWordTypes.has(node.type) ||
+    node.type === "ArgumentPlaceholder"
   ) {
     return true;
   }
@@ -1371,6 +1407,7 @@ module.exports = {
   isObjectTypePropertyAFunction,
   isSimpleType,
   isSimpleNumber,
+  isSimpleAtomicExpression,
   isSimpleTemplateLiteral,
   isStringLiteral,
   isStringPropSafeToUnquote,

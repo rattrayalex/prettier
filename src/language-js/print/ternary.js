@@ -8,6 +8,7 @@ const {
   isCallExpression,
   isMemberExpression,
   isBinaryish,
+  isSimpleAtomicExpression,
 } = require("../utils");
 const { locStart, locEnd } = require("../loc");
 const {
@@ -245,9 +246,21 @@ function printTernary(path, options, print, args) {
     isInJsx ||
     isJsxNode(alternateNode);
 
-  // Do we want to keep ` : ` on the same line as the consequent?
+  // Keep ` : ` on the same line as the consequent for this format:
+  //   foo ? foo : (
+  //     something.else()
+  //   );
+  // Which we only do in some situations.
   const shouldHugAlt =
-    isInJsx && !isParentTernary && !isInChain && !isTSConditional;
+    !isParentTernary &&
+    !isInChain &&
+    !isTSConditional &&
+    (isInJsx ||
+      (isSimpleAtomicExpression(consequentNode) &&
+        (isOnSameLineAsAssignment || isOnSameLineAsReturn)));
+
+  const dedentIfRhs = (doc) =>
+    shouldHugAlt && isOnSameLineAsAssignment ? dedent(doc) : doc;
 
   const printedTest = isConditionalExpression
     ? wrapInParens(print("test"))
@@ -261,19 +274,29 @@ function printTernary(path, options, print, args) {
     print(consequentNodePropertyName),
   ]);
 
+  const testGroupId = Symbol("test");
+  const printedTestWithQ = group([printedTest, " ?"], { id: testGroupId });
+
   const testAndConsequent = Symbol("test-and-consequent");
   const printedTestAndConsequent =
     shouldHugAlt || isInChain || isParentTernary || isTSConditional
       ? group(
           [
-            group([printedTest, " ?"]),
+            printedTestWithQ,
 
             // Avoid indenting consequent if it isn't a chain, even if the test breaks.
-            isInChain ? consequent : group(consequent),
+            isInChain
+              ? consequent
+              : isTSConditional
+              ? group(consequent)
+              : // If the test breaks, also break the consequent
+                ifBreak(consequent, group(consequent), {
+                  groupId: testGroupId,
+                }),
           ],
           { id: testAndConsequent }
         )
-      : [group([printedTest, " ?"]), consequent];
+      : [printedTestWithQ, consequent];
 
   const parts = [
     printedTestAndConsequent,
@@ -287,7 +310,7 @@ function printTernary(path, options, print, args) {
     isAlternateTernary
       ? print(alternateNodePropertyName)
       : shouldWrapAltInParens
-      ? group(wrapInParens(print(alternateNodePropertyName)), {
+      ? group(dedentIfRhs(wrapInParens(print(alternateNodePropertyName))), {
           shouldBreak: isInJsx && isJsxNode(alternateNode),
         })
       : shouldHugAlt
