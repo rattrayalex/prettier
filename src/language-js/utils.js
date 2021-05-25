@@ -633,44 +633,9 @@ function isSimpleTemplateLiteral(node) {
     return false;
   }
 
-  return expressions.every((expr) => {
-    // Disallow comments since printDocToString can't print them here
-    if (hasComment(expr)) {
-      return false;
-    }
-
-    // Allow `x` and `this`
-    if (expr.type === "Identifier" || expr.type === "ThisExpression") {
-      return true;
-    }
-
-    // Allow `a.b.c`, `a.b[c]`, and `this.x.y`
-    if (isMemberExpression(expr)) {
-      let head = expr;
-      while (isMemberExpression(head)) {
-        if (
-          head.property.type !== "Identifier" &&
-          head.property.type !== "Literal" &&
-          head.property.type !== "StringLiteral" &&
-          head.property.type !== "NumericLiteral"
-        ) {
-          return false;
-        }
-        head = head.object;
-        if (hasComment(head)) {
-          return false;
-        }
-      }
-
-      if (head.type === "Identifier" || head.type === "ThisExpression") {
-        return true;
-      }
-
-      return false;
-    }
-
-    return false;
-  });
+  return expressions.every(
+    (expr) => isSimpleAtomicExpression(expr) || isSimpleMemberExpression(expr)
+  );
 }
 
 /**
