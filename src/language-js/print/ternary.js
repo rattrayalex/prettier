@@ -268,7 +268,10 @@ function printTernary(path, options, print, args) {
   const printedTest = group(
     [
       isConditionalExpression
-        ? wrapInParens(print("test"))
+        ? [
+            wrapInParens(print("test")),
+            node.test.type === "ConditionalExpression" ? breakParent : "",
+          ]
         : [print("checkType"), " ", "extends", " ", print("extendsType")],
       " ?",
     ],
@@ -349,11 +352,8 @@ function printTernary(path, options, print, args) {
   const result =
     isOnSameLineAsAssignment || isOnSameLineAsReturn
       ? group(indent(parts))
-      : isInTest || shouldExtraIndent
-      ? group([
-          indent([softline, parts]),
-          breakTSClosingParen || isInTest ? softline : "",
-        ])
+      : shouldExtraIndent
+      ? group([indent([softline, parts]), breakTSClosingParen ? softline : ""])
       : parent === firstNonConditionalParent
       ? group(parts)
       : parts;
