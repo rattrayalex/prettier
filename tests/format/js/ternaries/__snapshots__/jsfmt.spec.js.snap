@@ -4259,6 +4259,26 @@ a
     ? line
     : softline
 
+const config = {
+    onFailure: onFailure !== undefined ? onFailure :   (
+      error => {
+          notify(
+              typeof error === 'string' ?
+                  error
+              : error.message || 'ra.notification.http_error',
+              'warning',
+              {
+                  _:
+                      typeof error === 'string' ? error
+                      : error && error.message ? error.message
+                      : undefined,
+              }
+          );
+          refresh();
+      }
+    )
+}
+
 =====================================output=====================================
 let icecream = what == "cone" ?
         (p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`)
@@ -4342,6 +4362,26 @@ a ? literalline
 ) ?
     line
 :   softline;
+
+const config = {
+    onFailure: onFailure !== undefined ? onFailure : (
+        (error) => {
+            notify(
+                typeof error === "string" ?
+                    error
+                : error.message || "ra.notification.http_error",
+                "warning",
+                {
+                    _:
+                        typeof error === "string" ? error
+                        : error && error.message ? error.message
+                        : undefined,
+                }
+            );
+            refresh();
+        }
+    ),
+};
 
 ================================================================================
 `;
@@ -4450,6 +4490,26 @@ a
     ? line
     : softline
 
+const config = {
+    onFailure: onFailure !== undefined ? onFailure :   (
+      error => {
+          notify(
+              typeof error === 'string' ?
+                  error
+              : error.message || 'ra.notification.http_error',
+              'warning',
+              {
+                  _:
+                      typeof error === 'string' ? error
+                      : error && error.message ? error.message
+                      : undefined,
+              }
+          );
+          refresh();
+      }
+    )
+}
+
 =====================================output=====================================
 let icecream = what == "cone" ?
 		(p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`)
@@ -4533,6 +4593,26 @@ a ? literalline
 ) ?
 	line
 :	softline;
+
+const config = {
+	onFailure: onFailure !== undefined ? onFailure : (
+		(error) => {
+			notify(
+				typeof error === "string" ?
+					error
+				: error.message || "ra.notification.http_error",
+				"warning",
+				{
+					_:
+						typeof error === "string" ? error
+						: error && error.message ? error.message
+						: undefined,
+				}
+			);
+			refresh();
+		}
+	),
+};
 
 ================================================================================
 `;
@@ -4640,6 +4720,26 @@ a
     ? line
     : softline
 
+const config = {
+    onFailure: onFailure !== undefined ? onFailure :   (
+      error => {
+          notify(
+              typeof error === 'string' ?
+                  error
+              : error.message || 'ra.notification.http_error',
+              'warning',
+              {
+                  _:
+                      typeof error === 'string' ? error
+                      : error && error.message ? error.message
+                      : undefined,
+              }
+          );
+          refresh();
+      }
+    )
+}
+
 =====================================output=====================================
 let icecream = what == "cone" ?
 		(p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`)
@@ -4723,6 +4823,26 @@ a ? literalline
 ) ?
 	line
 :	softline;
+
+const config = {
+	onFailure: onFailure !== undefined ? onFailure : (
+		(error) => {
+			notify(
+				typeof error === "string" ?
+					error
+				: error.message || "ra.notification.http_error",
+				"warning",
+				{
+					_:
+						typeof error === "string" ? error
+						: error && error.message ? error.message
+						: undefined,
+				}
+			);
+			refresh();
+		}
+	),
+};
 
 ================================================================================
 `;
@@ -4829,6 +4949,26 @@ a
     ? line
     : softline
 
+const config = {
+    onFailure: onFailure !== undefined ? onFailure :   (
+      error => {
+          notify(
+              typeof error === 'string' ?
+                  error
+              : error.message || 'ra.notification.http_error',
+              'warning',
+              {
+                  _:
+                      typeof error === 'string' ? error
+                      : error && error.message ? error.message
+                      : undefined,
+              }
+          );
+          refresh();
+      }
+    )
+}
+
 =====================================output=====================================
 let icecream = what == "cone" ?
     (p) => (!!p ? \`here's your \${p} cone\` : \`just the empty cone for you\`)
@@ -4912,6 +5052,26 @@ a ? literalline
 ) ?
   line
 : softline;
+
+const config = {
+  onFailure: onFailure !== undefined ? onFailure : (
+    (error) => {
+      notify(
+        typeof error === "string" ?
+          error
+        : error.message || "ra.notification.http_error",
+        "warning",
+        {
+          _:
+            typeof error === "string" ? error
+            : error && error.message ? error.message
+            : undefined,
+        }
+      );
+      refresh();
+    }
+  ),
+};
 
 ================================================================================
 `;
@@ -5442,7 +5602,7 @@ const obj1 = conditionIsTruthy ?
         { some: "long", object: "with", lots: "of", stuff }
     :   shortThing;
 
-const obj2 = conditionIsTruthy ? shortThing :   (
+const obj2 = conditionIsTruthy ? shortThing : (
     { some: "long", object: "with", lots: "of", stuff }
 );
 
@@ -5455,7 +5615,7 @@ const obj3 = conditionIsTruthy ?
         }
     :   shortThing;
 
-const obj4 = conditionIsTruthy ? shortThing :   (
+const obj4 = conditionIsTruthy ? shortThing : (
     {
         some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
         object: "with",
@@ -5503,7 +5663,7 @@ const obj1 = conditionIsTruthy ?
 		{ some: "long", object: "with", lots: "of", stuff }
 	:	shortThing;
 
-const obj2 = conditionIsTruthy ? shortThing :	(
+const obj2 = conditionIsTruthy ? shortThing : (
 	{ some: "long", object: "with", lots: "of", stuff }
 );
 
@@ -5516,7 +5676,7 @@ const obj3 = conditionIsTruthy ?
 		}
 	:	shortThing;
 
-const obj4 = conditionIsTruthy ? shortThing :	(
+const obj4 = conditionIsTruthy ? shortThing : (
 	{
 		some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
 		object: "with",
@@ -5563,7 +5723,7 @@ const obj1 = conditionIsTruthy ?
 		{ some: "long", object: "with", lots: "of", stuff }
 	:	shortThing;
 
-const obj2 = conditionIsTruthy ? shortThing :	(
+const obj2 = conditionIsTruthy ? shortThing : (
 	{ some: "long", object: "with", lots: "of", stuff }
 );
 
@@ -5576,7 +5736,7 @@ const obj3 = conditionIsTruthy ?
 		}
 	:	shortThing;
 
-const obj4 = conditionIsTruthy ? shortThing :	(
+const obj4 = conditionIsTruthy ? shortThing : (
 	{
 		some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
 		object: "with",

@@ -322,12 +322,14 @@ function printTernary(path, options, print, args) {
       ? ifBreak(
           fillToTabWidth(options),
           ifBreak(
-            isInChain || shouldWrapAltInParens ? " " : fillToTabWidth(options),
+            isInChain || shouldWrapAltInParens || shouldHugAlt
+              ? " "
+              : fillToTabWidth(options),
             " "
           ),
           { groupId: testAndConsequentId }
         )
-      : shouldWrapAltInParens
+      : shouldWrapAltInParens || shouldHugAlt
       ? ifBreak(" ", fillToTabWidth(options))
       : ifBreak(fillToTabWidth(options), " "),
 
