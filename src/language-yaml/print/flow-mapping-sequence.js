@@ -30,9 +30,9 @@ function printFlowMapping(path, print, options) {
       bracketSpacing,
       printChildren(path, print, options),
       options.trailingComma === "none" ? "" : ifBreak(","),
-      hasEndComments(node)
-        ? [hardline, join(hardline, path.map(print, "endComments"))]
-        : "",
+      hasEndComments(node) ?
+        [hardline, join(hardline, path.map(print, "endComments"))]
+      : "",
     ]),
     isLastItemEmptyMappingItem ? "" : bracketSpacing,
     closeMarker,
@@ -44,16 +44,18 @@ function printChildren(path, print, options) {
   const parts = path.map(
     (childPath, index) => [
       print(),
-      index === node.children.length - 1
-        ? ""
-        : [
-            ",",
-            line,
+      index === node.children.length - 1 ?
+        ""
+      : [
+          ",",
+          line,
+          (
             node.children[index].position.start.line !==
             node.children[index + 1].position.start.line
-              ? printNextEmptyLine(childPath, options.originalText)
-              : "",
-          ],
+          ) ?
+            printNextEmptyLine(childPath, options.originalText)
+          : "",
+        ],
     ],
     "children"
   );

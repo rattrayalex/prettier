@@ -28,14 +28,14 @@ function isNode(value, types) {
 
 function mapNode(node, callback, parent) {
   return callback(
-    "children" in node
-      ? {
-          ...node,
-          children: node.children.map((childNode) =>
-            mapNode(childNode, callback, node)
-          ),
-        }
-      : node,
+    "children" in node ?
+      {
+        ...node,
+        children: node.children.map((childNode) =>
+          mapNode(childNode, callback, node)
+        ),
+      }
+    : node,
     parent
   );
 }
@@ -98,8 +98,8 @@ function isLastDescendantNode(path) {
 }
 
 function getLastDescendantNode(node) {
-  return isNonEmptyArray(node.children)
-    ? getLastDescendantNode(getLast(node.children))
+  return isNonEmptyArray(node.children) ?
+      getLastDescendantNode(getLast(node.children))
     : node;
 }
 
@@ -196,13 +196,10 @@ function getFlowScalarLineContents(nodeType, content, options) {
   const rawLineContents = content
     .split("\n")
     .map((lineContent, index, lineContents) =>
-      index === 0 && index === lineContents.length - 1
-        ? lineContent
-        : index !== 0 && index !== lineContents.length - 1
-        ? lineContent.trim()
-        : index === 0
-        ? lineContent.trimEnd()
-        : lineContent.trimStart()
+      index === 0 && index === lineContents.length - 1 ? lineContent
+      : index !== 0 && index !== lineContents.length - 1 ? lineContent.trim()
+      : index === 0 ? lineContent.trimEnd()
+      : lineContent.trimStart()
     );
 
   if (options.proseWrap === "preserve") {
@@ -217,27 +214,26 @@ function getFlowScalarLineContents(nodeType, content, options) {
     )
     .reduce(
       (reduced, lineContentWords, index) =>
-        index !== 0 &&
-        rawLineContents[index - 1].length > 0 &&
-        lineContentWords.length > 0 &&
-        !(
-          // trailing backslash in quoteDouble should be preserved
-          (
-            nodeType === "quoteDouble" &&
-            getLast(getLast(reduced)).endsWith("\\")
+        (
+          index !== 0 &&
+          rawLineContents[index - 1].length > 0 &&
+          lineContentWords.length > 0 &&
+          !(
+            // trailing backslash in quoteDouble should be preserved
+            (
+              nodeType === "quoteDouble" &&
+              getLast(getLast(reduced)).endsWith("\\")
+            )
           )
-        )
-          ? [
-              ...reduced.slice(0, -1),
-              [...getLast(reduced), ...lineContentWords],
-            ]
-          : [...reduced, lineContentWords],
+        ) ?
+          [...reduced.slice(0, -1), [...getLast(reduced), ...lineContentWords]]
+        : [...reduced, lineContentWords],
       []
     )
     .map((lineContentWords) =>
-      options.proseWrap === "never"
-        ? [lineContentWords.join(" ")]
-        : lineContentWords
+      options.proseWrap === "never" ?
+        [lineContentWords.join(" ")]
+      : lineContentWords
     );
 }
 
@@ -245,20 +241,18 @@ function getBlockValueLineContents(
   node,
   { parentIndent, isLastDescendant, options }
 ) {
-  const content =
-    node.position.start.line === node.position.end.line
-      ? ""
-      : options.originalText
-          .slice(node.position.start.offset, node.position.end.offset)
-          // exclude open line `>` or `|`
-          .match(/^[^\n]*?\n(.*)$/s)[1];
+  const content = node.position.start.line === node.position.end.line ? "" : (
+    options.originalText
+      .slice(node.position.start.offset, node.position.end.offset)
+      // exclude open line `>` or `|`
+      .match(/^[^\n]*?\n(.*)$/s)[1]
+  );
 
-  const leadingSpaceCount =
-    node.indent === null
-      ? ((match) => (match ? match[1].length : Number.POSITIVE_INFINITY))(
-          content.match(/^( *)\S/m)
-        )
-      : node.indent - 1 + parentIndent;
+  const leadingSpaceCount = node.indent === null ?
+      ((match) => (match ? match[1].length : Number.POSITIVE_INFINITY))(
+        content.match(/^( *)\S/m)
+      )
+    : node.indent - 1 + parentIndent;
 
   const rawLineContents = content
     .split("\n")
@@ -279,39 +273,41 @@ function getBlockValueLineContents(
       )
       .reduce(
         (reduced, lineContentWords, index) =>
-          index !== 0 &&
-          rawLineContents[index - 1].length > 0 &&
-          lineContentWords.length > 0 &&
-          !/^\s/.test(lineContentWords[0]) &&
-          !/^\s|\s$/.test(getLast(reduced))
-            ? [
-                ...reduced.slice(0, -1),
-                [...getLast(reduced), ...lineContentWords],
-              ]
-            : [...reduced, lineContentWords],
+          (
+            index !== 0 &&
+            rawLineContents[index - 1].length > 0 &&
+            lineContentWords.length > 0 &&
+            !/^\s/.test(lineContentWords[0]) &&
+            !/^\s|\s$/.test(getLast(reduced))
+          ) ?
+            [
+              ...reduced.slice(0, -1),
+              [...getLast(reduced), ...lineContentWords],
+            ]
+          : [...reduced, lineContentWords],
         []
       )
       .map((lineContentWords) =>
         lineContentWords.reduce(
           (reduced, word) =>
             // disallow trailing spaces
-            reduced.length > 0 && /\s$/.test(getLast(reduced))
-              ? [...reduced.slice(0, -1), getLast(reduced) + " " + word]
-              : [...reduced, word],
+            reduced.length > 0 && /\s$/.test(getLast(reduced)) ?
+              [...reduced.slice(0, -1), getLast(reduced) + " " + word]
+            : [...reduced, word],
           []
         )
       )
       .map((lineContentWords) =>
-        options.proseWrap === "never"
-          ? [lineContentWords.join(" ")]
-          : lineContentWords
+        options.proseWrap === "never" ?
+          [lineContentWords.join(" ")]
+        : lineContentWords
       )
   );
 
   function removeUnnecessaryTrailingNewlines(lineContents) {
     if (node.chomping === "keep") {
-      return getLast(lineContents).length === 0
-        ? lineContents.slice(0, -1)
+      return getLast(lineContents).length === 0 ?
+          lineContents.slice(0, -1)
         : lineContents;
     }
 
@@ -324,12 +320,13 @@ function getBlockValueLineContents(
       }
     }
 
-    return trailingNewlineCount === 0
-      ? lineContents
-      : trailingNewlineCount >= 2 && !isLastDescendant
-      ? // next empty line
+    return (
+      trailingNewlineCount === 0 ? lineContents
+      : trailingNewlineCount >= 2 && !isLastDescendant ?
+        // next empty line
         lineContents.slice(0, -(trailingNewlineCount - 1))
-      : lineContents.slice(0, -trailingNewlineCount);
+      : lineContents.slice(0, -trailingNewlineCount)
+    );
   }
 }
 

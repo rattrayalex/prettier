@@ -158,17 +158,16 @@ const checkParser = ({ dirname, files }, parsers = []) => {
   if (allowedParsers && !allowedParsers.includes(parser)) {
     const suggestCategories = getParserCategories(parser);
 
-    const suggestion =
-      suggestCategories.length === 0
-        ? ""
-        : outdent`
+    const suggestion = suggestCategories.length === 0 ? "" : (
+      outdent`
             Suggest move your tests to:
             ${suggestCategories
               .map((category) => `- ${path.join(TESTS_ROOT, category)}`)
               .join("\n")}
 
             Or config to allow use this parser in "${__filename}".
-          `;
+          `
+    );
 
     throw new Error(
       `Parser "${parser}" should not used in "${dirname}".${

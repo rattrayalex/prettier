@@ -167,14 +167,14 @@ function ngHtmlParser(
    * @param {Attribute | Element} node
    */
   const restoreName = (node) => {
-    const namespace = node.name.startsWith(":")
-      ? node.name.slice(1).split(":")[0]
+    const namespace = node.name.startsWith(":") ?
+        node.name.slice(1).split(":")[0]
       : null;
     const rawName = node.nameSpan.toString();
     const hasExplicitNamespace =
       namespace !== null && rawName.startsWith(`${namespace}:`);
-    const name = hasExplicitNamespace
-      ? rawName.slice(namespace.length + 1)
+    const name = hasExplicitNamespace ?
+        rawName.slice(namespace.length + 1)
       : rawName;
 
     node.name = name;
@@ -295,8 +295,8 @@ function ngHtmlParser(
  * @param {boolean} shouldParseFrontMatter
  */
 function _parse(text, options, parserOptions, shouldParseFrontMatter = true) {
-  const { frontMatter, content } = shouldParseFrontMatter
-    ? parseFrontMatter(text)
+  const { frontMatter, content } = shouldParseFrontMatter ?
+      parseFrontMatter(text)
     : { frontMatter: null, content: text };
 
   const file = new ParseSourceFile(text, options.filepath);

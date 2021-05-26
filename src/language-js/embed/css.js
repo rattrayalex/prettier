@@ -15,13 +15,9 @@ function format(path, print, textToDoc) {
   let placeholderID = 0;
   const text = rawQuasis.reduce(
     (prevVal, currVal, idx) =>
-      idx === 0
-        ? currVal
-        : prevVal +
-          "@prettier-placeholder-" +
-          placeholderID++ +
-          "-id" +
-          currVal,
+      idx === 0 ?
+        currVal
+      : prevVal + "@prettier-placeholder-" + placeholderID++ + "-id" + currVal,
     ""
   );
   const doc = textToDoc(

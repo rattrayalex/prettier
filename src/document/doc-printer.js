@@ -36,17 +36,17 @@ function makeAlign(indent, widthOrDoc, options) {
     return { ...indent, root: indent };
   }
 
-  const alignType =
-    typeof widthOrDoc === "string" ? "stringAlign" : "numberAlign";
+  const alignType = typeof widthOrDoc === "string" ?
+      "stringAlign"
+    : "numberAlign";
 
   return generateInd(indent, { type: alignType, n: widthOrDoc }, options);
 }
 
 function generateInd(ind, newPart, options) {
-  const queue =
-    newPart.type === "dedent"
-      ? ind.queue.slice(0, -1)
-      : [...ind.queue, newPart];
+  const queue = newPart.type === "dedent" ?
+      ind.queue.slice(0, -1)
+    : [...ind.queue, newPart];
 
   let value = "";
   let length = 0;
@@ -197,9 +197,9 @@ function fits(next, restCommands, width, options, hasLineSuffix, mustBeFlat) {
             ind,
             groupMode,
             // The most expanded state takes up the least space on the current line.
-            doc.expandedStates && groupMode === MODE_BREAK
-              ? getLast(doc.expandedStates)
-              : doc.contents,
+            doc.expandedStates && groupMode === MODE_BREAK ?
+              getLast(doc.expandedStates)
+            : doc.contents,
           ]);
 
           if (doc.id) {
@@ -218,22 +218,18 @@ function fits(next, restCommands, width, options, hasLineSuffix, mustBeFlat) {
           const groupMode = doc.groupId ? groupModeMap[doc.groupId] : mode;
           if (groupMode === MODE_BREAK) {
             const breakContents =
-              doc.type === "if-break"
-                ? doc.breakContents
-                : doc.negate
-                ? doc.contents
-                : indent(doc.contents);
+              doc.type === "if-break" ? doc.breakContents
+              : doc.negate ? doc.contents
+              : indent(doc.contents);
             if (breakContents) {
               cmds.push([ind, mode, breakContents]);
             }
           }
           if (groupMode === MODE_FLAT) {
             const flatContents =
-              doc.type === "if-break"
-                ? doc.flatContents
-                : doc.negate
-                ? indent(doc.contents)
-                : doc.contents;
+              doc.type === "if-break" ? doc.flatContents
+              : doc.negate ? indent(doc.contents)
+              : doc.contents;
             if (flatContents) {
               cmds.push([ind, mode, flatContents]);
             }
@@ -489,22 +485,18 @@ function printDocToString(doc, options) {
           const groupMode = doc.groupId ? groupModeMap[doc.groupId] : mode;
           if (groupMode === MODE_BREAK) {
             const breakContents =
-              doc.type === "if-break"
-                ? doc.breakContents
-                : doc.negate
-                ? doc.contents
-                : indent(doc.contents);
+              doc.type === "if-break" ? doc.breakContents
+              : doc.negate ? doc.contents
+              : indent(doc.contents);
             if (breakContents) {
               cmds.push([ind, mode, breakContents]);
             }
           }
           if (groupMode === MODE_FLAT) {
             const flatContents =
-              doc.type === "if-break"
-                ? doc.flatContents
-                : doc.negate
-                ? indent(doc.contents)
-                : doc.contents;
+              doc.type === "if-break" ? doc.flatContents
+              : doc.negate ? indent(doc.contents)
+              : doc.contents;
             if (flatContents) {
               cmds.push([ind, mode, flatContents]);
             }

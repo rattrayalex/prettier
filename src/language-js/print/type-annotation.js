@@ -79,8 +79,9 @@ function printTypeAlias(path, options, print) {
     parts.push("declare ");
   }
   parts.push("type ", print("id"), print("typeParameters"));
-  const rightPropertyName =
-    node.type === "TSTypeAliasDeclaration" ? "typeAnnotation" : "right";
+  const rightPropertyName = node.type === "TSTypeAliasDeclaration" ?
+      "typeAnnotation"
+    : "right";
   return [
     printAssignment(path, options, print, parts, " =", rightPropertyName),
     semi,
@@ -252,15 +253,16 @@ function printFunctionType(path, options, print) {
 
   // The returnType is not wrapped in a TypeAnnotation, so the colon
   // needs to be added separately.
-  const returnTypeDoc =
-    node.returnType || node.predicate || node.typeAnnotation
-      ? [
-          isArrowFunctionTypeAnnotation ? " => " : ": ",
-          print("returnType"),
-          print("predicate"),
-          print("typeAnnotation"),
-        ]
-      : "";
+  const returnTypeDoc = (
+      node.returnType || node.predicate || node.typeAnnotation
+    ) ?
+      [
+        isArrowFunctionTypeAnnotation ? " => " : ": ",
+        print("returnType"),
+        print("predicate"),
+        print("typeAnnotation"),
+      ]
+    : "";
 
   const shouldGroupParameters = shouldGroupFunctionParameters(
     node,
@@ -300,8 +302,11 @@ function printTupleType(path, options, print) {
 // `TSIndexedAccessType`, `IndexedAccessType`, and `OptionalIndexedAccessType`
 function printIndexedAccessType(path, options, print) {
   const node = path.getValue();
-  const leftDelimiter =
-    node.type === "OptionalIndexedAccessType" && node.optional ? "?.[" : "[";
+  const leftDelimiter = (
+      node.type === "OptionalIndexedAccessType" && node.optional
+    ) ?
+      "?.["
+    : "[";
   return [print("objectType"), leftDelimiter, print("indexType"), "]"];
 }
 

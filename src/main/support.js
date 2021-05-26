@@ -38,20 +38,22 @@ function getSupportInfo({
     "name"
   )
     .filter((option) => filterSince(option) && filterDeprecated(option))
-    .sort((a, b) => (a.name === b.name ? 0 : a.name < b.name ? -1 : 1))
+    .sort((a, b) =>
+      a.name === b.name ? 0
+      : a.name < b.name ? -1
+      : 1
+    )
     .map(mapInternal)
     .map((option) => {
       option = { ...option };
 
       if (Array.isArray(option.default)) {
-        option.default =
-          option.default.length === 1
-            ? option.default[0].value
-            : option.default
-                .filter(filterSince)
-                .sort((info1, info2) =>
-                  semver.compare(info2.since, info1.since)
-                )[0].value;
+        option.default = option.default.length === 1 ? option.default[0].value
+          : option.default
+              .filter(filterSince)
+              .sort((info1, info2) =>
+                semver.compare(info2.since, info1.since)
+              )[0].value;
       }
 
       if (Array.isArray(option.choices)) {

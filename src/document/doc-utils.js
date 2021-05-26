@@ -313,8 +313,8 @@ function cleanDocFn(doc) {
     if (!part) {
       continue;
     }
-    const [currentPart, ...restParts] = isConcat(part)
-      ? getDocParts(part)
+    const [currentPart, ...restParts] = isConcat(part) ?
+        getDocParts(part)
       : [part];
     if (typeof currentPart === "string" && typeof getLast(parts) === "string") {
       parts[parts.length - 1] += currentPart;
@@ -389,9 +389,9 @@ function normalizeDoc(doc) {
 
 function replaceNewlinesWithLiterallines(doc) {
   return mapDoc(doc, (currentDoc) =>
-    typeof currentDoc === "string" && currentDoc.includes("\n")
-      ? join(literalline, currentDoc.split("\n"))
-      : currentDoc
+    typeof currentDoc === "string" && currentDoc.includes("\n") ?
+      join(literalline, currentDoc.split("\n"))
+    : currentDoc
   );
 }
 

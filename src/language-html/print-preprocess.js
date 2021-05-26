@@ -48,10 +48,9 @@ function removeIgnorableFirstLf(ast /*, options */) {
     ) {
       const [text, ...rest] = node.children;
       return node.clone({
-        children:
-          text.value.length === 1
-            ? rest
-            : [text.clone({ value: text.value.slice(1) }), ...rest],
+        children: text.value.length === 1 ? rest : (
+          [text.clone({ value: text.value.slice(1) }), ...rest]
+        ),
       });
     }
     return node;
@@ -135,10 +134,9 @@ function mergeNodeIntoText(ast, shouldMerge, getValue) {
             continue;
           }
 
-          const newChild =
-            child.type === "text"
-              ? child
-              : child.clone({ type: "text", value: getValue(child) });
+          const newChild = child.type === "text" ? child : (
+            child.clone({ type: "text", value: getValue(child) })
+          );
 
           if (
             newChildren.length === 0 ||
@@ -275,19 +273,18 @@ function extractInterpolation(ast, options) {
         newChildren.push({
           type: "interpolation",
           sourceSpan: new ParseSourceSpan(startSourceSpan, endSourceSpan),
-          children:
-            value.length === 0
-              ? []
-              : [
-                  {
-                    type: "text",
-                    value,
-                    sourceSpan: new ParseSourceSpan(
-                      startSourceSpan.moveBy(2),
-                      endSourceSpan.moveBy(-2)
-                    ),
-                  },
-                ],
+          children: value.length === 0 ?
+              []
+            : [
+                {
+                  type: "text",
+                  value,
+                  sourceSpan: new ParseSourceSpan(
+                    startSourceSpan.moveBy(2),
+                    endSourceSpan.moveBy(-2)
+                  ),
+                },
+              ],
         });
       }
     }
@@ -394,18 +391,18 @@ function addIsSelfClosing(ast /*, options */) {
 
 function addHasHtmComponentClosingTag(ast, options) {
   return ast.map((node) =>
-    node.type !== "element"
-      ? node
-      : Object.assign(node, {
-          hasHtmComponentClosingTag:
-            node.endSourceSpan &&
-            /^<\s*\/\s*\/\s*>$/.test(
-              options.originalText.slice(
-                node.endSourceSpan.start.offset,
-                node.endSourceSpan.end.offset
-              )
-            ),
-        })
+    node.type !== "element" ?
+      node
+    : Object.assign(node, {
+        hasHtmComponentClosingTag:
+          node.endSourceSpan &&
+          /^<\s*\/\s*\/\s*>$/.test(
+            options.originalText.slice(
+              node.endSourceSpan.start.offset,
+              node.endSourceSpan.end.offset
+            )
+          ),
+      })
   );
 }
 
@@ -444,16 +441,13 @@ function addIsSpaceSensitive(ast, options) {
         }))
         .map((child, index, children) => ({
           ...child,
-          isLeadingSpaceSensitive:
-            index === 0
-              ? child.isLeadingSpaceSensitive
-              : children[index - 1].isTrailingSpaceSensitive &&
-                child.isLeadingSpaceSensitive,
-          isTrailingSpaceSensitive:
-            index === children.length - 1
-              ? child.isTrailingSpaceSensitive
-              : children[index + 1].isLeadingSpaceSensitive &&
-                child.isTrailingSpaceSensitive,
+          isLeadingSpaceSensitive: index === 0 ? child.isLeadingSpaceSensitive
+            : children[index - 1].isTrailingSpaceSensitive &&
+              child.isLeadingSpaceSensitive,
+          isTrailingSpaceSensitive: index === children.length - 1 ?
+              child.isTrailingSpaceSensitive
+            : children[index + 1].isLeadingSpaceSensitive &&
+              child.isTrailingSpaceSensitive,
         })),
     });
   });

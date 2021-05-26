@@ -58,11 +58,12 @@ function print(path, options, print) {
     case "ElementNode": {
       const startingTag = group(printStartingTag(path, print));
 
-      const escapeNextElementNode =
-        options.htmlWhitespaceSensitivity === "ignore" &&
-        isNextNodeOfSomeType(path, ["ElementNode"])
-          ? softline
-          : "";
+      const escapeNextElementNode = (
+          options.htmlWhitespaceSensitivity === "ignore" &&
+          isNextNodeOfSomeType(path, ["ElementNode"])
+        ) ?
+          softline
+        : "";
 
       if (isVoid(node)) {
         return [startingTag, escapeNextElementNode];
@@ -153,10 +154,10 @@ function print(path, options, print) {
 
       // Let's assume quotes inside the content of text nodes are already
       // properly escaped with entities, otherwise the parse wouldn't have parsed them.
-      const quote = isText
-        ? chooseEnclosingQuote(options, node.value.chars).quote
-        : node.value.type === "ConcatStatement"
-        ? chooseEnclosingQuote(
+      const quote =
+        isText ? chooseEnclosingQuote(options, node.value.chars).quote
+        : node.value.type === "ConcatStatement" ?
+          chooseEnclosingQuote(
             options,
             node.value.parts
               .filter((part) => part.type === "TextNode")
@@ -425,9 +426,9 @@ function printStartingTag(path, print) {
     .filter((property) => isNonEmptyArray(node[property]))
     .map((property) => [
       line,
-      property === "blockParams"
-        ? printBlockParams(node)
-        : join(line, path.map(print, property)),
+      property === "blockParams" ?
+        printBlockParams(node)
+      : join(line, path.map(print, property)),
     ]);
 
   return [
@@ -566,8 +567,8 @@ function printCloseBlock(path, print, options) {
   const node = path.getValue();
 
   if (options.htmlWhitespaceSensitivity === "ignore") {
-    const escape = blockStatementHasOnlyWhitespaceInProgram(node)
-      ? softline
+    const escape = blockStatementHasOnlyWhitespaceInProgram(node) ?
+        softline
       : hardline;
 
     return [
@@ -625,10 +626,9 @@ function printInverse(path, print, options) {
   const node = path.getValue();
 
   const inverse = print("inverse");
-  const printed =
-    options.htmlWhitespaceSensitivity === "ignore"
-      ? [hardline, inverse]
-      : inverse;
+  const printed = options.htmlWhitespaceSensitivity === "ignore" ?
+      [hardline, inverse]
+    : inverse;
 
   if (blockStatementHasElseIf(node)) {
     return printed;

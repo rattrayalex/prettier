@@ -9,8 +9,8 @@ const prettierCli = path.join(
   typeof bin === "object" ? bin.prettier : bin
 );
 
-const thirdParty = isProduction
-  ? path.join(PRETTIER_DIR, "./third-party")
+const thirdParty = isProduction ?
+    path.join(PRETTIER_DIR, "./third-party")
   : path.join(PRETTIER_DIR, "./src/common/third-party");
 
 const projectRoot = path.join(__dirname, "../..");

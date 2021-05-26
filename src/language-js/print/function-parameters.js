@@ -32,8 +32,8 @@ function printFunctionParameters(
 ) {
   const functionNode = path.getValue();
   const parameters = getFunctionParameters(functionNode);
-  const typeParams = printTypeParams
-    ? printFunctionTypeParameters(path, options, print)
+  const typeParams = printTypeParams ?
+      printFunctionTypeParameters(path, options, print)
     : "";
 
   if (parameters.length === 0) {
@@ -143,9 +143,9 @@ function printFunctionParameters(
     "(",
     indent([softline, ...printed]),
     ifBreak(
-      !hasRestParameter(functionNode) && shouldPrintComma(options, "all")
-        ? ","
-        : ""
+      !hasRestParameter(functionNode) && shouldPrintComma(options, "all") ?
+        ","
+      : ""
     ),
     softline,
     ")",

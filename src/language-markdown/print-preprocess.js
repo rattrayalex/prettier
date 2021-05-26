@@ -40,19 +40,22 @@ function transformInlineCode(ast) {
 
 function restoreUnescapedCharacter(ast, options) {
   return mapAst(ast, (node) =>
-    node.type !== "text" ||
-    node.value === "*" ||
-    node.value === "_" || // handle these cases in printer
-    !isSingleCharRegex.test(node.value) ||
-    node.position.end.offset - node.position.start.offset === node.value.length
-      ? node
-      : {
-          ...node,
-          value: options.originalText.slice(
-            node.position.start.offset,
-            node.position.end.offset
-          ),
-        }
+    (
+      node.type !== "text" ||
+      node.value === "*" ||
+      node.value === "_" || // handle these cases in printer
+      !isSingleCharRegex.test(node.value) ||
+      node.position.end.offset - node.position.start.offset ===
+        node.value.length
+    ) ?
+      node
+    : {
+        ...node,
+        value: options.originalText.slice(
+          node.position.start.offset,
+          node.position.end.offset
+        ),
+      }
   );
 }
 
@@ -181,8 +184,8 @@ function markAlignedList(ast, options) {
   });
 
   function getListItemStart(listItem) {
-    return listItem.children.length === 0
-      ? -1
+    return listItem.children.length === 0 ?
+        -1
       : listItem.children[0].position.start.column - 1;
   }
 

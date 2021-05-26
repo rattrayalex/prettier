@@ -57,7 +57,9 @@ function printTypeAnnotation(path, options, print) {
   }
 
   return [
-    isFunctionDeclarationIdentifier ? "" : isDefinite ? "!: " : ": ",
+    isFunctionDeclarationIdentifier ? ""
+    : isDefinite ? "!: "
+    : ": ",
     print("typeAnnotation"),
   ];
 }

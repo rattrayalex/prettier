@@ -4,8 +4,8 @@ const { TEST_STANDALONE } = process.env;
 
 const fs = require("fs");
 const path = require("path");
-const prettier = !TEST_STANDALONE
-  ? require("prettier-local")
+const prettier = !TEST_STANDALONE ?
+    require("prettier-local")
   : require("prettier-standalone");
 const checkParsers = require("./utils/check-parsers");
 const createSnapshot = require("./utils/create-snapshot");
@@ -40,9 +40,9 @@ const unstableTests = new Map(
     "typescript/prettier-ignore/mapped-types.ts",
     "js/comments/html-like/comment.js",
   ].map((fixture) => {
-    const [file, isUnstable = () => true] = Array.isArray(fixture)
-      ? fixture
-      : [fixture];
+    const [file, isUnstable = () => true] = Array.isArray(fixture) ? fixture : (
+      [fixture]
+    );
     return [path.join(__dirname, "../format/", file), isUnstable];
   })
 );
@@ -98,8 +98,9 @@ const isTestDirectory = (dirname, name) =>
   );
 
 function runSpec(fixtures, parsers, options) {
-  let { dirname, snippets = [] } =
-    typeof fixtures === "string" ? { dirname: fixtures } : fixtures;
+  let { dirname, snippets = [] } = typeof fixtures === "string" ?
+      { dirname: fixtures }
+    : fixtures;
 
   // `IS_PARSER_INFERENCE_TESTS` mean to test `inferParser` on `standalone`
   const IS_PARSER_INFERENCE_TESTS = isTestDirectory(
@@ -206,8 +207,8 @@ function runSpec(fixtures, parsers, options) {
         filepath: filename,
         parser,
       };
-      const mainParserFormatResult = shouldThrowOnFormat(name, formatOptions)
-        ? { options: formatOptions, error: true }
+      const mainParserFormatResult = shouldThrowOnFormat(name, formatOptions) ?
+          { options: formatOptions, error: true }
         : format(code, formatOptions);
 
       for (const currentParser of allParsers) {
@@ -334,13 +335,12 @@ function runTest({
           formatOptions
         ).eolVisualizedOutput;
         // Only if `endOfLine: "auto"` the result will be different
-        const expected =
-          formatOptions.endOfLine === "auto"
-            ? visualizeEndOfLine(
-                // All `code` use `LF`, so the `eol` of result is always `LF`
-                formatResult.outputWithCursor.replace(/\n/g, eol)
-              )
-            : formatResult.eolVisualizedOutput;
+        const expected = formatOptions.endOfLine === "auto" ?
+            visualizeEndOfLine(
+              // All `code` use `LF`, so the `eol` of result is always `LF`
+              formatResult.outputWithCursor.replace(/\n/g, eol)
+            )
+          : formatResult.eolVisualizedOutput;
         expect(output).toEqual(expected);
       });
     }
@@ -413,11 +413,9 @@ function replacePlaceholders(originalText, originalOptions) {
 }
 
 const insertCursor = (text, cursorOffset) =>
-  cursorOffset >= 0
-    ? text.slice(0, cursorOffset) +
-      CURSOR_PLACEHOLDER +
-      text.slice(cursorOffset)
-    : text;
+  cursorOffset >= 0 ?
+    text.slice(0, cursorOffset) + CURSOR_PLACEHOLDER + text.slice(cursorOffset)
+  : text;
 function format(originalText, originalOptions) {
   const { text: input, options } = replacePlaceholders(
     originalText,

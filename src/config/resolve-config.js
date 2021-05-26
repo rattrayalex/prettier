@@ -88,9 +88,11 @@ function _resolveConfig(filePath, opts, sync) {
     for (const optionName of ["plugins", "pluginSearchDirs"]) {
       if (Array.isArray(merged[optionName])) {
         merged[optionName] = merged[optionName].map((value) =>
-          typeof value === "string" && value.startsWith(".") // relative path
-            ? path.resolve(path.dirname(result.filepath), value)
-            : value
+          (
+            typeof value === "string" && value.startsWith(".") // relative path
+          ) ?
+            path.resolve(path.dirname(result.filepath), value)
+          : value
         );
       }
     }
@@ -156,8 +158,7 @@ function mergeOverrides(configResult, filePath) {
 // Based on eslint: https://github.com/eslint/eslint/blob/master/lib/config/config-ops.js
 function pathMatchesGlobs(filePath, patterns, excludedPatterns = []) {
   const patternList = Array.isArray(patterns) ? patterns : [patterns];
-  const excludedPatternList = Array.isArray(excludedPatterns)
-    ? excludedPatterns
+  const excludedPatternList = Array.isArray(excludedPatterns) ? excludedPatterns
     : [excludedPatterns];
   const opts = { matchBase: true, dot: true };
 

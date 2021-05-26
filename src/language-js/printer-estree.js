@@ -672,9 +672,9 @@ function printPathNoParens(path, options, print, args) {
 
         return [
           "catch ",
-          parameterHasComments
-            ? ["(", indent([softline, param]), softline, ") "]
-            : ["(", param, ") "],
+          parameterHasComments ?
+            ["(", indent([softline, param]), softline, ") "]
+          : ["(", param, ") "],
           print("body"),
         ];
       }
@@ -690,24 +690,26 @@ function printPathNoParens(path, options, print, args) {
           ")",
         ]),
         " {",
-        node.cases.length > 0
-          ? indent([
+        node.cases.length > 0 ?
+          indent([
+            hardline,
+            join(
               hardline,
-              join(
-                hardline,
-                path.map((casePath, index, cases) => {
-                  const caseNode = casePath.getValue();
-                  return [
-                    print(),
+              path.map((casePath, index, cases) => {
+                const caseNode = casePath.getValue();
+                return [
+                  print(),
+                  (
                     index !== cases.length - 1 &&
                     isNextLineEmpty(caseNode, options)
-                      ? hardline
-                      : "",
-                  ];
-                }, "cases")
-              ),
-            ])
-          : "",
+                  ) ?
+                    hardline
+                  : "",
+                ];
+              }, "cases")
+            ),
+          ])
+        : "",
         hardline,
         "}",
       ];
@@ -726,9 +728,9 @@ function printPathNoParens(path, options, print, args) {
         const cons = printSwitchCaseConsequent(path, options, print);
 
         parts.push(
-          consequent.length === 1 && consequent[0].type === "BlockStatement"
-            ? [" ", cons]
-            : indent([hardline, cons])
+          consequent.length === 1 && consequent[0].type === "BlockStatement" ?
+            [" ", cons]
+          : indent([hardline, cons])
         );
       }
 
@@ -813,14 +815,13 @@ function printPathNoParens(path, options, print, args) {
           group(["{", printDanglingComments(path, options), softline, "}"])
         );
       } else {
-        const members =
-          node.members.length > 0
-            ? [
-                hardline,
-                printArrayItems(path, options, "members", print),
-                node.hasUnknownMembers || shouldPrintComma(options) ? "," : "",
-              ]
-            : [];
+        const members = node.members.length > 0 ?
+            [
+              hardline,
+              printArrayItems(path, options, "members", print),
+              node.hasUnknownMembers || shouldPrintComma(options) ? "," : "",
+            ]
+          : [];
 
         parts.push(
           group([
@@ -848,10 +849,9 @@ function printPathNoParens(path, options, print, args) {
     case "EnumDefaultedMember":
       return print("id");
     case "FunctionTypeParam": {
-      const name = node.name
-        ? print("name")
-        : path.getParentNode().this === node
-        ? "this"
+      const name =
+        node.name ? print("name")
+        : path.getParentNode().this === node ? "this"
         : "";
       return [
         name,

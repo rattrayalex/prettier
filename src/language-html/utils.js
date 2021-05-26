@@ -330,21 +330,21 @@ function hasSurroundingLineBreak(node) {
 function hasLeadingLineBreak(node) {
   return (
     node.hasLeadingSpaces &&
-    (node.prev
-      ? node.prev.sourceSpan.end.line < node.sourceSpan.start.line
-      : node.parent.type === "root" ||
-        node.parent.startSourceSpan.end.line < node.sourceSpan.start.line)
+    (node.prev ?
+      node.prev.sourceSpan.end.line < node.sourceSpan.start.line
+    : node.parent.type === "root" ||
+      node.parent.startSourceSpan.end.line < node.sourceSpan.start.line)
   );
 }
 
 function hasTrailingLineBreak(node) {
   return (
     node.hasTrailingSpaces &&
-    (node.next
-      ? node.next.sourceSpan.start.line > node.sourceSpan.end.line
-      : node.parent.type === "root" ||
-        (node.parent.endSourceSpan &&
-          node.parent.endSourceSpan.start.line > node.sourceSpan.end.line))
+    (node.next ?
+      node.next.sourceSpan.start.line > node.sourceSpan.end.line
+    : node.parent.type === "root" ||
+      (node.parent.endSourceSpan &&
+        node.parent.endSourceSpan.start.line > node.sourceSpan.end.line))
   );
 }
 
@@ -591,12 +591,12 @@ function getMinIndentation(text) {
 }
 
 function dedentString(text, minIndent = getMinIndentation(text)) {
-  return minIndent === 0
-    ? text
-    : text
-        .split("\n")
-        .map((lineText) => lineText.slice(minIndent))
-        .join("\n");
+  return minIndent === 0 ? text : (
+    text
+      .split("\n")
+      .map((lineText) => lineText.slice(minIndent))
+      .join("\n")
+  );
 }
 
 function shouldNotPrintClosingTag(node, options) {

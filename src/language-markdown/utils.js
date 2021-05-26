@@ -52,13 +52,12 @@ function splitText(text, options) {
   const nodes = [];
 
   const tokens = (
-    options.proseWrap === "preserve"
-      ? text
-      : text.replace(
-          new RegExp(`(${cjkPattern})\n(${cjkPattern})`, "g"),
-          "$1$2"
-        )
-  ).split(/([\t\n ]+)/);
+    options.proseWrap === "preserve" ?
+      text
+    : text.replace(
+        new RegExp(`(${cjkPattern})\n(${cjkPattern})`, "g"),
+        "$1$2"
+      )).split(/([\t\n ]+)/);
   for (const [index, token] of tokens.entries()) {
     // whitespace
     if (index % 2 === 1) {
@@ -100,21 +99,21 @@ function splitText(text, options) {
 
       // CJK character
       appendNode(
-        punctuationRegex.test(innerToken)
-          ? {
-              type: "word",
-              value: innerToken,
-              kind: KIND_CJK_PUNCTUATION,
-              hasLeadingPunctuation: true,
-              hasTrailingPunctuation: true,
-            }
-          : {
-              type: "word",
-              value: innerToken,
-              kind: kRegex.test(innerToken) ? KIND_K_LETTER : KIND_CJ_LETTER,
-              hasLeadingPunctuation: false,
-              hasTrailingPunctuation: false,
-            }
+        punctuationRegex.test(innerToken) ?
+          {
+            type: "word",
+            value: innerToken,
+            kind: KIND_CJK_PUNCTUATION,
+            hasLeadingPunctuation: true,
+            hasTrailingPunctuation: true,
+          }
+        : {
+            type: "word",
+            value: innerToken,
+            kind: kRegex.test(innerToken) ? KIND_K_LETTER : KIND_CJ_LETTER,
+            hasLeadingPunctuation: false,
+            hasTrailingPunctuation: false,
+          }
       );
     }
   }

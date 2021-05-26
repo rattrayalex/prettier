@@ -65,9 +65,9 @@ async function getOptionsOrDie(context, filePath) {
     }
 
     context.logger.debug(
-      context.argv.config
-        ? `load config file from '${context.argv.config}'`
-        : `resolve config from '${filePath}'`
+      context.argv.config ?
+        `load config file from '${context.argv.config}'`
+      : `resolve config from '${filePath}'`
     );
 
     const options = await prettier.resolveConfig(filePath, {

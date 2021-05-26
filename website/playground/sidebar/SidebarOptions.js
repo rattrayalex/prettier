@@ -12,7 +12,7 @@ export default function ({
 }) {
   const options = groupBy(availableOptions, "category");
   return categories.map((category) =>
-    options[category] ? (
+    options[category] ?
       <SidebarCategory key={category} title={category}>
         {options[category].map((option) => (
           <Option
@@ -23,6 +23,6 @@ export default function ({
           />
         ))}
       </SidebarCategory>
-    ) : null
+    : null
   );
 }

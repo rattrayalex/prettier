@@ -9,13 +9,10 @@ const cliDescriptor = {
   key: (key) => (key.length === 1 ? `-${key}` : `--${key}`),
   value: (value) => vnopts.apiDescriptor.value(value),
   pair: ({ key, value }) =>
-    value === false
-      ? `--no-${key}`
-      : value === true
-      ? cliDescriptor.key(key)
-      : value === ""
-      ? `${cliDescriptor.key(key)} without an argument`
-      : `${cliDescriptor.key(key)}=${value}`,
+    value === false ? `--no-${key}`
+    : value === true ? cliDescriptor.key(key)
+    : value === "" ? `${cliDescriptor.key(key)} without an argument`
+    : `${cliDescriptor.key(key)}=${value}`,
 };
 
 class FlagSchema extends vnopts.ChoiceSchema {
@@ -54,8 +51,9 @@ function normalizeOptions(
   optionInfos,
   { logger, isCLI = false, passThrough = false } = {}
 ) {
-  const unknown = !passThrough
-    ? (key, value, options) => {
+  const unknown =
+    !passThrough ?
+      (key, value, options) => {
         // Don't suggest `_` for unknown flags
         const { _, ...schemas } = options.schemas;
         return vnopts.levenUnknownHandler(key, value, {
@@ -63,8 +61,8 @@ function normalizeOptions(
           schemas,
         });
       }
-    : Array.isArray(passThrough)
-    ? (key, value) =>
+    : Array.isArray(passThrough) ?
+      (key, value) =>
         !passThrough.includes(key) ? undefined : { [key]: value }
     : (key, value) => ({ [key]: value });
 
@@ -132,14 +130,14 @@ function optionInfoToSchema(optionInfo, { isCLI, optionInfos }) {
     case "choice":
       SchemaConstructor = vnopts.ChoiceSchema;
       parameters.choices = optionInfo.choices.map((choiceInfo) =>
-        typeof choiceInfo === "object" && choiceInfo.redirect
-          ? {
-              ...choiceInfo,
-              redirect: {
-                to: { key: optionInfo.name, value: choiceInfo.redirect },
-              },
-            }
-          : choiceInfo
+        typeof choiceInfo === "object" && choiceInfo.redirect ?
+          {
+            ...choiceInfo,
+            redirect: {
+              to: { key: optionInfo.name, value: choiceInfo.redirect },
+            },
+          }
+        : choiceInfo
       );
       break;
     case "boolean":
@@ -174,14 +172,14 @@ function optionInfoToSchema(optionInfo, { isCLI, optionInfos }) {
   /* istanbul ignore next */
   if (optionInfo.redirect) {
     handlers.redirect = (value) =>
-      !value
-        ? undefined
-        : {
-            to: {
-              key: optionInfo.redirect.option,
-              value: optionInfo.redirect.value,
-            },
-          };
+      !value ?
+        undefined
+      : {
+          to: {
+            key: optionInfo.redirect.option,
+            value: optionInfo.redirect.value,
+          },
+        };
   }
 
   /* istanbul ignore next */
@@ -199,8 +197,8 @@ function optionInfoToSchema(optionInfo, { isCLI, optionInfos }) {
       );
   }
 
-  return optionInfo.array
-    ? vnopts.ArraySchema.create({
+  return optionInfo.array ?
+      vnopts.ArraySchema.create({
         ...(isCLI ? { preprocess: (v) => (Array.isArray(v) ? v : [v]) } : {}),
         ...handlers,
         valueSchema: SchemaConstructor.create(parameters),

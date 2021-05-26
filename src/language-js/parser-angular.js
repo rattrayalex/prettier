@@ -8,10 +8,12 @@ function createParser(_parse) {
     const node = _parse(text, ngEstreeParser);
     return {
       type: "NGRoot",
-      node:
-        options.parser === "__ng_action" && node.type !== "NGChainedExpression"
-          ? { ...node, type: "NGChainedExpression", expressions: [node] }
-          : node,
+      node: (
+          options.parser === "__ng_action" &&
+          node.type !== "NGChainedExpression"
+        ) ?
+          { ...node, type: "NGChainedExpression", expressions: [node] }
+        : node,
     };
   };
   return { astFormat: "estree", parse, locStart, locEnd };

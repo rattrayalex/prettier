@@ -73,8 +73,8 @@ function printDocToDebug(doc) {
         parentParts[index + 1] &&
         parentParts[index + 1].type === "break-parent";
       if (doc.literal) {
-        return withBreakParent
-          ? "literalline"
+        return withBreakParent ?
+            "literalline"
           : "literallineWithoutBreakParent";
       }
       if (doc.hard) {
@@ -104,17 +104,13 @@ function printDocToDebug(doc) {
     }
 
     if (doc.type === "align") {
-      return doc.n === Number.NEGATIVE_INFINITY
-        ? "dedentToRoot(" + printDoc(doc.contents) + ")"
-        : doc.n < 0
-        ? "dedent(" + printDoc(doc.contents) + ")"
-        : doc.n.type === "root"
-        ? "markAsRoot(" + printDoc(doc.contents) + ")"
-        : "align(" +
-          JSON.stringify(doc.n) +
-          ", " +
-          printDoc(doc.contents) +
-          ")";
+      return (
+        doc.n === Number.NEGATIVE_INFINITY ?
+          "dedentToRoot(" + printDoc(doc.contents) + ")"
+        : doc.n < 0 ? "dedent(" + printDoc(doc.contents) + ")"
+        : doc.n.type === "root" ? "markAsRoot(" + printDoc(doc.contents) + ")"
+        : "align(" + JSON.stringify(doc.n) + ", " + printDoc(doc.contents) + ")"
+      );
     }
 
     if (doc.type === "if-break") {
@@ -122,10 +118,10 @@ function printDocToDebug(doc) {
         "ifBreak(" +
         printDoc(doc.breakContents) +
         (doc.flatContents ? ", " + printDoc(doc.flatContents) : "") +
-        (doc.groupId
-          ? (!doc.flatContents ? ', ""' : "") +
-            `, { groupId: ${printGroupId(doc.groupId)} }`
-          : "") +
+        (doc.groupId ?
+          (!doc.flatContents ? ', ""' : "") +
+          `, { groupId: ${printGroupId(doc.groupId)} }`
+        : "") +
         ")"
       );
     }
@@ -141,8 +137,9 @@ function printDocToDebug(doc) {
         optionsParts.push(`groupId: ${printGroupId(doc.groupId)}`);
       }
 
-      const options =
-        optionsParts.length > 0 ? `, { ${optionsParts.join(", ")} }` : "";
+      const options = optionsParts.length > 0 ?
+          `, { ${optionsParts.join(", ")} }`
+        : "";
 
       return `indentIfBreak(${printDoc(doc.contents)}${options})`;
     }
@@ -158,8 +155,9 @@ function printDocToDebug(doc) {
         optionsParts.push(`id: ${printGroupId(doc.id)}`);
       }
 
-      const options =
-        optionsParts.length > 0 ? `, { ${optionsParts.join(", ")} }` : "";
+      const options = optionsParts.length > 0 ?
+          `, { ${optionsParts.join(", ")} }`
+        : "";
 
       if (doc.expandedStates) {
         return `conditionalGroup([${doc.expandedStates

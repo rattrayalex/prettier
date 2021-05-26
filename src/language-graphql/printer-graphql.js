@@ -39,25 +39,28 @@ function genericPrint(path, options, print) {
       return [
         hasOperation ? node.operation : "",
         hasOperation && hasName ? [" ", print("name")] : "",
-        hasOperation && !hasName && isNonEmptyArray(node.variableDefinitions)
-          ? " "
-          : "",
-        isNonEmptyArray(node.variableDefinitions)
-          ? group([
-              "(",
-              indent([
-                softline,
-                join(
-                  [ifBreak("", ", "), softline],
-                  path.map(print, "variableDefinitions")
-                ),
-              ]),
+        hasOperation && !hasName && isNonEmptyArray(node.variableDefinitions) ?
+          " "
+        : "",
+        isNonEmptyArray(node.variableDefinitions) ?
+          group([
+            "(",
+            indent([
               softline,
-              ")",
-            ])
-          : "",
+              join(
+                [ifBreak("", ", "), softline],
+                path.map(print, "variableDefinitions")
+              ),
+            ]),
+            softline,
+            ")",
+          ])
+        : "",
         printDirectives(path, print, node),
-        node.selectionSet ? (!hasOperation && !hasName ? "" : " ") : "",
+        node.selectionSet ?
+          !hasOperation && !hasName ? ""
+          : " "
+        : "",
         print("selectionSet"),
       ];
     }
@@ -65,20 +68,20 @@ function genericPrint(path, options, print) {
       return [
         "fragment ",
         print("name"),
-        isNonEmptyArray(node.variableDefinitions)
-          ? group([
-              "(",
-              indent([
-                softline,
-                join(
-                  [ifBreak("", ", "), softline],
-                  path.map(print, "variableDefinitions")
-                ),
-              ]),
+        isNonEmptyArray(node.variableDefinitions) ?
+          group([
+            "(",
+            indent([
               softline,
-              ")",
-            ])
-          : "",
+              join(
+                [ifBreak("", ", "), softline],
+                path.map(print, "variableDefinitions")
+              ),
+            ]),
+            softline,
+            ")",
+          ])
+        : "",
         " on ",
         print("typeCondition"),
         printDirectives(path, print, node),
@@ -107,23 +110,23 @@ function genericPrint(path, options, print) {
       return group([
         node.alias ? [print("alias"), ": "] : "",
         print("name"),
-        node.arguments.length > 0
-          ? group([
-              "(",
-              indent([
-                softline,
-                join(
-                  [ifBreak("", ", "), softline],
-                  path.call(
-                    (argsPath) => printSequence(argsPath, options, print),
-                    "arguments"
-                  )
-                ),
-              ]),
+        node.arguments.length > 0 ?
+          group([
+            "(",
+            indent([
               softline,
-              ")",
-            ])
-          : "",
+              join(
+                [ifBreak("", ", "), softline],
+                path.call(
+                  (argsPath) => printSequence(argsPath, options, print),
+                  "arguments"
+                )
+              ),
+            ]),
+            softline,
+            ")",
+          ])
+        : "",
         printDirectives(path, print, node),
         node.selectionSet ? " " : "",
         print("selectionSet"),
@@ -198,23 +201,23 @@ function genericPrint(path, options, print) {
       return [
         "@",
         print("name"),
-        node.arguments.length > 0
-          ? group([
-              "(",
-              indent([
-                softline,
-                join(
-                  [ifBreak("", ", "), softline],
-                  path.call(
-                    (argsPath) => printSequence(argsPath, options, print),
-                    "arguments"
-                  )
-                ),
-              ]),
+        node.arguments.length > 0 ?
+          group([
+            "(",
+            indent([
               softline,
-              ")",
-            ])
-          : "",
+              join(
+                [ifBreak("", ", "), softline],
+                path.call(
+                  (argsPath) => printSequence(argsPath, options, print),
+                  "arguments"
+                )
+              ),
+            ]),
+            softline,
+            ")",
+          ])
+        : "",
       ];
     }
 
@@ -240,27 +243,27 @@ function genericPrint(path, options, print) {
         node.kind === "ObjectTypeExtension" ? "extend " : "",
         "type ",
         print("name"),
-        node.interfaces.length > 0
-          ? [" implements ", ...printInterfaces(path, options, print)]
-          : "",
+        node.interfaces.length > 0 ?
+          [" implements ", ...printInterfaces(path, options, print)]
+        : "",
         printDirectives(path, print, node),
-        node.fields.length > 0
-          ? [
-              " {",
-              indent([
-                hardline,
-                join(
-                  hardline,
-                  path.call(
-                    (fieldsPath) => printSequence(fieldsPath, options, print),
-                    "fields"
-                  )
-                ),
-              ]),
+        node.fields.length > 0 ?
+          [
+            " {",
+            indent([
               hardline,
-              "}",
-            ]
-          : "",
+              join(
+                hardline,
+                path.call(
+                  (fieldsPath) => printSequence(fieldsPath, options, print),
+                  "fields"
+                )
+              ),
+            ]),
+            hardline,
+            "}",
+          ]
+        : "",
       ];
     }
 
@@ -269,23 +272,23 @@ function genericPrint(path, options, print) {
         print("description"),
         node.description ? hardline : "",
         print("name"),
-        node.arguments.length > 0
-          ? group([
-              "(",
-              indent([
-                softline,
-                join(
-                  [ifBreak("", ", "), softline],
-                  path.call(
-                    (argsPath) => printSequence(argsPath, options, print),
-                    "arguments"
-                  )
-                ),
-              ]),
+        node.arguments.length > 0 ?
+          group([
+            "(",
+            indent([
               softline,
-              ")",
-            ])
-          : "",
+              join(
+                [ifBreak("", ", "), softline],
+                path.call(
+                  (argsPath) => printSequence(argsPath, options, print),
+                  "arguments"
+                )
+              ),
+            ]),
+            softline,
+            ")",
+          ])
+        : "",
         ": ",
         print("type"),
         printDirectives(path, print, node),
@@ -299,23 +302,23 @@ function genericPrint(path, options, print) {
         "directive ",
         "@",
         print("name"),
-        node.arguments.length > 0
-          ? group([
-              "(",
-              indent([
-                softline,
-                join(
-                  [ifBreak("", ", "), softline],
-                  path.call(
-                    (argsPath) => printSequence(argsPath, options, print),
-                    "arguments"
-                  )
-                ),
-              ]),
+        node.arguments.length > 0 ?
+          group([
+            "(",
+            indent([
               softline,
-              ")",
-            ])
-          : "",
+              join(
+                [ifBreak("", ", "), softline],
+                path.call(
+                  (argsPath) => printSequence(argsPath, options, print),
+                  "arguments"
+                )
+              ),
+            ]),
+            softline,
+            ")",
+          ])
+        : "",
         node.repeatable ? " repeatable" : "",
         " on ",
         join(" | ", path.map(print, "locations")),
@@ -332,23 +335,23 @@ function genericPrint(path, options, print) {
         print("name"),
         printDirectives(path, print, node),
 
-        node.values.length > 0
-          ? [
-              " {",
-              indent([
-                hardline,
-                join(
-                  hardline,
-                  path.call(
-                    (valuesPath) => printSequence(valuesPath, options, print),
-                    "values"
-                  )
-                ),
-              ]),
+        node.values.length > 0 ?
+          [
+            " {",
+            indent([
               hardline,
-              "}",
-            ]
-          : "",
+              join(
+                hardline,
+                path.call(
+                  (valuesPath) => printSequence(valuesPath, options, print),
+                  "values"
+                )
+              ),
+            ]),
+            hardline,
+            "}",
+          ]
+        : "",
       ];
     }
 
@@ -364,7 +367,10 @@ function genericPrint(path, options, print) {
     case "InputValueDefinition": {
       return [
         print("description"),
-        node.description ? (node.description.block ? hardline : line) : "",
+        node.description ?
+          node.description.block ? hardline
+          : line
+        : "",
         print("name"),
         ": ",
         print("type"),
@@ -382,23 +388,23 @@ function genericPrint(path, options, print) {
         "input ",
         print("name"),
         printDirectives(path, print, node),
-        node.fields.length > 0
-          ? [
-              " {",
-              indent([
-                hardline,
-                join(
-                  hardline,
-                  path.call(
-                    (fieldsPath) => printSequence(fieldsPath, options, print),
-                    "fields"
-                  )
-                ),
-              ]),
+        node.fields.length > 0 ?
+          [
+            " {",
+            indent([
               hardline,
-              "}",
-            ]
-          : "",
+              join(
+                hardline,
+                path.call(
+                  (fieldsPath) => printSequence(fieldsPath, options, print),
+                  "fields"
+                )
+              ),
+            ]),
+            hardline,
+            "}",
+          ]
+        : "",
       ];
     }
 
@@ -407,18 +413,18 @@ function genericPrint(path, options, print) {
         "schema",
         printDirectives(path, print, node),
         " {",
-        node.operationTypes.length > 0
-          ? indent([
+        node.operationTypes.length > 0 ?
+          indent([
+            hardline,
+            join(
               hardline,
-              join(
-                hardline,
-                path.call(
-                  (opsPath) => printSequence(opsPath, options, print),
-                  "operationTypes"
-                )
-              ),
-            ])
-          : "",
+              path.call(
+                (opsPath) => printSequence(opsPath, options, print),
+                "operationTypes"
+              )
+            ),
+          ])
+        : "",
         hardline,
         "}",
       ];
@@ -436,27 +442,27 @@ function genericPrint(path, options, print) {
         node.kind === "InterfaceTypeExtension" ? "extend " : "",
         "interface ",
         print("name"),
-        node.interfaces.length > 0
-          ? [" implements ", ...printInterfaces(path, options, print)]
-          : "",
+        node.interfaces.length > 0 ?
+          [" implements ", ...printInterfaces(path, options, print)]
+        : "",
         printDirectives(path, print, node),
-        node.fields.length > 0
-          ? [
-              " {",
-              indent([
-                hardline,
-                join(
-                  hardline,
-                  path.call(
-                    (fieldsPath) => printSequence(fieldsPath, options, print),
-                    "fields"
-                  )
-                ),
-              ]),
+        node.fields.length > 0 ?
+          [
+            " {",
+            indent([
               hardline,
-              "}",
-            ]
-          : "",
+              join(
+                hardline,
+                path.call(
+                  (fieldsPath) => printSequence(fieldsPath, options, print),
+                  "fields"
+                )
+              ),
+            ]),
+            hardline,
+            "}",
+          ]
+        : "",
       ];
     }
 
@@ -484,16 +490,16 @@ function genericPrint(path, options, print) {
           "union ",
           print("name"),
           printDirectives(path, print, node),
-          node.types.length > 0
-            ? [
-                " =",
-                ifBreak("", " "),
-                indent([
-                  ifBreak([line, "  "]),
-                  join([line, "| "], path.map(print, "types")),
-                ]),
-              ]
-            : "",
+          node.types.length > 0 ?
+            [
+              " =",
+              ifBreak("", " "),
+              indent([
+                ifBreak([line, "  "]),
+                join([line, "| "], path.map(print, "types")),
+              ]),
+            ]
+          : "",
         ]),
       ]);
     }
