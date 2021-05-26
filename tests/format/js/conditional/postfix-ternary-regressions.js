@@ -21,42 +21,6 @@ const isEmpty = obj =>
       obj === undefined ||
       shallowEqual(obj, {});
 
-// Ternaries in JSXExpressionContainers that are just attributes
-// should not use jsxMode
-const component = (
-  <List
-    dense={dense}
-    component="div"
-    disablePadding
-    className={
-      sidebarIsOpen ?
-        classes.sidebarIsOpen :
-        classes.sidebarIsClosed
-    }
-  >
-    {children}
-  </List>
-);
-
-// Template strings with multiple entries, back-to-back with spaces,
-// should not make it hard to distinguish the alternate.
-const field = (
-  <FunctionField
-    render={(record = Record) =>
-        record
-          ? `${
-                (record_as_Customer)
-                    .first_name
-            } ${
-                (record_as_Customer)
-                    .last_name
-            }`
-          : ''
-    }
-    variant="subtitle1"
-    className={classes.inline}
-  />
-);
 
 // Again, this case is a bit hard to distinguish the alternate.
 const eventsFromOrders =
