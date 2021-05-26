@@ -596,7 +596,10 @@ function isSimpleAtomicExpression(node) {
   return literalTypes.has(node.type) || singleWordTypes.has(node.type);
 }
 
-function isSimpleMemberExpression(node, { maxDepth = Infinity } = {}) {
+function isSimpleMemberExpression(
+  node,
+  { maxDepth = Number.POSITIVE_INFINITY } = {}
+) {
   if (!isMemberExpression(node)) {
     return false;
   }
