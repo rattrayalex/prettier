@@ -7,7 +7,6 @@ const {
   getComments,
   isCallExpression,
   isMemberExpression,
-  isBinaryish,
   isSimpleAtomicExpression,
   isSimpleMemberExpression,
 } = require("../utils");
@@ -21,7 +20,6 @@ const {
     indent,
     ifBreak,
     dedent,
-    align,
     breakParent,
   },
 } = require("../../document");
@@ -136,10 +134,6 @@ const wrapInParens = (doc) => [
  * The following is the shared logic for
  * ternary operators, namely ConditionalExpression
  * and TSConditionalType
- * @param {AstPath} path - The path to the ConditionalExpression/TSConditionalType node.
- * @param {Options} options - Prettier options
- * @param {Function} print - Print function to call recursively
- * @returns {Doc}
  */
 function printTernary(path, options, print, args) {
   const node = path.getValue();
@@ -163,8 +157,6 @@ function printTernary(path, options, print, args) {
   const isInTest =
     isParentTernary &&
     testNodePropertyNames.some((prop) => parent[prop] === node);
-  const isInConsequent =
-    isParentTernary && parent[consequentNodePropertyName] === node;
   const isInAlternate =
     isParentTernary && parent[alternateNodePropertyName] === node;
   const isConsequentTernary = consequentNode.type === node.type;
@@ -189,7 +181,6 @@ function printTernary(path, options, print, args) {
     )
   );
   const firstNonConditionalParent = currentParent || parent;
-  const lastConditionalParent = previousParent;
 
   const isOnSameLineAsAssignment =
     args &&
@@ -255,11 +246,6 @@ function printTernary(path, options, print, args) {
 
   const shouldGroupTestAndConsequent =
     shouldHugAlt || isInChain || isParentTernary || isTSConditional;
-
-  const dedentIfRhs = (doc) =>
-    shouldHugAlt && (isOnSameLineAsAssignment || isOnSameLineAsReturn)
-      ? dedent(doc)
-      : doc;
 
   const testId = Symbol("test");
   const consequentId = Symbol("consequent");
