@@ -25,6 +25,13 @@ const {
 } = require("../../document");
 const pathNeedsParens = require("../needs-parens");
 
+/**
+ * @typedef {import("../../document").Doc} Doc
+ * @typedef {import("../../common/ast-path")} AstPath
+ *
+ * @typedef {any} Options - Prettier options (TBD ...)
+ */
+
 // Break the closing paren to keep the chain right after it:
 // (a
 //   ? b
@@ -134,6 +141,9 @@ const wrapInParens = (doc) => [
  * The following is the shared logic for
  * ternary operators, namely ConditionalExpression
  * and TSConditionalType
+ * @param {Options} options - Prettier options
+ * @param {Function} print - Print function to call recursively
+ * @returns {Doc}
  */
 function printTernary(path, options, print, args) {
   const node = path.getValue();
