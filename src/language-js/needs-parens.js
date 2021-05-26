@@ -467,10 +467,9 @@ function needsParens(path, options) {
       return parent.type === "ArrayTypeAnnotation";
 
     case "FunctionTypeAnnotation": {
-      const ancestor =
-        parent.type === "NullableTypeAnnotation"
-          ? path.getParentNode(1)
-          : parent;
+      const ancestor = parent.type === "NullableTypeAnnotation" ?
+          path.getParentNode(1)
+        : parent;
 
       return (
         ancestor.type === "UnionTypeAnnotation" ||

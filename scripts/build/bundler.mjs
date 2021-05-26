@@ -212,10 +212,9 @@ function getRollupConfig(bundle) {
     rollupPluginCommonjs({
       ignoreGlobal: bundle.target === "node",
       ...bundle.commonjs,
-      ignore:
-        bundle.type === "plugin"
-          ? undefined
-          : (id) => /\.\/parser-.*?/.test(id),
+      ignore: bundle.type === "plugin" ? undefined : (
+        (id) => /\.\/parser-.*?/.test(id)
+      ),
       requireReturnsDefault: "preferred",
     }),
     rollupPluginExternals(bundle.externals),
@@ -247,8 +246,9 @@ function getRollupOutputOptions(bundle, buildOptions) {
   if (bundle.target === "node") {
     options.format = "cjs";
   } else if (bundle.target === "universal") {
-    options.name =
-      bundle.type === "plugin" ? `prettierPlugins.${bundle.name}` : bundle.name;
+    options.name = bundle.type === "plugin" ?
+        `prettierPlugins.${bundle.name}`
+      : bundle.name;
 
     if (!bundle.format && bundle.bundler !== "webpack") {
       return [

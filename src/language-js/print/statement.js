@@ -216,8 +216,8 @@ function shouldPrintSemicolonAfterClassProperty(node, nextNode) {
         return false;
       }
 
-      const isGenerator = nextNode.value
-        ? nextNode.value.generator
+      const isGenerator = nextNode.value ?
+          nextNode.value.generator
         : nextNode.generator;
       if (nextNode.computed || isGenerator) {
         return true;

@@ -117,22 +117,24 @@ function genericPrint(path, options, print) {
       return [
         print("selector"),
         node.important ? " !important" : "",
-        node.nodes
-          ? [
+        node.nodes ?
+          [
+            (
               node.selector &&
               node.selector.type === "selector-unknown" &&
               lastLineHasInlineComment(node.selector.value)
-                ? line
-                : " ",
-              "{",
-              node.nodes.length > 0
-                ? indent([hardline, printNodeSequence(path, options, print)])
-                : "",
-              hardline,
-              "}",
-              isDetachedRulesetDeclarationNode(node) ? ";" : "",
-            ]
-          : ";",
+            ) ?
+              line
+            : " ",
+            "{",
+            node.nodes.length > 0 ?
+              indent([hardline, printNodeSequence(path, options, print)])
+            : "",
+            hardline,
+            "}",
+            isDetachedRulesetDeclarationNode(node) ? ";" : "",
+          ]
+        : ";",
       ];
     }
     case "css-decl": {
@@ -142,8 +144,8 @@ function genericPrint(path, options, print) {
       const trimmedBetween = rawBetween.trim();
       const isColon = trimmedBetween === ":";
 
-      let value = hasComposesNode(node)
-        ? removeLines(print("value"))
+      let value = hasComposesNode(node) ?
+          removeLines(print("value"))
         : print("value");
 
       if (!isColon && lastLineHasInlineComment(trimmedBetween)) {
@@ -156,39 +158,38 @@ function genericPrint(path, options, print) {
         trimmedBetween.startsWith("//") ? " " : "",
         trimmedBetween,
         node.extend ? "" : " ",
-        isLessParser(options) && node.extend && node.selector
-          ? ["extend(", print("selector"), ")"]
-          : "",
+        isLessParser(options) && node.extend && node.selector ?
+          ["extend(", print("selector"), ")"]
+        : "",
         value,
-        node.raws.important
-          ? node.raws.important.replace(/\s*!\s*important/i, " !important")
-          : node.important
-          ? " !important"
-          : "",
-        node.raws.scssDefault
-          ? node.raws.scssDefault.replace(/\s*!default/i, " !default")
-          : node.scssDefault
-          ? " !default"
-          : "",
-        node.raws.scssGlobal
-          ? node.raws.scssGlobal.replace(/\s*!global/i, " !global")
-          : node.scssGlobal
-          ? " !global"
-          : "",
-        node.nodes
-          ? [
-              " {",
-              indent([softline, printNodeSequence(path, options, print)]),
-              softline,
-              "}",
-            ]
-          : isTemplatePropNode(node) &&
-            !parentNode.raws.semicolon &&
-            options.originalText[locEnd(node) - 1] !== ";"
-          ? ""
-          : options.__isHTMLStyleAttribute && isLastNode(path, node)
-          ? ifBreak(";")
-          : ";",
+        node.raws.important ?
+          node.raws.important.replace(/\s*!\s*important/i, " !important")
+        : node.important ? " !important"
+        : "",
+        node.raws.scssDefault ?
+          node.raws.scssDefault.replace(/\s*!default/i, " !default")
+        : node.scssDefault ? " !default"
+        : "",
+        node.raws.scssGlobal ?
+          node.raws.scssGlobal.replace(/\s*!global/i, " !global")
+        : node.scssGlobal ? " !global"
+        : "",
+        node.nodes ?
+          [
+            " {",
+            indent([softline, printNodeSequence(path, options, print)]),
+            softline,
+            "}",
+          ]
+        : (
+          isTemplatePropNode(node) &&
+          !parentNode.raws.semicolon &&
+          options.originalText[locEnd(node) - 1] !== ";"
+        ) ?
+          ""
+        : options.__isHTMLStyleAttribute && isLastNode(path, node) ?
+          ifBreak(";")
+        : ";",
       ];
     }
     case "css-atrule": {
@@ -222,17 +223,17 @@ function genericPrint(path, options, print) {
             ": ",
             node.value ? print("value") : "",
             node.raws.between.trim() ? node.raws.between.trim() + " " : "",
-            node.nodes
-              ? [
-                  "{",
-                  indent([
-                    node.nodes.length > 0 ? softline : "",
-                    printNodeSequence(path, options, print),
-                  ]),
-                  softline,
-                  "}",
-                ]
-              : "",
+            node.nodes ?
+              [
+                "{",
+                indent([
+                  node.nodes.length > 0 ? softline : "",
+                  printNodeSequence(path, options, print),
+                ]),
+                softline,
+                "}",
+              ]
+            : "",
             isTemplatePlaceholderNodeWithoutSemiColon ? "" : ";",
           ];
         }
@@ -243,65 +244,58 @@ function genericPrint(path, options, print) {
         // If a Less file ends up being parsed with the SCSS parser, Less
         // variable declarations will be parsed as at-rules with names ending
         // with a colon, so keep the original case then.
-        isDetachedRulesetCallNode(node) || node.name.endsWith(":")
-          ? node.name
-          : maybeToLowerCase(node.name),
-        node.params
-          ? [
-              isDetachedRulesetCallNode(node)
-                ? ""
-                : isTemplatePlaceholderNode(node)
-                ? node.raws.afterName === ""
-                  ? ""
-                  : node.name.endsWith(":")
-                  ? " "
-                  : /^\s*\n\s*\n/.test(node.raws.afterName)
-                  ? [hardline, hardline]
-                  : /^\s*\n/.test(node.raws.afterName)
-                  ? hardline
-                  : " "
-                : " ",
-              print("params"),
-            ]
-          : "",
+        isDetachedRulesetCallNode(node) || node.name.endsWith(":") ?
+          node.name
+        : maybeToLowerCase(node.name),
+        node.params ?
+          [
+            isDetachedRulesetCallNode(node) ? ""
+            : isTemplatePlaceholderNode(node) ?
+              node.raws.afterName === "" ? ""
+              : node.name.endsWith(":") ? " "
+              : /^\s*\n\s*\n/.test(node.raws.afterName) ? [hardline, hardline]
+              : /^\s*\n/.test(node.raws.afterName) ? hardline
+              : " "
+            : " ",
+            print("params"),
+          ]
+        : "",
         node.selector ? indent([" ", print("selector")]) : "",
-        node.value
-          ? group([
-              " ",
-              print("value"),
-              isSCSSControlDirectiveNode(node)
-                ? hasParensAroundNode(node)
-                  ? " "
-                  : line
-                : "",
-            ])
-          : node.name === "else"
-          ? " "
-          : "",
-        node.nodes
-          ? [
-              isSCSSControlDirectiveNode(node)
-                ? ""
-                : (node.selector &&
-                    !node.selector.nodes &&
-                    typeof node.selector.value === "string" &&
-                    lastLineHasInlineComment(node.selector.value)) ||
-                  (!node.selector &&
-                    typeof node.params === "string" &&
-                    lastLineHasInlineComment(node.params))
-                ? line
-                : " ",
-              "{",
-              indent([
-                node.nodes.length > 0 ? softline : "",
-                printNodeSequence(path, options, print),
-              ]),
-              softline,
-              "}",
-            ]
-          : isTemplatePlaceholderNodeWithoutSemiColon
-          ? ""
-          : ";",
+        node.value ?
+          group([
+            " ",
+            print("value"),
+            isSCSSControlDirectiveNode(node) ?
+              hasParensAroundNode(node) ? " "
+              : line
+            : "",
+          ])
+        : node.name === "else" ? " "
+        : "",
+        node.nodes ?
+          [
+            isSCSSControlDirectiveNode(node) ? ""
+            : (
+              (node.selector &&
+                !node.selector.nodes &&
+                typeof node.selector.value === "string" &&
+                lastLineHasInlineComment(node.selector.value)) ||
+              (!node.selector &&
+                typeof node.params === "string" &&
+                lastLineHasInlineComment(node.params))
+            ) ?
+              line
+            : " ",
+            "{",
+            indent([
+              node.nodes.length > 0 ? softline : "",
+              printNodeSequence(path, options, print),
+            ]),
+            softline,
+            "}",
+          ]
+        : isTemplatePlaceholderNodeWithoutSemiColon ? ""
+        : ";",
       ];
     }
     // postcss-media-query-parser
@@ -358,15 +352,15 @@ function genericPrint(path, options, print) {
     // postcss-selector-parser
     case "selector-root": {
       return group([
-        insideAtRuleNode(path, "custom-selector")
-          ? [getAncestorNode(path, "css-atrule").customSelector, line]
-          : "",
+        insideAtRuleNode(path, "custom-selector") ?
+          [getAncestorNode(path, "css-atrule").customSelector, line]
+        : "",
         join(
           [
             ",",
-            insideAtRuleNode(path, ["extend", "custom-selector", "nest"])
-              ? line
-              : hardline,
+            insideAtRuleNode(path, ["extend", "custom-selector", "nest"]) ?
+              line
+            : hardline,
           ],
           path.map(print, "nodes")
         ),
@@ -387,16 +381,16 @@ function genericPrint(path, options, print) {
       const prevNode = index && parentNode.nodes[index - 1];
 
       return [
-        node.namespace
-          ? [node.namespace === true ? "" : node.namespace.trim(), "|"]
-          : "",
-        prevNode.type === "selector-nesting"
-          ? node.value
-          : adjustNumbers(
-              isKeyframeAtRuleKeywords(path, node.value)
-                ? node.value.toLowerCase()
-                : node.value
-            ),
+        node.namespace ?
+          [node.namespace === true ? "" : node.namespace.trim(), "|"]
+        : "",
+        prevNode.type === "selector-nesting" ?
+          node.value
+        : adjustNumbers(
+            isKeyframeAtRuleKeywords(path, node.value) ?
+              node.value.toLowerCase()
+            : node.value
+          ),
       ];
     }
     case "selector-id": {
@@ -408,17 +402,17 @@ function genericPrint(path, options, print) {
     case "selector-attribute": {
       return [
         "[",
-        node.namespace
-          ? [node.namespace === true ? "" : node.namespace.trim(), "|"]
-          : "",
+        node.namespace ?
+          [node.namespace === true ? "" : node.namespace.trim(), "|"]
+        : "",
         node.attribute.trim(),
         node.operator ? node.operator : "",
-        node.value
-          ? quoteAttributeValue(
-              adjustStrings(node.value.trim(), options),
-              options
-            )
-          : "",
+        node.value ?
+          quoteAttributeValue(
+            adjustStrings(node.value.trim(), options),
+            options
+          )
+        : "",
         node.insensitive ? " i" : "",
         "]",
       ];
@@ -431,11 +425,12 @@ function genericPrint(path, options, print) {
         node.value === ">>>"
       ) {
         const parentNode = path.getParentNode();
-        const leading =
-          parentNode.type === "selector-selector" &&
-          parentNode.nodes[0] === node
-            ? ""
-            : line;
+        const leading = (
+            parentNode.type === "selector-selector" &&
+            parentNode.nodes[0] === node
+          ) ?
+            ""
+          : line;
 
         return [leading, node.value, isLastNode(path, node) ? "" : " "];
       }
@@ -448,18 +443,18 @@ function genericPrint(path, options, print) {
     }
     case "selector-universal": {
       return [
-        node.namespace
-          ? [node.namespace === true ? "" : node.namespace.trim(), "|"]
-          : "",
+        node.namespace ?
+          [node.namespace === true ? "" : node.namespace.trim(), "|"]
+        : "",
         node.value,
       ];
     }
     case "selector-pseudo": {
       return [
         maybeToLowerCase(node.value),
-        isNonEmptyArray(node.nodes)
-          ? ["(", join(", ", path.map(print, "nodes")), ")"]
-          : "",
+        isNonEmptyArray(node.nodes) ?
+          ["(", join(", ", path.map(print, "nodes")), ")"]
+        : "",
       ];
     }
     case "selector-nesting": {
@@ -495,8 +490,8 @@ function genericPrint(path, options, print) {
         const end = locEnd(parentNode.close) - 1;
         const selector = options.originalText.slice(start, end).trim();
 
-        return lastLineHasInlineComment(selector)
-          ? [breakParent, selector]
+        return lastLineHasInlineComment(selector) ?
+            [breakParent, selector]
           : selector;
       }
 
@@ -891,12 +886,14 @@ function genericPrint(path, options, print) {
             ),
           ]),
           ifBreak(
-            !isLastItemComment &&
-              isSCSS(options.parser, options.originalText) &&
-              isSCSSMapItem &&
-              shouldPrintComma(options)
-              ? ","
-              : ""
+            (
+              !isLastItemComment &&
+                isSCSS(options.parser, options.originalText) &&
+                isSCSSMapItem &&
+                shouldPrintComma(options)
+            ) ?
+              ","
+            : ""
           ),
           softline,
           node.close ? print("close") : "",
@@ -911,9 +908,9 @@ function genericPrint(path, options, print) {
     case "value-func": {
       return [
         node.value,
-        insideAtRuleNode(path, "supports") && isMediaAndSupportsKeywords(node)
-          ? " "
-          : "",
+        insideAtRuleNode(path, "supports") && isMediaAndSupportsKeywords(node) ?
+          " "
+        : "",
         print("group"),
       ];
     }
@@ -940,13 +937,15 @@ function genericPrint(path, options, print) {
       return [
         node.value,
         // Don't add spaces on escaped colon `:`, e.g: grid-template-rows: [row-1-00\:00] auto;
-        (prevNode &&
-          typeof prevNode.value === "string" &&
-          getLast(prevNode.value) === "\\") ||
-        // Don't add spaces on `:` in `url` function (i.e. `url(fbglyph: cross-outline, fig-white)`)
-        insideValueFunctionNode(path, "url")
-          ? ""
-          : line,
+        (
+          (prevNode &&
+            typeof prevNode.value === "string" &&
+            getLast(prevNode.value) === "\\") ||
+          // Don't add spaces on `:` in `url` function (i.e. `url(fbglyph: cross-outline, fig-white)`)
+          insideValueFunctionNode(path, "url")
+        ) ?
+          ""
+        : line,
       ];
     }
     // TODO: confirm this code is dead
@@ -1038,18 +1037,18 @@ function adjustStrings(value, options) {
 
 function quoteAttributeValue(value, options) {
   const quote = options.singleQuote ? "'" : '"';
-  return value.includes('"') || value.includes("'")
-    ? value
-    : quote + value + quote;
+  return value.includes('"') || value.includes("'") ? value : (
+    quote + value + quote
+  );
 }
 
 function adjustNumbers(value) {
   return value.replace(
     ADJUST_NUMBERS_REGEX,
     (match, quote, wordPart, number, unit) =>
-      !wordPart && number
-        ? printCssNumber(number) + maybeToLowerCase(unit || "")
-        : match
+      !wordPart && number ?
+        printCssNumber(number) + maybeToLowerCase(unit || "")
+      : match
   );
 }
 

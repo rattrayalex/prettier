@@ -115,8 +115,8 @@ function _getFileInfo({
 }
 
 function normalizeFilePath(filePath, ignorePath) {
-  return ignorePath
-    ? path.relative(path.dirname(ignorePath), filePath)
+  return ignorePath ?
+      path.relative(path.dirname(ignorePath), filePath)
     : filePath;
 }
 

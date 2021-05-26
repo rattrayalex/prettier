@@ -84,9 +84,9 @@ function hasNode(node, fn) {
     return node.some((value) => hasNode(value, fn));
   }
   const result = fn(node);
-  return typeof result === "boolean"
-    ? result
-    : Object.values(node).some((value) => hasNode(value, fn));
+  return typeof result === "boolean" ? result : (
+    Object.values(node).some((value) => hasNode(value, fn))
+  );
 }
 
 /**
@@ -531,10 +531,10 @@ function isTestCall(node, parent) {
         return false;
       }
       return (
-        (node.arguments.length === 2
-          ? isFunctionOrArrowExpression(node.arguments[1])
-          : isFunctionOrArrowExpressionWithBody(node.arguments[1]) &&
-            getFunctionParameters(node.arguments[1]).length <= 1) ||
+        (node.arguments.length === 2 ?
+          isFunctionOrArrowExpression(node.arguments[1])
+        : isFunctionOrArrowExpressionWithBody(node.arguments[1]) &&
+          getFunctionParameters(node.arguments[1]).length <= 1) ||
         isAngularTestWrapper(node.arguments[1])
       );
     }

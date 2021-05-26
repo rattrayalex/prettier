@@ -64,11 +64,9 @@ function genericPrint(path, options, print) {
       ),
       options
     ).map((node) =>
-      node.type === "word"
-        ? node.value
-        : node.value === ""
-        ? ""
-        : printLine(path, node.value, options)
+      node.type === "word" ? node.value
+      : node.value === "" ? ""
+      : printLine(path, node.value, options)
     );
   }
 
@@ -84,9 +82,9 @@ function genericPrint(path, options, print) {
       }
       return [
         normalizeDoc(printRoot(path, options, print)),
-        !TRAILING_HARDLINE_NODES.has(getLastDescendantNode(node).type)
-          ? hardline
-          : "",
+        !TRAILING_HARDLINE_NODES.has(getLastDescendantNode(node).type) ?
+          hardline
+        : "",
       ];
     case "paragraph":
       return printChildren(path, options, print, {
@@ -106,9 +104,9 @@ function genericPrint(path, options, print) {
             "g"
           ),
           (_, text1, underscore1, underscore2, text2) =>
-            (underscore1
-              ? `${text1}${underscore1}`
-              : `${underscore2}${text2}`
+            (underscore1 ?
+              `${text1}${underscore1}`
+            : `${underscore2}${text2}`
             ).replace(/_/g, "\\_")
         ); // escape all `_` except concating with non-punctuation, e.g. `1_2_3` is not considered emphasis
 
@@ -142,9 +140,9 @@ function genericPrint(path, options, print) {
 
       const proseWrap =
         // leading char that may cause different syntax
-        nextNode && /^>|^([*+-]|#{1,6}|\d+[).])$/.test(nextNode.value)
-          ? "never"
-          : options.proseWrap;
+        nextNode && /^>|^([*+-]|#{1,6}|\d+[).])$/.test(nextNode.value) ?
+          "never"
+        : options.proseWrap;
 
       return printLine(path, node.value, { proseWrap });
     }
@@ -168,8 +166,9 @@ function genericPrint(path, options, print) {
             nextNode.children.length > 0 &&
             nextNode.children[0].type === "word" &&
             !nextNode.children[0].hasLeadingPunctuation);
-        style =
-          hasPrevOrNextWord || getAncestorNode(path, "emphasis") ? "*" : "_";
+        style = hasPrevOrNextWord || getAncestorNode(path, "emphasis") ?
+            "*"
+          : "_";
       }
       return [style, printChildren(path, options, print), style];
     }
@@ -199,13 +198,15 @@ function genericPrint(path, options, print) {
           const mailto = "mailto:";
           const url =
             // <hello@example.com> is parsed as { url: "mailto:hello@example.com" }
-            node.url.startsWith(mailto) &&
-            options.originalText.slice(
-              node.position.start.offset + 1,
-              node.position.start.offset + 1 + mailto.length
-            ) !== mailto
-              ? node.url.slice(mailto.length)
-              : node.url;
+            (
+              node.url.startsWith(mailto) &&
+              options.originalText.slice(
+                node.position.start.offset + 1,
+                node.position.start.offset + 1 + mailto.length
+              ) !== mailto
+            ) ?
+              node.url.slice(mailto.length)
+            : node.url;
           return ["<", url, ">"];
         }
         case "[":
@@ -270,10 +271,11 @@ function genericPrint(path, options, print) {
     }
     case "html": {
       const parentNode = path.getParentNode();
-      const value =
-        parentNode.type === "root" && getLast(parentNode.children) === node
-          ? node.value.trimEnd()
-          : node.value;
+      const value = (
+          parentNode.type === "root" && getLast(parentNode.children) === node
+        ) ?
+          node.value.trimEnd()
+        : node.value;
       const isHtmlComment = /^<!--.*-->$/s.test(value);
       return replaceEndOfLineWith(
         value,
@@ -314,20 +316,20 @@ function genericPrint(path, options, print) {
           ];
 
           function getPrefix() {
-            const rawPrefix = node.ordered
-              ? (index === 0
-                  ? node.start
-                  : isGitDiffFriendlyOrderedList
-                  ? 1
-                  : node.start + index) +
+            const rawPrefix =
+              node.ordered ?
+                (index === 0 ? node.start
+                : isGitDiffFriendlyOrderedList ? 1
+                : node.start + index) +
                 (nthSiblingIndex % 2 === 0 ? ". " : ") ")
-              : nthSiblingIndex % 2 === 0
-              ? "- "
+              : nthSiblingIndex % 2 === 0 ? "- "
               : "* ";
 
-            return node.isAligned ||
-              /* workaround for https://github.com/remarkjs/remark/issues/315 */ node.hasIndentedCodeblock
-              ? alignListPrefix(rawPrefix, options)
+            return (
+                node.isAligned ||
+                  /* workaround for https://github.com/remarkjs/remark/issues/315 */ node.hasIndentedCodeblock
+              ) ?
+                alignListPrefix(rawPrefix, options)
               : rawPrefix;
           }
         },
@@ -349,11 +351,9 @@ function genericPrint(path, options, print) {
         "[",
         printChildren(path, options, print),
         "]",
-        node.referenceType === "full"
-          ? ["[", node.identifier, "]"]
-          : node.referenceType === "collapsed"
-          ? "[]"
-          : "",
+        node.referenceType === "full" ? ["[", node.identifier, "]"]
+        : node.referenceType === "collapsed" ? "[]"
+        : "",
       ];
     case "imageReference":
       switch (node.referenceType) {
@@ -376,9 +376,9 @@ function genericPrint(path, options, print) {
         indent([
           lineOrSpace,
           printUrl(node.url),
-          node.title === null
-            ? ""
-            : [lineOrSpace, printTitle(node.title, options, false)],
+          node.title === null ?
+            ""
+          : [lineOrSpace, printTitle(node.title, options, false)],
         ]),
       ]);
     }
@@ -402,20 +402,18 @@ function genericPrint(path, options, print) {
         "[^",
         node.identifier,
         "]: ",
-        shouldInlineFootnote
-          ? printChildren(path, options, print)
-          : group([
-              align(
-                " ".repeat(4),
-                printChildren(path, options, print, {
-                  processor: (childPath, index) =>
-                    index === 0 ? group([softline, print()]) : print(),
-                })
-              ),
-              nextNode && nextNode.type === "footnoteDefinition"
-                ? softline
-                : "",
-            ]),
+        shouldInlineFootnote ?
+          printChildren(path, options, print)
+        : group([
+            align(
+              " ".repeat(4),
+              printChildren(path, options, print, {
+                processor: (childPath, index) =>
+                  index === 0 ? group([softline, print()]) : print(),
+              })
+            ),
+            nextNode && nextNode.type === "footnoteDefinition" ? softline : "",
+          ]),
       ];
     }
     case "table":
@@ -423,8 +421,8 @@ function genericPrint(path, options, print) {
     case "tableCell":
       return printChildren(path, options, print);
     case "break":
-      return /\s/.test(options.originalText[node.position.start.offset])
-        ? ["  ", markAsRoot(literalline)]
+      return /\s/.test(options.originalText[node.position.start.offset]) ?
+          ["  ", markAsRoot(literalline)]
         : ["\\", hardline];
     case "liquidNode":
       return replaceEndOfLineWith(node.value, hardline);
@@ -439,9 +437,9 @@ function genericPrint(path, options, print) {
       return [
         "$$",
         hardline,
-        node.value
-          ? [...replaceEndOfLineWith(node.value, hardline), hardline]
-          : "",
+        node.value ?
+          [...replaceEndOfLineWith(node.value, hardline), hardline]
+        : "",
         "$$",
       ];
     case "inlineMath": {
@@ -460,7 +458,10 @@ function genericPrint(path, options, print) {
 
 function printListItem(path, options, print, listPrefix) {
   const node = path.getValue();
-  const prefix = node.checked === null ? "" : node.checked ? "[x] " : "[ ] ";
+  const prefix =
+    node.checked === null ? ""
+    : node.checked ? "[x] "
+    : "[ ] ";
   return [
     prefix,
     printChildren(path, options, print, {
@@ -545,13 +546,13 @@ function printLine(path, value, options) {
   const isBreakable =
     options.proseWrap === "always" &&
     !getAncestorNode(path, SINGLE_LINE_NODE_TYPES);
-  return value !== ""
-    ? isBreakable
-      ? line
+  return (
+    value !== "" ?
+      isBreakable ? line
       : " "
-    : isBreakable
-    ? softline
-    : "";
+    : isBreakable ? softline
+    : ""
+  );
 }
 
 function printTable(path, options, print) {
@@ -762,7 +763,11 @@ function isPrettierIgnore(node) {
   const match = node.value.match(
     /^<!--\s*prettier-ignore(?:-(start|end))?\s*-->$/
   );
-  return match === null ? false : match[1] ? match[1] : "next";
+  return (
+    match === null ? false
+    : match[1] ? match[1]
+    : "next"
+  );
 }
 
 function shouldPrePrintHardline(node, data) {
@@ -841,12 +846,12 @@ function shouldRemainTheSameContent(path) {
 function printUrl(url, dangerousCharOrChars = []) {
   const dangerousChars = [
     " ",
-    ...(Array.isArray(dangerousCharOrChars)
-      ? dangerousCharOrChars
-      : [dangerousCharOrChars]),
+    ...(Array.isArray(dangerousCharOrChars) ?
+      dangerousCharOrChars
+    : [dangerousCharOrChars]),
   ];
-  return new RegExp(dangerousChars.map((x) => `\\${x}`).join("|")).test(url)
-    ? `<${url}>`
+  return new RegExp(dangerousChars.map((x) => `\\${x}`).join("|")).test(url) ?
+      `<${url}>`
     : url;
 }
 
@@ -868,20 +873,21 @@ function printTitle(title, options, printSpace = true) {
   const singleCount = title.split("'").length - 1;
   const doubleCount = title.split('"').length - 1;
   const quote =
-    singleCount > doubleCount
-      ? '"'
-      : doubleCount > singleCount
-      ? "'"
-      : options.singleQuote
-      ? "'"
-      : '"';
+    singleCount > doubleCount ? '"'
+    : doubleCount > singleCount ? "'"
+    : options.singleQuote ? "'"
+    : '"';
   title = title.replace(/\\/, "\\\\");
   title = title.replace(new RegExp(`(${quote})`, "g"), "\\$1");
   return `${quote}${title}${quote}`;
 }
 
 function clamp(value, min, max) {
-  return value < min ? min : value > max ? max : value;
+  return (
+    value < min ? min
+    : value > max ? max
+    : value
+  );
 }
 
 function hasPrettierIgnore(path) {

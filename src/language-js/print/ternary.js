@@ -108,14 +108,14 @@ function conditionalExpressionChainContainsJsx(node) {
 function printTernaryTest(path, options, print) {
   const node = path.getValue();
   const isConditionalExpression = node.type === "ConditionalExpression";
-  const alternateNodePropertyName = isConditionalExpression
-    ? "alternate"
+  const alternateNodePropertyName = isConditionalExpression ?
+      "alternate"
     : "falseType";
 
   const parent = path.getParentNode();
 
-  const printed = isConditionalExpression
-    ? print("test")
+  const printed = isConditionalExpression ?
+      print("test")
     : [print("checkType"), " ", "extends", " ", print("extendsType")];
   /**
    *     a
@@ -194,14 +194,14 @@ function shouldExtraIndentForConditionalExpression(path) {
 function printTernary(path, options, print) {
   const node = path.getValue();
   const isConditionalExpression = node.type === "ConditionalExpression";
-  const consequentNodePropertyName = isConditionalExpression
-    ? "consequent"
+  const consequentNodePropertyName = isConditionalExpression ?
+      "consequent"
     : "trueType";
-  const alternateNodePropertyName = isConditionalExpression
-    ? "alternate"
+  const alternateNodePropertyName = isConditionalExpression ?
+      "alternate"
     : "falseType";
-  const testNodePropertyNames = isConditionalExpression
-    ? ["test"]
+  const testNodePropertyNames = isConditionalExpression ?
+      ["test"]
     : ["checkType", "extendsType"];
   const consequentNode = node[consequentNodePropertyName];
   const alternateNode = node[alternateNodePropertyName];
@@ -267,13 +267,13 @@ function printTernary(path, options, print) {
 
     parts.push(
       " ? ",
-      isNil(consequentNode)
-        ? print(consequentNodePropertyName)
-        : wrap(print(consequentNodePropertyName)),
+      isNil(consequentNode) ?
+        print(consequentNodePropertyName)
+      : wrap(print(consequentNodePropertyName)),
       " : ",
-      alternateNode.type === node.type || isNil(alternateNode)
-        ? print(alternateNodePropertyName)
-        : wrap(print(alternateNodePropertyName))
+      alternateNode.type === node.type || isNil(alternateNode) ?
+        print(alternateNodePropertyName)
+      : wrap(print(alternateNodePropertyName))
     );
   } else {
     // normal mode
@@ -285,18 +285,19 @@ function printTernary(path, options, print) {
       consequentNode.type === node.type ? ifBreak("", ")") : "",
       line,
       ": ",
-      alternateNode.type === node.type
-        ? print(alternateNodePropertyName)
-        : align(2, print(alternateNodePropertyName)),
+      alternateNode.type === node.type ?
+        print(alternateNodePropertyName)
+      : align(2, print(alternateNodePropertyName)),
     ];
     parts.push(
-      parent.type !== node.type ||
-        parent[alternateNodePropertyName] === node ||
-        isParentTest
-        ? part
-        : options.useTabs
-        ? dedent(indent(part))
-        : align(Math.max(0, options.tabWidth - 2), part)
+      (
+        parent.type !== node.type ||
+          parent[alternateNodePropertyName] === node ||
+          isParentTest
+      ) ?
+        part
+      : options.useTabs ? dedent(indent(part))
+      : align(Math.max(0, options.tabWidth - 2), part)
     );
   }
 
@@ -320,11 +321,9 @@ function printTernary(path, options, print) {
       )
   );
   const maybeGroup = (doc) =>
-    parent === firstNonConditionalParent
-      ? group(doc, { shouldBreak })
-      : shouldBreak
-      ? [doc, breakParent]
-      : doc;
+    parent === firstNonConditionalParent ? group(doc, { shouldBreak })
+    : shouldBreak ? [doc, breakParent]
+    : doc;
 
   // Break the closing paren to keep the chain right after it:
   // (a
@@ -342,13 +341,13 @@ function printTernary(path, options, print) {
   const result = maybeGroup([
     printTernaryTest(path, options, print),
     forceNoIndent ? parts : indent(parts),
-    isConditionalExpression && breakClosingParen && !shouldExtraIndent
-      ? softline
-      : "",
+    isConditionalExpression && breakClosingParen && !shouldExtraIndent ?
+      softline
+    : "",
   ]);
 
-  return isParentTest || shouldExtraIndent
-    ? group([indent([softline, result]), softline])
+  return isParentTest || shouldExtraIndent ?
+      group([indent([softline, result]), softline])
     : result;
 }
 

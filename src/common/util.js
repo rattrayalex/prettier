@@ -372,10 +372,9 @@ function getPreferredQuote(raw, preferredQuote) {
     const numPreferredQuotes = (rawContent.match(preferred.regex) || []).length;
     const numAlternateQuotes = (rawContent.match(alternate.regex) || []).length;
 
-    result =
-      numPreferredQuotes > numAlternateQuotes
-        ? alternate.quote
-        : preferred.quote;
+    result = numPreferredQuotes > numAlternateQuotes ?
+        alternate.quote
+      : preferred.quote;
   }
 
   return result;
@@ -388,14 +387,15 @@ function printString(raw, options) {
 
   /** @type {Quote} */
   const enclosingQuote =
-    options.parser === "json" ||
-    (options.parser === "json5" &&
-      options.quoteProps === "preserve" &&
-      !options.singleQuote)
-      ? '"'
-      : options.__isInHtmlAttribute
-      ? "'"
-      : getPreferredQuote(raw, options.singleQuote ? "'" : '"');
+    (
+      options.parser === "json" ||
+      (options.parser === "json5" &&
+        options.quoteProps === "preserve" &&
+        !options.singleQuote)
+    ) ?
+      '"'
+    : options.__isInHtmlAttribute ? "'"
+    : getPreferredQuote(raw, options.singleQuote ? "'" : '"');
 
   // It might sound unnecessary to use `makeString` even if the string already
   // is enclosed with `enclosingQuote`, but it isn't. The string could contain
@@ -448,9 +448,11 @@ function makeString(rawContent, enclosingQuote, unescapeUnnecessaryEscapes) {
 
     // Unescape any unnecessarily escaped character.
     // Adapted from https://github.com/eslint/eslint/blob/de0b4ad7bd820ade41b1f606008bea68683dc11a/lib/rules/no-useless-escape.js#L27
-    return unescapeUnnecessaryEscapes &&
-      /^[^\n\r"'0-7\\bfnrt-vx\u2028\u2029]$/.test(escaped)
-      ? escaped
+    return (
+        unescapeUnnecessaryEscapes &&
+          /^[^\n\r"'0-7\\bfnrt-vx\u2028\u2029]$/.test(escaped)
+      ) ?
+        escaped
       : "\\" + escaped;
   });
 

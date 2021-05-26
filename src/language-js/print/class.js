@@ -124,11 +124,11 @@ function printList(path, options, print, listName) {
     ({ marker }) => marker === listName
   );
   return [
-    shouldIndentOnlyHeritageClauses(node)
-      ? ifBreak(" ", line, {
-          groupId: getTypeParametersGroupId(node.typeParameters),
-        })
-      : line,
+    shouldIndentOnlyHeritageClauses(node) ?
+      ifBreak(" ", line, {
+        groupId: getTypeParametersGroupId(node.typeParameters),
+      })
+    : line,
     printedLeadingComments,
     printedLeadingComments && hardline,
     listName,

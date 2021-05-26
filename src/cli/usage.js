@@ -13,8 +13,8 @@ function indent(str, spaces) {
 }
 
 function createDefaultValueDisplay(value) {
-  return Array.isArray(value)
-    ? `[${value.map(createDefaultValueDisplay).join(", ")}]`
+  return Array.isArray(value) ?
+      `[${value.map(createDefaultValueDisplay).join(", ")}]`
     : value;
 }
 
@@ -44,10 +44,9 @@ function createOptionUsageHeader(option) {
 }
 
 function createOptionUsageRow(header, content, threshold) {
-  const separator =
-    header.length >= threshold
-      ? `\n${" ".repeat(threshold)}`
-      : " ".repeat(threshold - header.length);
+  const separator = header.length >= threshold ?
+      `\n${" ".repeat(threshold)}`
+    : " ".repeat(threshold - header.length);
 
   const description = content.replace(/\n/g, `\n${" ".repeat(threshold)}`);
 
@@ -88,9 +87,9 @@ function createOptionUsage(context, option, threshold) {
   return createOptionUsageRow(
     header,
     `${option.description}${
-      optionDefaultValue === undefined
-        ? ""
-        : `\nDefaults to ${createDefaultValueDisplay(optionDefaultValue)}.`
+      optionDefaultValue === undefined ?
+        ""
+      : `\nDefaults to ${createDefaultValueDisplay(optionDefaultValue)}.`
     }`,
     threshold
   );
@@ -100,14 +99,14 @@ function getOptionsWithOpposites(options) {
   // Add --no-foo after --foo.
   const optionsWithOpposites = options.map((option) => [
     option.description ? option : null,
-    option.oppositeDescription
-      ? {
-          ...option,
-          name: `no-${option.name}`,
-          type: "boolean",
-          description: option.oppositeDescription,
-        }
-      : null,
+    option.oppositeDescription ?
+      {
+        ...option,
+        name: `no-${option.name}`,
+        type: "boolean",
+        description: option.oppositeDescription,
+      }
+    : null,
   ]);
   return optionsWithOpposites.flat().filter(Boolean);
 }
@@ -156,27 +155,26 @@ function createDetailedUsage(context, flag) {
   const header = createOptionUsageHeader(option);
   const description = `\n\n${indent(option.description, 2)}`;
 
-  const choices =
-    option.type !== "choice"
-      ? ""
-      : `\n\nValid options:\n\n${createChoiceUsages(
-          option.choices,
-          CHOICE_USAGE_MARGIN,
-          CHOICE_USAGE_INDENTATION
-        ).join("\n")}`;
+  const choices = option.type !== "choice" ? "" : (
+    `\n\nValid options:\n\n${createChoiceUsages(
+      option.choices,
+      CHOICE_USAGE_MARGIN,
+      CHOICE_USAGE_INDENTATION
+    ).join("\n")}`
+  );
 
   const optionDefaultValue = getOptionDefaultValue(context, option.name);
-  const defaults =
-    optionDefaultValue !== undefined
-      ? `\n\nDefault: ${createDefaultValueDisplay(optionDefaultValue)}`
-      : "";
+  const defaults = optionDefaultValue !== undefined ?
+      `\n\nDefault: ${createDefaultValueDisplay(optionDefaultValue)}`
+    : "";
 
-  const pluginDefaults =
-    option.pluginDefaults && Object.keys(option.pluginDefaults).length > 0
-      ? `\nPlugin defaults:${Object.entries(option.pluginDefaults).map(
-          ([key, value]) => `\n* ${key}: ${createDefaultValueDisplay(value)}`
-        )}`
-      : "";
+  const pluginDefaults = (
+      option.pluginDefaults && Object.keys(option.pluginDefaults).length > 0
+    ) ?
+      `\nPlugin defaults:${Object.entries(option.pluginDefaults).map(
+        ([key, value]) => `\n* ${key}: ${createDefaultValueDisplay(value)}`
+      )}`
+    : "";
   return `${header}${description}${choices}${defaults}${pluginDefaults}`;
 }
 

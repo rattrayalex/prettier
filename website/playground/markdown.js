@@ -21,12 +21,12 @@ function formatMarkdown({
     "**Input:**",
     codeBlock(input, syntax),
     ...(doc ? ["", "**Doc:**", codeBlock(doc, "js")] : []),
-    ...(output === undefined
-      ? []
-      : ["", "**Output:**", codeBlock(output, syntax)]),
-    ...(isIdempotent
-      ? []
-      : ["", "**Second Output:**", codeBlock(output2, syntax)]),
+    ...(output === undefined ?
+      []
+    : ["", "**Output:**", codeBlock(output, syntax)]),
+    ...(isIdempotent ?
+      []
+    : ["", "**Second Output:**", codeBlock(output2, syntax)]),
     ...(full ? ["", "**Expected behavior:**", ""] : []),
   ]
     .filter((part) => part !== null)

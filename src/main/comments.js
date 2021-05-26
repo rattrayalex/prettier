@@ -446,11 +446,14 @@ function printLeadingComment(path, options) {
   // Leading block comments should see if they need to stay on the
   // same line or not.
   if (isBlock) {
-    const lineBreak = hasNewline(originalText, locEnd(comment))
-      ? hasNewline(originalText, locStart(comment), {
-          backwards: true,
-        })
-        ? hardline
+    const lineBreak =
+      hasNewline(originalText, locEnd(comment)) ?
+        (
+          hasNewline(originalText, locStart(comment), {
+            backwards: true,
+          })
+        ) ?
+          hardline
         : line
       : " ";
 

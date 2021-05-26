@@ -28,17 +28,17 @@ function genericPrint(path, options, print) {
       ];
     }
     case "ObjectExpression":
-      return node.properties.length === 0
-        ? "{}"
-        : [
-            "{",
-            indent([
-              hardline,
-              join([",", hardline], path.map(print, "properties")),
-            ]),
+      return node.properties.length === 0 ? "{}" : (
+        [
+          "{",
+          indent([
             hardline,
-            "}",
-          ];
+            join([",", hardline], path.map(print, "properties")),
+          ]),
+          hardline,
+          "}",
+        ]
+      );
     case "ObjectProperty":
       return [print("key"), ": ", print("value")];
     case "UnaryExpression":

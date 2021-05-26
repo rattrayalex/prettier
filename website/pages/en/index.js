@@ -126,7 +126,9 @@ const Language = ({ name, nameLink, showName, image, variants }) => (
     <ul>
       {showName && (
         <li className="accented">
-          {nameLink ? <a href={nameLink}>{name}</a> : name}
+          {nameLink ?
+            <a href={nameLink}>{name}</a>
+          : name}
         </li>
       )}
       {variants.map((variant) => (

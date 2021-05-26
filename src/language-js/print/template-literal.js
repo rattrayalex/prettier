@@ -97,10 +97,9 @@ function printTemplateLiteral(path, print, options) {
         }
       }
 
-      const aligned =
-        indentSize === 0 && quasi.value.raw.endsWith("\n")
-          ? align(Number.NEGATIVE_INFINITY, printed)
-          : addAlignmentToDoc(printed, indentSize, tabWidth);
+      const aligned = indentSize === 0 && quasi.value.raw.endsWith("\n") ?
+          align(Number.NEGATIVE_INFINITY, printed)
+        : addAlignmentToDoc(printed, indentSize, tabWidth);
 
       parts.push(group(["${", aligned, lineSuffixBoundary, "}"]));
     }
@@ -184,10 +183,10 @@ function printJestEachTemplateLiteral(path, options, print) {
             join(
               " | ",
               row.cells.map((cell, index) =>
-                row.hasLineBreak
-                  ? cell
-                  : cell +
-                    " ".repeat(maxColumnWidths[index] - getStringWidth(cell))
+                row.hasLineBreak ?
+                  cell
+                : cell +
+                  " ".repeat(maxColumnWidths[index] - getStringWidth(cell))
               )
             )
           )
@@ -219,8 +218,8 @@ function printTemplateExpressions(path, print) {
 function escapeTemplateCharacters(doc, raw) {
   return mapDoc(doc, (currentDoc) => {
     if (typeof currentDoc === "string") {
-      return raw
-        ? currentDoc.replace(/(\\*)`/g, "$1$1\\`")
+      return raw ?
+          currentDoc.replace(/(\\*)`/g, "$1$1\\`")
         : uncookTemplateElementValue(currentDoc);
     }
 

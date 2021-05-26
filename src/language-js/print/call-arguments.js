@@ -78,10 +78,12 @@ function printCallArguments(path, options, print) {
 
   const maybeTrailingComma =
     // Dynamic imports cannot have trailing commas
-    !(isDynamicImport || (node.callee && node.callee.type === "Import")) &&
-    shouldPrintComma(options, "all")
-      ? ","
-      : "";
+    (
+      !(isDynamicImport || (node.callee && node.callee.type === "Import")) &&
+      shouldPrintComma(options, "all")
+    ) ?
+      ","
+    : "";
 
   function allArgsBrokenOut() {
     return group(
@@ -102,9 +104,9 @@ function printCallArguments(path, options, print) {
   const shouldGroupLast = shouldGroupLastArg(args, options);
   if (shouldGroupFirst || shouldGroupLast) {
     if (
-      shouldGroupFirst
-        ? printedArguments.slice(1).some(willBreak)
-        : printedArguments.slice(0, -1).some(willBreak)
+      shouldGroupFirst ?
+        printedArguments.slice(1).some(willBreak)
+      : printedArguments.slice(0, -1).some(willBreak)
     ) {
       return allArgsBrokenOut();
     }
@@ -146,19 +148,19 @@ function printCallArguments(path, options, print) {
       printedArguments.some(willBreak) ? breakParent : "",
       conditionalGroup([
         ["(", ...printedExpanded, ")"],
-        shouldGroupFirst
-          ? [
-              "(",
-              group(printedExpanded[0], { shouldBreak: true }),
-              ...printedExpanded.slice(1),
-              ")",
-            ]
-          : [
-              "(",
-              ...printedArguments.slice(0, -1),
-              group(getLast(printedExpanded), { shouldBreak: true }),
-              ")",
-            ],
+        shouldGroupFirst ?
+          [
+            "(",
+            group(printedExpanded[0], { shouldBreak: true }),
+            ...printedExpanded.slice(1),
+            ")",
+          ]
+        : [
+            "(",
+            ...printedArguments.slice(0, -1),
+            group(getLast(printedExpanded), { shouldBreak: true }),
+            ")",
+          ],
         allArgsBrokenOut(),
       ]),
     ];

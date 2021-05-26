@@ -228,22 +228,23 @@ function printBinaryishExpressions(
       !hasLeadingOwnLineComment(options.originalText, node.right);
 
     const operator = node.type === "NGPipeExpression" ? "|" : node.operator;
-    const rightSuffix =
-      node.type === "NGPipeExpression" && node.arguments.length > 0
-        ? group(
-            indent([
-              softline,
-              ": ",
-              join(
-                [softline, ":", ifBreak(" ")],
-                path.map(print, "arguments").map((arg) => align(2, group(arg)))
-              ),
-            ])
-          )
-        : "";
+    const rightSuffix = (
+        node.type === "NGPipeExpression" && node.arguments.length > 0
+      ) ?
+        group(
+          indent([
+            softline,
+            ": ",
+            join(
+              [softline, ":", ifBreak(" ")],
+              path.map(print, "arguments").map((arg) => align(2, group(arg)))
+            ),
+          ])
+        )
+      : "";
 
-    const right = shouldInline
-      ? [operator, " ", print("right"), rightSuffix]
+    const right = shouldInline ?
+        [operator, " ", print("right"), rightSuffix]
       : [
           lineBeforeOperator ? line : "",
           operator,

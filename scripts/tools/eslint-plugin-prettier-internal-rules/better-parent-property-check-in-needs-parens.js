@@ -70,10 +70,9 @@ module.exports = {
         const { property } = [left, right].find(
           ({ type }) => type === "MemberExpression"
         );
-        const propertyText =
-          property.type === "Identifier"
-            ? `"${property.name}"`
-            : sourceCode.getText(property);
+        const propertyText = property.type === "Identifier" ?
+            `"${property.name}"`
+          : sourceCode.getText(property);
 
         context.report({
           node,

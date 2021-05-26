@@ -3,8 +3,8 @@
 const replaceCWD = (text) => {
   const cwd = process.cwd();
 
-  const variants = /^[a-z]:\\/i.test(cwd)
-    ? [
+  const variants = /^[a-z]:\\/i.test(cwd) ?
+      [
         cwd.charAt(0).toLowerCase() + cwd.slice(1),
         cwd.charAt(0).toUpperCase() + cwd.slice(1),
       ]

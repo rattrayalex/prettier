@@ -44,11 +44,9 @@ function printDecorators(path, options, print) {
     hasNewlineBetweenOrAfterDecorators(node, options);
 
   return [
-    getParentExportDeclaration(path)
-      ? hardline
-      : shouldBreak
-      ? breakParent
-      : "",
+    getParentExportDeclaration(path) ? hardline
+    : shouldBreak ? breakParent
+    : "",
     join(line, path.map(print, "decorators")),
     line,
   ];

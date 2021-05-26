@@ -23,10 +23,9 @@ run_spec(
       ...[...characters, LINE_FEED].map((character) => ({
         name: `json(\\${characterCode(character)})`,
         code: SINGLE_QUOTE + BACKSLASH + character + SINGLE_QUOTE,
-        output:
-          character === UNDERSCORE || character === SPACE
-            ? DOUBLE_QUOTE + character + DOUBLE_QUOTE + LINE_FEED
-            : DOUBLE_QUOTE + BACKSLASH + character + DOUBLE_QUOTE + LINE_FEED,
+        output: character === UNDERSCORE || character === SPACE ?
+            DOUBLE_QUOTE + character + DOUBLE_QUOTE + LINE_FEED
+          : DOUBLE_QUOTE + BACKSLASH + character + DOUBLE_QUOTE + LINE_FEED,
       })),
       ...characters.map((character) => ({
         name: `json(\\\\${characterCode(character)})`,
@@ -56,10 +55,9 @@ run_spec(
       ...[...characters, LINE_FEED].map((character) => ({
         name: `json-stringify(\\${characterCode(character)})`,
         code: SINGLE_QUOTE + BACKSLASH + character + SINGLE_QUOTE,
-        output:
-          character === UNDERSCORE || character === SPACE
-            ? DOUBLE_QUOTE + character + DOUBLE_QUOTE + LINE_FEED
-            : DOUBLE_QUOTE + DOUBLE_QUOTE + LINE_FEED,
+        output: character === UNDERSCORE || character === SPACE ?
+            DOUBLE_QUOTE + character + DOUBLE_QUOTE + LINE_FEED
+          : DOUBLE_QUOTE + DOUBLE_QUOTE + LINE_FEED,
       })),
       ...characters.map((character) => ({
         name: `json-stringify(\\\\${characterCode(character)})`,

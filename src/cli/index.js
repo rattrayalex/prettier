@@ -62,9 +62,9 @@ async function main(rawArguments, logger) {
 
   if (context.argv.help !== undefined) {
     logger.log(
-      typeof context.argv.help === "string" && context.argv.help !== ""
-        ? core.createDetailedUsage(context, context.argv.help)
-        : core.createUsage(context)
+      typeof context.argv.help === "string" && context.argv.help !== "" ?
+        core.createDetailedUsage(context, context.argv.help)
+      : core.createUsage(context)
     );
     return;
   }

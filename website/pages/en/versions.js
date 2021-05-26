@@ -18,8 +18,8 @@ const rootPackageJson = require(`${CWD}/../package.json`);
 const defaultBranchVersion = rootPackageJson.version;
 const isDefaultBranchDevVersion = defaultBranchVersion.endsWith("-dev");
 const devVersion = isDefaultBranchDevVersion ? defaultBranchVersion : null;
-const latestVersion = isDefaultBranchDevVersion
-  ? rootPackageJson.devDependencies.prettier
+const latestVersion = isDefaultBranchDevVersion ?
+    rootPackageJson.devDependencies.prettier
   : defaultBranchVersion;
 const [latestDocsVersion, ...pastDocsVersions] = versions;
 

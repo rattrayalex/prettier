@@ -14,9 +14,9 @@ function printAngular(path, options, print) {
     case "NGRoot":
       return [
         print("node"),
-        !hasComment(node.node)
-          ? ""
-          : " //" + getComments(node.node)[0].value.trimEnd(),
+        !hasComment(node.node) ?
+          ""
+        : " //" + getComments(node.node)[0].value.trimEnd(),
       ];
     case "NGPipeExpression":
       return printBinaryishExpression(path, options, print);
@@ -38,19 +38,17 @@ function printAngular(path, options, print) {
     case "NGMicrosyntax":
       return path.map(
         (childPath, index) => [
-          index === 0
-            ? ""
-            : isNgForOf(childPath.getValue(), index, node)
-            ? " "
-            : [";", line],
+          index === 0 ? ""
+          : isNgForOf(childPath.getValue(), index, node) ? " "
+          : [";", line],
           print(),
         ],
         "body"
       );
     case "NGMicrosyntaxKey":
-      return /^[$_a-z][\w$]*(-[$_a-z][\w$])*$/i.test(node.name)
-        ? node.name
-        : JSON.stringify(node.name);
+      return /^[$_a-z][\w$]*(-[$_a-z][\w$])*$/i.test(node.name) ? node.name : (
+        JSON.stringify(node.name)
+      );
     case "NGMicrosyntaxExpression":
       return [
         print("expression"),
