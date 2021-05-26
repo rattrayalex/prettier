@@ -17,6 +17,7 @@ const {
   rawText,
   hasComment,
   isSignedNumericLiteral,
+  isObjectProperty,
 } = require("../utils");
 const { shouldInlineLogicalExpression } = require("./binaryish");
 const { printCallExpression } = require("./call-expression");
@@ -180,10 +181,14 @@ function shouldBreakAfterOperator(path, options, print, hasShortKey) {
   switch (rightNode.type) {
     case "StringLiteralTypeAnnotation":
     case "SequenceExpression":
+    case "TSConditionalType":
       return true;
     case "ConditionalExpression": {
-      const { test } = rightNode;
-      return isBinaryish(test) && !shouldInlineLogicalExpression(test);
+      const { consequent, alternate } = rightNode;
+      return (
+        consequent.type === "ConditionalExpression" ||
+        alternate.type === "ConditionalExpression"
+      );
     }
     case "ClassExpression":
       return isNonEmptyArray(rightNode.decorators);
@@ -229,8 +234,7 @@ function isComplexDestructuring(node) {
       leftNode.properties.length > 2 &&
       leftNode.properties.some(
         (property) =>
-          (property.type === "ObjectProperty" ||
-            property.type === "Property") &&
+          isObjectProperty(property) &&
           (!property.shorthand ||
             (property.value && property.value.type === "AssignmentPattern"))
       )
@@ -396,7 +400,7 @@ function isLoneShortArgument(node, { printWidth }) {
 }
 
 function isObjectPropertyWithShortKey(node, keyDoc, options) {
-  if (node.type !== "ObjectProperty" && node.type !== "Property") {
+  if (!isObjectProperty(node)) {
     return false;
   }
   // TODO: for performance, it might make sense to use a more lightweight
