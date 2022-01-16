@@ -117,9 +117,9 @@ function printMemberChain(path, options, print) {
         needsParens: pathNeedsParens(path, options),
         printed: printComments(
           path,
-          isMemberExpression(node)
-            ? printMemberLookup(path, options, print)
-            : printBindExpressionCallee(path, options, print),
+          isMemberExpression(node) ?
+            printMemberLookup(path, options, print)
+          : printBindExpressionCallee(path, options, print),
           options
         ),
       });

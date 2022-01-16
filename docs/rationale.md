@@ -236,19 +236,17 @@ Prettier prints things a little differently compared to other JS when JSX is inv
 
 ```jsx
 function greet(user) {
-  return user
-    ? `Welcome back, ${user.name}!`
+  return user ?
+      `Welcome back, ${user.name}!`
     : "Greetings, traveler! Sign up today!";
 }
 
 function Greet({ user }) {
   return (
     <div>
-      {user ? (
+      {user ?
         <p>Welcome back, {user.name}!</p>
-      ) : (
-        <p>Greetings, traveler! Sign up today!</p>
-      )}
+      : <p>Greetings, traveler! Sign up today!</p>}
     </div>
   );
 }
@@ -295,8 +293,9 @@ Prettier will turn the above into:
 
 ```js
 // eslint-disable-next-line no-eval
-const result =
-  safeToEval && settings.allowNativeEval ? eval(input) : fallback(input);
+const result = safeToEval && settings.allowNativeEval ?
+    eval(input)
+  : fallback(input);
 ```
 
 Which means that the `eslint-disable-next-line` comment is no longer effective. In this case you need to move the comment:

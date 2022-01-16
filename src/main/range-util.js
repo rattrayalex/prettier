@@ -211,16 +211,16 @@ function calculateRange(text, opts, ast) {
   );
   const endNodeAndParents =
     // No need find Node at `end`, it will be the same as `startNodeAndParents`
-    isAllWhitespace
-      ? startNodeAndParents
-      : findNodeAtOffset(
-          ast,
-          end,
-          opts,
-          (node) => isSourceElement(opts, node),
-          [],
-          "rangeEnd"
-        );
+    isAllWhitespace ?
+      startNodeAndParents
+    : findNodeAtOffset(
+        ast,
+        end,
+        opts,
+        (node) => isSourceElement(opts, node),
+        [],
+        "rangeEnd"
+      );
   if (!startNodeAndParents || !endNodeAndParents) {
     return {
       rangeStart: 0,

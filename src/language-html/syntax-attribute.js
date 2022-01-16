@@ -23,8 +23,14 @@ function printImgSrcset(value) {
     throw new Error("Mixed descriptor in srcset is not supported");
   }
 
-  const key = hasW ? "w" : hasH ? "h" : "d";
-  const unit = hasW ? "w" : hasH ? "h" : "x";
+  const key =
+    hasW ? "w"
+    : hasH ? "h"
+    : "d";
+  const unit =
+    hasW ? "w"
+    : hasH ? "h"
+    : "x";
 
   const getMax = (values) => Math.max(...values);
 

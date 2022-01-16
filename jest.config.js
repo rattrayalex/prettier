@@ -9,8 +9,8 @@ const ENABLE_CODE_COVERAGE = Boolean(process.env.ENABLE_CODE_COVERAGE);
 const TEST_STANDALONE = Boolean(process.env.TEST_STANDALONE);
 const INSTALL_PACKAGE = Boolean(process.env.INSTALL_PACKAGE);
 
-let PRETTIER_DIR = isProduction
-  ? path.join(PROJECT_ROOT, "dist")
+let PRETTIER_DIR = isProduction ?
+    path.join(PROJECT_ROOT, "dist")
   : PROJECT_ROOT;
 if (INSTALL_PACKAGE || (isProduction && !TEST_STANDALONE)) {
   PRETTIER_DIR = installPrettier(PRETTIER_DIR);

@@ -351,9 +351,9 @@ function printArrowFunctionExpression(path, options, print, args) {
         body,
         shouldAddParens ? ifBreak("", ")") : "",
       ]),
-      shouldAddSoftLine
-        ? [ifBreak(printTrailingComma ? "," : ""), softline]
-        : "",
+      shouldAddSoftLine ?
+        [ifBreak(printTrailingComma ? "," : ""), softline]
+      : "",
     ]),
   ]);
 }

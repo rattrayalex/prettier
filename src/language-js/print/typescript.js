@@ -206,10 +206,9 @@ function printTypescript(path, options, print) {
       // using them, it makes sense to have a trailing comma. But if you
       // aren't, this is more like a computed property name than an array.
       // So we leave off the trailing comma when there's just one parameter.
-      const trailingComma =
-        node.parameters.length > 1
-          ? ifBreak(shouldPrintComma(options) ? "," : "")
-          : "";
+      const trailingComma = node.parameters.length > 1 ?
+          ifBreak(shouldPrintComma(options) ? "," : "")
+        : "";
 
       const parametersGroup = group([
         indent([
@@ -299,17 +298,14 @@ function printTypescript(path, options, print) {
           "{",
           indent([
             options.bracketSpacing ? line : softline,
-            node.readonly
-              ? [
-                  getTypeScriptMappedTypeModifier(node.readonly, "readonly"),
-                  " ",
-                ]
-              : "",
+            node.readonly ?
+              [getTypeScriptMappedTypeModifier(node.readonly, "readonly"), " "]
+            : "",
             printTypeScriptModifiers(path, options, print),
             print("typeParameter"),
-            node.optional
-              ? getTypeScriptMappedTypeModifier(node.optional, "?")
-              : "",
+            node.optional ?
+              getTypeScriptMappedTypeModifier(node.optional, "?")
+            : "",
             node.typeAnnotation ? ": " : "",
             print("typeAnnotation"),
             ifBreak(semi),
@@ -347,8 +343,8 @@ function printTypescript(path, options, print) {
         /* printTypeParams */ true
       );
 
-      const returnTypePropertyName = node.returnType
-        ? "returnType"
+      const returnTypePropertyName = node.returnType ?
+          "returnType"
         : "typeAnnotation";
       const returnTypeNode = node[returnTypePropertyName];
       const returnTypeDoc = returnTypeNode ? print(returnTypePropertyName) : "";
@@ -463,10 +459,12 @@ function printTypescript(path, options, print) {
 
         if (!isGlobalDeclaration) {
           parts.push(
-            isExternalModule ||
-              /(^|\s)module(\s|$)/.test(textBetweenNodeAndItsId)
-              ? "module "
-              : "namespace "
+            (
+              isExternalModule ||
+                /(^|\s)module(\s|$)/.test(textBetweenNodeAndItsId)
+            ) ?
+              "module "
+            : "namespace "
           );
         }
       }

@@ -85,9 +85,9 @@ function printCallExpression(path, options, print) {
     isNew ? "new " : "",
     isDynamicImport ? "import" : print("callee"),
     optional,
-    isIdentifierWithFlowAnnotation
-      ? `/*:: ${node.callee.trailingComments[0].value.slice(2).trim()} */`
-      : "",
+    isIdentifierWithFlowAnnotation ?
+      `/*:: ${node.callee.trailingComments[0].value.slice(2).trim()} */`
+    : "",
     printFunctionTypeParameters(path, options, print),
     printCallArguments(path, options, print),
   ];

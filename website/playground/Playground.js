@@ -124,11 +124,12 @@ class Playground extends React.Component {
         options[option.name] = value;
       }
 
-      const content =
-        state.content === "" ||
-        state.content === getCodeSample(state.options.parser)
-          ? getCodeSample(options.parser)
-          : state.content;
+      const content = (
+          state.content === "" ||
+          state.content === getCodeSample(state.options.parser)
+        ) ?
+          getCodeSample(options.parser)
+        : state.content;
 
       return { options, content };
     });
@@ -204,18 +205,18 @@ class Playground extends React.Component {
                         <Option
                           option={this.rangeStartOption}
                           value={
-                            typeof options.rangeStart === "number"
-                              ? options.rangeStart
-                              : ""
+                            typeof options.rangeStart === "number" ?
+                              options.rangeStart
+                            : ""
                           }
                           onChange={this.handleOptionValueChange}
                         />
                         <Option
                           option={this.rangeEndOption}
                           value={
-                            typeof options.rangeEnd === "number"
-                              ? options.rangeEnd
-                              : ""
+                            typeof options.rangeEnd === "number" ?
+                              options.rangeEnd
+                            : ""
                           }
                           overrideMax={content.length}
                           onChange={this.handleOptionValueChange}
@@ -273,7 +274,7 @@ class Playground extends React.Component {
                       </div>
                     </Sidebar>
                     <div className="editors">
-                      {editorState.showInput ? (
+                      {editorState.showInput ?
                         <InputPanel
                           mode={util.getCodemirrorMode(options.parser)}
                           ruler={options.printWidth}
@@ -284,36 +285,36 @@ class Playground extends React.Component {
                           onChange={this.setContent}
                           onSelectionChange={this.setSelection}
                         />
-                      ) : null}
-                      {editorState.showAst ? (
+                      : null}
+                      {editorState.showAst ?
                         <DebugPanel
                           value={debug.ast || ""}
                           autoFold={util.getAstAutoFold(options.parser)}
                         />
-                      ) : null}
-                      {editorState.showDoc ? (
+                      : null}
+                      {editorState.showDoc ?
                         <DebugPanel value={debug.doc || ""} />
-                      ) : null}
-                      {showShowComments && editorState.showComments ? (
+                      : null}
+                      {showShowComments && editorState.showComments ?
                         <DebugPanel
                           value={debug.comments || ""}
                           autoFold={util.getAstAutoFold(options.parser)}
                         />
-                      ) : null}
-                      {editorState.showOutput ? (
+                      : null}
+                      {editorState.showOutput ?
                         <OutputPanel
                           mode={util.getCodemirrorMode(options.parser)}
                           value={formatted}
                           ruler={options.printWidth}
                         />
-                      ) : null}
-                      {editorState.showSecondFormat ? (
+                      : null}
+                      {editorState.showSecondFormat ?
                         <OutputPanel
                           mode={util.getCodemirrorMode(options.parser)}
                           value={getSecondFormat(formatted, debug.reformatted)}
                           ruler={options.printWidth}
                         />
-                      ) : null}
+                      : null}
                     </div>
                   </div>
                   <div className="bottom-bar">
@@ -390,11 +391,11 @@ function getReportLink(reportBody) {
 }
 
 function getSecondFormat(formatted, reformatted) {
-  return formatted === ""
-    ? ""
-    : formatted === reformatted
-    ? "✓ Second format is unchanged."
-    : reformatted;
+  return (
+    formatted === "" ? ""
+    : formatted === reformatted ? "✓ Second format is unchanged."
+    : reformatted
+  );
 }
 
 export default Playground;

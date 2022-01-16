@@ -80,8 +80,9 @@ module.exports = {
           leftObject = leftObject.arguments[0];
         }
 
-        const rightObject =
-          right.type === "BinaryExpression" ? right.left.object : right.object;
+        const rightObject = right.type === "BinaryExpression" ?
+            right.left.object
+          : right.object;
         const objectText = sourceCode.getText(rightObject);
         // Simple compare with code
         if (sourceCode.getText(leftObject) !== objectText) {
@@ -115,10 +116,9 @@ module.exports = {
           return;
         }
 
-        const rightObject =
-          right.type === "UnaryExpression"
-            ? right.argument.object
-            : right.left.object;
+        const rightObject = right.type === "UnaryExpression" ?
+            right.argument.object
+          : right.left.object;
         let leftObject = left.argument;
         if (isArrayIsArrayCall(leftObject)) {
           leftObject = leftObject.arguments[0];

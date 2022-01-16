@@ -23,11 +23,10 @@ function getCoreInfo() {
       {
         type: option.type,
         default: option.default,
-        ...(option.type === "int"
-          ? { range: option.range }
-          : option.type === "choice"
-          ? { choices: option.choices.map((choice) => choice.value) }
-          : null),
+        ...(option.type === "int" ? { range: option.range }
+        : option.type === "choice" ?
+          { choices: option.choices.map((choice) => choice.value) }
+        : null),
       },
     ])
   );

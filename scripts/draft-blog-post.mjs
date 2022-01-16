@@ -73,18 +73,15 @@ for (const dir of dirs) {
 
       const improvement = title.match(/\[IMPROVEMENT(:(\d+))?]/);
 
-      const section = title.includes("[HIGHLIGHT]")
-        ? "highlight"
-        : title.includes("[BREAKING]")
-        ? "breaking"
-        : improvement
-        ? "improvement"
+      const section =
+        title.includes("[HIGHLIGHT]") ? "highlight"
+        : title.includes("[BREAKING]") ? "breaking"
+        : improvement ? "improvement"
         : undefined;
 
-      const order =
-        section === "improvement" && improvement[2] !== undefined
-          ? Number(improvement[2])
-          : undefined;
+      const order = section === "improvement" && improvement[2] !== undefined ?
+          Number(improvement[2])
+        : undefined;
 
       const content = [processTitle(title), ...rest].join("\n");
 

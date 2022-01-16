@@ -67,9 +67,9 @@ function printIndentableBlockComment(comment) {
     join(
       hardline,
       lines.map((line, index) =>
-        index === 0
-          ? line.trimEnd()
-          : " " + (index < lines.length - 1 ? line.trim() : line.trimStart())
+        index === 0 ?
+          line.trimEnd()
+        : " " + (index < lines.length - 1 ? line.trim() : line.trimStart())
       )
     ),
     "*/",

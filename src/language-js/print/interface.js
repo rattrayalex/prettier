@@ -40,11 +40,11 @@ function printInterface(path, options, print) {
 
   if (isNonEmptyArray(node.extends)) {
     extendsParts.push(
-      shouldIndentOnlyHeritageClauses
-        ? ifBreak(" ", line, {
-            groupId: getTypeParametersGroupId(node.typeParameters),
-          })
-        : line,
+      shouldIndentOnlyHeritageClauses ?
+        ifBreak(" ", line, {
+          groupId: getTypeParametersGroupId(node.typeParameters),
+        })
+      : line,
       "extends ",
       (node.extends.length === 1 ? identity : indent)(
         join([",", line], path.map(print, "extends"))

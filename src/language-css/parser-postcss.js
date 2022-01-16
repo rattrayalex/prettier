@@ -306,9 +306,9 @@ function parseNestedCSS(node, options) {
     let selector = "";
 
     if (typeof node.selector === "string") {
-      selector = node.raws.selector
-        ? node.raws.selector.scss
-          ? node.raws.selector.scss
+      selector =
+        node.raws.selector ?
+          node.raws.selector.scss ? node.raws.selector.scss
           : node.raws.selector.raw
         : node.selector;
 
@@ -322,9 +322,9 @@ function parseNestedCSS(node, options) {
     let value = "";
 
     if (typeof node.value === "string") {
-      value = node.raws.value
-        ? node.raws.value.scss
-          ? node.raws.value.scss
+      value =
+        node.raws.value ?
+          node.raws.value.scss ? node.raws.value.scss
           : node.raws.value.raw
         : node.value;
 
@@ -336,9 +336,9 @@ function parseNestedCSS(node, options) {
     let params = "";
 
     if (typeof node.params === "string") {
-      params = node.raws.params
-        ? node.raws.params.scss
-          ? node.raws.params.scss
+      params =
+        node.raws.params ?
+          node.raws.params.scss ? node.raws.params.scss
           : node.raws.params.raw
         : node.params;
 
@@ -620,8 +620,8 @@ function parseWithParser(parse, text, options) {
 // TODO: make this only work on css
 function parseCss(text, parsers, options) {
   const isSCSSParser = isSCSS(options.parser, text);
-  const parseFunctions = isSCSSParser
-    ? [parseScss, parseLess]
+  const parseFunctions = isSCSSParser ?
+      [parseScss, parseLess]
     : [parseLess, parseScss];
 
   let error;

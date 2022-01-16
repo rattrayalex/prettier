@@ -63,14 +63,12 @@ function printJsxElementInternal(path, options, print) {
     return [print("openingElement"), print("closingElement")];
   }
 
-  const openingLines =
-    node.type === "JSXElement"
-      ? print("openingElement")
-      : print("openingFragment");
-  const closingLines =
-    node.type === "JSXElement"
-      ? print("closingElement")
-      : print("closingFragment");
+  const openingLines = node.type === "JSXElement" ?
+      print("openingElement")
+    : print("openingFragment");
+  const closingLines = node.type === "JSXElement" ?
+      print("closingElement")
+    : print("closingFragment");
 
   if (
     node.children.length === 1 &&
@@ -112,8 +110,7 @@ function printJsxElementInternal(path, options, print) {
   const isMdxBlock = path.getParentNode().rootMarker === "mdx";
 
   const rawJsxWhitespace = options.singleQuote ? "{' '}" : '{" "}';
-  const jsxWhitespace = isMdxBlock
-    ? " "
+  const jsxWhitespace = isMdxBlock ? " "
     : ifBreak([rawJsxWhitespace, softline], " ");
 
   const isFacebookTranslationTag =
@@ -228,8 +225,8 @@ function printJsxElementInternal(path, options, print) {
   // If there is text we use `fill` to fit as much onto each line as possible.
   // When there is no text (just tags and expressions) we use `group`
   // to output each on a separate line.
-  const content = containsText
-    ? fill(multilineChildren)
+  const content = containsText ?
+      fill(multilineChildren)
     : group(multilineChildren, { shouldBreak: true });
 
   if (isMdxBlock) {
@@ -415,9 +412,13 @@ function separatorWithWhitespace(
   }
 
   if (child.length === 1) {
-    return (childNode.type === "JSXElement" && !childNode.closingElement) ||
-      (nextNode && nextNode.type === "JSXElement" && !nextNode.closingElement)
-      ? hardline
+    return (
+        (childNode.type === "JSXElement" && !childNode.closingElement) ||
+          (nextNode &&
+            nextNode.type === "JSXElement" &&
+            !nextNode.closingElement)
+      ) ?
+        hardline
       : softline;
   }
 
@@ -603,8 +604,12 @@ function printJsxOpeningElement(path, options, print) {
       print("name"),
       print("typeParameters"),
       indent(path.map(() => [line, print()], "attributes")),
-      node.selfClosing ? line : bracketSameLine ? ">" : softline,
-      node.selfClosing ? "/>" : bracketSameLine ? "" : ">",
+      node.selfClosing ? line
+      : bracketSameLine ? ">"
+      : softline,
+      node.selfClosing ? "/>"
+      : bracketSameLine ? ""
+      : ">",
     ],
     { shouldBreak }
   );
@@ -642,11 +647,9 @@ function printJsxOpeningClosingFragment(path, options /*, print*/) {
   return [
     isOpeningFragment ? "<" : "</",
     indent([
-      hasOwnLineComment
-        ? hardline
-        : nodeHasComment && !isOpeningFragment
-        ? " "
-        : "",
+      hasOwnLineComment ? hardline
+      : nodeHasComment && !isOpeningFragment ? " "
+      : "",
       printDanglingComments(path, options, true),
     ]),
     hasOwnLineComment ? hardline : "",

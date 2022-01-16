@@ -28,8 +28,7 @@ function genericPrint(path, options, print) {
       ];
     }
     case "ObjectExpression":
-      return node.properties.length === 0
-        ? "{}"
+      return node.properties.length === 0 ? "{}"
         : [
             "{",
             indent([

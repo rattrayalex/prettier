@@ -21,9 +21,9 @@ function format(path, print, textToDoc, options, { parser }) {
 
   const text = node.quasis
     .map((quasi, index, quasis) =>
-      index === quasis.length - 1
-        ? quasi.value.cooked
-        : quasi.value.cooked + composePlaceholder(index)
+      index === quasis.length - 1 ?
+        quasi.value.cooked
+      : quasi.value.cooked + composePlaceholder(index)
     )
     .join("");
 
@@ -78,11 +78,9 @@ function format(path, print, textToDoc, options, { parser }) {
   const trailingWhitespace = /\s$/.test(text) ? " " : "";
 
   const linebreak =
-    options.htmlWhitespaceSensitivity === "ignore"
-      ? hardline
-      : leadingWhitespace && trailingWhitespace
-      ? line
-      : null;
+    options.htmlWhitespaceSensitivity === "ignore" ? hardline
+    : leadingWhitespace && trailingWhitespace ? line
+    : null;
 
   if (linebreak) {
     return group(["`", indent([linebreak, group(contentDoc)]), linebreak, "`"]);

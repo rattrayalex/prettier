@@ -179,11 +179,11 @@ function runPrettier(dir, args = [], options = {}) {
           // \r is trimmed from jest snapshots by default;
           // manually replacing this character with /*CR*/ to test its true presence
           // If ignoreLineEndings is specified, \r is simply deleted instead
-          typeof result[name] === "string"
-            ? options.ignoreLineEndings
-              ? stripAnsi(result[name]).replace(/\r/g, "")
-              : stripAnsi(result[name]).replace(/\r/g, "/*CR*/")
-            : result[name];
+          typeof result[name] === "string" ?
+            options.ignoreLineEndings ?
+              stripAnsi(result[name]).replace(/\r/g, "")
+            : stripAnsi(result[name]).replace(/\r/g, "/*CR*/")
+          : result[name];
         if (name in testOptions) {
           if (name === "status" && testOptions[name] === "non-zero") {
             expect(value).not.toEqual(0);

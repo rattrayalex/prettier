@@ -84,13 +84,15 @@ function printObject(path, options, print) {
         locStart(firstProperty)
       ));
 
-  const separator = isFlowInterfaceLikeBody
-    ? ";"
-    : node.type === "TSInterfaceBody" || node.type === "TSTypeLiteral"
-    ? ifBreak(semi, ";")
+  const separator =
+    isFlowInterfaceLikeBody ? ";"
+    : node.type === "TSInterfaceBody" || node.type === "TSTypeLiteral" ?
+      ifBreak(semi, ";")
     : ",";
   const leftBrace =
-    node.type === "RecordExpression" ? "#{" : node.exact ? "{|" : "{";
+    node.type === "RecordExpression" ? "#{"
+    : node.exact ? "{|"
+    : "{";
   const rightBrace = node.exact ? "|}" : "}";
 
   // Unfortunately, things are grouped together in the ast can be
@@ -142,10 +144,12 @@ function printObject(path, options, print) {
       );
       printed = [
         printedDanglingComments,
-        hasLineComments ||
-        hasNewline(options.originalText, locEnd(getLast(getComments(node))))
-          ? hardline
-          : line,
+        (
+          hasLineComments ||
+          hasNewline(options.originalText, locEnd(getLast(getComments(node))))
+        ) ?
+          hardline
+        : line,
         "...",
       ];
     } else {
@@ -183,16 +187,18 @@ function printObject(path, options, print) {
     ]);
   } else {
     content = [
-      isFlowInterfaceLikeBody && isNonEmptyArray(node.properties)
-        ? printHardlineAfterHeritage(parent)
-        : "",
+      isFlowInterfaceLikeBody && isNonEmptyArray(node.properties) ?
+        printHardlineAfterHeritage(parent)
+      : "",
       leftBrace,
       indent([options.bracketSpacing ? line : softline, ...props]),
       ifBreak(
-        canHaveTrailingSeparator &&
-          (separator !== "," || shouldPrintComma(options))
-          ? separator
-          : ""
+        (
+          canHaveTrailingSeparator &&
+            (separator !== "," || shouldPrintComma(options))
+        ) ?
+          separator
+        : ""
       ),
       options.bracketSpacing ? line : softline,
       rightBrace,

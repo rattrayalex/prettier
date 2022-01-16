@@ -82,9 +82,9 @@ function optionToSchema(option) {
     description: option.description,
     default: option.default,
     ...(option.array ? wrapWithArraySchema : identity)(
-      option.type === "choice"
-        ? { oneOf: option.choices.map(choiceToSchema) }
-        : { type: optionTypeToSchemaType(option.type) }
+      option.type === "choice" ?
+        { oneOf: option.choices.map(choiceToSchema) }
+      : { type: optionTypeToSchemaType(option.type) }
     ),
   };
 }

@@ -12,11 +12,12 @@ function printSeparator(description = "") {
 }
 
 function stringify(value) {
-  return value === Number.POSITIVE_INFINITY
-    ? "Infinity"
-    : Array.isArray(value)
-    ? `[${value.map((v) => JSON.stringify(v)).join(", ")}]`
-    : JSON.stringify(value);
+  return (
+    value === Number.POSITIVE_INFINITY ? "Infinity"
+    : Array.isArray(value) ?
+      `[${value.map((v) => JSON.stringify(v)).join(", ")}]`
+    : JSON.stringify(value)
+  );
 }
 
 function printOptions(options) {

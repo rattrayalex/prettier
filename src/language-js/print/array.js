@@ -74,22 +74,20 @@ function printArray(path, options, print) {
           return false;
         }
 
-        const itemsKey =
-          elementType === "ArrayExpression" ? "elements" : "properties";
+        const itemsKey = elementType === "ArrayExpression" ?
+            "elements"
+          : "properties";
 
         return element[itemsKey] && element[itemsKey].length > 1;
       });
 
     const shouldUseConciseFormatting = isConciselyPrintedArray(node, options);
 
-    const trailingComma = !canHaveTrailingComma
-      ? ""
-      : needsForcedTrailingComma
-      ? ","
-      : !shouldPrintComma(options)
-      ? ""
-      : shouldUseConciseFormatting
-      ? ifBreak(",", "", { groupId })
+    const trailingComma =
+      !canHaveTrailingComma ? ""
+      : needsForcedTrailingComma ? ","
+      : !shouldPrintComma(options) ? ""
+      : shouldUseConciseFormatting ? ifBreak(",", "", { groupId })
       : ifBreak(",");
 
     parts.push(
@@ -98,12 +96,12 @@ function printArray(path, options, print) {
           openBracket,
           indent([
             softline,
-            shouldUseConciseFormatting
-              ? printArrayItemsConcisely(path, options, print, trailingComma)
-              : [
-                  printArrayItems(path, options, "elements", print),
-                  trailingComma,
-                ],
+            shouldUseConciseFormatting ?
+              printArrayItemsConcisely(path, options, print, trailingComma)
+            : [
+                printArrayItems(path, options, "elements", print),
+                trailingComma,
+              ],
             printDanglingComments(path, options, /* sameIndent */ true),
           ]),
           softline,
@@ -171,14 +169,15 @@ function printArrayItemsConcisely(path, options, print, trailingComma) {
 
     if (!isLast) {
       parts.push(
-        isNextLineEmpty(childPath.getValue(), options)
-          ? [hardline, hardline]
-          : hasComment(
-              elements[i + 1],
-              CommentCheckFlags.Leading | CommentCheckFlags.Line
-            )
-          ? hardline
-          : line
+        isNextLineEmpty(childPath.getValue(), options) ? [hardline, hardline]
+        : (
+          hasComment(
+            elements[i + 1],
+            CommentCheckFlags.Leading | CommentCheckFlags.Line
+          )
+        ) ?
+          hardline
+        : line
       );
     }
   }, "elements");

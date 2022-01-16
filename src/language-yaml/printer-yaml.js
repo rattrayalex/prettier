@@ -115,11 +115,13 @@ function genericPrint(path, options, print) {
     parts.push(
       lineSuffix([
         node.type === "mappingValue" && !node.content ? "" : " ",
-        parentNode.type === "mappingKey" &&
-        path.getParentNode(2).type === "mapping" &&
-        isInlineNode(node)
-          ? ""
-          : breakParent,
+        (
+          parentNode.type === "mappingKey" &&
+          path.getParentNode(2).type === "mapping" &&
+          isInlineNode(node)
+        ) ?
+          ""
+        : breakParent,
         print("trailingComment"),
       ])
     );
@@ -133,13 +135,15 @@ function genericPrint(path, options, print) {
           hardline,
           path.map(
             (path) => [
-              isPreviousLineEmpty(
-                options.originalText,
-                path.getValue(),
-                locStart
-              )
-                ? hardline
-                : "",
+              (
+                isPreviousLineEmpty(
+                  options.originalText,
+                  path.getValue(),
+                  locStart
+                )
+              ) ?
+                hardline
+              : "",
               print(),
             ],
             "endComments"
@@ -277,8 +281,9 @@ function printNode(node, parentNode, path, options, print) {
       ) {
         // only quoteDouble can use escape chars
         // and quoteSingle do not need to escape backslashes
-        const originalQuote =
-          node.type === "quoteDouble" ? doubleQuote : singleQuote;
+        const originalQuote = node.type === "quoteDouble" ?
+            doubleQuote
+          : singleQuote;
         return [
           originalQuote,
           printFlowScalarContent(node.type, raw, options),
@@ -291,12 +296,12 @@ function printNode(node, parentNode, path, options, print) {
           singleQuote,
           printFlowScalarContent(
             node.type,
-            node.type === "quoteDouble"
-              ? raw
-                  // double quote needs to be escaped by backslash in quoteDouble
-                  .replace(/\\"/g, doubleQuote)
-                  .replace(/'/g, singleQuote.repeat(2))
-              : raw,
+            node.type === "quoteDouble" ?
+              raw
+                // double quote needs to be escaped by backslash in quoteDouble
+                .replace(/\\"/g, doubleQuote)
+                .replace(/'/g, singleQuote.repeat(2))
+            : raw,
             options
           ),
           singleQuote,
@@ -308,10 +313,10 @@ function printNode(node, parentNode, path, options, print) {
           doubleQuote,
           printFlowScalarContent(
             node.type,
-            node.type === "quoteSingle"
-              ? // single quote needs to be escaped by 2 single quotes in quoteSingle
-                raw.replace(/''/g, singleQuote)
-              : raw,
+            node.type === "quoteSingle" ?
+              // single quote needs to be escaped by 2 single quotes in quoteSingle
+              raw.replace(/''/g, singleQuote)
+            : raw,
             options
           ),
           doubleQuote,

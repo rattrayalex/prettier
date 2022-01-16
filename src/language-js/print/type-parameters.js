@@ -52,16 +52,19 @@ function printTypeParameters(path, options, print, paramsKey) {
   // has one type parameter that isn't extend with any types.
   // Because, otherwise formatted result will be invalid as tsx.
   const trailingComma =
-    node.type === "TSTypeParameterInstantiation" // https://github.com/microsoft/TypeScript/issues/21984
-      ? ""
-      : getFunctionParameters(node).length === 1 &&
-        isTSXFile(options) &&
-        !node[paramsKey][0].constraint &&
-        path.getParentNode().type === "ArrowFunctionExpression"
-      ? ","
-      : shouldPrintComma(options, "all")
-      ? ifBreak(",")
-      : "";
+    (
+      node.type === "TSTypeParameterInstantiation" // https://github.com/microsoft/TypeScript/issues/21984
+    ) ?
+      ""
+    : (
+      getFunctionParameters(node).length === 1 &&
+      isTSXFile(options) &&
+      !node[paramsKey][0].constraint &&
+      path.getParentNode().type === "ArrowFunctionExpression"
+    ) ?
+      ","
+    : shouldPrintComma(options, "all") ? ifBreak(",")
+    : "";
 
   return group(
     [

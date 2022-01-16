@@ -145,10 +145,11 @@ async function format(context, input, opt) {
       /* istanbul ignore next */
       if (ast !== past) {
         const MAX_AST_SIZE = 2097152; // 2MB
-        const astDiff =
-          ast.length > MAX_AST_SIZE || past.length > MAX_AST_SIZE
-            ? "AST diff too large to render"
-            : diff(ast, past);
+        const astDiff = (
+            ast.length > MAX_AST_SIZE || past.length > MAX_AST_SIZE
+          ) ?
+            "AST diff too large to render"
+          : diff(ast, past);
         throw new errors.DebugError(
           "ast(input) !== ast(prettier(input))\n" +
             astDiff +
@@ -233,15 +234,15 @@ async function createIgnorerFromContextOrDie(context) {
 }
 
 async function formatStdin(context) {
-  const filepath = context.argv["stdin-filepath"]
-    ? path.resolve(process.cwd(), context.argv["stdin-filepath"])
+  const filepath = context.argv["stdin-filepath"] ?
+      path.resolve(process.cwd(), context.argv["stdin-filepath"])
     : process.cwd();
 
   const ignorer = await createIgnorerFromContextOrDie(context);
   // If there's an ignore-path set, the filename must be relative to the
   // ignore path, not the current working directory.
-  const relativeFilepath = context.argv["ignore-path"]
-    ? path.relative(path.dirname(context.argv["ignore-path"]), filepath)
+  const relativeFilepath = context.argv["ignore-path"] ?
+      path.relative(path.dirname(context.argv["ignore-path"]), filepath)
     : path.relative(process.cwd(), filepath);
 
   try {
@@ -289,8 +290,8 @@ async function formatFiles(context) {
     const filename = pathOrError;
     // If there's an ignore-path set, the filename must be relative to the
     // ignore path, not the current working directory.
-    const ignoreFilename = context.argv["ignore-path"]
-      ? path.relative(path.dirname(context.argv["ignore-path"]), filename)
+    const ignoreFilename = context.argv["ignore-path"] ?
+        path.relative(path.dirname(context.argv["ignore-path"]), filename)
       : filename;
 
     const fileIgnored = ignorer.ignores(fixWindowsSlashes(ignoreFilename));
@@ -413,9 +414,9 @@ async function formatFiles(context) {
       context.logger.log("All matched files use Prettier code style!");
     } else {
       context.logger.warn(
-        context.argv.write
-          ? "Code style issues fixed in the above file(s)."
-          : "Code style issues found in the above file(s). Forgot to run Prettier?"
+        context.argv.write ?
+          "Code style issues fixed in the above file(s)."
+        : "Code style issues found in the above file(s). Forgot to run Prettier?"
       );
     }
   }

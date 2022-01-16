@@ -110,12 +110,15 @@ function chooseLayout(path, options, print, leftDoc, rightPropertyName) {
         node.type !== "VariableDeclaration")
   );
   if (shouldUseChainFormatting) {
-    return !isTail
-      ? "chain"
-      : rightNode.type === "ArrowFunctionExpression" &&
+    return (
+      !isTail ? "chain"
+      : (
+        rightNode.type === "ArrowFunctionExpression" &&
         rightNode.body.type === "ArrowFunctionExpression"
-      ? "chain-tail-arrow-chain"
-      : "chain-tail";
+      ) ?
+        "chain-tail-arrow-chain"
+      : "chain-tail"
+    );
   }
   const isHeadOfLongChain = !isTail && isAssignment(rightNode.right);
 
@@ -250,8 +253,9 @@ function isAssignmentOrVariableDeclarator(node) {
 function isComplexTypeAliasParams(node) {
   const typeParams = getTypeParametersFromTypeAlias(node);
   if (isNonEmptyArray(typeParams)) {
-    const constraintPropertyName =
-      node.type === "TSTypeAliasDeclaration" ? "constraint" : "bound";
+    const constraintPropertyName = node.type === "TSTypeAliasDeclaration" ?
+        "constraint"
+      : "bound";
     if (
       typeParams.length > 1 &&
       typeParams.some((param) => param[constraintPropertyName] || param.default)

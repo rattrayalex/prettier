@@ -90,8 +90,8 @@ function hasStringOrFunction(groupList) {
 function isSCSS(parser, text) {
   const hasExplicitParserChoice = parser === "less" || parser === "scss";
   const IS_POSSIBLY_SCSS = /(\w\s*:\s*[^:}]+|#){|@import[^\n]+(?:url|,)/;
-  return hasExplicitParserChoice
-    ? parser === "scss"
+  return hasExplicitParserChoice ?
+      parser === "scss"
     : IS_POSSIBLY_SCSS.test(text);
 }
 
@@ -116,14 +116,16 @@ function isKeyframeAtRuleKeywords(path, value) {
 }
 
 function maybeToLowerCase(value) {
-  return value.includes("$") ||
-    value.includes("@") ||
-    value.includes("#") ||
-    value.startsWith("%") ||
-    value.startsWith("--") ||
-    value.startsWith(":--") ||
-    (value.includes("(") && value.includes(")"))
-    ? value
+  return (
+      value.includes("$") ||
+        value.includes("@") ||
+        value.includes("#") ||
+        value.startsWith("%") ||
+        value.startsWith("--") ||
+        value.startsWith(":--") ||
+        (value.includes("(") && value.includes(")"))
+    ) ?
+      value
     : value.toLowerCase();
 }
 
@@ -149,8 +151,8 @@ function insideICSSRuleNode(path) {
 }
 
 function insideAtRuleNode(path, atRuleNameOrAtRuleNames) {
-  const atRuleNames = Array.isArray(atRuleNameOrAtRuleNames)
-    ? atRuleNameOrAtRuleNames
+  const atRuleNames = Array.isArray(atRuleNameOrAtRuleNames) ?
+      atRuleNameOrAtRuleNames
     : [atRuleNameOrAtRuleNames];
   const atRuleAncestorNode = getAncestorNode(path, "css-atrule");
 
@@ -449,10 +451,12 @@ function stringifyNode(node) {
       (previousValue, currentValue, index) =>
         previousValue +
         stringifyNode(currentValue) +
-        (node.groups[0].type === "comma_group" &&
-        index !== node.groups.length - 1
-          ? ","
-          : ""),
+        ((
+          node.groups[0].type === "comma_group" &&
+          index !== node.groups.length - 1
+        ) ?
+          ","
+        : ""),
       ""
     );
     const close = node.close && node.close.value ? node.close.value : "";

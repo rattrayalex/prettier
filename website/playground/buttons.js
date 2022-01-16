@@ -42,7 +42,9 @@ export class ClipboardButton extends React.Component {
 
     return (
       <Button ref={this.ref} {...rest}>
-        {showTooltip ? <span className="tooltip">{tooltipText}</span> : null}
+        {showTooltip ?
+          <span className="tooltip">{tooltipText}</span>
+        : null}
         {children}
       </Button>
     );
