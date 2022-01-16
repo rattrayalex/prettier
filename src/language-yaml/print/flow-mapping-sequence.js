@@ -44,8 +44,7 @@ function printChildren(path, print, options) {
   const parts = path.map(
     (childPath, index) => [
       print(),
-      index === node.children.length - 1 ?
-        ""
+      index === node.children.length - 1 ? ""
       : [
           ",",
           line,

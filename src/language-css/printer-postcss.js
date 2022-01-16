@@ -244,8 +244,7 @@ function genericPrint(path, options, print) {
         // If a Less file ends up being parsed with the SCSS parser, Less
         // variable declarations will be parsed as at-rules with names ending
         // with a colon, so keep the original case then.
-        isDetachedRulesetCallNode(node) || node.name.endsWith(":") ?
-          node.name
+        isDetachedRulesetCallNode(node) || node.name.endsWith(":") ? node.name
         : maybeToLowerCase(node.name),
         node.params ?
           [
@@ -358,8 +357,7 @@ function genericPrint(path, options, print) {
         join(
           [
             ",",
-            insideAtRuleNode(path, ["extend", "custom-selector", "nest"]) ?
-              line
+            insideAtRuleNode(path, ["extend", "custom-selector", "nest"]) ? line
             : hardline,
           ],
           path.map(print, "nodes")
@@ -1037,9 +1035,8 @@ function adjustStrings(value, options) {
 
 function quoteAttributeValue(value, options) {
   const quote = options.singleQuote ? "'" : '"';
-  return value.includes('"') || value.includes("'") ? value : (
-    quote + value + quote
-  );
+  return value.includes('"') || value.includes("'") ? value
+    : quote + value + quote;
 }
 
 function adjustNumbers(value) {

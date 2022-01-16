@@ -448,12 +448,10 @@ function printChildren(path, options, print) {
 
       ...path.map((childPath) => {
         const childNode = childPath.getValue();
-        const prevBetweenLine = !childNode.prev ? "" : (
-          printBetweenLine(childNode.prev, childNode)
-        );
+        const prevBetweenLine = !childNode.prev ? ""
+          : printBetweenLine(childNode.prev, childNode);
         return [
-          !prevBetweenLine ?
-            ""
+          !prevBetweenLine ? ""
           : [
               prevBetweenLine,
               forceNextEmptyLine(childNode.prev) ? hardline : "",
@@ -741,9 +739,8 @@ function printOpeningTag(path, options, print) {
 }
 
 function printOpeningTagStart(node, options) {
-  return node.prev && needsToBorrowNextOpeningTagStartMarker(node.prev) ? "" : (
-    [printOpeningTagPrefix(node, options), printOpeningTagStartMarker(node)]
-  );
+  return node.prev && needsToBorrowNextOpeningTagStartMarker(node.prev) ? ""
+    : [printOpeningTagPrefix(node, options), printOpeningTagStartMarker(node)];
 }
 
 function printOpeningTagEnd(node) {

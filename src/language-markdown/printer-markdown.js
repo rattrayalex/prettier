@@ -140,8 +140,7 @@ function genericPrint(path, options, print) {
 
       const proseWrap =
         // leading char that may cause different syntax
-        nextNode && /^>|^([*+-]|#{1,6}|\d+[).])$/.test(nextNode.value) ?
-          "never"
+        nextNode && /^>|^([*+-]|#{1,6}|\d+[).])$/.test(nextNode.value) ? "never"
         : options.proseWrap;
 
       return printLine(path, node.value, { proseWrap });
@@ -166,8 +165,7 @@ function genericPrint(path, options, print) {
             nextNode.children.length > 0 &&
             nextNode.children[0].type === "word" &&
             !nextNode.children[0].hasLeadingPunctuation);
-        style = hasPrevOrNextWord || getAncestorNode(path, "emphasis") ?
-            "*"
+        style = hasPrevOrNextWord || getAncestorNode(path, "emphasis") ? "*"
           : "_";
       }
       return [style, printChildren(path, options, print), style];
@@ -376,8 +374,7 @@ function genericPrint(path, options, print) {
         indent([
           lineOrSpace,
           printUrl(node.url),
-          node.title === null ?
-            ""
+          node.title === null ? ""
           : [lineOrSpace, printTitle(node.title, options, false)],
         ]),
       ]);

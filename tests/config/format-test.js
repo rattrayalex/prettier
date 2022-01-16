@@ -40,9 +40,8 @@ const unstableTests = new Map(
     "typescript/prettier-ignore/mapped-types.ts",
     "js/comments/html-like/comment.js",
   ].map((fixture) => {
-    const [file, isUnstable = () => true] = Array.isArray(fixture) ? fixture : (
-      [fixture]
-    );
+    const [file, isUnstable = () => true] = Array.isArray(fixture) ? fixture
+      : [fixture];
     return [path.join(__dirname, "../format/", file), isUnstable];
   })
 );

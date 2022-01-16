@@ -184,8 +184,7 @@ function markAlignedList(ast, options) {
   });
 
   function getListItemStart(listItem) {
-    return listItem.children.length === 0 ?
-        -1
+    return listItem.children.length === 0 ? -1
       : listItem.children[0].position.start.column - 1;
   }
 

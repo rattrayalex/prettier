@@ -591,12 +591,11 @@ function getMinIndentation(text) {
 }
 
 function dedentString(text, minIndent = getMinIndentation(text)) {
-  return minIndent === 0 ? text : (
-    text
-      .split("\n")
-      .map((lineText) => lineText.slice(minIndent))
-      .join("\n")
-  );
+  return minIndent === 0 ? text
+    : text
+        .split("\n")
+        .map((lineText) => lineText.slice(minIndent))
+        .join("\n");
 }
 
 function shouldNotPrintClosingTag(node, options) {

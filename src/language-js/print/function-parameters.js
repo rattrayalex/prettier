@@ -143,8 +143,7 @@ function printFunctionParameters(
     "(",
     indent([softline, ...printed]),
     ifBreak(
-      !hasRestParameter(functionNode) && shouldPrintComma(options, "all") ?
-        ","
+      !hasRestParameter(functionNode) && shouldPrintComma(options, "all") ? ","
       : ""
     ),
     softline,

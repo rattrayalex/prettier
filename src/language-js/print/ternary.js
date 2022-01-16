@@ -200,8 +200,7 @@ function printTernary(path, options, print) {
   const alternateNodePropertyName = isConditionalExpression ?
       "alternate"
     : "falseType";
-  const testNodePropertyNames = isConditionalExpression ?
-      ["test"]
+  const testNodePropertyNames = isConditionalExpression ? ["test"]
     : ["checkType", "extendsType"];
   const consequentNode = node[consequentNodePropertyName];
   const alternateNode = node[alternateNodePropertyName];

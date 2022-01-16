@@ -183,8 +183,7 @@ function printJestEachTemplateLiteral(path, options, print) {
             join(
               " | ",
               row.cells.map((cell, index) =>
-                row.hasLineBreak ?
-                  cell
+                row.hasLineBreak ? cell
                 : cell +
                   " ".repeat(maxColumnWidths[index] - getStringWidth(cell))
               )

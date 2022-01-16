@@ -212,9 +212,8 @@ function getRollupConfig(bundle) {
     rollupPluginCommonjs({
       ignoreGlobal: bundle.target === "node",
       ...bundle.commonjs,
-      ignore: bundle.type === "plugin" ? undefined : (
-        (id) => /\.\/parser-.*?/.test(id)
-      ),
+      ignore: bundle.type === "plugin" ? undefined
+        : (id) => /\.\/parser-.*?/.test(id),
       requireReturnsDefault: "preferred",
     }),
     rollupPluginExternals(bundle.externals),

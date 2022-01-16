@@ -21,11 +21,9 @@ function formatMarkdown({
     "**Input:**",
     codeBlock(input, syntax),
     ...(doc ? ["", "**Doc:**", codeBlock(doc, "js")] : []),
-    ...(output === undefined ?
-      []
+    ...(output === undefined ? []
     : ["", "**Output:**", codeBlock(output, syntax)]),
-    ...(isIdempotent ?
-      []
+    ...(isIdempotent ? []
     : ["", "**Second Output:**", codeBlock(output2, syntax)]),
     ...(full ? ["", "**Expected behavior:**", ""] : []),
   ]

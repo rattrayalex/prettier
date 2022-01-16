@@ -241,12 +241,11 @@ function getBlockValueLineContents(
   node,
   { parentIndent, isLastDescendant, options }
 ) {
-  const content = node.position.start.line === node.position.end.line ? "" : (
-    options.originalText
-      .slice(node.position.start.offset, node.position.end.offset)
-      // exclude open line `>` or `|`
-      .match(/^[^\n]*?\n(.*)$/s)[1]
-  );
+  const content = node.position.start.line === node.position.end.line ? ""
+    : options.originalText
+        .slice(node.position.start.offset, node.position.end.offset)
+        // exclude open line `>` or `|`
+        .match(/^[^\n]*?\n(.*)$/s)[1];
 
   const leadingSpaceCount = node.indent === null ?
       ((match) => (match ? match[1].length : Number.POSITIVE_INFINITY))(

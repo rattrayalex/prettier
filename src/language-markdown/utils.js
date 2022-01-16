@@ -52,8 +52,7 @@ function splitText(text, options) {
   const nodes = [];
 
   const tokens = (
-    options.proseWrap === "preserve" ?
-      text
+    options.proseWrap === "preserve" ? text
     : text.replace(
         new RegExp(`(${cjkPattern})\n(${cjkPattern})`, "g"),
         "$1$2"

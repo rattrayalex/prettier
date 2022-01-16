@@ -87,8 +87,7 @@ function createOptionUsage(context, option, threshold) {
   return createOptionUsageRow(
     header,
     `${option.description}${
-      optionDefaultValue === undefined ?
-        ""
+      optionDefaultValue === undefined ? ""
       : `\nDefaults to ${createDefaultValueDisplay(optionDefaultValue)}.`
     }`,
     threshold
@@ -155,13 +154,12 @@ function createDetailedUsage(context, flag) {
   const header = createOptionUsageHeader(option);
   const description = `\n\n${indent(option.description, 2)}`;
 
-  const choices = option.type !== "choice" ? "" : (
-    `\n\nValid options:\n\n${createChoiceUsages(
-      option.choices,
-      CHOICE_USAGE_MARGIN,
-      CHOICE_USAGE_INDENTATION
-    ).join("\n")}`
-  );
+  const choices = option.type !== "choice" ? ""
+    : `\n\nValid options:\n\n${createChoiceUsages(
+        option.choices,
+        CHOICE_USAGE_MARGIN,
+        CHOICE_USAGE_INDENTATION
+      ).join("\n")}`;
 
   const optionDefaultValue = getOptionDefaultValue(context, option.name);
   const defaults = optionDefaultValue !== undefined ?

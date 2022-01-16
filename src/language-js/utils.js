@@ -84,9 +84,8 @@ function hasNode(node, fn) {
     return node.some((value) => hasNode(value, fn));
   }
   const result = fn(node);
-  return typeof result === "boolean" ? result : (
-    Object.values(node).some((value) => hasNode(value, fn))
-  );
+  return typeof result === "boolean" ? result
+    : Object.values(node).some((value) => hasNode(value, fn));
 }
 
 /**

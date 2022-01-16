@@ -567,8 +567,7 @@ function printCloseBlock(path, print, options) {
   const node = path.getValue();
 
   if (options.htmlWhitespaceSensitivity === "ignore") {
-    const escape = blockStatementHasOnlyWhitespaceInProgram(node) ?
-        softline
+    const escape = blockStatementHasOnlyWhitespaceInProgram(node) ? softline
       : hardline;
 
     return [

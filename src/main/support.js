@@ -48,7 +48,8 @@ function getSupportInfo({
       option = { ...option };
 
       if (Array.isArray(option.default)) {
-        option.default = option.default.length === 1 ? option.default[0].value
+        option.default = option.default.length === 1 ?
+            option.default[0].value
           : option.default
               .filter(filterSince)
               .sort((info1, info2) =>

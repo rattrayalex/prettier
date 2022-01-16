@@ -48,9 +48,8 @@ function removeIgnorableFirstLf(ast /*, options */) {
     ) {
       const [text, ...rest] = node.children;
       return node.clone({
-        children: text.value.length === 1 ? rest : (
-          [text.clone({ value: text.value.slice(1) }), ...rest]
-        ),
+        children: text.value.length === 1 ? rest
+          : [text.clone({ value: text.value.slice(1) }), ...rest],
       });
     }
     return node;
@@ -134,9 +133,8 @@ function mergeNodeIntoText(ast, shouldMerge, getValue) {
             continue;
           }
 
-          const newChild = child.type === "text" ? child : (
-            child.clone({ type: "text", value: getValue(child) })
-          );
+          const newChild = child.type === "text" ? child
+            : child.clone({ type: "text", value: getValue(child) });
 
           if (
             newChildren.length === 0 ||
@@ -273,8 +271,7 @@ function extractInterpolation(ast, options) {
         newChildren.push({
           type: "interpolation",
           sourceSpan: new ParseSourceSpan(startSourceSpan, endSourceSpan),
-          children: value.length === 0 ?
-              []
+          children: value.length === 0 ? []
             : [
                 {
                   type: "text",
@@ -391,8 +388,7 @@ function addIsSelfClosing(ast /*, options */) {
 
 function addHasHtmComponentClosingTag(ast, options) {
   return ast.map((node) =>
-    node.type !== "element" ?
-      node
+    node.type !== "element" ? node
     : Object.assign(node, {
         hasHtmComponentClosingTag:
           node.endSourceSpan &&
@@ -441,7 +437,8 @@ function addIsSpaceSensitive(ast, options) {
         }))
         .map((child, index, children) => ({
           ...child,
-          isLeadingSpaceSensitive: index === 0 ? child.isLeadingSpaceSensitive
+          isLeadingSpaceSensitive: index === 0 ?
+              child.isLeadingSpaceSensitive
             : children[index - 1].isTrailingSpaceSensitive &&
               child.isLeadingSpaceSensitive,
           isTrailingSpaceSensitive: index === children.length - 1 ?

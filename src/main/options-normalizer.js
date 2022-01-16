@@ -172,8 +172,7 @@ function optionInfoToSchema(optionInfo, { isCLI, optionInfos }) {
   /* istanbul ignore next */
   if (optionInfo.redirect) {
     handlers.redirect = (value) =>
-      !value ?
-        undefined
+      !value ? undefined
       : {
           to: {
             key: optionInfo.redirect.option,

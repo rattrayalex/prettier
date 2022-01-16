@@ -110,9 +110,8 @@ function printJsxElementInternal(path, options, print) {
   const isMdxBlock = path.getParentNode().rootMarker === "mdx";
 
   const rawJsxWhitespace = options.singleQuote ? "{' '}" : '{" "}';
-  const jsxWhitespace = isMdxBlock ? " " : (
-    ifBreak([rawJsxWhitespace, softline], " ")
-  );
+  const jsxWhitespace = isMdxBlock ? " "
+    : ifBreak([rawJsxWhitespace, softline], " ");
 
   const isFacebookTranslationTag =
     node.openingElement &&

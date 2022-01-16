@@ -102,8 +102,7 @@ class Node {
 
 function mapNodesIfChanged(nodes, fn) {
   const newNodes = nodes.map(fn);
-  return newNodes.some((newNode, index) => newNode !== nodes[index]) ?
-      newNodes
+  return newNodes.some((newNode, index) => newNode !== nodes[index]) ? newNodes
     : nodes;
 }
 

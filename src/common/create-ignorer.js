@@ -21,9 +21,8 @@ async function createIgnorer(ignorePath, withNodeModules) {
  * @param {boolean?} withNodeModules
  */
 createIgnorer.sync = function (ignorePath, withNodeModules) {
-  const ignoreContent = !ignorePath ? null : (
-    getFileContentOrNull.sync(path.resolve(ignorePath))
-  );
+  const ignoreContent = !ignorePath ? null
+    : getFileContentOrNull.sync(path.resolve(ignorePath));
   return _createIgnorer(ignoreContent, withNodeModules);
 };
 
