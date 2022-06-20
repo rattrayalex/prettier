@@ -258,6 +258,36 @@ printWidth: 80
 ================================================================================
 `;
 
+exports[`multiple-expressions-per-line.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// real-world inspiration:
+const ClientInstantiation = (opts) => {
+  return dedent\`
+    const \${Names.ClientName()} = \${JS.ClassInstantiation({
+      name: Names.PackageName(),
+      params: [opts].filter(Boolean),
+    })};
+  \`;
+};
+
+=====================================output=====================================
+// real-world inspiration:
+const ClientInstantiation = (opts) => {
+  return dedent\`
+    const \${Names.ClientName()} = \${JS.ClassInstantiation({
+      name: Names.PackageName(),
+      params: [opts].filter(Boolean),
+    })};
+  \`;
+};
+
+================================================================================
+`;
+
 exports[`sequence-expressions.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
@@ -318,7 +348,7 @@ margin: 0;
 
 .top-bar .logo {
   height: 30px;
-  margin: auto; 
+  margin: auto;
     position: absolute;
 	left: 0;right: 0;
 }
@@ -401,7 +431,7 @@ color: red; display: none
 </div>;
 
 <div>
-<style jsx>{\`This is invalid css. 
+<style jsx>{\`This is invalid css.
       Shouldn't fail.
             Shouldn't be formatted.\`}</style>
 </div>;
@@ -419,7 +449,7 @@ margin: 0;
 
 .top-bar .logo {
   height: 30px;
-  margin: auto; 
+  margin: auto;
     position: absolute;
 	left: 0;right: 0;
 }
@@ -438,7 +468,7 @@ margin: 0;
 
 .top-bar .logo {
   height: 30px;
-  margin: auto; 
+  margin: auto;
     position: absolute;
 	left: 0;right: 0;
 }
@@ -457,7 +487,7 @@ margin: 0;
 
 .top-bar .logo {
   height: 30px;
-  margin: auto; 
+  margin: auto;
     position: absolute;
 	left: 0;right: 0;
 }
@@ -491,7 +521,7 @@ margin: 0;
 </div>;
 
 <div>
-  <style jsx>{\`This is invalid css. 
+  <style jsx>{\`This is invalid css.
       Shouldn't fail.
             Shouldn't be formatted.\`}</style>
 </div>;
