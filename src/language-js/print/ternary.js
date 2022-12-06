@@ -22,7 +22,6 @@ const {
     dedent,
     ifBreak,
     breakParent,
-    conditionalGroup,
   },
 } = require("../../document/index.js");
 const pathNeedsParens = require("../needs-parens.js");
@@ -353,20 +352,14 @@ function printTernary(path, options, print, args) {
 
   const result =
     isOnSameLineAsAssignment && !shouldBreak
-      ? conditionalGroup([
-          // If the whole expression fits on one line with the assignment, print as normal.
-          group(indent(parts)),
-          // Else if the ternary fits on one line after the assignment with an indent, do so.
-          indent([
-            hardline,
-            conditionalGroup([
-              [printedTest, " ? ", printedConsequent, " : ", printedAlternate],
-              // Else, we'd ideally print on same line as assignment,
-              // but I cant figure out how, so it gets bumped to the next line. Sorry.
-              parts,
-            ]),
-          ]),
-        ])
+      ? // We try to preserve the case of a single-line ternary bumped to the line after assignment:
+        //
+        //   const foo =
+        //     cond ? result : otherwise;
+        //
+        // However, this sadly means that tests are always shunted to the next line in this case,
+        // which I'm ambivalent about but some people like keeping on the same line as the assignment.
+        group(indent([softline, group(parts)]))
       : isOnSameLineAsAssignment || isOnSameLineAsReturn
       ? group(indent(parts))
       : shouldExtraIndent || (isTSConditional && isInTest)

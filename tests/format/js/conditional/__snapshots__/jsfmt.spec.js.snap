@@ -130,7 +130,8 @@ test ? test /* c
 c */? foo : bar : bar;
 
 =====================================output=====================================
-var inspect = 4 === util.inspect.length ?
+var inspect =
+  4 === util.inspect.length ?
     // node <= 0.8.x
     function (v, colors) {
       return util.inspect(v, void 0, void 0, colors);
@@ -140,7 +141,8 @@ var inspect = 4 === util.inspect.length ?
       return util.inspect(v, { colors: colors });
     };
 
-var inspect = 4 === util.inspect.length ?
+var inspect =
+  4 === util.inspect.length ?
     // node <= 0.8.x
     function (v, colors) {
       return util.inspect(v, void 0, void 0, colors);
@@ -150,23 +152,27 @@ var inspect = 4 === util.inspect.length ?
       return util.inspect(v, { colors: colors });
     };
 
-const extractTextPluginOptions = shouldUseRelativeAssetPaths ?
+const extractTextPluginOptions =
+  shouldUseRelativeAssetPaths ?
     // Making sure that the publicPath goes back to to build folder.
     { publicPath: Array(cssFilename.split("/").length).join("../") }
   : {};
 
-const extractTextPluginOptions2 = shouldUseRelativeAssetPaths ?
+const extractTextPluginOptions2 =
+  shouldUseRelativeAssetPaths ?
     // Making sure that the publicPath goes back to to build folder.
     { publicPath: Array(cssFilename.split("/").length).join("../") }
   : {};
 
-const extractTextPluginOptions3 = (
+const extractTextPluginOptions3 =
+  (
     shouldUseRelativeAssetPaths // Making sure that the publicPath goes back to to build folder.
   ) ?
     { publicPath: Array(cssFilename.split("/").length).join("../") }
   : {};
 
-const { configureStore } = process.env.NODE_ENV === "production" ?
+const { configureStore } =
+  process.env.NODE_ENV === "production" ?
     require("./configureProdStore") // a
   : require("./configureDevStore"); // b
 
@@ -1152,7 +1158,8 @@ const isEmpty = (obj) =>
   );
 
 // Again, this case is a bit hard to distinguish the alternate.
-const eventsFromOrders = orderIds && orders ?
+const eventsFromOrders =
+  orderIds && orders ?
     orderIds.map((id) => ({
       type: "order",
       date: orders[id].date,
@@ -1178,7 +1185,8 @@ function foo2() {
 }
 
 // Function call ideally wouldnt break break
-const matchingReferencesError = isMatchingReferencesError(matchingReferences) ?
+const matchingReferencesError =
+  isMatchingReferencesError(matchingReferences) ?
     translate(matchingReferences.error, {
       _: matchingReferences.error,
     })
@@ -1186,7 +1194,8 @@ const matchingReferencesError = isMatchingReferencesError(matchingReferences) ?
 
 // This one is kinda confusing any way you slice it…
 const obj = {
-  error: (
+  error:
+    (
       matchingReferencesError &&
       (!input.value ||
         (input.value &&
@@ -1200,7 +1209,8 @@ const obj = {
 
 // I think we should indent after the inner || on this, and do better wtih the parens around the &&
 const obj2 = {
-  warning: (
+  warning:
+    (
       matchingReferencesError ||
       (input.value && selectedReferencesDataStatus !== REFERENCES_STATUS_READY)
     ) ?

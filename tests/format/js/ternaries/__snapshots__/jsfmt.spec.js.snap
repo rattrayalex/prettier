@@ -510,7 +510,8 @@ a ?
         a: 0,
     }
 :   {
-        a: (
+        a:
+            (
                 {
                     a: 0,
                 }
@@ -519,7 +520,8 @@ a ?
                     a: 0,
                 }
             :   {
-                    y: (
+                    y:
+                        (
                             {
                                 a: 0,
                             }
@@ -842,7 +844,8 @@ a ?
 		a: 0,
 	}
 :	{
-		a: (
+		a:
+			(
 				{
 					a: 0,
 				}
@@ -851,7 +854,8 @@ a ?
 					a: 0,
 				}
 			:	{
-					y: (
+					y:
+						(
 							{
 								a: 0,
 							}
@@ -1173,7 +1177,8 @@ a ?
 		a: 0,
 	}
 :	{
-		a: (
+		a:
+			(
 				{
 					a: 0,
 				}
@@ -1182,7 +1187,8 @@ a ?
 					a: 0,
 				}
 			:	{
-					y: (
+					y:
+						(
 							{
 								a: 0,
 							}
@@ -1503,7 +1509,8 @@ a ?
     a: 0,
   }
 : {
-    a: (
+    a:
+      (
         {
           a: 0,
         }
@@ -1512,7 +1519,8 @@ a ?
           a: 0,
         }
       : {
-          y: (
+          y:
+            (
               {
                 a: 0,
               }
@@ -4375,7 +4383,8 @@ a ? literalline
 :   softline;
 
 const config = {
-    onFailure: onFailure !== undefined ? onFailure : (
+    onFailure:
+        onFailure !== undefined ? onFailure : (
             (error) => {
                 notify(
                     typeof error === "string" ? error : (
@@ -4622,7 +4631,8 @@ a ? literalline
 :	softline;
 
 const config = {
-	onFailure: onFailure !== undefined ? onFailure : (
+	onFailure:
+		onFailure !== undefined ? onFailure : (
 			(error) => {
 				notify(
 					typeof error === "string" ? error : (
@@ -4868,7 +4878,8 @@ a ? literalline
 :	softline;
 
 const config = {
-	onFailure: onFailure !== undefined ? onFailure : (
+	onFailure:
+		onFailure !== undefined ? onFailure : (
 			(error) => {
 				notify(
 					typeof error === "string" ? error : (
@@ -5113,7 +5124,8 @@ a ? literalline
 : softline;
 
 const config = {
-  onFailure: onFailure !== undefined ? onFailure : (
+  onFailure:
+    onFailure !== undefined ? onFailure : (
       (error) => {
         notify(
           typeof error === "string" ? error : (
@@ -5189,7 +5201,8 @@ const value = (bifornCringerMoshedPerplexSawder
 );
 
 =====================================output=====================================
-$var = (
+$var =
+    (
         $number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
             kochabCooieGameOnOboleUnweave
         :   annularCooeedSplicesWalksWayWay
@@ -5274,7 +5287,8 @@ const value = (bifornCringerMoshedPerplexSawder
 );
 
 =====================================output=====================================
-$var = (
+$var =
+	(
 		$number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
 			kochabCooieGameOnOboleUnweave
 		:	annularCooeedSplicesWalksWayWay
@@ -5358,7 +5372,8 @@ const value = (bifornCringerMoshedPerplexSawder
 );
 
 =====================================output=====================================
-$var = (
+$var =
+	(
 		$number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
 			kochabCooieGameOnOboleUnweave
 		:	annularCooeedSplicesWalksWayWay
@@ -5441,7 +5456,8 @@ const value = (bifornCringerMoshedPerplexSawder
 );
 
 =====================================output=====================================
-$var = (
+$var =
+  (
     $number % 10 >= 2 && ($number % 100 < 10 || $number % 100 >= 20) ?
       kochabCooieGameOnOboleUnweave
     : annularCooeedSplicesWalksWayWay

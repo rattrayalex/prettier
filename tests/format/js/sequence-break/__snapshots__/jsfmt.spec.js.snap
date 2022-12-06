@@ -54,23 +54,32 @@ for (
   test;
   update
 ) {}
-(a = b ? c : (
+(a =
+  b ? c : (
     function () {
       return 0;
     }
-  )), (a = b ? c : (
+  )),
+  (a =
+    b ? c : (
       function () {
         return 0;
       }
-    )), (a = b ? c : (
+    )),
+  (a =
+    b ? c : (
       function () {
         return 0;
       }
-    )), (a = b ? c : (
+    )),
+  (a =
+    b ? c : (
       function () {
         return 0;
       }
-    )), (a = b ? c : (
+    )),
+  (a =
+    b ? c : (
       function () {
         return 0;
       }
