@@ -586,7 +586,7 @@ a ?
                                                     {
                                                         a: 0,
                                                     },
-                                                    a ? a() :   (
+                                                    a ? a() : (
                                                         a({
                                                             a: 0,
                                                         })
@@ -918,7 +918,7 @@ a ?
 													{
 														a: 0,
 													},
-													a ? a() :	(
+													a ? a() : (
 														a({
 															a: 0,
 														})
@@ -1249,7 +1249,7 @@ a ?
 													{
 														a: 0,
 													},
-													a ? a() :	(
+													a ? a() : (
 														a({
 															a: 0,
 														})
@@ -4375,13 +4375,12 @@ a ? literalline
 :   softline;
 
 const config = {
-    onFailure: onFailure !== undefined ?
-            onFailure
-        :   (error) => {
+    onFailure: onFailure !== undefined ? onFailure : (
+            (error) => {
                 notify(
-                    typeof error === "string" ?
-                        error
-                    :   error.message || "ra.notification.http_error",
+                    typeof error === "string" ? error : (
+                        error.message || "ra.notification.http_error"
+                    ),
                     "warning",
                     {
                         _:
@@ -4391,7 +4390,8 @@ const config = {
                     }
                 );
                 refresh();
-            },
+            }
+        ),
 };
 
 showNotification(
@@ -4622,13 +4622,12 @@ a ? literalline
 :	softline;
 
 const config = {
-	onFailure: onFailure !== undefined ?
-			onFailure
-		:	(error) => {
+	onFailure: onFailure !== undefined ? onFailure : (
+			(error) => {
 				notify(
-					typeof error === "string" ?
-						error
-					:	error.message || "ra.notification.http_error",
+					typeof error === "string" ? error : (
+						error.message || "ra.notification.http_error"
+					),
 					"warning",
 					{
 						_:
@@ -4638,7 +4637,8 @@ const config = {
 					}
 				);
 				refresh();
-			},
+			}
+		),
 };
 
 showNotification(
@@ -4868,13 +4868,12 @@ a ? literalline
 :	softline;
 
 const config = {
-	onFailure: onFailure !== undefined ?
-			onFailure
-		:	(error) => {
+	onFailure: onFailure !== undefined ? onFailure : (
+			(error) => {
 				notify(
-					typeof error === "string" ?
-						error
-					:	error.message || "ra.notification.http_error",
+					typeof error === "string" ? error : (
+						error.message || "ra.notification.http_error"
+					),
 					"warning",
 					{
 						_:
@@ -4884,7 +4883,8 @@ const config = {
 					}
 				);
 				refresh();
-			},
+			}
+		),
 };
 
 showNotification(
@@ -5113,13 +5113,12 @@ a ? literalline
 : softline;
 
 const config = {
-  onFailure: onFailure !== undefined ?
-      onFailure
-    : (error) => {
+  onFailure: onFailure !== undefined ? onFailure : (
+      (error) => {
         notify(
-          typeof error === "string" ?
-            error
-          : error.message || "ra.notification.http_error",
+          typeof error === "string" ? error : (
+            error.message || "ra.notification.http_error"
+          ),
           "warning",
           {
             _:
@@ -5129,7 +5128,8 @@ const config = {
           }
         );
         refresh();
-      },
+      }
+    ),
 };
 
 showNotification(
@@ -5664,9 +5664,9 @@ const obj1 =
     :   shortThing;
 
 const obj2 =
-    conditionIsTruthy ?
-        shortThing
-    :   { some: "long", object: "with", lots: "of", stuff };
+    conditionIsTruthy ? shortThing : (
+        { some: "long", object: "with", lots: "of", stuff }
+    );
 
 const obj3 =
     conditionIsTruthy ?
@@ -5679,14 +5679,14 @@ const obj3 =
     :   shortThing;
 
 const obj4 =
-    conditionIsTruthy ?
-        shortThing
-    :   {
+    conditionIsTruthy ? shortThing : (
+        {
             some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
             object: "with",
             lots: "of",
             stuff,
-        };
+        }
+    );
 
 const obj5 =
     conditionIsTruthy ?
@@ -5730,9 +5730,9 @@ const obj1 =
 	:	shortThing;
 
 const obj2 =
-	conditionIsTruthy ?
-		shortThing
-	:	{ some: "long", object: "with", lots: "of", stuff };
+	conditionIsTruthy ? shortThing : (
+		{ some: "long", object: "with", lots: "of", stuff }
+	);
 
 const obj3 =
 	conditionIsTruthy ?
@@ -5745,14 +5745,14 @@ const obj3 =
 	:	shortThing;
 
 const obj4 =
-	conditionIsTruthy ?
-		shortThing
-	:	{
+	conditionIsTruthy ? shortThing : (
+		{
 			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
 			object: "with",
 			lots: "of",
 			stuff,
-		};
+		}
+	);
 
 const obj5 =
 	conditionIsTruthy ?
@@ -5795,9 +5795,9 @@ const obj1 =
 	:	shortThing;
 
 const obj2 =
-	conditionIsTruthy ?
-		shortThing
-	:	{ some: "long", object: "with", lots: "of", stuff };
+	conditionIsTruthy ? shortThing : (
+		{ some: "long", object: "with", lots: "of", stuff }
+	);
 
 const obj3 =
 	conditionIsTruthy ?
@@ -5810,14 +5810,14 @@ const obj3 =
 	:	shortThing;
 
 const obj4 =
-	conditionIsTruthy ?
-		shortThing
-	:	{
+	conditionIsTruthy ? shortThing : (
+		{
 			some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
 			object: "with",
 			lots: "of",
 			stuff,
-		};
+		}
+	);
 
 const obj5 =
 	conditionIsTruthy ?
@@ -5859,9 +5859,9 @@ const obj1 =
   : shortThing;
 
 const obj2 =
-  conditionIsTruthy ?
-    shortThing
-  : { some: "long", object: "with", lots: "of", stuff };
+  conditionIsTruthy ? shortThing : (
+    { some: "long", object: "with", lots: "of", stuff }
+  );
 
 const obj3 =
   conditionIsTruthy ?
@@ -5874,14 +5874,14 @@ const obj3 =
   : shortThing;
 
 const obj4 =
-  conditionIsTruthy ?
-    shortThing
-  : {
+  conditionIsTruthy ? shortThing : (
+    {
       some: "eeeeeeeeeeeeven looooooooooooooooooooooooooooooonger",
       object: "with",
       lots: "of",
       stuff,
-    };
+    }
+  );
 
 const obj5 =
   conditionIsTruthy ?

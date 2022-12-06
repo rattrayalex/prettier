@@ -771,9 +771,9 @@ const andIndented =
 
 // unless the consequent is short (less than ten characters long):
 const shortSoCase =
-  isLoudReallyReallyReallyReallyLoud() ?
-    silent()
-  : makeNoiseReallyReallyReallyReallyReallyLoudly.omgSoLoud();
+  isLoudReallyReallyReallyReallyLoud() ? silent() : (
+    makeNoiseReallyReallyReallyReallyReallyLoudly.omgSoLoud()
+  );
 
 // if chained, always break and put after the =
 const chainedShort =

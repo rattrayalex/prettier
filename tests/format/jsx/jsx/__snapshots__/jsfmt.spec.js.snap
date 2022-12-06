@@ -1233,13 +1233,13 @@ jsxModeFromElementBreaking ?
 
 // This ConditionalExpression prints in JSX mode because its alternate is a
 // JSXElement. It is breaking.
-jsxModeFromElementBreaking ?
-  "a"
-: <div>
+jsxModeFromElementBreaking ? "a" : (
+  <div>
     <span>
       thisIsASongAboutYourPoorSickPenguinHeHasAFeverAndHisToesAreBlueButIfISingToYourPoorSickPenguinHeWillFeelBetterInADayOrTwo
     </span>
-  </div>;
+  </div>
+);
 
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is
@@ -1549,13 +1549,13 @@ jsxModeFromElementBreaking ?
 
 // This ConditionalExpression prints in JSX mode because its alternate is a
 // JSXElement. It is breaking.
-jsxModeFromElementBreaking ?
-  "a"
-: <div>
+jsxModeFromElementBreaking ? "a" : (
+  <div>
     <span>
       thisIsASongAboutYourPoorSickPenguinHeHasAFeverAndHisToesAreBlueButIfISingToYourPoorSickPenguinHeWillFeelBetterInADayOrTwo
     </span>
-  </div>;
+  </div>
+);
 
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is
@@ -1865,13 +1865,13 @@ jsxModeFromElementBreaking ?
 
 // This ConditionalExpression prints in JSX mode because its alternate is a
 // JSXElement. It is breaking.
-jsxModeFromElementBreaking ?
-  'a'
-: <div>
+jsxModeFromElementBreaking ? 'a' : (
+  <div>
     <span>
       thisIsASongAboutYourPoorSickPenguinHeHasAFeverAndHisToesAreBlueButIfISingToYourPoorSickPenguinHeWillFeelBetterInADayOrTwo
     </span>
-  </div>;
+  </div>
+);
 
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is
@@ -2181,13 +2181,13 @@ jsxModeFromElementBreaking ?
 
 // This ConditionalExpression prints in JSX mode because its alternate is a
 // JSXElement. It is breaking.
-jsxModeFromElementBreaking ?
-  'a'
-: <div>
+jsxModeFromElementBreaking ? 'a' : (
+  <div>
     <span>
       thisIsASongAboutYourPoorSickPenguinHeHasAFeverAndHisToesAreBlueButIfISingToYourPoorSickPenguinHeWillFeelBetterInADayOrTwo
     </span>
-  </div>;
+  </div>
+);
 
 // This chain of ConditionalExpressions prints in JSX mode because the parent of
 // the outermost ConditionalExpression is a JSXExpressionContainer. It is

@@ -7,7 +7,8 @@ const {
   isCallExpression,
   isMemberExpression,
   isTSTypeExpression,
-  isVisuallyShortExpression,
+  isLoneShortArgument,
+  isSimpleExpressionByNodeCount,
 } = require("../utils/index.js");
 const { locStart, locEnd } = require("../loc.js");
 const isBlockComment = require("../utils/is-block-comment.js");
@@ -243,19 +244,22 @@ function printTernary(path, options, print, args) {
     !isInChain &&
     !isParentTernary &&
     !isTSConditional &&
-    // Right now, we do this when both the test and the consequent are short.
-    // This heuristic could probably be refined over time, but felt right after moderate amounts of tinkering.
-    ((isVisuallyShortExpression(consequentNode, options.originalText) &&
-      isVisuallyShortExpression(node.test, options.originalText, 20)) ||
-      // JSX null-consequent special case (to mirror booleans):
-      //
-      //   {!foo ? null : (
-      //     something.else()
-      //   )}
-      (isInJsx &&
-        (consequentNode.type === "NullLiteral" ||
-          (consequentNode.type === "Literal" &&
-            consequentNode.value === null))));
+    (isInJsx
+      ? // In JSX, we want this with a null-consequent to mirror booleans:
+        //
+        //   {!foo ? null : (
+        //     something.else()
+        //   )}
+        //
+        // But not in the general case, where it's (subjectively) better to have things multiline.
+        consequentNode.type === "NullLiteral" ||
+        (consequentNode.type === "Literal" && consequentNode.value === null)
+      : // Right now, we do this when:
+        // 1. The test is simple and,
+        // 2. The consequent is short.
+        // This heuristic could probably be refined over time, but felt right after moderate amounts of tinkering.
+        isLoneShortArgument(consequentNode, options) &&
+        isSimpleExpressionByNodeCount(node.test, 3));
 
   const shouldGroupTestAndConsequent =
     isInChain ||
@@ -329,9 +333,11 @@ function printTernary(path, options, print, args) {
       : !isBigTabs
       ? " "
       : shouldGroupTestAndConsequent
-      ? ifBreak(fillTab, ifBreak(isInChain ? " " : fillTab, " "), {
-          groupId: testAndConsequentId,
-        })
+      ? ifBreak(
+          fillTab,
+          ifBreak(isInChain || tryToParenthesizeAlternate ? " " : fillTab, " "),
+          { groupId: testAndConsequentId }
+        )
       : ifBreak(fillTab, " "),
 
     isAlternateTernary

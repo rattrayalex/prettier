@@ -8,7 +8,6 @@ const {
   isNonEmptyArray,
   isNextLineEmptyAfterIndex,
   getStringWidth,
-  hasNewlineInRange,
 } = require("../../common/util.js");
 const { locStart, locEnd, hasSameLocStart } = require("../loc.js");
 const isBlockComment = require("./is-block-comment.js");
@@ -619,20 +618,83 @@ function isSimpleTemplateLiteral(node) {
   );
 }
 
+function getExpressionInnerNodeCount(node, maxCount) {
+  let count = 0;
+  for (const k in node) {
+    const prop = node[k];
+
+    if (prop && typeof prop === "object" && typeof prop.type === "string") {
+      count++;
+      count += getExpressionInnerNodeCount(prop, maxCount - count);
+    }
+
+    // Bail early to protect against bad performance.
+    if (count > maxCount) {
+      return count;
+    }
+  }
+  return count;
+}
+
 /**
- * Returns whether the expression is under ten characters long
- * (calibrated to the word "undefined").
- *
- * Note that while the input won't be broken,
- * this does not guarantee that the output will not break.
+ * Attempts to gauge the rough complexity of a node, for example
+ * to detect deeply-nested booleans, call expressions with lots of arguments, etc.
  */
-function isVisuallyShortExpression(node, originalText, maxLength = 10) {
-  const start = locStart(node);
-  const end = locEnd(node);
-  return (
-    end - start < maxLength &&
-    !hasNewlineInRange(originalText, locStart(node), locEnd(node))
-  );
+function isSimpleExpressionByNodeCount(node, maxInnerNodeCount = 5) {
+  const count = getExpressionInnerNodeCount(node, maxInnerNodeCount);
+  return count <= maxInnerNodeCount;
+}
+
+const LONE_SHORT_ARGUMENT_THRESHOLD_RATE = 0.25;
+
+function isLoneShortArgument(node, { printWidth }) {
+  if (hasComment(node)) {
+    return false;
+  }
+
+  const threshold = printWidth * LONE_SHORT_ARGUMENT_THRESHOLD_RATE;
+
+  if (
+    node.type === "ThisExpression" ||
+    (node.type === "Identifier" && node.name.length <= threshold) ||
+    (isSignedNumericLiteral(node) && !hasComment(node.argument))
+  ) {
+    return true;
+  }
+
+  const regexpPattern =
+    (node.type === "Literal" && "regex" in node && node.regex.pattern) ||
+    (node.type === "RegExpLiteral" && node.pattern);
+
+  if (regexpPattern) {
+    return regexpPattern.length <= threshold;
+  }
+
+  if (isStringLiteral(node)) {
+    return rawText(node).length <= threshold;
+  }
+
+  if (node.type === "TemplateLiteral") {
+    return (
+      node.expressions.length === 0 &&
+      node.quasis[0].value.raw.length <= threshold &&
+      !node.quasis[0].value.raw.includes("\n")
+    );
+  }
+
+  if (node.type === "UnaryExpression") {
+    return isLoneShortArgument(node.argument);
+  }
+
+  if (
+    node.type === "CallExpression" &&
+    node.arguments.length === 0 &&
+    node.callee.type === "Identifier"
+  ) {
+    return node.callee.name.length <= threshold - 2;
+  }
+
+  return isLiteral(node);
 }
 
 /**
@@ -1362,7 +1424,8 @@ module.exports = {
   isSimpleAtomicExpression,
   isSimpleMemberExpression,
   isSimpleTemplateLiteral,
-  isVisuallyShortExpression,
+  isSimpleExpressionByNodeCount,
+  isLoneShortArgument,
   isStringLiteral,
   isStringPropSafeToUnquote,
   isTemplateOnItsOwnLine,
