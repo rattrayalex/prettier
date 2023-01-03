@@ -683,7 +683,7 @@ function isLoneShortArgument(node, { printWidth }) {
   }
 
   if (node.type === "UnaryExpression") {
-    return isLoneShortArgument(node.argument);
+    return isLoneShortArgument(node.argument, { printWidth });
   }
 
   if (
