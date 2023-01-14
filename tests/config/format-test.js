@@ -39,6 +39,7 @@ const unstableTests = new Map(
     "js/for/continue-and-break-comment-without-blocks.js",
     "js/sequence-expression/parenthesized.js",
     "typescript/satisfies-operators/comments-unstable.ts",
+    "js/comments-closure-typecast/issue-9358.js",
     ["js/identifier/parentheses/let.js", (options) => options.semi === false],
     "jsx/comments/in-attributes.js",
   ].map((fixture) => {
