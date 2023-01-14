@@ -9,6 +9,8 @@ const {
   isTSTypeExpression,
   isLoneShortArgument,
   isSimpleExpressionByNodeCount,
+  hasComment,
+  CommentCheckFlags,
 } = require("../utils/index.js");
 const { locStart, locEnd } = require("../loc.js");
 const isBlockComment = require("../utils/is-block-comment.js");
@@ -25,6 +27,7 @@ const {
   },
 } = require("../../document/index.js");
 const pathNeedsParens = require("../needs-parens.js");
+const { printDanglingComments } = require("../../main/comments.js");
 
 /**
  * @typedef {import("../../document").Doc} Doc
@@ -318,8 +321,17 @@ function printTernary(path, options, print, args) {
       })
     : printedAlternate;
 
+  const danglingComments = [];
+  if (hasComment(alternateNode, CommentCheckFlags.Dangling)) {
+    path.call((childPath) => {
+      danglingComments.push(printDanglingComments(childPath, options));
+    }, "alternate");
+  }
+
   const parts = [
     printedTestAndConsequent,
+
+    ...danglingComments,
 
     isAlternateTernary
       ? hardline
